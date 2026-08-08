@@ -127,12 +127,6 @@ venv/
 evals/results/*
 !evals/results/.gitkeep
 
-## Raw output of the Phase 0 decoder-validation spike — contains real message
-## text pulled from chat.db. TEMPORARY: remove this line once the scrubbed
-## subset lands at harness/test/fixtures/attributed-body.json (Commit 3c);
-## that path is a different name and is never matched by this rule.
-fixtures.json
-
 # ==============================================================================
 # Environment & secrets
 # ==============================================================================
