@@ -1,0 +1,153 @@
+# ==============================================================================
+# Project docs (private planning material — not part of the shipped repo)
+# ==============================================================================
+docs/
+
+# ==============================================================================
+# macOS
+# ==============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ==============================================================================
+# Xcode / iOS / Swift
+# ==============================================================================
+
+## User-specific Xcode state (never shared between machines)
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+
+## Legacy Xcode per-user files (pre-workspace era, harmless to keep excluded)
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+## Build products & derived data
+build/
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+## Swift Package Manager
+## .build/ and .swiftpm/ are local resolution/build state, always regenerable.
+## Package.resolved is INTENTIONALLY NOT ignored — for an app target (not a
+## library) it should be committed so every clone builds against identical
+## dependency versions.
+.build/
+.swiftpm/
+Packages/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+## Xcode Previews / Simulator scratch state
+*.xcresult/
+Preview Content/PreviewAssets.xcassets/.DS_Store
+
+## Instruments / Profiling
+*.trace
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+## App Store Connect / signing artifacts — never commit these
+*.mobileprovision
+*.p12
+*.p8
+*.cer
+*.certSigningRequest
+
+## fastlane (only relevant if it gets added later; harmless if unused)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ==============================================================================
+# TypeScript / Node.js (harness/)
+# ==============================================================================
+node_modules/
+dist/
+out/
+*.tsbuildinfo
+.turbo/
+.npm/
+.pnpm-store/
+.yarn/cache/
+.yarn/install-state.gz
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/
+.nyc_output/
+
+# ==============================================================================
+# Python (evals/)
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+.tox/
+
+# ==============================================================================
+# Runtime data & generated artifacts
+# ==============================================================================
+## Checkpoints, audit logs, and any locally-generated SQLite database.
+## Fixture *source* (the generator script, ground-truth.json) is TypeScript/JSON
+## and is unaffected by this — only the generator's runtime *.db output is ignored.
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+## Eval run outputs — regenerable by re-running the eval suite from a fixed seed
+evals/results/*
+!evals/results/.gitkeep
+
+# ==============================================================================
+# Environment & secrets
+# ==============================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# ==============================================================================
+# Editor / IDE
+# ==============================================================================
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# ==============================================================================
+# Logs
+# ==============================================================================
+*.log
+logs/
