@@ -1,7 +1,16 @@
 # ==============================================================================
 # Project docs (private planning material — not part of the shipped repo)
 # ==============================================================================
-docs/
+## docs/* (not docs/) ignores direct children while still letting git
+## traverse the directory to evaluate the negations below. A bare `docs/`
+## rule excludes the directory itself, which git will not descend into even
+## to check per-file negations — the classic gitignore gotcha.
+docs/*
+## Portfolio artifacts a reviewer should be able to find, tracked despite
+## the blanket rule above. Everything else in docs/ (planning notes,
+## the implementation plan) stays private.
+!docs/SECURITY.md
+!docs/DECISIONS.md
 
 # ==============================================================================
 # macOS
@@ -123,9 +132,24 @@ venv/
 *.sqlite
 *.sqlite3
 
+## Defense in depth: catches a copied/renamed chat.db backup (e.g. chat.db.bak)
+## that *.db alone wouldn't match.
+chat.db*
+
+## Session transcripts / audit-log exports — may contain message content.
+*.jsonl
+
 ## Eval run outputs — regenerable by re-running the eval suite from a fixed seed
 evals/results/*
 !evals/results/.gitkeep
+
+# ==============================================================================
+# Demo captures
+# ==============================================================================
+## Unedited screen recordings expose the full Messages sidebar — every
+## contact name, every preview line, whatever notification lands mid-take.
+## Only cropped, reviewed exports (outside this path) belong in the repo.
+/demo/raw/
 
 # ==============================================================================
 # Environment & secrets
