@@ -1,14 +1,67 @@
 # Benchmark Results
 
-**No results yet. The eval runner lands in Phase 9.**
+**First measured run: 2026-08-17.** The metric definitions below were fixed
+before any number existed, and have not been changed since.
 
-This document is the measurement plan, published before the numbers exist so
-that the methodology is fixed in advance. Deciding how to score after seeing
-the output is how benchmarks end up flattering the thing they measure.
+The ablation matrix is still pending — those runs need the toggles wired
+through the harness. What follows is the baseline configuration only.
 
-Every cell below is `pending`. Nothing here will be filled in by hand — the
-runner writes `evals/results/<timestamp>-<config>.json` and this table is
-generated from those files.
+## Baseline — claude-sonnet-5, 370 transactions, 2026-06
+
+| | |
+|---|---|
+| Categorization accuracy | **95.1%** (352/370 exact GL match) |
+| Anomaly F1 | **0.94** (P 0.92 / R 0.96) |
+| Escape-hatch rate | 4.9% (18/370, all correct) |
+| Verifier blocks | 0 |
+| Turns | 20 (17 categorizer over 8 batches, 3 anomaly) |
+| Tokens | 83,352 in / 49,774 out (29,776 cached) |
+| Cost | **$1.00** |
+| Wall clock | 291s |
+
+### Anomalies by category
+
+| Category | Planted | Found | Precision | Recall | Found by |
+|---|---|---|---|---|---|
+| FX mismatch | 7 | 7 | 1.00 | 1.00 | deterministic |
+| Receipt mismatch | 9 | 9 | 1.00 | 1.00 | deterministic |
+| Policy violation | 10 | 10 | 1.00 | 1.00 | deterministic |
+| Missing recurring | 5 | 5 | 1.00 | 1.00 | deterministic |
+| Price anomaly | 6 | 5 | 1.00 | 0.83 | deterministic |
+| Vendor alias | 4 | 5 | 0.80 | 1.00 | model |
+| Duplicate | 6 | 8 | 0.63 | 0.83 | model |
+
+**The split is the result.** Five categories are solved exactly by arithmetic
+for zero tokens. The two the model handles are the two it was given because
+arithmetic provably cannot do them — and they are also the two with the
+lowest precision, which is the honest shape of the trade rather than an
+embarrassment. The model over-flags duplicates: three of its eight calls were
+legitimate repeat purchases.
+
+Notably the model found all four vendor-alias groups including the one the
+deterministic pass structurally cannot reach, where the merchant's descriptor
+carries a different numeric suffix on every charge.
+
+### Where the categorizer was wrong
+
+All 18 misses fall into three clusters, and every one is a debatable
+classification rather than a clear error:
+
+| Ground truth | Model | Count | Vendor |
+|---|---|---|---|
+| 6060 Marketing | 6010 Software | 10 | `CANVA PRO` |
+| 6080 Telecom | 6010 Software | 5 | `TWILIO INC` |
+| 6900 Uncategorized | 6050 Professional Services | 3 | `VENDOR SVCS LLC` and similar |
+
+Canva Pro genuinely is a software subscription. Twilio is a communications
+API and could sit in either account. The third cluster is the model
+committing where the manifest says punt.
+
+**Ground truth has not been changed to match.** Adjusting the answer key
+after seeing the output is the failure this whole document exists to prevent.
+The honest reading is that 95.1% is a floor: a chart of accounts with
+sharper boundaries, or a policy note on where Canva belongs, would raise it
+without the harness changing at all.
 
 ---
 
@@ -80,8 +133,11 @@ Fixed now so they can't be redefined to fit a result later.
 
 ## Ablation matrix
 
-Five toggles is 32 configurations. Six are worth running: the baseline, plus
-each component disabled individually.
+**Pending.** Five toggles is 32 configurations; six are worth running: the
+baseline, plus each component disabled individually. Configurations and
+per-variant hypotheses are committed in `evals/src/ablation.ts`, written
+before the runs so a surprising result cannot be quietly reinterpreted
+afterwards.
 
 | Configuration | Categorization accuracy | Anomaly F1 | Escape-hatch rate | Verifier block rate | Median turns | Cost / run |
 |---|---|---|---|---|---|---|
@@ -115,3 +171,14 @@ Recorded now, while there's no result to be defensive about.
   metric definitions before any result exists — but it is not eliminated.
 - **One seed, one month.** Results on a single fixture are a point estimate.
   Multi-seed variance is worth reporting before treating any gap as real.
+- **Some ground-truth labels are debatable.** Every categorization miss in
+  the baseline run was on a vendor that could reasonably sit in two
+  accounts. That makes 95.1% a floor rather than a ceiling, and it means
+  small accuracy differences between configurations should not be
+  over-read — a 2-point gap is within the noise of how the chart of
+  accounts was drawn.
+- **The duplicate judgment is the weakest link and the most interesting
+  one.** Precision 0.63 is the model deciding that identical same-day
+  charges are double charges when some are simply repeat purchases. No
+  deterministic rule separates them, which is exactly why it was given to
+  the model — but it is where a human reviewer will spend their attention.

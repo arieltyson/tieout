@@ -6,9 +6,9 @@
 
 [![CI](https://github.com/arieltyson/tieout/actions/workflows/ci.yml/badge.svg)](https://github.com/arieltyson/tieout/actions/workflows/ci.yml)
 
-**Status: in active development — Phase 0 of 10 complete.**
-The benchmark fixture is built; the agent that runs against it is not.
-Measurement plan: [evals/RESULTS.md](evals/RESULTS.md)
+**Status: in active development.** The harness runs end to end and is
+measured; the iMessage transport and the ablation table are not built yet.
+Numbers: [evals/RESULTS.md](evals/RESULTS.md)
 
 </div>
 
@@ -31,64 +31,77 @@ The harness is TypeScript. The surface will be Swift.
 
 ## Status 🚧
 
-This is a build log, not a finished product. Phase 0 established the
-foundation and the benchmark; Phases 1–10 build the agent on top of it.
+A build log, not a finished product. The harness runs end to end and is
+measured; the transport that makes it a *Messages* app is not built.
 
-**Built and tested:**
+**Built, tested, and measured:**
 
-- **Deterministic ledger fixture** — 400 synthetic transactions with 47 planted
-  defects across seven categories, plus an expected GL code for every
-  transaction. Same seed, same ledger, byte for byte; CI regenerates it on
-  every push and fails on any drift.
-- **Ground truth that can't drift** — the generator emits the answer key in the
-  same pass that plants each defect, and a test asserts none of it is reachable
-  from the ledger the agent sees.
-- **Integer-cent money type** — a branded `Cents` type making floating-point
-  dollars structurally impossible, with the classic `0.1 + 0.2` case in the
-  suite.
-- **Chart of accounts** — 18 accounts, Zod-validated at load, exposing the
-  `isValidGLCode` check the verifier bank will depend on.
-- **`attributedBody` decoder** — iMessage bodies frequently live as a serialized
-  `NSAttributedString` typedstream rather than plain text. Validated 500/500
-  against real messages using the populated `text` column as the oracle.
-- **Secret scanning** — pre-commit hook plus a whole-tree CI pass, with tests
-  proving it catches what the staged scan structurally cannot.
+- **The harness runs.** `npm run close 2026-06` categorizes 370 transactions,
+  hunts anomalies, verifies every proposal, and scores against ground truth.
+- **Verifier bank** — six deterministic verifiers over pure
+  `(proposals, ledger)` functions. Every one mutation-tested: break the
+  predicate, confirm the right tests fail and no others.
+- **Deterministic detectors** — five defect categories solved by arithmetic at
+  P 1.00, before a model is invoked.
+- **Deterministic ledger fixture** — 400 transactions, 47 planted defects,
+  byte-identical from its seed. CI regenerates it every push and fails on drift.
+- **Agent loop** — tool dispatch, four budget types checked before every call,
+  and errors returned as `tool_result` rather than exceptions. Fully testable
+  against a scripted model client, zero tokens.
+- **iOS app** — SwiftUI run detail, a Live Activity with Lock Screen and
+  Dynamic Island presentations, and a Messages extension rendering approval
+  cards. Builds against the iOS 26.5 simulator; verified by screenshot.
+- **Shared contract** — the Swift client decodes a byte-for-byte copy of what
+  the harness actually emits, so drift fails a build rather than a screen.
+- **Private data stays out** — the transport reads a synthetic `chat.db` and
+  *refuses* any path under `~/Library/Messages` without an explicit opt-in.
 
-101 tests, none of which spend a token.
+**318 TypeScript tests and 12 Swift tests**, all runnable without an API key.
 
-**Not built yet:** the verifier bank, the tool layer, the agent loop, the
-sub-agents, durable checkpointing, the iMessage transport, the eval runner, and
-the entire iOS surface. The iOS half — a Messages extension for approval cards,
-a Live Activity for run progress, and on-device Vision for receipt matching — is
-specced in detail in the plan. Harness first.
+**Not built yet:** the iMessage listener and sender, the reconciler and receipt
+chaser sub-agents, durable checkpointing and decision application, vendor
+memory, the ablation runs, and on-device receipt Vision.
 
 ## Benchmark 📊
 
-**No numbers yet.** The eval runner is Phase 9. Rather than publish
-placeholders, the methodology is fixed in advance in
-[evals/RESULTS.md](evals/RESULTS.md): metric definitions, the ablation matrix,
-and the limitations — written before any result exists, so scoring can't be
-adjusted to flatter the output.
+Measured against the committed fixture: 370 transactions, 47 planted defects
+across seven categories, `claude-sonnet-5`. Full methodology, per-category
+breakdown, and error analysis in [evals/RESULTS.md](evals/RESULTS.md).
 
-What the benchmark will test is whether **harness quality dominates model
-choice**: the same model run through progressively degraded versions of the
-same harness. If disabling the verifier bank doesn't measurably hurt, the
-architecture isn't earning its complexity, and this README will say so.
-
-The fixture that makes that measurable already exists:
-
-| Defect category | Count |
+| | |
 |---|---|
-| Policy violation | 10 |
-| Receipt mismatch | 9 |
-| FX mismatch | 7 |
-| Duplicate charge | 6 |
-| Price anomaly | 6 |
-| Missing recurring | 5 |
-| Vendor alias | 4 |
-| **Total planted defects** | **47** |
+| Categorization accuracy | **95.1%** (352/370 exact GL match) |
+| Anomaly F1 | **0.94** (P 0.92 / R 0.96) |
+| Escape-hatch rate | 4.9%, all correct |
+| Cost | **$1.00** per close |
+| Wall clock | 291s |
 
-Plus 400 transactions carrying an expected GL code each.
+**The interesting number is the split, not the total.**
+
+| Found by | Categories | Precision | Recall | Tokens |
+|---|---|---|---|---|
+| Deterministic code | FX, receipts, policy, recurring gaps, price jumps | 1.00 | 0.96 | **0** |
+| The model | Duplicate judgment, vendor aliasing | 0.71 | 0.90 | all of them |
+
+Five of seven defect categories are solved exactly by arithmetic, for nothing.
+The model is invoked only for the two that have no deterministic answer —
+whether identical same-day charges are a double charge or two legitimate
+purchases, and which mangled descriptors are the same merchant. That split is
+the architecture, and it is why a close costs a dollar instead of ten.
+
+It also shows the cost of the trade honestly: the model's two categories have
+the lowest precision on the board. It over-flags duplicates, calling three
+legitimate repeat purchases double charges.
+
+**On the 18 categorization misses:** every one is a debatable classification
+rather than a clear error — `CANVA PRO` filed as software rather than
+marketing, `TWILIO` as software rather than telecom. Ground truth has not been
+adjusted to match, because fitting the answer key to the output is the failure
+this benchmark exists to prevent. 95.1% is a floor.
+
+The ablation table — each component disabled in turn — is still pending. The
+configurations and their hypotheses are committed in `evals/src/ablation.ts`,
+written before the runs.
 
 ### Why the fixture is the hard part
 
@@ -108,9 +121,6 @@ names would yield 99% accuracy and prove nothing.
 
 ## The design 🔧
 
-Described as intent. Almost none of this is built yet — the Status section
-above lists what is.
-
 **Deterministic-first.** Every operation that *can* run in code *must* run in
 code; the model is reserved for judgment that genuinely requires it. Exact
 duplicate detection is `GROUP BY vendor, amount, date HAVING COUNT(*) > 1`, not
@@ -121,15 +131,16 @@ no I/O, no network, no model. Sums must tie to the cent, GL codes must exist,
 no transaction categorized twice, debits equal credits. Deterministic failures
 block; inferential failures warn.
 
-**Context isolation over parallelism.** Four sub-agents — categorizer,
-reconciler, anomaly hunter, receipt chaser — exist so the categorizer can chew
-through thousands of rows without the orchestrator compacting by turn three.
-Each gets a fresh context and returns a compact structured summary. Least
-privilege on tool grants falls out as a second-order benefit.
+**Context isolation over parallelism.** Sub-agents exist so the categorizer can
+chew through thousands of rows without the orchestrator compacting by turn
+three. Each gets a fresh context and returns a compact structured summary.
+Least privilege on tool grants falls out as a second-order benefit. Two of the
+four are built — categorizer and anomaly hunter; the reconciler and receipt
+chaser are not.
 
-**Bounded self-correction.** Verifier failures are fed back to the originating
-sub-agent as a tool result for a capped number of repair attempts, then
-escalated to a human with the verifier output attached.
+**Bounded self-correction** *(designed, not built)*. Verifier failures are fed
+back to the originating sub-agent as a tool result for a capped number of
+repair attempts, then escalated to a human with the verifier output attached.
 
 **A scripted model client.** The loop, budget enforcement, retry bounds, and
 self-correction are all testable against canned `tool_use` blocks — zero
