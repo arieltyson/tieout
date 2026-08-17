@@ -67,8 +67,11 @@ describe('scan-secrets.sh', () => {
     expect(runScanner()).toBe(1);
   });
 
+  // Uses a real provider, not example.com. Documentation domains are now
+  // exempt by design, so testing the email pattern against one would assert
+  // the opposite of what this test is for.
   test('blocks a staged email address', () => {
-    const email = 'ariel' + '@example.com';
+    const email = 'ariel' + '@fastmail.com';
     stageFile('leak.txt', `contact ${email} for details\n`);
     expect(runScanner()).toBe(1);
   });
@@ -82,6 +85,48 @@ describe('scan-secrets.sh', () => {
   test('allows the 555 placeholder in .env.example', () => {
     stageFile('.env.example', 'TIEOUT_ALLOWLIST=+15555550100\n');
     expect(runScanner()).toBe(0);
+  });
+
+  // The exemption covers ranges reserved for documentation, in any written
+  // form. It was previously a match on the literal "555555", which exempted
+  // one E.164 shape and nothing else — and then blocked this repo's own
+  // chat.db fixture for using the dashed form of the same reserved number.
+  test('allows the reserved 555 range written with dashes', () => {
+    const phone = '555-555' + '-0142';
+    stageFile('fixture.ts', `const handle = '${phone}';\n`);
+    expect(runScanner()).toBe(0);
+  });
+
+  test('allows RFC 2606 documentation domains', () => {
+    stageFile('fixture.ts', "const a = 'user' + '@example.com';\nconst b = 'x@host.invalid';\n");
+    expect(runScanner()).toBe(0);
+  });
+
+  // The widening must not have opened a hole. These are the cases that
+  // matter: a real number and a real provider, both close in shape to
+  // something exempt.
+  test('still blocks a real area code using the 555 exchange', () => {
+    const phone = '604-555' + '-1234';
+    stageFile('leak.txt', `call ${phone}\n`);
+    expect(runScanner()).toBe(1);
+  });
+
+  test('still blocks a real E.164 number outside the reserved block', () => {
+    const phone = '+1604' + '5551234';
+    stageFile('leak.txt', `call ${phone}\n`);
+    expect(runScanner()).toBe(1);
+  });
+
+  test('still blocks a real mail provider', () => {
+    const email = 'someone' + '@gmail.com';
+    stageFile('leak.txt', `mail ${email}\n`);
+    expect(runScanner()).toBe(1);
+  });
+
+  test('still blocks a lookalike domain that is not reserved', () => {
+    const email = 'someone' + '@example.co';
+    stageFile('leak.txt', `mail ${email}\n`);
+    expect(runScanner()).toBe(1);
   });
 
   test('allows a commit with no secret patterns', () => {
