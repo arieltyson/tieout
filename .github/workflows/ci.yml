@@ -46,3 +46,34 @@ jobs:
         run: |
           npm run fixtures:generate
           git diff --exit-code -- fixtures/data
+
+      # The client's decode fixture must be what the harness actually emits.
+      # Regenerating here means a contract change that was not mirrored in
+      # Swift fails on the TypeScript side too, not only on a Mac.
+      #
+      # Timestamps and wall clock are stripped before comparing — they are
+      # genuinely non-deterministic, and comparing them would produce a step
+      # that fails on every run and gets ignored within a week.
+      - name: CloseRun artifact matches the committed client fixture
+        shell: bash
+        run: |
+          npm run close -- 2026-06 --dry > /dev/null
+          STRIP='del(.startedAt, .finishedAt, .cost.wallClockMs)'
+          diff <(jq -S "$STRIP" evals/results/latest-run.json) \
+               <(jq -S "$STRIP" ios/TieoutCore/Tests/TieoutCoreTests/Fixtures/close-run.json)
+
+  swift:
+    name: swift build · swift test
+    runs-on: macos-15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Swift version
+        run: swift --version
+
+      - name: Build and test TieoutCore
+        working-directory: ios/TieoutCore
+        run: |
+          swift build
+          swift test
