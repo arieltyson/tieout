@@ -19,6 +19,7 @@
 import { detectAll, describeRule, type AnomalyCandidates } from '../domain/detectors.js';
 import type { Ledger, TxnId } from '../domain/ledger.js';
 import { exactDuplicateCandidates, recurringGaps } from '../domain/queries.js';
+import { assertGranted } from '../tools/dispatch.js';
 import { runLoop, type AuditEntry, type RunBudget } from '../loop/run.js';
 import { addUsage, emptyUsage, type ModelClient, type Usage } from '../model/client.js';
 import {
@@ -183,6 +184,11 @@ export async function runAnomalyHunter(
 
   const sink: AnomalySink = { duplicateVerdicts: [], aliasGroups: [] };
   const tools = buildAnomalyTools(ledger, duplicateCandidates, sink);
+  // Fails loudly if someone hands this agent a tool it may not hold. The
+  // filter version is silent, which is right at runtime and wrong here:
+  // quietly dropping a needed tool produces an agent that mysteriously
+  // cannot do its job.
+  assertGranted('anomalyHunter', tools);
 
   const result = await runLoop({
     client: options.client,

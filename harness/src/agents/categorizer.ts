@@ -12,6 +12,7 @@
  */
 import { chartOfAccounts } from '../domain/chart-of-accounts.js';
 import type { Ledger, Transaction } from '../domain/ledger.js';
+import { assertGranted } from '../tools/dispatch.js';
 import { runLoop, type AuditEntry, type RunBudget } from '../loop/run.js';
 import { addUsage, emptyUsage, type ModelClient, type Usage } from '../model/client.js';
 import {
@@ -124,6 +125,11 @@ export async function runCategorizer(options: CategorizerOptions): Promise<Categ
   const batchSize = options.batchSize ?? DEFAULT_BATCH_SIZE;
   const sink: CategorizerSink = { categorizations: [] };
   const tools = buildCategorizerTools(options.ledger, sink);
+  // Fails loudly if someone hands this agent a tool it may not hold. The
+  // filter version is silent, which is right at runtime and wrong here:
+  // quietly dropping a needed tool produces an agent that mysteriously
+  // cannot do its job.
+  assertGranted('categorizer', tools);
 
   let usage = emptyUsage();
   let turns = 0;
