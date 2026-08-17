@@ -12,7 +12,8 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "fixtures:generate": "tsx fixtures/src/generate.ts",
-    "prepare": "git config core.hooksPath .githooks"
+    "prepare": "git config core.hooksPath .githooks",
+    "close": "tsx evals/src/close.ts"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^9.6.0",
