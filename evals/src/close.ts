@@ -19,6 +19,7 @@ import { ScriptedModelClient } from '../../harness/src/model/scripted.js';
 import type { ModelClient } from '../../harness/src/model/client.js';
 import { loadGroundTruth, loadLedger } from '../../fixtures/src/index.js';
 import { estimateCostUsd, scoreCategorizations } from './score.js';
+import { buildCloseRun } from './build-artifact.js';
 
 const RESULTS_DIR = fileURLToPath(new URL('../results/', import.meta.url));
 
@@ -129,6 +130,7 @@ async function main(): Promise<void> {
   console.log(`  transactions ${transactions.length}`);
   console.log(`  batch size   ${args.batchSize}\n`);
 
+  const startedAtDate = new Date();
   const startedAt = Date.now();
   const result = await runCategorizer({
     client,
@@ -189,6 +191,29 @@ async function main(): Promise<void> {
       console.log(`  ${c.expected} -> ${c.actual}   ${c.count}x`);
     }
   }
+
+  // The artifact the iOS client consumes. Written on every run, including
+  // dry ones — the app needs something to render long before the harness
+  // is wired to a real model.
+  const artifact = buildCloseRun({
+    runId: 'run_local',
+    period: args.period,
+    model: args.dry ? 'scripted-dry' : args.model,
+    dryRun: args.dry,
+    ledger,
+    transactionCount: transactions.length,
+    categorizer: result,
+    proposals,
+    bank,
+    score,
+    costUsd: cost,
+    startedAt: startedAtDate,
+    finishedAt: new Date(),
+  });
+  mkdirSync(RESULTS_DIR, { recursive: true });
+  const artifactPath = `${RESULTS_DIR}latest-run.json`;
+  writeFileSync(artifactPath, `${JSON.stringify(artifact, null, 2)}\n`);
+  console.log(`\n  wrote ${artifactPath}`);
 
   if (args.dry) {
     console.log('\n  DRY RUN — the scripted client replays ground truth. This exercises the');
