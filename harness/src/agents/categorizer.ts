@@ -22,6 +22,15 @@ import {
 
 export const DEFAULT_BATCH_SIZE = 50;
 
+/**
+ * A batch of 50 categorizations is a few thousand output tokens once each
+ * carries a rationale. At the loop's 4096 default the model was truncated
+ * mid-tool_use: the block never completed, so it was never dispatched and
+ * the batch silently recorded nothing. Sized with headroom, and
+ * `maxTokensHits` below makes a recurrence loud instead of invisible.
+ */
+export const CATEGORIZER_MAX_TOKENS = 16_384;
+
 const accountLines = chartOfAccounts
   .map((a) => `  ${a.code}  ${a.name} (${a.type})`)
   .join('\n');
@@ -72,6 +81,8 @@ export interface CategorizerResult {
   readonly batches: number;
   readonly audit: readonly AuditEntry[];
   readonly budgetHits: number;
+  /** Batches the model was cut off mid-response. Any value above 0 invalidates the run. */
+  readonly maxTokensHits: number;
 }
 
 export interface CategorizerOptions {
@@ -79,6 +90,7 @@ export interface CategorizerOptions {
   readonly ledger: Ledger;
   readonly transactions: readonly Transaction[];
   readonly batchSize?: number;
+  readonly maxTokensPerCall?: number;
   readonly budget?: RunBudget;
   readonly runId?: string;
   readonly onBatch?: (done: number, total: number) => void;
@@ -117,6 +129,7 @@ export async function runCategorizer(options: CategorizerOptions): Promise<Categ
   let turns = 0;
   let batches = 0;
   let budgetHits = 0;
+  let maxTokensHits = 0;
   const audit: AuditEntry[] = [];
 
   for (let i = 0; i < options.transactions.length; i += batchSize) {
@@ -126,6 +139,7 @@ export async function runCategorizer(options: CategorizerOptions): Promise<Categ
       system: CATEGORIZER_SYSTEM,
       initialMessage: renderBatch(batch),
       tools,
+      maxTokensPerCall: options.maxTokensPerCall ?? CATEGORIZER_MAX_TOKENS,
       ...(options.budget ? { budget: options.budget } : {}),
       runId: options.runId ?? 'run_local',
     });
@@ -135,9 +149,10 @@ export async function runCategorizer(options: CategorizerOptions): Promise<Categ
     batches += 1;
     audit.push(...result.audit);
     if (result.stopReason === 'budget') budgetHits += 1;
+    if (result.stopReason === 'max_tokens') maxTokensHits += 1;
 
     options.onBatch?.(Math.min(i + batchSize, options.transactions.length), options.transactions.length);
   }
 
-  return { categorizations: sink.categorizations, usage, turns, batches, audit, budgetHits };
+  return { categorizations: sink.categorizations, usage, turns, batches, audit, budgetHits, maxTokensHits };
 }

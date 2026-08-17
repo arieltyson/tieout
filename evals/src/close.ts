@@ -9,6 +9,16 @@
  * which spends nothing and needs no API key.
  */
 import { writeFileSync, mkdirSync } from 'node:fs';
+
+// Read .env before anything looks at process.env. Without this the CLI only
+// sees a key that was exported into the shell, and reports "not set" while
+// the file sits right there — which is exactly what happened the first time.
+try {
+  process.loadEnvFile();
+} catch {
+  // No .env present; --dry needs no key, and the real path fails loudly below.
+}
+
 import { fileURLToPath } from 'node:url';
 import { runCategorizer } from '../../harness/src/agents/categorizer.js';
 import { runBank } from '../../harness/src/domain/bank.js';
@@ -163,6 +173,13 @@ async function main(): Promise<void> {
   );
   const score = scoreCategorizations(result.categorizations, expectedForScope);
   const cost = estimateCostUsd(args.model, result.usage.inputTokens, result.usage.outputTokens);
+
+  if (result.maxTokensHits > 0) {
+    console.log('⚠️  TRUNCATED RESPONSE');
+    console.log(`  ${result.maxTokensHits} of ${result.batches} batch(es) hit the max-token ceiling`);
+    console.log('  mid-response, so their tool calls never completed. Any accuracy');
+    console.log('  below is meaningless — lower --batch or raise the ceiling.\n');
+  }
 
   console.log('RESULTS');
   console.log(`  accuracy           ${pct(score.accuracy)}  (${score.correct}/${score.expected} exact GL match)`);
