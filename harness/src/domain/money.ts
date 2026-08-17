@@ -5,6 +5,8 @@
  * runs through this type so that class of bug is structurally impossible
  * rather than something to remember to avoid.
  */
+import { z } from 'zod';
+
 export type Cents = number & { readonly __brand: 'Cents' };
 
 export function cents(n: number): Cents {
@@ -13,6 +15,22 @@ export function cents(n: number): Cents {
   }
   return n as Cents;
 }
+
+/**
+ * The ONLY sanctioned way to get a `Cents` out of parsed JSON.
+ *
+ * Reasserting the brand with `value as unknown as Cents` after validating
+ * elsewhere works right up until someone reuses the cast on a schema that
+ * forgot `.int()` — and `Cents` is the single mechanism standing between
+ * this system and a floating-point money bug, so that guarantee must not be
+ * something a loader can quietly opt out of. Validating and branding in one
+ * expression means the integer check cannot be separated from the brand.
+ *
+ * Use `PositiveCentsSchema` for amounts that must also be non-zero.
+ */
+export const CentsSchema = z.number().int().transform(cents);
+
+export const PositiveCentsSchema = z.number().int().positive().transform(cents);
 
 const DECIMAL_PATTERN = /^(-?)(\d+)(?:\.(\d{1,2}))?$/;
 

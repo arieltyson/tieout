@@ -16,9 +16,7 @@ export function loadLedger(): Ledger {
   if (!parsed.success) {
     throw new Error(`fixtures/data/ledger.json failed schema validation:\n${parsed.error.message}`);
   }
-  // Cents is a branded type — Zod validates the runtime integer shape, and
-  // this cast is what asserts the brand back on top of that proof.
-  return parsed.data as unknown as Ledger;
+  return parsed.data;
 }
 
 export function loadGroundTruth(): GroundTruth {
@@ -27,7 +25,7 @@ export function loadGroundTruth(): GroundTruth {
   if (!parsed.success) {
     throw new Error(`fixtures/data/ground-truth.json failed schema validation:\n${parsed.error.message}`);
   }
-  return parsed.data as unknown as GroundTruth;
+  return parsed.data;
 }
 
 export * from './chart-of-accounts.js';

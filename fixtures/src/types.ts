@@ -5,7 +5,7 @@
  * the interfaces below and serializes them directly.
  */
 import { z } from 'zod';
-import type { Cents } from '../../harness/src/domain/money.js';
+import { CentsSchema, PositiveCentsSchema, type Cents } from '../../harness/src/domain/money.js';
 
 export type TxnId = string;
 export const TxnIdSchema = z.string().regex(/^txn_\d{4,}$/);
@@ -32,9 +32,9 @@ export const TransactionSchema = z.object({
   id: TxnIdSchema,
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   vendorDescriptor: z.string().min(1),
-  amountCents: z.number().int().positive(),
+  amountCents: PositiveCentsSchema,
   currency: CurrencySchema,
-  originalAmountCents: z.number().int().positive().nullable(),
+  originalAmountCents: PositiveCentsSchema.nullable(),
   fxRate: z.number().positive().nullable(),
 });
 
@@ -45,7 +45,7 @@ export interface Receipt {
 
 export const ReceiptSchema = z.object({
   txnId: TxnIdSchema,
-  receiptTotalCents: z.number().int().positive(),
+  receiptTotalCents: PositiveCentsSchema,
 });
 
 export interface Ledger {
@@ -162,16 +162,16 @@ export const PlantedDefectSchema = z.discriminatedUnion('kind', [
     ...baseDefectFields,
     kind: z.literal('fxMismatch'),
     txnIds: z.tuple([TxnIdSchema]),
-    expectedAmountCents: z.number().int(),
-    actualAmountCents: z.number().int(),
+    expectedAmountCents: CentsSchema,
+    actualAmountCents: CentsSchema,
     deltaCents: z.number().int(),
   }),
   z.object({
     ...baseDefectFields,
     kind: z.literal('receiptMismatch'),
     txnIds: z.tuple([TxnIdSchema]),
-    transactionAmountCents: z.number().int(),
-    receiptTotalCents: z.number().int(),
+    transactionAmountCents: CentsSchema,
+    receiptTotalCents: CentsSchema,
     deltaCents: z.number().int(),
   }),
   z.object({
@@ -180,7 +180,7 @@ export const PlantedDefectSchema = z.discriminatedUnion('kind', [
     txnIds: z.array(TxnIdSchema).min(1),
     vendor: z.string().min(1),
     glCode: z.string().regex(/^\d{4}$/),
-    expectedAmountCents: z.number().int().positive(),
+    expectedAmountCents: PositiveCentsSchema,
     expectedPeriod: z.string().regex(/^\d{4}-\d{2}$/),
   }),
   z.object({
@@ -194,8 +194,8 @@ export const PlantedDefectSchema = z.discriminatedUnion('kind', [
     kind: z.literal('priceAnomaly'),
     txnIds: z.tuple([TxnIdSchema]),
     vendor: z.string().min(1),
-    priorAmountCents: z.number().int().positive(),
-    currentAmountCents: z.number().int().positive(),
+    priorAmountCents: PositiveCentsSchema,
+    currentAmountCents: PositiveCentsSchema,
     percentChange: z.number(),
   }),
 ]);

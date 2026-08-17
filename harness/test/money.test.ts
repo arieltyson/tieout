@@ -1,5 +1,12 @@
 import { describe, expect, test } from 'vitest';
-import { cents, fromDecimal, sum, toDisplay } from '../src/domain/money.js';
+import {
+  CentsSchema,
+  PositiveCentsSchema,
+  cents,
+  fromDecimal,
+  sum,
+  toDisplay,
+} from '../src/domain/money.js';
 
 describe('cents', () => {
   test('accepts an integer', () => {
@@ -84,5 +91,57 @@ describe('sum', () => {
 
   test('sums an empty list to zero', () => {
     expect(sum([])).toBe(0);
+  });
+});
+
+// These schemas exist so that no loader has to reassert the Cents brand
+// with a cast after validating elsewhere. The tests that matter here are
+// the rejections: a cast would have laundered every one of these through.
+describe('CentsSchema', () => {
+  test('parses an integer', () => {
+    expect(CentsSchema.parse(1234)).toBe(1234);
+  });
+
+  test('parses a negative integer', () => {
+    expect(CentsSchema.parse(-1234)).toBe(-1234);
+  });
+
+  test('parses zero', () => {
+    expect(CentsSchema.parse(0)).toBe(0);
+  });
+
+  test('rejects a float', () => {
+    expect(CentsSchema.safeParse(12.34).success).toBe(false);
+  });
+
+  test('rejects the result of a float sum that lands off-integer', () => {
+    expect(CentsSchema.safeParse(0.1 + 0.2).success).toBe(false);
+  });
+
+  test('rejects NaN and Infinity', () => {
+    expect(CentsSchema.safeParse(Number.NaN).success).toBe(false);
+    expect(CentsSchema.safeParse(Number.POSITIVE_INFINITY).success).toBe(false);
+  });
+
+  test('rejects a numeric string', () => {
+    expect(CentsSchema.safeParse('1234').success).toBe(false);
+  });
+});
+
+describe('PositiveCentsSchema', () => {
+  test('parses a positive integer', () => {
+    expect(PositiveCentsSchema.parse(1234)).toBe(1234);
+  });
+
+  test('rejects zero', () => {
+    expect(PositiveCentsSchema.safeParse(0).success).toBe(false);
+  });
+
+  test('rejects a negative amount', () => {
+    expect(PositiveCentsSchema.safeParse(-1).success).toBe(false);
+  });
+
+  test('rejects a positive float', () => {
+    expect(PositiveCentsSchema.safeParse(12.34).success).toBe(false);
   });
 });
