@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "id": "single-txn-limit",
+      "description": "Any single charge over $750 requires prior approval on file.",
+      "glScope": null,
+      "thresholdCents": 75000
+    },
+    {
+      "id": "meals-daily-limit",
+      "description": "Meals & Entertainment charges over $150 require prior approval.",
+      "glScope": "6030",
+      "thresholdCents": 15000
+    },
+    {
+      "id": "equipment-limit",
+      "description": "Equipment purchases over $2000 require prior approval.",
+      "glScope": "6070",
+      "thresholdCents": 200000
+    }
+  ]
+}

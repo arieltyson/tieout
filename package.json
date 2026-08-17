@@ -11,6 +11,7 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
+    "fixtures:generate": "tsx fixtures/src/generate.ts",
     "prepare": "git config core.hooksPath .githooks"
   },
   "devDependencies": {

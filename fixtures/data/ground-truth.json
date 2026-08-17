@@ -1,0 +1,916 @@
+{
+  "seed": 20260601,
+  "period": "2026-06",
+  "expectedCategorizations": {
+    "txn_0001": "6010",
+    "txn_0002": "6010",
+    "txn_0003": "6010",
+    "txn_0004": "6010",
+    "txn_0005": "6010",
+    "txn_0006": "6010",
+    "txn_0007": "5010",
+    "txn_0008": "5010",
+    "txn_0009": "5010",
+    "txn_0010": "6010",
+    "txn_0011": "6010",
+    "txn_0012": "6010",
+    "txn_0013": "6010",
+    "txn_0014": "6010",
+    "txn_0015": "6010",
+    "txn_0016": "6010",
+    "txn_0017": "6010",
+    "txn_0018": "5010",
+    "txn_0019": "5010",
+    "txn_0020": "5010",
+    "txn_0021": "6010",
+    "txn_0022": "6010",
+    "txn_0023": "6010",
+    "txn_0024": "6010",
+    "txn_0025": "6010",
+    "txn_0026": "6040",
+    "txn_0027": "6040",
+    "txn_0028": "6040",
+    "txn_0029": "5010",
+    "txn_0030": "5010",
+    "txn_0031": "6050",
+    "txn_0032": "6050",
+    "txn_0033": "6050",
+    "txn_0034": "6050",
+    "txn_0035": "6050",
+    "txn_0036": "6060",
+    "txn_0037": "6060",
+    "txn_0038": "6060",
+    "txn_0039": "6080",
+    "txn_0040": "6080",
+    "txn_0041": "6010",
+    "txn_0042": "6010",
+    "txn_0043": "6040",
+    "txn_0044": "6040",
+    "txn_0045": "6040",
+    "txn_0046": "6040",
+    "txn_0047": "6040",
+    "txn_0048": "6030",
+    "txn_0049": "6030",
+    "txn_0050": "6030",
+    "txn_0051": "6040",
+    "txn_0052": "6040",
+    "txn_0053": "6030",
+    "txn_0054": "6030",
+    "txn_0055": "6070",
+    "txn_0056": "6070",
+    "txn_0057": "6060",
+    "txn_0058": "6060",
+    "txn_0059": "6080",
+    "txn_0060": "6080",
+    "txn_0061": "6020",
+    "txn_0062": "6020",
+    "txn_0063": "6020",
+    "txn_0064": "6030",
+    "txn_0065": "6020",
+    "txn_0066": "6020",
+    "txn_0067": "5010",
+    "txn_0068": "6020",
+    "txn_0069": "6020",
+    "txn_0070": "6020",
+    "txn_0071": "6030",
+    "txn_0072": "6030",
+    "txn_0073": "6040",
+    "txn_0074": "6020",
+    "txn_0075": "6020",
+    "txn_0076": "6020",
+    "txn_0077": "6020",
+    "txn_0078": "6100",
+    "txn_0079": "6020",
+    "txn_0080": "6030",
+    "txn_0081": "6030",
+    "txn_0082": "6020",
+    "txn_0083": "6070",
+    "txn_0084": "6070",
+    "txn_0085": "6070",
+    "txn_0086": "6020",
+    "txn_0087": "6050",
+    "txn_0088": "6050",
+    "txn_0089": "6060",
+    "txn_0090": "6060",
+    "txn_0091": "6030",
+    "txn_0092": "6030",
+    "txn_0093": "6070",
+    "txn_0094": "6020",
+    "txn_0095": "6050",
+    "txn_0096": "6020",
+    "txn_0097": "6020",
+    "txn_0098": "6070",
+    "txn_0099": "6040",
+    "txn_0100": "6030",
+    "txn_0101": "6020",
+    "txn_0102": "6050",
+    "txn_0103": "6070",
+    "txn_0104": "6040",
+    "txn_0105": "6100",
+    "txn_0106": "6020",
+    "txn_0107": "6070",
+    "txn_0108": "6100",
+    "txn_0109": "6060",
+    "txn_0110": "6020",
+    "txn_0111": "6060",
+    "txn_0112": "6020",
+    "txn_0113": "6040",
+    "txn_0114": "6050",
+    "txn_0115": "6030",
+    "txn_0116": "6020",
+    "txn_0117": "6020",
+    "txn_0118": "6020",
+    "txn_0119": "6030",
+    "txn_0120": "6020",
+    "txn_0121": "6030",
+    "txn_0122": "6070",
+    "txn_0123": "6020",
+    "txn_0124": "6070",
+    "txn_0125": "6030",
+    "txn_0126": "6040",
+    "txn_0127": "6030",
+    "txn_0128": "6900",
+    "txn_0129": "6070",
+    "txn_0130": "6020",
+    "txn_0131": "6040",
+    "txn_0132": "6020",
+    "txn_0133": "6060",
+    "txn_0134": "6020",
+    "txn_0135": "6060",
+    "txn_0136": "6030",
+    "txn_0137": "6020",
+    "txn_0138": "6020",
+    "txn_0139": "6060",
+    "txn_0140": "6050",
+    "txn_0141": "6070",
+    "txn_0142": "6020",
+    "txn_0143": "6050",
+    "txn_0144": "6100",
+    "txn_0145": "6060",
+    "txn_0146": "6060",
+    "txn_0147": "6020",
+    "txn_0148": "6030",
+    "txn_0149": "6060",
+    "txn_0150": "6060",
+    "txn_0151": "6080",
+    "txn_0152": "6020",
+    "txn_0153": "6070",
+    "txn_0154": "6060",
+    "txn_0155": "6050",
+    "txn_0156": "6030",
+    "txn_0157": "6030",
+    "txn_0158": "6030",
+    "txn_0159": "6070",
+    "txn_0160": "6040",
+    "txn_0161": "6900",
+    "txn_0162": "6070",
+    "txn_0163": "6070",
+    "txn_0164": "6060",
+    "txn_0165": "6030",
+    "txn_0166": "6060",
+    "txn_0167": "6020",
+    "txn_0168": "6040",
+    "txn_0169": "6030",
+    "txn_0170": "6100",
+    "txn_0171": "6060",
+    "txn_0172": "6070",
+    "txn_0173": "6030",
+    "txn_0174": "6030",
+    "txn_0175": "6040",
+    "txn_0176": "6100",
+    "txn_0177": "6100",
+    "txn_0178": "6020",
+    "txn_0179": "6050",
+    "txn_0180": "6040",
+    "txn_0181": "6030",
+    "txn_0182": "6900",
+    "txn_0183": "6070",
+    "txn_0184": "6070",
+    "txn_0185": "6020",
+    "txn_0186": "6070",
+    "txn_0187": "6080",
+    "txn_0188": "6020",
+    "txn_0189": "6030",
+    "txn_0190": "6100",
+    "txn_0191": "6020",
+    "txn_0192": "6060",
+    "txn_0193": "6060",
+    "txn_0194": "6900",
+    "txn_0195": "6030",
+    "txn_0196": "6050",
+    "txn_0197": "6050",
+    "txn_0198": "6020",
+    "txn_0199": "6100",
+    "txn_0200": "6020",
+    "txn_0201": "6070",
+    "txn_0202": "6040",
+    "txn_0203": "6020",
+    "txn_0204": "6030",
+    "txn_0205": "6040",
+    "txn_0206": "6040",
+    "txn_0207": "6060",
+    "txn_0208": "6020",
+    "txn_0209": "6070",
+    "txn_0210": "6900",
+    "txn_0211": "6040",
+    "txn_0212": "6060",
+    "txn_0213": "6030",
+    "txn_0214": "6040",
+    "txn_0215": "6030",
+    "txn_0216": "6080",
+    "txn_0217": "6060",
+    "txn_0218": "6100",
+    "txn_0219": "6060",
+    "txn_0220": "6060",
+    "txn_0221": "6040",
+    "txn_0222": "6030",
+    "txn_0223": "6100",
+    "txn_0224": "6020",
+    "txn_0225": "6020",
+    "txn_0226": "6030",
+    "txn_0227": "6060",
+    "txn_0228": "6020",
+    "txn_0229": "6050",
+    "txn_0230": "6100",
+    "txn_0231": "6060",
+    "txn_0232": "6030",
+    "txn_0233": "6030",
+    "txn_0234": "6100",
+    "txn_0235": "6020",
+    "txn_0236": "6020",
+    "txn_0237": "6040",
+    "txn_0238": "6070",
+    "txn_0239": "6020",
+    "txn_0240": "6100",
+    "txn_0241": "6050",
+    "txn_0242": "6020",
+    "txn_0243": "6030",
+    "txn_0244": "6030",
+    "txn_0245": "6050",
+    "txn_0246": "6060",
+    "txn_0247": "6070",
+    "txn_0248": "6100",
+    "txn_0249": "6020",
+    "txn_0250": "6100",
+    "txn_0251": "6030",
+    "txn_0252": "6030",
+    "txn_0253": "6100",
+    "txn_0254": "6020",
+    "txn_0255": "6080",
+    "txn_0256": "6020",
+    "txn_0257": "6050",
+    "txn_0258": "6030",
+    "txn_0259": "6020",
+    "txn_0260": "6050",
+    "txn_0261": "6900",
+    "txn_0262": "6050",
+    "txn_0263": "6030",
+    "txn_0264": "6040",
+    "txn_0265": "6040",
+    "txn_0266": "6090",
+    "txn_0267": "6020",
+    "txn_0268": "6090",
+    "txn_0269": "6080",
+    "txn_0270": "6030",
+    "txn_0271": "6030",
+    "txn_0272": "6060",
+    "txn_0273": "6020",
+    "txn_0274": "6050",
+    "txn_0275": "6030",
+    "txn_0276": "6030",
+    "txn_0277": "6060",
+    "txn_0278": "6060",
+    "txn_0279": "6100",
+    "txn_0280": "6030",
+    "txn_0281": "6080",
+    "txn_0282": "6030",
+    "txn_0283": "6080",
+    "txn_0284": "6060",
+    "txn_0285": "6080",
+    "txn_0286": "6060",
+    "txn_0287": "6060",
+    "txn_0288": "6060",
+    "txn_0289": "6070",
+    "txn_0290": "6070",
+    "txn_0291": "6020",
+    "txn_0292": "6020",
+    "txn_0293": "6020",
+    "txn_0294": "6060",
+    "txn_0295": "6090",
+    "txn_0296": "6080",
+    "txn_0297": "6070",
+    "txn_0298": "6100",
+    "txn_0299": "6060",
+    "txn_0300": "6030",
+    "txn_0301": "6040",
+    "txn_0302": "6020",
+    "txn_0303": "6070",
+    "txn_0304": "6040",
+    "txn_0305": "6070",
+    "txn_0306": "6040",
+    "txn_0307": "6900",
+    "txn_0308": "6050",
+    "txn_0309": "6080",
+    "txn_0310": "6020",
+    "txn_0311": "6060",
+    "txn_0312": "6060",
+    "txn_0313": "6080",
+    "txn_0314": "6020",
+    "txn_0315": "6020",
+    "txn_0316": "6050",
+    "txn_0317": "6040",
+    "txn_0318": "6100",
+    "txn_0319": "6040",
+    "txn_0320": "6040",
+    "txn_0321": "6020",
+    "txn_0322": "6070",
+    "txn_0323": "6090",
+    "txn_0324": "6040",
+    "txn_0325": "6030",
+    "txn_0326": "6030",
+    "txn_0327": "6020",
+    "txn_0328": "6020",
+    "txn_0329": "6030",
+    "txn_0330": "6020",
+    "txn_0331": "6100",
+    "txn_0332": "6040",
+    "txn_0333": "6090",
+    "txn_0334": "6030",
+    "txn_0335": "6050",
+    "txn_0336": "6050",
+    "txn_0337": "6080",
+    "txn_0338": "6060",
+    "txn_0339": "6900",
+    "txn_0340": "6020",
+    "txn_0341": "6030",
+    "txn_0342": "6020",
+    "txn_0343": "6070",
+    "txn_0344": "6020",
+    "txn_0345": "6070",
+    "txn_0346": "6020",
+    "txn_0347": "6050",
+    "txn_0348": "6050",
+    "txn_0349": "6100",
+    "txn_0350": "6030",
+    "txn_0351": "6040",
+    "txn_0352": "6060",
+    "txn_0353": "6070",
+    "txn_0354": "6060",
+    "txn_0355": "6070",
+    "txn_0356": "6020",
+    "txn_0357": "6030",
+    "txn_0358": "6020",
+    "txn_0359": "6030",
+    "txn_0360": "6080",
+    "txn_0361": "6070",
+    "txn_0362": "6030",
+    "txn_0363": "6070",
+    "txn_0364": "6050",
+    "txn_0365": "6100",
+    "txn_0366": "6020",
+    "txn_0367": "6030",
+    "txn_0368": "6030",
+    "txn_0369": "6060",
+    "txn_0370": "6050",
+    "txn_0371": "6050",
+    "txn_0372": "6070",
+    "txn_0373": "6080",
+    "txn_0374": "6060",
+    "txn_0375": "6090",
+    "txn_0376": "6050",
+    "txn_0377": "6060",
+    "txn_0378": "6060",
+    "txn_0379": "6040",
+    "txn_0380": "6060",
+    "txn_0381": "6900",
+    "txn_0382": "6060",
+    "txn_0383": "6060",
+    "txn_0384": "6020",
+    "txn_0385": "6100",
+    "txn_0386": "6030",
+    "txn_0387": "6020",
+    "txn_0388": "6020",
+    "txn_0389": "6050",
+    "txn_0390": "6040",
+    "txn_0391": "6030",
+    "txn_0392": "6060",
+    "txn_0393": "6040",
+    "txn_0394": "6020",
+    "txn_0395": "6030",
+    "txn_0396": "6020",
+    "txn_0397": "6020",
+    "txn_0398": "6020",
+    "txn_0399": "6060",
+    "txn_0400": "6100"
+  },
+  "plantedDefects": [
+    {
+      "id": "alias-amazon",
+      "kind": "vendorAlias",
+      "txnIds": [
+        "txn_0043",
+        "txn_0044",
+        "txn_0045",
+        "txn_0046",
+        "txn_0047"
+      ],
+      "canonicalVendor": "Amazon",
+      "glCode": "6040",
+      "note": "Amazon appears under 3 different descriptors in the same period."
+    },
+    {
+      "id": "alias-blue-bottle",
+      "kind": "vendorAlias",
+      "txnIds": [
+        "txn_0048",
+        "txn_0049",
+        "txn_0050"
+      ],
+      "canonicalVendor": "Blue Bottle Coffee",
+      "glCode": "6030",
+      "note": "Blue Bottle Coffee appears under 2 different descriptors in the same period."
+    },
+    {
+      "id": "alias-gcp",
+      "kind": "vendorAlias",
+      "txnIds": [
+        "txn_0007",
+        "txn_0008",
+        "txn_0009"
+      ],
+      "canonicalVendor": "Google Cloud",
+      "glCode": "5010",
+      "note": "Same vendor, numeric suffix varies per charge — must not be treated as distinct vendors."
+    },
+    {
+      "id": "alias-notion",
+      "kind": "vendorAlias",
+      "txnIds": [
+        "txn_0001",
+        "txn_0002",
+        "txn_0003",
+        "txn_0041"
+      ],
+      "canonicalVendor": "Notion",
+      "glCode": "6010",
+      "note": "A PayPal-intermediated recurring charge and a direct one-off charge are the same vendor."
+    },
+    {
+      "id": "dup-01",
+      "kind": "duplicate",
+      "txnIds": [
+        "txn_0003",
+        "txn_0042"
+      ],
+      "note": "Notion charged twice on the 13th."
+    },
+    {
+      "id": "dup-apple",
+      "kind": "duplicate",
+      "txnIds": [
+        "txn_0055",
+        "txn_0056"
+      ],
+      "note": "APPLE STORE R234 charged twice on 2026-06-01."
+    },
+    {
+      "id": "dup-facebook-ads",
+      "kind": "duplicate",
+      "txnIds": [
+        "txn_0057",
+        "txn_0058"
+      ],
+      "note": "FACEBOOK ADS charged twice on 2026-06-18."
+    },
+    {
+      "id": "dup-staples",
+      "kind": "duplicate",
+      "txnIds": [
+        "txn_0051",
+        "txn_0052"
+      ],
+      "note": "STAPLES STORE #1423 charged twice on 2026-06-09."
+    },
+    {
+      "id": "dup-tartine",
+      "kind": "duplicate",
+      "txnIds": [
+        "txn_0053",
+        "txn_0054"
+      ],
+      "note": "SQ *TARTINE BAKERY charged twice on 2026-06-03."
+    },
+    {
+      "id": "dup-twilio",
+      "kind": "duplicate",
+      "txnIds": [
+        "txn_0059",
+        "txn_0060"
+      ],
+      "note": "TWILIO INC charged twice on 2026-06-09."
+    },
+    {
+      "id": "fx-txn_0061",
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0061"
+      ],
+      "expectedAmountCents": 12328,
+      "actualAmountCents": 12324,
+      "deltaCents": -4,
+      "note": "Posted at 1.086, off by -4c from the correct conversion of the €113.52 original charge."
+    },
+    {
+      "id": "fx-txn_0062",
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0062"
+      ],
+      "expectedAmountCents": 99333,
+      "actualAmountCents": 99328,
+      "deltaCents": -5,
+      "note": "Posted at 1.086, off by -5c from the correct conversion of the €914.67 original charge."
+    },
+    {
+      "id": "fx-txn_0063",
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0063"
+      ],
+      "expectedAmountCents": 10380,
+      "actualAmountCents": 10375,
+      "deltaCents": -5,
+      "note": "Posted at 1.086, off by -5c from the correct conversion of the €95.58 original charge."
+    },
+    {
+      "id": "fx-txn_0064",
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0064"
+      ],
+      "expectedAmountCents": 2884,
+      "actualAmountCents": 2888,
+      "deltaCents": 4,
+      "note": "Posted at 1.086, off by 4c from the correct conversion of the €26.56 original charge."
+    },
+    {
+      "id": "fx-txn_0065",
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0065"
+      ],
+      "expectedAmountCents": 2505,
+      "actualAmountCents": 2496,
+      "deltaCents": -9,
+      "note": "Posted at 1.086, off by -9c from the correct conversion of the €23.07 original charge."
+    },
+    {
+      "id": "fx-txn_0066",
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0066"
+      ],
+      "expectedAmountCents": 2980,
+      "actualAmountCents": 2977,
+      "deltaCents": -3,
+      "note": "Posted at 1.086, off by -3c from the correct conversion of the €27.44 original charge."
+    },
+    {
+      "id": "fx-txn_0067",
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0067"
+      ],
+      "expectedAmountCents": 16557,
+      "actualAmountCents": 16550,
+      "deltaCents": -7,
+      "note": "Posted at 1.086, off by -7c from the correct conversion of the €152.46 original charge."
+    },
+    {
+      "id": "missing-carta",
+      "kind": "missingRecurring",
+      "txnIds": [
+        "txn_0031",
+        "txn_0032"
+      ],
+      "vendor": "Carta",
+      "glCode": "6050",
+      "expectedAmountCents": 50000,
+      "expectedPeriod": "2026-06",
+      "note": "Carta charged in 4/5 but not in the close month — propose an accrual or confirm cancellation."
+    },
+    {
+      "id": "missing-datadog",
+      "kind": "missingRecurring",
+      "txnIds": [
+        "txn_0029",
+        "txn_0030"
+      ],
+      "vendor": "Datadog",
+      "glCode": "5010",
+      "expectedAmountCents": 34000,
+      "expectedPeriod": "2026-06",
+      "note": "Datadog charged in 4/5 but not in the close month — propose an accrual or confirm cancellation."
+    },
+    {
+      "id": "missing-linear",
+      "kind": "missingRecurring",
+      "txnIds": [
+        "txn_0024",
+        "txn_0025"
+      ],
+      "vendor": "Linear",
+      "glCode": "6010",
+      "expectedAmountCents": 9600,
+      "expectedPeriod": "2026-06",
+      "note": "Linear charged in 4/5 but not in the close month — propose an accrual or confirm cancellation."
+    },
+    {
+      "id": "missing-verizon",
+      "kind": "missingRecurring",
+      "txnIds": [
+        "txn_0039",
+        "txn_0040"
+      ],
+      "vendor": "Verizon Wireless",
+      "glCode": "6080",
+      "expectedAmountCents": 31000,
+      "expectedPeriod": "2026-06",
+      "note": "Verizon Wireless charged in 4/5 but not in the close month — propose an accrual or confirm cancellation."
+    },
+    {
+      "id": "missing-zoom",
+      "kind": "missingRecurring",
+      "txnIds": [
+        "txn_0016",
+        "txn_0017"
+      ],
+      "vendor": "Zoom",
+      "glCode": "6010",
+      "expectedAmountCents": 6499,
+      "expectedPeriod": "2026-06",
+      "note": "Zoom charged in 4/5 but not in the close month — propose an accrual or confirm cancellation."
+    },
+    {
+      "id": "policy-txn_0083",
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0083"
+      ],
+      "rule": "equipment-limit",
+      "note": "DELL BUSINESS SALES charged 2499.00 with no approval on file, against rule \"equipment-limit\"."
+    },
+    {
+      "id": "policy-txn_0084",
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0084"
+      ],
+      "rule": "equipment-limit",
+      "note": "APPLE STORE R234 charged 3299.00 with no approval on file, against rule \"equipment-limit\"."
+    },
+    {
+      "id": "policy-txn_0085",
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0085"
+      ],
+      "rule": "equipment-limit",
+      "note": "B&H PHOTO VIDEO charged 2199.00 with no approval on file, against rule \"equipment-limit\"."
+    },
+    {
+      "id": "policy-txn_0086",
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0086"
+      ],
+      "rule": "single-txn-limit",
+      "note": "MARRIOTT HOTELS charged 925.00 with no approval on file, against rule \"single-txn-limit\"."
+    },
+    {
+      "id": "policy-txn_0087",
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0087"
+      ],
+      "rule": "single-txn-limit",
+      "note": "UPWORK CONTRACTOR PMT charged 1450.00 with no approval on file, against rule \"single-txn-limit\"."
+    },
+    {
+      "id": "policy-txn_0088",
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0088"
+      ],
+      "rule": "single-txn-limit",
+      "note": "CLERKY LEGAL DOCS charged 890.00 with no approval on file, against rule \"single-txn-limit\"."
+    },
+    {
+      "id": "policy-txn_0089",
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0089"
+      ],
+      "rule": "single-txn-limit",
+      "note": "FACEBOOK ADS charged 820.00 with no approval on file, against rule \"single-txn-limit\"."
+    },
+    {
+      "id": "policy-txn_0090",
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0090"
+      ],
+      "rule": "single-txn-limit",
+      "note": "GOOGLE ADS-4471829 charged 910.00 with no approval on file, against rule \"single-txn-limit\"."
+    },
+    {
+      "id": "policy-txn_0091",
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0091"
+      ],
+      "rule": "meals-daily-limit",
+      "note": "SQ *TEAM DINNER EVENT charged 184.00 with no approval on file, against rule \"meals-daily-limit\"."
+    },
+    {
+      "id": "policy-txn_0092",
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0092"
+      ],
+      "rule": "meals-daily-limit",
+      "note": "SQ *TEAM DINNER EVENT charged 212.00 with no approval on file, against rule \"meals-daily-limit\"."
+    },
+    {
+      "id": "price-aws",
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0020"
+      ],
+      "vendor": "AWS",
+      "priorAmountCents": 161752,
+      "currentAmountCents": 245897,
+      "percentChange": 0.52,
+      "note": "AWS jumped 52% month-over-month — flag as anomalous, not duplicate."
+    },
+    {
+      "id": "price-gcp",
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0009"
+      ],
+      "vendor": "Google Cloud",
+      "priorAmountCents": 87164,
+      "currentAmountCents": 120163,
+      "percentChange": 0.379,
+      "note": "Google Cloud jumped 38% month-over-month — flag as anomalous, not duplicate."
+    },
+    {
+      "id": "price-github",
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0023"
+      ],
+      "vendor": "GitHub",
+      "priorAmountCents": 8297,
+      "currentAmountCents": 13266,
+      "percentChange": 0.599,
+      "note": "GitHub jumped 60% month-over-month — flag as anomalous, not duplicate."
+    },
+    {
+      "id": "price-linkedin-ads",
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0038"
+      ],
+      "vendor": "LinkedIn Ads",
+      "priorAmountCents": 55840,
+      "currentAmountCents": 90752,
+      "percentChange": 0.625,
+      "note": "LinkedIn Ads jumped 63% month-over-month — flag as anomalous, not duplicate."
+    },
+    {
+      "id": "price-slack",
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0012"
+      ],
+      "vendor": "Slack",
+      "priorAmountCents": 8955,
+      "currentAmountCents": 13982,
+      "percentChange": 0.561,
+      "note": "Slack jumped 56% month-over-month — flag as anomalous, not duplicate."
+    },
+    {
+      "id": "price-wework",
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0028"
+      ],
+      "vendor": "WeWork",
+      "priorAmountCents": 125229,
+      "currentAmountCents": 169037,
+      "percentChange": 0.35,
+      "note": "WeWork jumped 35% month-over-month — flag as anomalous, not duplicate."
+    },
+    {
+      "id": "receipt-txn_0096",
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0096"
+      ],
+      "transactionAmountCents": 68000,
+      "receiptTotalCents": 71200,
+      "deltaCents": 3200,
+      "note": "MARRIOTT HOTELS: receipt total differs from the posted charge by 3200c."
+    },
+    {
+      "id": "receipt-txn_0097",
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0097"
+      ],
+      "transactionAmountCents": 61000,
+      "receiptTotalCents": 58400,
+      "deltaCents": -2600,
+      "note": "HILTON HOTELS: receipt total differs from the posted charge by -2600c."
+    },
+    {
+      "id": "receipt-txn_0098",
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0098"
+      ],
+      "transactionAmountCents": 89900,
+      "receiptTotalCents": 84900,
+      "deltaCents": -5000,
+      "note": "B&H PHOTO VIDEO: receipt total differs from the posted charge by -5000c."
+    },
+    {
+      "id": "receipt-txn_0099",
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0099"
+      ],
+      "transactionAmountCents": 12400,
+      "receiptTotalCents": 10900,
+      "deltaCents": -1500,
+      "note": "STAPLES STORE #1423: receipt total differs from the posted charge by -1500c."
+    },
+    {
+      "id": "receipt-txn_0100",
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0100"
+      ],
+      "transactionAmountCents": 1850,
+      "receiptTotalCents": 1400,
+      "deltaCents": -450,
+      "note": "SWEETGREEN #442: receipt total differs from the posted charge by -450c."
+    },
+    {
+      "id": "receipt-txn_0101",
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0101"
+      ],
+      "transactionAmountCents": 18900,
+      "receiptTotalCents": 21200,
+      "deltaCents": 2300,
+      "note": "AVIS RENT A CAR: receipt total differs from the posted charge by 2300c."
+    },
+    {
+      "id": "receipt-txn_0102",
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0102"
+      ],
+      "transactionAmountCents": 24000,
+      "receiptTotalCents": 22500,
+      "deltaCents": -1500,
+      "note": "CLERKY LEGAL DOCS: receipt total differs from the posted charge by -1500c."
+    },
+    {
+      "id": "receipt-txn_0103",
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0103"
+      ],
+      "transactionAmountCents": 129900,
+      "receiptTotalCents": 134900,
+      "deltaCents": 5000,
+      "note": "DELL BUSINESS SALES: receipt total differs from the posted charge by 5000c."
+    },
+    {
+      "id": "receipt-txn_0104",
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0104"
+      ],
+      "transactionAmountCents": 8900,
+      "receiptTotalCents": 7600,
+      "deltaCents": -1300,
+      "note": "OFFICE DEPOT #2210: receipt total differs from the posted charge by -1300c."
+    }
+  ]
+}

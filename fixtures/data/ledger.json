@@ -1,0 +1,4389 @@
+{
+  "seed": 20260601,
+  "period": "2026-06",
+  "transactions": [
+    {
+      "id": "txn_0026",
+      "date": "2026-04-01",
+      "vendorDescriptor": "WEWORK 1234 5TH AVE",
+      "amountCents": 115270,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0018",
+      "date": "2026-04-02",
+      "vendorDescriptor": "AWS  AMAZON WEB SERVICES",
+      "amountCents": 140821,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0004",
+      "date": "2026-04-03",
+      "vendorDescriptor": "GOOGLE *WORKSPACE",
+      "amountCents": 14400,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0007",
+      "date": "2026-04-05",
+      "vendorDescriptor": "GOOGLE *CLOUD 8199486",
+      "amountCents": 86829,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0029",
+      "date": "2026-04-07",
+      "vendorDescriptor": "DATADOG INC",
+      "amountCents": 35651,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0013",
+      "date": "2026-04-08",
+      "vendorDescriptor": "FIGMA INC",
+      "amountCents": 4500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0024",
+      "date": "2026-04-08",
+      "vendorDescriptor": "LINEAR ORBIT INC",
+      "amountCents": 9600,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0036",
+      "date": "2026-04-10",
+      "vendorDescriptor": "LINKEDIN ADS",
+      "amountCents": 59338,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0016",
+      "date": "2026-04-11",
+      "vendorDescriptor": "ZOOM.US SAN JOSE CA",
+      "amountCents": 6499,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0001",
+      "date": "2026-04-15",
+      "vendorDescriptor": "PAYPAL *NOTIONLABS",
+      "amountCents": 9600,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0021",
+      "date": "2026-04-17",
+      "vendorDescriptor": "GITHUB, INC.",
+      "amountCents": 8283,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0010",
+      "date": "2026-04-20",
+      "vendorDescriptor": "SLACK   T02X4M9K1 SF",
+      "amountCents": 8726,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0039",
+      "date": "2026-04-21",
+      "vendorDescriptor": "VERIZON WIRELESS",
+      "amountCents": 31000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0031",
+      "date": "2026-04-26",
+      "vendorDescriptor": "CARTA INC",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0033",
+      "date": "2026-04-29",
+      "vendorDescriptor": "GUSTO",
+      "amountCents": 24000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0027",
+      "date": "2026-05-01",
+      "vendorDescriptor": "WEWORK 1234 5TH AVE",
+      "amountCents": 125229,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0005",
+      "date": "2026-05-02",
+      "vendorDescriptor": "GOOGLE *WORKSPACE",
+      "amountCents": 14400,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0019",
+      "date": "2026-05-02",
+      "vendorDescriptor": "AWS  AMAZON WEB SERVICES",
+      "amountCents": 161752,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0030",
+      "date": "2026-05-05",
+      "vendorDescriptor": "DATADOG INC",
+      "amountCents": 33642,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0008",
+      "date": "2026-05-06",
+      "vendorDescriptor": "GOOGLE *CLOUD 2319196",
+      "amountCents": 87164,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0014",
+      "date": "2026-05-09",
+      "vendorDescriptor": "FIGMA INC",
+      "amountCents": 4500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0025",
+      "date": "2026-05-09",
+      "vendorDescriptor": "LINEAR ORBIT INC",
+      "amountCents": 9600,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0017",
+      "date": "2026-05-11",
+      "vendorDescriptor": "ZOOM.US SAN JOSE CA",
+      "amountCents": 6499,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0037",
+      "date": "2026-05-12",
+      "vendorDescriptor": "LINKEDIN ADS",
+      "amountCents": 55840,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0002",
+      "date": "2026-05-13",
+      "vendorDescriptor": "PAYPAL *NOTIONLABS",
+      "amountCents": 9600,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0022",
+      "date": "2026-05-17",
+      "vendorDescriptor": "GITHUB, INC.",
+      "amountCents": 8297,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0011",
+      "date": "2026-05-19",
+      "vendorDescriptor": "SLACK   T02X4M9K1 SF",
+      "amountCents": 8955,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0040",
+      "date": "2026-05-21",
+      "vendorDescriptor": "VERIZON WIRELESS",
+      "amountCents": 31000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0032",
+      "date": "2026-05-26",
+      "vendorDescriptor": "CARTA INC",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0034",
+      "date": "2026-05-29",
+      "vendorDescriptor": "GUSTO",
+      "amountCents": 24000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0028",
+      "date": "2026-06-01",
+      "vendorDescriptor": "WEWORK 1234 5TH AVE",
+      "amountCents": 169037,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0043",
+      "date": "2026-06-01",
+      "vendorDescriptor": "AMZN Mktp US*BNXKKC8AV",
+      "amountCents": 12156,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0055",
+      "date": "2026-06-01",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 57586,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0056",
+      "date": "2026-06-01",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 57586,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0113",
+      "date": "2026-06-01",
+      "vendorDescriptor": "OFFICE DEPOT #2210",
+      "amountCents": 7631,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0115",
+      "date": "2026-06-01",
+      "vendorDescriptor": "DOORDASH*RESTAURANT",
+      "amountCents": 1986,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0175",
+      "date": "2026-06-01",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 13298,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0188",
+      "date": "2026-06-01",
+      "vendorDescriptor": "LYFT   *RIDE",
+      "amountCents": 1472,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0189",
+      "date": "2026-06-01",
+      "vendorDescriptor": "SQ *TEAM DINNER EVENT",
+      "amountCents": 8971,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0269",
+      "date": "2026-06-01",
+      "vendorDescriptor": "TWILIO INC",
+      "amountCents": 10599,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0294",
+      "date": "2026-06-01",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 13515,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0296",
+      "date": "2026-06-01",
+      "vendorDescriptor": "TWILIO INC",
+      "amountCents": 11530,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0322",
+      "date": "2026-06-01",
+      "vendorDescriptor": "LOGITECH.COM",
+      "amountCents": 10178,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0068",
+      "date": "2026-06-02",
+      "vendorDescriptor": "DELTA AIR 0062134489217",
+      "amountCents": 41200,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0069",
+      "date": "2026-06-02",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 52800,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0070",
+      "date": "2026-06-02",
+      "vendorDescriptor": "LYFT   *RIDE",
+      "amountCents": 3400,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0099",
+      "date": "2026-06-02",
+      "vendorDescriptor": "STAPLES STORE #1423",
+      "amountCents": 12400,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0101",
+      "date": "2026-06-02",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 18900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0104",
+      "date": "2026-06-02",
+      "vendorDescriptor": "OFFICE DEPOT #2210",
+      "amountCents": 8900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0120",
+      "date": "2026-06-02",
+      "vendorDescriptor": "LYFT   *RIDE",
+      "amountCents": 2956,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0129",
+      "date": "2026-06-02",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 74212,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0172",
+      "date": "2026-06-02",
+      "vendorDescriptor": "B&H PHOTO VIDEO",
+      "amountCents": 36204,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0179",
+      "date": "2026-06-02",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 40081,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0227",
+      "date": "2026-06-02",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0257",
+      "date": "2026-06-02",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 21576,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0264",
+      "date": "2026-06-02",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 25982,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0273",
+      "date": "2026-06-02",
+      "vendorDescriptor": "PARKWHIZ PARKING",
+      "amountCents": 1866,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0282",
+      "date": "2026-06-02",
+      "vendorDescriptor": "DOORDASH*RESTAURANT",
+      "amountCents": 3388,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0312",
+      "date": "2026-06-02",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0326",
+      "date": "2026-06-02",
+      "vendorDescriptor": "DOORDASH*RESTAURANT",
+      "amountCents": 1703,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0333",
+      "date": "2026-06-02",
+      "vendorDescriptor": "NEXT INSURANCE",
+      "amountCents": 24000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0334",
+      "date": "2026-06-02",
+      "vendorDescriptor": "SWEETGREEN #442",
+      "amountCents": 1342,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0337",
+      "date": "2026-06-02",
+      "vendorDescriptor": "TWILIO INC",
+      "amountCents": 9267,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0345",
+      "date": "2026-06-02",
+      "vendorDescriptor": "DELL BUSINESS SALES",
+      "amountCents": 138405,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0365",
+      "date": "2026-06-02",
+      "vendorDescriptor": "COURSERA FOR BUSINESS",
+      "amountCents": 5900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0391",
+      "date": "2026-06-02",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 5304,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0053",
+      "date": "2026-06-03",
+      "vendorDescriptor": "SQ *TARTINE BAKERY",
+      "amountCents": 2539,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0054",
+      "date": "2026-06-03",
+      "vendorDescriptor": "SQ *TARTINE BAKERY",
+      "amountCents": 2539,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0071",
+      "date": "2026-06-03",
+      "vendorDescriptor": "SWEETGREEN #442",
+      "amountCents": 1650,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0072",
+      "date": "2026-06-03",
+      "vendorDescriptor": "STARBUCKS #08123",
+      "amountCents": 680,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0073",
+      "date": "2026-06-03",
+      "vendorDescriptor": "WEWORK 1234 5TH AVE",
+      "amountCents": 4500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0084",
+      "date": "2026-06-03",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 329900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0117",
+      "date": "2026-06-03",
+      "vendorDescriptor": "AMTRAK TRAINS",
+      "amountCents": 16233,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0162",
+      "date": "2026-06-03",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 110225,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0190",
+      "date": "2026-06-03",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0214",
+      "date": "2026-06-03",
+      "vendorDescriptor": "OFFICE DEPOT #2210",
+      "amountCents": 9071,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0220",
+      "date": "2026-06-03",
+      "vendorDescriptor": "MAILCHIMP*EMAIL",
+      "amountCents": 7966,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0226",
+      "date": "2026-06-03",
+      "vendorDescriptor": "STARBUCKS #08123",
+      "amountCents": 988,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0272",
+      "date": "2026-06-03",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 20374,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0348",
+      "date": "2026-06-03",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0349",
+      "date": "2026-06-03",
+      "vendorDescriptor": "CONF REG - STRANGE LOOP",
+      "amountCents": 59900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0357",
+      "date": "2026-06-03",
+      "vendorDescriptor": "SQ *TARTINE BAKERY",
+      "amountCents": 2293,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0387",
+      "date": "2026-06-03",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 28691,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0398",
+      "date": "2026-06-03",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 24307,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0006",
+      "date": "2026-06-04",
+      "vendorDescriptor": "GOOGLE *WORKSPACE",
+      "amountCents": 14400,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0020",
+      "date": "2026-06-04",
+      "vendorDescriptor": "AWS  AMAZON WEB SERVICES",
+      "amountCents": 245897,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0074",
+      "date": "2026-06-04",
+      "vendorDescriptor": "LYFT   *RIDE",
+      "amountCents": 2900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0075",
+      "date": "2026-06-04",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 52800,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0086",
+      "date": "2026-06-04",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 92500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0088",
+      "date": "2026-06-04",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 89000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0100",
+      "date": "2026-06-04",
+      "vendorDescriptor": "SWEETGREEN #442",
+      "amountCents": 1850,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0109",
+      "date": "2026-06-04",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0116",
+      "date": "2026-06-04",
+      "vendorDescriptor": "DELTA AIR 0062134489217",
+      "amountCents": 44456,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0123",
+      "date": "2026-06-04",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 49073,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0164",
+      "date": "2026-06-04",
+      "vendorDescriptor": "GOOGLE ADS-4471829",
+      "amountCents": 13082,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0193",
+      "date": "2026-06-04",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0233",
+      "date": "2026-06-04",
+      "vendorDescriptor": "SQ *TEAM DINNER EVENT",
+      "amountCents": 7818,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0259",
+      "date": "2026-06-04",
+      "vendorDescriptor": "DELTA AIR 0062134489217",
+      "amountCents": 81520,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0275",
+      "date": "2026-06-04",
+      "vendorDescriptor": "STARBUCKS #08123",
+      "amountCents": 757,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0281",
+      "date": "2026-06-04",
+      "vendorDescriptor": "TWILIO INC",
+      "amountCents": 5994,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0353",
+      "date": "2026-06-04",
+      "vendorDescriptor": "DELL BUSINESS SALES",
+      "amountCents": 139297,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0395",
+      "date": "2026-06-04",
+      "vendorDescriptor": "DOORDASH*RESTAURANT",
+      "amountCents": 2561,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0009",
+      "date": "2026-06-05",
+      "vendorDescriptor": "GOOGLE *CLOUD 4843015",
+      "amountCents": 120163,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0087",
+      "date": "2026-06-05",
+      "vendorDescriptor": "UPWORK CONTRACTOR PMT",
+      "amountCents": 145000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0094",
+      "date": "2026-06-05",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 88000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0114",
+      "date": "2026-06-05",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0136",
+      "date": "2026-06-05",
+      "vendorDescriptor": "SQ *TEAM DINNER EVENT",
+      "amountCents": 4536,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0191",
+      "date": "2026-06-05",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 34634,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0215",
+      "date": "2026-06-05",
+      "vendorDescriptor": "SWEETGREEN #442",
+      "amountCents": 2251,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0319",
+      "date": "2026-06-05",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 15351,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0371",
+      "date": "2026-06-05",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 13294,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0375",
+      "date": "2026-06-05",
+      "vendorDescriptor": "HISCOX SMALL BIZ",
+      "amountCents": 18000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0379",
+      "date": "2026-06-05",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 20868,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0394",
+      "date": "2026-06-05",
+      "vendorDescriptor": "AMTRAK TRAINS",
+      "amountCents": 10064,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0396",
+      "date": "2026-06-05",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 65437,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0096",
+      "date": "2026-06-06",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 68000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0171",
+      "date": "2026-06-06",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 26470,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0185",
+      "date": "2026-06-06",
+      "vendorDescriptor": "UNITED AIRLINES 0162239981",
+      "amountCents": 75954,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0255",
+      "date": "2026-06-06",
+      "vendorDescriptor": "T-MOBILE*AUTOPAY",
+      "amountCents": 8500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0314",
+      "date": "2026-06-06",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 49979,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0369",
+      "date": "2026-06-06",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0378",
+      "date": "2026-06-06",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 25210,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0085",
+      "date": "2026-06-07",
+      "vendorDescriptor": "B&H PHOTO VIDEO",
+      "amountCents": 219900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0145",
+      "date": "2026-06-07",
+      "vendorDescriptor": "MAILCHIMP*EMAIL",
+      "amountCents": 4361,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0156",
+      "date": "2026-06-07",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 3912,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0159",
+      "date": "2026-06-07",
+      "vendorDescriptor": "DELL BUSINESS SALES",
+      "amountCents": 116588,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0206",
+      "date": "2026-06-07",
+      "vendorDescriptor": "OFFICE DEPOT #2210",
+      "amountCents": 7639,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0245",
+      "date": "2026-06-07",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0249",
+      "date": "2026-06-07",
+      "vendorDescriptor": "DELTA AIR 0062134489217",
+      "amountCents": 55605,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0383",
+      "date": "2026-06-07",
+      "vendorDescriptor": "MAILCHIMP*EMAIL",
+      "amountCents": 7441,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0389",
+      "date": "2026-06-07",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0044",
+      "date": "2026-06-08",
+      "vendorDescriptor": "AMZN Mktp US*9FK6YNYXB",
+      "amountCents": 16707,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0050",
+      "date": "2026-06-08",
+      "vendorDescriptor": "SQ *BLUE BOTTLE COFFE",
+      "amountCents": 478,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0102",
+      "date": "2026-06-08",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 24000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0169",
+      "date": "2026-06-08",
+      "vendorDescriptor": "DOORDASH*RESTAURANT",
+      "amountCents": 2765,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0196",
+      "date": "2026-06-08",
+      "vendorDescriptor": "UPWORK CONTRACTOR PMT",
+      "amountCents": 31507,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0225",
+      "date": "2026-06-08",
+      "vendorDescriptor": "PARKWHIZ PARKING",
+      "amountCents": 2796,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0231",
+      "date": "2026-06-08",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 37468,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0236",
+      "date": "2026-06-08",
+      "vendorDescriptor": "AMTRAK TRAINS",
+      "amountCents": 15776,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0258",
+      "date": "2026-06-08",
+      "vendorDescriptor": "STARBUCKS #08123",
+      "amountCents": 544,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0293",
+      "date": "2026-06-08",
+      "vendorDescriptor": "UNITED AIRLINES 0162239981",
+      "amountCents": 46535,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0331",
+      "date": "2026-06-08",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0338",
+      "date": "2026-06-08",
+      "vendorDescriptor": "MAILCHIMP*EMAIL",
+      "amountCents": 8444,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0358",
+      "date": "2026-06-08",
+      "vendorDescriptor": "DELTA AIR 0062134489217",
+      "amountCents": 51441,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0359",
+      "date": "2026-06-08",
+      "vendorDescriptor": "SQ *TEAM DINNER EVENT",
+      "amountCents": 9139,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0368",
+      "date": "2026-06-08",
+      "vendorDescriptor": "SQ *TEAM DINNER EVENT",
+      "amountCents": 5867,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0015",
+      "date": "2026-06-09",
+      "vendorDescriptor": "FIGMA INC",
+      "amountCents": 4500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0051",
+      "date": "2026-06-09",
+      "vendorDescriptor": "STAPLES STORE #1423",
+      "amountCents": 4785,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0052",
+      "date": "2026-06-09",
+      "vendorDescriptor": "STAPLES STORE #1423",
+      "amountCents": 4785,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0059",
+      "date": "2026-06-09",
+      "vendorDescriptor": "TWILIO INC",
+      "amountCents": 5014,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0060",
+      "date": "2026-06-09",
+      "vendorDescriptor": "TWILIO INC",
+      "amountCents": 5014,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0062",
+      "date": "2026-06-09",
+      "vendorDescriptor": "HOTEL LUTETIA PARIS",
+      "amountCents": 99328,
+      "currency": "EUR",
+      "originalAmountCents": 91467,
+      "fxRate": 1.086
+    },
+    {
+      "id": "txn_0065",
+      "date": "2026-06-09",
+      "vendorDescriptor": "TAXI G7 PARIS",
+      "amountCents": 2496,
+      "currency": "EUR",
+      "originalAmountCents": 2307,
+      "fxRate": 1.086
+    },
+    {
+      "id": "txn_0066",
+      "date": "2026-06-09",
+      "vendorDescriptor": "UBER   *TRIP HELP.UBER.CO",
+      "amountCents": 2977,
+      "currency": "EUR",
+      "originalAmountCents": 2744,
+      "fxRate": 1.086
+    },
+    {
+      "id": "txn_0067",
+      "date": "2026-06-09",
+      "vendorDescriptor": "AWS EU-WEST-1",
+      "amountCents": 16550,
+      "currency": "EUR",
+      "originalAmountCents": 15246,
+      "fxRate": 1.086
+    },
+    {
+      "id": "txn_0097",
+      "date": "2026-06-09",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 61000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0107",
+      "date": "2026-06-09",
+      "vendorDescriptor": "B&H PHOTO VIDEO",
+      "amountCents": 75253,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0122",
+      "date": "2026-06-09",
+      "vendorDescriptor": "DELL BUSINESS SALES",
+      "amountCents": 188549,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0158",
+      "date": "2026-06-09",
+      "vendorDescriptor": "DOORDASH*RESTAURANT",
+      "amountCents": 2485,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0165",
+      "date": "2026-06-09",
+      "vendorDescriptor": "CHIPOTLE 2871",
+      "amountCents": 1192,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0183",
+      "date": "2026-06-09",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 157257,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0197",
+      "date": "2026-06-09",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0209",
+      "date": "2026-06-09",
+      "vendorDescriptor": "B&H PHOTO VIDEO",
+      "amountCents": 27328,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0290",
+      "date": "2026-06-09",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 101875,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0291",
+      "date": "2026-06-09",
+      "vendorDescriptor": "UNITED AIRLINES 0162239981",
+      "amountCents": 64318,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0400",
+      "date": "2026-06-09",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0061",
+      "date": "2026-06-10",
+      "vendorDescriptor": "TRAINLINE EUROPE",
+      "amountCents": 12324,
+      "currency": "EUR",
+      "originalAmountCents": 11352,
+      "fxRate": 1.086
+    },
+    {
+      "id": "txn_0064",
+      "date": "2026-06-10",
+      "vendorDescriptor": "CAFE DE FLORE PARIS",
+      "amountCents": 2888,
+      "currency": "EUR",
+      "originalAmountCents": 2656,
+      "fxRate": 1.086
+    },
+    {
+      "id": "txn_0139",
+      "date": "2026-06-10",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 29133,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0151",
+      "date": "2026-06-10",
+      "vendorDescriptor": "T-MOBILE*AUTOPAY",
+      "amountCents": 8500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0222",
+      "date": "2026-06-10",
+      "vendorDescriptor": "CHIPOTLE 2871",
+      "amountCents": 956,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0292",
+      "date": "2026-06-10",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 49704,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0310",
+      "date": "2026-06-10",
+      "vendorDescriptor": "UBER   *TRIP HELP.UBER.CO",
+      "amountCents": 1565,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0339",
+      "date": "2026-06-10",
+      "vendorDescriptor": "VENDOR SVCS LLC",
+      "amountCents": 21800,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0382",
+      "date": "2026-06-10",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0046",
+      "date": "2026-06-11",
+      "vendorDescriptor": "AMZN Mktp US*WFN2NHNLB",
+      "amountCents": 13050,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0063",
+      "date": "2026-06-11",
+      "vendorDescriptor": "DEUTSCHE BAHN",
+      "amountCents": 10375,
+      "currency": "EUR",
+      "originalAmountCents": 9558,
+      "fxRate": 1.086
+    },
+    {
+      "id": "txn_0098",
+      "date": "2026-06-11",
+      "vendorDescriptor": "B&H PHOTO VIDEO",
+      "amountCents": 89900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0119",
+      "date": "2026-06-11",
+      "vendorDescriptor": "SQ *TARTINE BAKERY",
+      "amountCents": 1357,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0130",
+      "date": "2026-06-11",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 20606,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0131",
+      "date": "2026-06-11",
+      "vendorDescriptor": "STAPLES STORE #1423",
+      "amountCents": 19005,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0192",
+      "date": "2026-06-11",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0235",
+      "date": "2026-06-11",
+      "vendorDescriptor": "AMTRAK TRAINS",
+      "amountCents": 12181,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0254",
+      "date": "2026-06-11",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 17170,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0263",
+      "date": "2026-06-11",
+      "vendorDescriptor": "CHIPOTLE 2871",
+      "amountCents": 1190,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0356",
+      "date": "2026-06-11",
+      "vendorDescriptor": "LYFT   *RIDE",
+      "amountCents": 1982,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0377",
+      "date": "2026-06-11",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 13089,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0384",
+      "date": "2026-06-11",
+      "vendorDescriptor": "AMTRAK TRAINS",
+      "amountCents": 16860,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0038",
+      "date": "2026-06-12",
+      "vendorDescriptor": "LINKEDIN ADS",
+      "amountCents": 90752,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0186",
+      "date": "2026-06-12",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 162553,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0234",
+      "date": "2026-06-12",
+      "vendorDescriptor": "CONF REG - STRANGE LOOP",
+      "amountCents": 59900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0260",
+      "date": "2026-06-12",
+      "vendorDescriptor": "UPWORK CONTRACTOR PMT",
+      "amountCents": 43683,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0309",
+      "date": "2026-06-12",
+      "vendorDescriptor": "TWILIO INC",
+      "amountCents": 10639,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0342",
+      "date": "2026-06-12",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 19539,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0366",
+      "date": "2026-06-12",
+      "vendorDescriptor": "PARKWHIZ PARKING",
+      "amountCents": 2052,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0393",
+      "date": "2026-06-12",
+      "vendorDescriptor": "STAPLES STORE #1423",
+      "amountCents": 22767,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0003",
+      "date": "2026-06-13",
+      "vendorDescriptor": "PAYPAL *NOTIONLABS",
+      "amountCents": 9600,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0042",
+      "date": "2026-06-13",
+      "vendorDescriptor": "PAYPAL *NOTIONLABS",
+      "amountCents": 9600,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0187",
+      "date": "2026-06-13",
+      "vendorDescriptor": "T-MOBILE*AUTOPAY",
+      "amountCents": 8500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0228",
+      "date": "2026-06-13",
+      "vendorDescriptor": "UNITED AIRLINES 0162239981",
+      "amountCents": 74833,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0230",
+      "date": "2026-06-13",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0232",
+      "date": "2026-06-13",
+      "vendorDescriptor": "SWEETGREEN #442",
+      "amountCents": 1235,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0241",
+      "date": "2026-06-13",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 38846,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0253",
+      "date": "2026-06-13",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0265",
+      "date": "2026-06-13",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 17247,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0288",
+      "date": "2026-06-13",
+      "vendorDescriptor": "GOOGLE ADS-4471829",
+      "amountCents": 28099,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0297",
+      "date": "2026-06-13",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 157106,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0303",
+      "date": "2026-06-13",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 79700,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0340",
+      "date": "2026-06-13",
+      "vendorDescriptor": "LYFT   *RIDE",
+      "amountCents": 5647,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0346",
+      "date": "2026-06-13",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 57825,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0049",
+      "date": "2026-06-14",
+      "vendorDescriptor": "BLUE BOTTLE COFFEE",
+      "amountCents": 689,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0093",
+      "date": "2026-06-14",
+      "vendorDescriptor": "DELL BUSINESS SALES",
+      "amountCents": 259900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0095",
+      "date": "2026-06-14",
+      "vendorDescriptor": "UPWORK CONTRACTOR PMT",
+      "amountCents": 160000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0118",
+      "date": "2026-06-14",
+      "vendorDescriptor": "AMTRAK TRAINS",
+      "amountCents": 18164,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0124",
+      "date": "2026-06-14",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 157808,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0149",
+      "date": "2026-06-14",
+      "vendorDescriptor": "GOOGLE ADS-4471829",
+      "amountCents": 30476,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0160",
+      "date": "2026-06-14",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 8175,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0202",
+      "date": "2026-06-14",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 9063,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0216",
+      "date": "2026-06-14",
+      "vendorDescriptor": "T-MOBILE*AUTOPAY",
+      "amountCents": 8500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0251",
+      "date": "2026-06-14",
+      "vendorDescriptor": "SWEETGREEN #442",
+      "amountCents": 1550,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0305",
+      "date": "2026-06-14",
+      "vendorDescriptor": "LOGITECH.COM",
+      "amountCents": 23749,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0321",
+      "date": "2026-06-14",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 22363,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0048",
+      "date": "2026-06-15",
+      "vendorDescriptor": "SQ *BLUE BOTTLE COFFE",
+      "amountCents": 684,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0090",
+      "date": "2026-06-15",
+      "vendorDescriptor": "GOOGLE ADS-4471829",
+      "amountCents": 91000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0157",
+      "date": "2026-06-15",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 1937,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0207",
+      "date": "2026-06-15",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0218",
+      "date": "2026-06-15",
+      "vendorDescriptor": "COURSERA FOR BUSINESS",
+      "amountCents": 5900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0276",
+      "date": "2026-06-15",
+      "vendorDescriptor": "SQ *TARTINE BAKERY",
+      "amountCents": 1542,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0302",
+      "date": "2026-06-15",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 23693,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0351",
+      "date": "2026-06-15",
+      "vendorDescriptor": "OFFICE DEPOT #2210",
+      "amountCents": 3026,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0354",
+      "date": "2026-06-15",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 42726,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0355",
+      "date": "2026-06-15",
+      "vendorDescriptor": "B&H PHOTO VIDEO",
+      "amountCents": 29718,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0364",
+      "date": "2026-06-15",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 27778,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0399",
+      "date": "2026-06-15",
+      "vendorDescriptor": "GOOGLE ADS-4471829",
+      "amountCents": 14563,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0268",
+      "date": "2026-06-16",
+      "vendorDescriptor": "HISCOX SMALL BIZ",
+      "amountCents": 18000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0283",
+      "date": "2026-06-16",
+      "vendorDescriptor": "TWILIO INC",
+      "amountCents": 4652,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0287",
+      "date": "2026-06-16",
+      "vendorDescriptor": "MAILCHIMP*EMAIL",
+      "amountCents": 4153,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0315",
+      "date": "2026-06-16",
+      "vendorDescriptor": "AMTRAK TRAINS",
+      "amountCents": 19361,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0318",
+      "date": "2026-06-16",
+      "vendorDescriptor": "CONF REG - STRANGE LOOP",
+      "amountCents": 59900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0347",
+      "date": "2026-06-16",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 13881,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0374",
+      "date": "2026-06-16",
+      "vendorDescriptor": "MAILCHIMP*EMAIL",
+      "amountCents": 5854,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0023",
+      "date": "2026-06-17",
+      "vendorDescriptor": "GITHUB, INC.",
+      "amountCents": 13266,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0047",
+      "date": "2026-06-17",
+      "vendorDescriptor": "AMZN Mktp US*BSMZGND66",
+      "amountCents": 10655,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0127",
+      "date": "2026-06-17",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 3412,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0142",
+      "date": "2026-06-17",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 10337,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0239",
+      "date": "2026-06-17",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 11602,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0240",
+      "date": "2026-06-17",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0248",
+      "date": "2026-06-17",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0279",
+      "date": "2026-06-17",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0285",
+      "date": "2026-06-17",
+      "vendorDescriptor": "TWILIO INC",
+      "amountCents": 6139,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0363",
+      "date": "2026-06-17",
+      "vendorDescriptor": "B&H PHOTO VIDEO",
+      "amountCents": 80001,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0373",
+      "date": "2026-06-17",
+      "vendorDescriptor": "T-MOBILE*AUTOPAY",
+      "amountCents": 8500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0390",
+      "date": "2026-06-17",
+      "vendorDescriptor": "STAPLES STORE #1423",
+      "amountCents": 23941,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0041",
+      "date": "2026-06-18",
+      "vendorDescriptor": "NOTION LABS INC",
+      "amountCents": 4800,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0057",
+      "date": "2026-06-18",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 31046,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0058",
+      "date": "2026-06-18",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 31046,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0083",
+      "date": "2026-06-18",
+      "vendorDescriptor": "DELL BUSINESS SALES",
+      "amountCents": 249900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0089",
+      "date": "2026-06-18",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 82000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0091",
+      "date": "2026-06-18",
+      "vendorDescriptor": "SQ *TEAM DINNER EVENT",
+      "amountCents": 18400,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0133",
+      "date": "2026-06-18",
+      "vendorDescriptor": "GOOGLE ADS-4471829",
+      "amountCents": 22529,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0137",
+      "date": "2026-06-18",
+      "vendorDescriptor": "PARKWHIZ PARKING",
+      "amountCents": 3692,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0148",
+      "date": "2026-06-18",
+      "vendorDescriptor": "SWEETGREEN #442",
+      "amountCents": 1585,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0176",
+      "date": "2026-06-18",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0178",
+      "date": "2026-06-18",
+      "vendorDescriptor": "PARKWHIZ PARKING",
+      "amountCents": 2930,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0205",
+      "date": "2026-06-18",
+      "vendorDescriptor": "OFFICE DEPOT #2210",
+      "amountCents": 14134,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0246",
+      "date": "2026-06-18",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0329",
+      "date": "2026-06-18",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 4210,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0360",
+      "date": "2026-06-18",
+      "vendorDescriptor": "T-MOBILE*AUTOPAY",
+      "amountCents": 8500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0361",
+      "date": "2026-06-18",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 91795,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0012",
+      "date": "2026-06-19",
+      "vendorDescriptor": "SLACK   T02X4M9K1 SF",
+      "amountCents": 13982,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0126",
+      "date": "2026-06-19",
+      "vendorDescriptor": "STAPLES STORE #1423",
+      "amountCents": 2598,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0132",
+      "date": "2026-06-19",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 55101,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0134",
+      "date": "2026-06-19",
+      "vendorDescriptor": "AMTRAK TRAINS",
+      "amountCents": 24055,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0146",
+      "date": "2026-06-19",
+      "vendorDescriptor": "GOOGLE ADS-4471829",
+      "amountCents": 40354,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0152",
+      "date": "2026-06-19",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 22544,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0170",
+      "date": "2026-06-19",
+      "vendorDescriptor": "CONF REG - STRANGE LOOP",
+      "amountCents": 59900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0208",
+      "date": "2026-06-19",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 36700,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0224",
+      "date": "2026-06-19",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 34052,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0336",
+      "date": "2026-06-19",
+      "vendorDescriptor": "UPWORK CONTRACTOR PMT",
+      "amountCents": 36672,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0350",
+      "date": "2026-06-19",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 2213,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0045",
+      "date": "2026-06-20",
+      "vendorDescriptor": "AMAZON BUSINESS",
+      "amountCents": 12890,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0112",
+      "date": "2026-06-20",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 11559,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0128",
+      "date": "2026-06-20",
+      "vendorDescriptor": "PAYMENT PROCESSING FEE",
+      "amountCents": 3238,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0173",
+      "date": "2026-06-20",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 4612,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0195",
+      "date": "2026-06-20",
+      "vendorDescriptor": "STARBUCKS #08123",
+      "amountCents": 647,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0200",
+      "date": "2026-06-20",
+      "vendorDescriptor": "UBER   *TRIP HELP.UBER.CO",
+      "amountCents": 3636,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0223",
+      "date": "2026-06-20",
+      "vendorDescriptor": "CONF REG - STRANGE LOOP",
+      "amountCents": 59900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0306",
+      "date": "2026-06-20",
+      "vendorDescriptor": "STAPLES STORE #1423",
+      "amountCents": 16853,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0327",
+      "date": "2026-06-20",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 47145,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0370",
+      "date": "2026-06-20",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0141",
+      "date": "2026-06-21",
+      "vendorDescriptor": "DELL BUSINESS SALES",
+      "amountCents": 162130,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0143",
+      "date": "2026-06-21",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 18655,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0147",
+      "date": "2026-06-21",
+      "vendorDescriptor": "PARKWHIZ PARKING",
+      "amountCents": 2916,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0167",
+      "date": "2026-06-21",
+      "vendorDescriptor": "PARKWHIZ PARKING",
+      "amountCents": 2860,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0168",
+      "date": "2026-06-21",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 18822,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0182",
+      "date": "2026-06-21",
+      "vendorDescriptor": "VENDOR SVCS LLC",
+      "amountCents": 11371,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0237",
+      "date": "2026-06-21",
+      "vendorDescriptor": "OFFICE DEPOT #2210",
+      "amountCents": 8961,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0267",
+      "date": "2026-06-21",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 49109,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0324",
+      "date": "2026-06-21",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 24609,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0325",
+      "date": "2026-06-21",
+      "vendorDescriptor": "SQ *TARTINE BAKERY",
+      "amountCents": 1075,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0332",
+      "date": "2026-06-21",
+      "vendorDescriptor": "OFFICE DEPOT #2210",
+      "amountCents": 17762,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0343",
+      "date": "2026-06-21",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 79491,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0352",
+      "date": "2026-06-21",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 32684,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0076",
+      "date": "2026-06-22",
+      "vendorDescriptor": "UNITED AIRLINES 0162239981",
+      "amountCents": 38900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0077",
+      "date": "2026-06-22",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 48900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0078",
+      "date": "2026-06-22",
+      "vendorDescriptor": "CONF REG - STRANGE LOOP",
+      "amountCents": 59900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0092",
+      "date": "2026-06-22",
+      "vendorDescriptor": "SQ *TEAM DINNER EVENT",
+      "amountCents": 21200,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0106",
+      "date": "2026-06-22",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 57398,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0108",
+      "date": "2026-06-22",
+      "vendorDescriptor": "CONF REG - STRANGE LOOP",
+      "amountCents": 59900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0111",
+      "date": "2026-06-22",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0177",
+      "date": "2026-06-22",
+      "vendorDescriptor": "COURSERA FOR BUSINESS",
+      "amountCents": 5900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0198",
+      "date": "2026-06-22",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 54951,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0219",
+      "date": "2026-06-22",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0221",
+      "date": "2026-06-22",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 25647,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0243",
+      "date": "2026-06-22",
+      "vendorDescriptor": "DOORDASH*RESTAURANT",
+      "amountCents": 3287,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0313",
+      "date": "2026-06-22",
+      "vendorDescriptor": "T-MOBILE*AUTOPAY",
+      "amountCents": 8500,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0317",
+      "date": "2026-06-22",
+      "vendorDescriptor": "OFFICE DEPOT #2210",
+      "amountCents": 9303,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0079",
+      "date": "2026-06-23",
+      "vendorDescriptor": "LYFT   *RIDE",
+      "amountCents": 1850,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0080",
+      "date": "2026-06-23",
+      "vendorDescriptor": "CHIPOTLE 2871",
+      "amountCents": 1420,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0211",
+      "date": "2026-06-23",
+      "vendorDescriptor": "STAPLES STORE #1423",
+      "amountCents": 22678,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0213",
+      "date": "2026-06-23",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 3573,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0316",
+      "date": "2026-06-23",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 27258,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0328",
+      "date": "2026-06-23",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 11946,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0341",
+      "date": "2026-06-23",
+      "vendorDescriptor": "CHIPOTLE 2871",
+      "amountCents": 1233,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0081",
+      "date": "2026-06-24",
+      "vendorDescriptor": "STARBUCKS #08123",
+      "amountCents": 590,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0082",
+      "date": "2026-06-24",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 48900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0140",
+      "date": "2026-06-24",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0174",
+      "date": "2026-06-24",
+      "vendorDescriptor": "DOORDASH*RESTAURANT",
+      "amountCents": 1690,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0181",
+      "date": "2026-06-24",
+      "vendorDescriptor": "CHIPOTLE 2871",
+      "amountCents": 1140,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0201",
+      "date": "2026-06-24",
+      "vendorDescriptor": "B&H PHOTO VIDEO",
+      "amountCents": 65709,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0203",
+      "date": "2026-06-24",
+      "vendorDescriptor": "AVIS RENT A CAR",
+      "amountCents": 9813,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0277",
+      "date": "2026-06-24",
+      "vendorDescriptor": "MAILCHIMP*EMAIL",
+      "amountCents": 4195,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0304",
+      "date": "2026-06-24",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 9442,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0311",
+      "date": "2026-06-24",
+      "vendorDescriptor": "GOOGLE ADS-4471829",
+      "amountCents": 35517,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0323",
+      "date": "2026-06-24",
+      "vendorDescriptor": "NEXT INSURANCE",
+      "amountCents": 24000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0376",
+      "date": "2026-06-24",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0380",
+      "date": "2026-06-24",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0397",
+      "date": "2026-06-24",
+      "vendorDescriptor": "UBER   *TRIP HELP.UBER.CO",
+      "amountCents": 3196,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0103",
+      "date": "2026-06-25",
+      "vendorDescriptor": "DELL BUSINESS SALES",
+      "amountCents": 129900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0184",
+      "date": "2026-06-25",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 79816,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0210",
+      "date": "2026-06-25",
+      "vendorDescriptor": "PAYMENT PROCESSING FEE",
+      "amountCents": 2969,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0212",
+      "date": "2026-06-25",
+      "vendorDescriptor": "MAILCHIMP*EMAIL",
+      "amountCents": 9012,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0247",
+      "date": "2026-06-25",
+      "vendorDescriptor": "LOGITECH.COM",
+      "amountCents": 24370,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0256",
+      "date": "2026-06-25",
+      "vendorDescriptor": "LYFT   *RIDE",
+      "amountCents": 1222,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0298",
+      "date": "2026-06-25",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0301",
+      "date": "2026-06-25",
+      "vendorDescriptor": "OFFICE DEPOT #2210",
+      "amountCents": 6116,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0308",
+      "date": "2026-06-25",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0320",
+      "date": "2026-06-25",
+      "vendorDescriptor": "COSTCO WHSE #445",
+      "amountCents": 26119,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0367",
+      "date": "2026-06-25",
+      "vendorDescriptor": "STARBUCKS #08123",
+      "amountCents": 643,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0385",
+      "date": "2026-06-25",
+      "vendorDescriptor": "COURSERA FOR BUSINESS",
+      "amountCents": 5900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0105",
+      "date": "2026-06-26",
+      "vendorDescriptor": "COURSERA FOR BUSINESS",
+      "amountCents": 5900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0153",
+      "date": "2026-06-26",
+      "vendorDescriptor": "DELL BUSINESS SALES",
+      "amountCents": 105305,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0154",
+      "date": "2026-06-26",
+      "vendorDescriptor": "MAILCHIMP*EMAIL",
+      "amountCents": 5640,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0161",
+      "date": "2026-06-26",
+      "vendorDescriptor": "VENDOR SVCS LLC",
+      "amountCents": 15597,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0163",
+      "date": "2026-06-26",
+      "vendorDescriptor": "B&H PHOTO VIDEO",
+      "amountCents": 81571,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0194",
+      "date": "2026-06-26",
+      "vendorDescriptor": "SQUARE UP*MISC SVC",
+      "amountCents": 3770,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0204",
+      "date": "2026-06-26",
+      "vendorDescriptor": "CHIPOTLE 2871",
+      "amountCents": 1072,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0229",
+      "date": "2026-06-26",
+      "vendorDescriptor": "UPWORK CONTRACTOR PMT",
+      "amountCents": 67142,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0244",
+      "date": "2026-06-26",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 3529,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0270",
+      "date": "2026-06-26",
+      "vendorDescriptor": "SQ *TARTINE BAKERY",
+      "amountCents": 2204,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0284",
+      "date": "2026-06-26",
+      "vendorDescriptor": "GOOGLE ADS-4471829",
+      "amountCents": 35305,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0289",
+      "date": "2026-06-26",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 89357,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0330",
+      "date": "2026-06-26",
+      "vendorDescriptor": "MARRIOTT HOTELS",
+      "amountCents": 41092,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0110",
+      "date": "2026-06-27",
+      "vendorDescriptor": "AMTRAK TRAINS",
+      "amountCents": 14956,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0121",
+      "date": "2026-06-27",
+      "vendorDescriptor": "SQ *TARTINE BAKERY",
+      "amountCents": 867,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0150",
+      "date": "2026-06-27",
+      "vendorDescriptor": "MAILCHIMP*EMAIL",
+      "amountCents": 3222,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0199",
+      "date": "2026-06-27",
+      "vendorDescriptor": "CONF REG - STRANGE LOOP",
+      "amountCents": 59900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0217",
+      "date": "2026-06-27",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0242",
+      "date": "2026-06-27",
+      "vendorDescriptor": "UBER   *TRIP HELP.UBER.CO",
+      "amountCents": 1659,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0250",
+      "date": "2026-06-27",
+      "vendorDescriptor": "UDEMY BUSINESS",
+      "amountCents": 3900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0252",
+      "date": "2026-06-27",
+      "vendorDescriptor": "STARBUCKS #08123",
+      "amountCents": 1052,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0274",
+      "date": "2026-06-27",
+      "vendorDescriptor": "UPWORK CONTRACTOR PMT",
+      "amountCents": 52975,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0278",
+      "date": "2026-06-27",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 13930,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0299",
+      "date": "2026-06-27",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 44908,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0300",
+      "date": "2026-06-27",
+      "vendorDescriptor": "DOORDASH*RESTAURANT",
+      "amountCents": 2820,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0362",
+      "date": "2026-06-27",
+      "vendorDescriptor": "DOORDASH*RESTAURANT",
+      "amountCents": 3159,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0381",
+      "date": "2026-06-27",
+      "vendorDescriptor": "SETTLEMENT ADJ",
+      "amountCents": 3868,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0388",
+      "date": "2026-06-27",
+      "vendorDescriptor": "UBER   *TRIP HELP.UBER.CO",
+      "amountCents": 3923,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0392",
+      "date": "2026-06-27",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 12453,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0035",
+      "date": "2026-06-28",
+      "vendorDescriptor": "GUSTO",
+      "amountCents": 24000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0125",
+      "date": "2026-06-28",
+      "vendorDescriptor": "CHIPOTLE 2871",
+      "amountCents": 1303,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0135",
+      "date": "2026-06-28",
+      "vendorDescriptor": "GOOGLE ADS-4471829",
+      "amountCents": 43561,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0138",
+      "date": "2026-06-28",
+      "vendorDescriptor": "HILTON HOTELS",
+      "amountCents": 49437,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0144",
+      "date": "2026-06-28",
+      "vendorDescriptor": "COURSERA FOR BUSINESS",
+      "amountCents": 5900,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0155",
+      "date": "2026-06-28",
+      "vendorDescriptor": "CLERKY LEGAL DOCS",
+      "amountCents": 11969,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0166",
+      "date": "2026-06-28",
+      "vendorDescriptor": "CANVA PRO",
+      "amountCents": 1299,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0180",
+      "date": "2026-06-28",
+      "vendorDescriptor": "STAPLES STORE #1423",
+      "amountCents": 12864,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0238",
+      "date": "2026-06-28",
+      "vendorDescriptor": "LOGITECH.COM",
+      "amountCents": 22454,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0261",
+      "date": "2026-06-28",
+      "vendorDescriptor": "MISC CHARGE 88213",
+      "amountCents": 2857,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0262",
+      "date": "2026-06-28",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0266",
+      "date": "2026-06-28",
+      "vendorDescriptor": "HISCOX SMALL BIZ",
+      "amountCents": 18000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0271",
+      "date": "2026-06-28",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 2815,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0280",
+      "date": "2026-06-28",
+      "vendorDescriptor": "UBER   *EATS",
+      "amountCents": 2949,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0286",
+      "date": "2026-06-28",
+      "vendorDescriptor": "FACEBOOK ADS",
+      "amountCents": 18003,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0295",
+      "date": "2026-06-28",
+      "vendorDescriptor": "HISCOX SMALL BIZ",
+      "amountCents": 18000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0307",
+      "date": "2026-06-28",
+      "vendorDescriptor": "PAYMENT PROCESSING FEE",
+      "amountCents": 1921,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0335",
+      "date": "2026-06-28",
+      "vendorDescriptor": "STRIPE ATLAS",
+      "amountCents": 50000,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0344",
+      "date": "2026-06-28",
+      "vendorDescriptor": "PARKWHIZ PARKING",
+      "amountCents": 2581,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0372",
+      "date": "2026-06-28",
+      "vendorDescriptor": "APPLE STORE R234",
+      "amountCents": 115703,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    },
+    {
+      "id": "txn_0386",
+      "date": "2026-06-28",
+      "vendorDescriptor": "CHIPOTLE 2871",
+      "amountCents": 1533,
+      "currency": "USD",
+      "originalAmountCents": null,
+      "fxRate": null
+    }
+  ],
+  "receipts": [
+    {
+      "txnId": "txn_0001",
+      "receiptTotalCents": 9600
+    },
+    {
+      "txnId": "txn_0002",
+      "receiptTotalCents": 9600
+    },
+    {
+      "txnId": "txn_0006",
+      "receiptTotalCents": 14400
+    },
+    {
+      "txnId": "txn_0007",
+      "receiptTotalCents": 86829
+    },
+    {
+      "txnId": "txn_0009",
+      "receiptTotalCents": 120163
+    },
+    {
+      "txnId": "txn_0011",
+      "receiptTotalCents": 8955
+    },
+    {
+      "txnId": "txn_0012",
+      "receiptTotalCents": 13982
+    },
+    {
+      "txnId": "txn_0014",
+      "receiptTotalCents": 4500
+    },
+    {
+      "txnId": "txn_0016",
+      "receiptTotalCents": 6499
+    },
+    {
+      "txnId": "txn_0019",
+      "receiptTotalCents": 161752
+    },
+    {
+      "txnId": "txn_0020",
+      "receiptTotalCents": 245897
+    },
+    {
+      "txnId": "txn_0022",
+      "receiptTotalCents": 8297
+    },
+    {
+      "txnId": "txn_0025",
+      "receiptTotalCents": 9600
+    },
+    {
+      "txnId": "txn_0027",
+      "receiptTotalCents": 125229
+    },
+    {
+      "txnId": "txn_0032",
+      "receiptTotalCents": 50000
+    },
+    {
+      "txnId": "txn_0033",
+      "receiptTotalCents": 24000
+    },
+    {
+      "txnId": "txn_0034",
+      "receiptTotalCents": 24000
+    },
+    {
+      "txnId": "txn_0037",
+      "receiptTotalCents": 55840
+    },
+    {
+      "txnId": "txn_0039",
+      "receiptTotalCents": 31000
+    },
+    {
+      "txnId": "txn_0041",
+      "receiptTotalCents": 4800
+    },
+    {
+      "txnId": "txn_0044",
+      "receiptTotalCents": 16707
+    },
+    {
+      "txnId": "txn_0045",
+      "receiptTotalCents": 12890
+    },
+    {
+      "txnId": "txn_0048",
+      "receiptTotalCents": 684
+    },
+    {
+      "txnId": "txn_0050",
+      "receiptTotalCents": 478
+    },
+    {
+      "txnId": "txn_0051",
+      "receiptTotalCents": 4785
+    },
+    {
+      "txnId": "txn_0052",
+      "receiptTotalCents": 4785
+    },
+    {
+      "txnId": "txn_0055",
+      "receiptTotalCents": 57586
+    },
+    {
+      "txnId": "txn_0056",
+      "receiptTotalCents": 57586
+    },
+    {
+      "txnId": "txn_0058",
+      "receiptTotalCents": 31046
+    },
+    {
+      "txnId": "txn_0060",
+      "receiptTotalCents": 5014
+    },
+    {
+      "txnId": "txn_0062",
+      "receiptTotalCents": 99328
+    },
+    {
+      "txnId": "txn_0063",
+      "receiptTotalCents": 10375
+    },
+    {
+      "txnId": "txn_0066",
+      "receiptTotalCents": 2977
+    },
+    {
+      "txnId": "txn_0070",
+      "receiptTotalCents": 3400
+    },
+    {
+      "txnId": "txn_0071",
+      "receiptTotalCents": 1650
+    },
+    {
+      "txnId": "txn_0072",
+      "receiptTotalCents": 680
+    },
+    {
+      "txnId": "txn_0073",
+      "receiptTotalCents": 4500
+    },
+    {
+      "txnId": "txn_0076",
+      "receiptTotalCents": 38900
+    },
+    {
+      "txnId": "txn_0077",
+      "receiptTotalCents": 48900
+    },
+    {
+      "txnId": "txn_0078",
+      "receiptTotalCents": 59900
+    },
+    {
+      "txnId": "txn_0079",
+      "receiptTotalCents": 1850
+    },
+    {
+      "txnId": "txn_0081",
+      "receiptTotalCents": 590
+    },
+    {
+      "txnId": "txn_0085",
+      "receiptTotalCents": 219900
+    },
+    {
+      "txnId": "txn_0086",
+      "receiptTotalCents": 92500
+    },
+    {
+      "txnId": "txn_0088",
+      "receiptTotalCents": 89000
+    },
+    {
+      "txnId": "txn_0089",
+      "receiptTotalCents": 82000
+    },
+    {
+      "txnId": "txn_0090",
+      "receiptTotalCents": 91000
+    },
+    {
+      "txnId": "txn_0091",
+      "receiptTotalCents": 18400
+    },
+    {
+      "txnId": "txn_0092",
+      "receiptTotalCents": 21200
+    },
+    {
+      "txnId": "txn_0093",
+      "receiptTotalCents": 259900
+    },
+    {
+      "txnId": "txn_0094",
+      "receiptTotalCents": 88000
+    },
+    {
+      "txnId": "txn_0095",
+      "receiptTotalCents": 160000
+    },
+    {
+      "txnId": "txn_0096",
+      "receiptTotalCents": 71200
+    },
+    {
+      "txnId": "txn_0097",
+      "receiptTotalCents": 58400
+    },
+    {
+      "txnId": "txn_0098",
+      "receiptTotalCents": 84900
+    },
+    {
+      "txnId": "txn_0099",
+      "receiptTotalCents": 10900
+    },
+    {
+      "txnId": "txn_0100",
+      "receiptTotalCents": 1400
+    },
+    {
+      "txnId": "txn_0101",
+      "receiptTotalCents": 21200
+    },
+    {
+      "txnId": "txn_0102",
+      "receiptTotalCents": 22500
+    },
+    {
+      "txnId": "txn_0103",
+      "receiptTotalCents": 134900
+    },
+    {
+      "txnId": "txn_0104",
+      "receiptTotalCents": 7600
+    },
+    {
+      "txnId": "txn_0106",
+      "receiptTotalCents": 57398
+    },
+    {
+      "txnId": "txn_0108",
+      "receiptTotalCents": 59900
+    },
+    {
+      "txnId": "txn_0109",
+      "receiptTotalCents": 1299
+    },
+    {
+      "txnId": "txn_0110",
+      "receiptTotalCents": 14956
+    },
+    {
+      "txnId": "txn_0111",
+      "receiptTotalCents": 1299
+    },
+    {
+      "txnId": "txn_0113",
+      "receiptTotalCents": 7631
+    },
+    {
+      "txnId": "txn_0116",
+      "receiptTotalCents": 44456
+    },
+    {
+      "txnId": "txn_0118",
+      "receiptTotalCents": 18164
+    },
+    {
+      "txnId": "txn_0124",
+      "receiptTotalCents": 157808
+    },
+    {
+      "txnId": "txn_0125",
+      "receiptTotalCents": 1303
+    },
+    {
+      "txnId": "txn_0129",
+      "receiptTotalCents": 74212
+    },
+    {
+      "txnId": "txn_0132",
+      "receiptTotalCents": 55101
+    },
+    {
+      "txnId": "txn_0134",
+      "receiptTotalCents": 24055
+    },
+    {
+      "txnId": "txn_0135",
+      "receiptTotalCents": 43561
+    },
+    {
+      "txnId": "txn_0136",
+      "receiptTotalCents": 4536
+    },
+    {
+      "txnId": "txn_0137",
+      "receiptTotalCents": 3692
+    },
+    {
+      "txnId": "txn_0139",
+      "receiptTotalCents": 29133
+    },
+    {
+      "txnId": "txn_0142",
+      "receiptTotalCents": 10337
+    },
+    {
+      "txnId": "txn_0146",
+      "receiptTotalCents": 40354
+    },
+    {
+      "txnId": "txn_0147",
+      "receiptTotalCents": 2916
+    },
+    {
+      "txnId": "txn_0148",
+      "receiptTotalCents": 1585
+    },
+    {
+      "txnId": "txn_0149",
+      "receiptTotalCents": 30476
+    },
+    {
+      "txnId": "txn_0151",
+      "receiptTotalCents": 8500
+    },
+    {
+      "txnId": "txn_0152",
+      "receiptTotalCents": 22544
+    },
+    {
+      "txnId": "txn_0154",
+      "receiptTotalCents": 5640
+    },
+    {
+      "txnId": "txn_0155",
+      "receiptTotalCents": 11969
+    },
+    {
+      "txnId": "txn_0159",
+      "receiptTotalCents": 116588
+    },
+    {
+      "txnId": "txn_0161",
+      "receiptTotalCents": 15597
+    },
+    {
+      "txnId": "txn_0162",
+      "receiptTotalCents": 110225
+    },
+    {
+      "txnId": "txn_0164",
+      "receiptTotalCents": 13082
+    },
+    {
+      "txnId": "txn_0167",
+      "receiptTotalCents": 2860
+    },
+    {
+      "txnId": "txn_0172",
+      "receiptTotalCents": 36204
+    },
+    {
+      "txnId": "txn_0174",
+      "receiptTotalCents": 1690
+    },
+    {
+      "txnId": "txn_0175",
+      "receiptTotalCents": 13298
+    },
+    {
+      "txnId": "txn_0178",
+      "receiptTotalCents": 2930
+    },
+    {
+      "txnId": "txn_0182",
+      "receiptTotalCents": 11371
+    },
+    {
+      "txnId": "txn_0185",
+      "receiptTotalCents": 75954
+    },
+    {
+      "txnId": "txn_0186",
+      "receiptTotalCents": 162553
+    },
+    {
+      "txnId": "txn_0187",
+      "receiptTotalCents": 8500
+    },
+    {
+      "txnId": "txn_0189",
+      "receiptTotalCents": 8971
+    },
+    {
+      "txnId": "txn_0191",
+      "receiptTotalCents": 34634
+    },
+    {
+      "txnId": "txn_0194",
+      "receiptTotalCents": 3770
+    },
+    {
+      "txnId": "txn_0196",
+      "receiptTotalCents": 31507
+    },
+    {
+      "txnId": "txn_0198",
+      "receiptTotalCents": 54951
+    },
+    {
+      "txnId": "txn_0199",
+      "receiptTotalCents": 59900
+    },
+    {
+      "txnId": "txn_0200",
+      "receiptTotalCents": 3636
+    },
+    {
+      "txnId": "txn_0201",
+      "receiptTotalCents": 65709
+    },
+    {
+      "txnId": "txn_0203",
+      "receiptTotalCents": 9813
+    },
+    {
+      "txnId": "txn_0204",
+      "receiptTotalCents": 1072
+    },
+    {
+      "txnId": "txn_0206",
+      "receiptTotalCents": 7639
+    },
+    {
+      "txnId": "txn_0209",
+      "receiptTotalCents": 27328
+    },
+    {
+      "txnId": "txn_0212",
+      "receiptTotalCents": 9012
+    },
+    {
+      "txnId": "txn_0214",
+      "receiptTotalCents": 9071
+    },
+    {
+      "txnId": "txn_0215",
+      "receiptTotalCents": 2251
+    },
+    {
+      "txnId": "txn_0216",
+      "receiptTotalCents": 8500
+    },
+    {
+      "txnId": "txn_0217",
+      "receiptTotalCents": 1299
+    },
+    {
+      "txnId": "txn_0218",
+      "receiptTotalCents": 5900
+    },
+    {
+      "txnId": "txn_0223",
+      "receiptTotalCents": 59900
+    },
+    {
+      "txnId": "txn_0228",
+      "receiptTotalCents": 74833
+    },
+    {
+      "txnId": "txn_0229",
+      "receiptTotalCents": 67142
+    },
+    {
+      "txnId": "txn_0230",
+      "receiptTotalCents": 3900
+    },
+    {
+      "txnId": "txn_0231",
+      "receiptTotalCents": 37468
+    },
+    {
+      "txnId": "txn_0237",
+      "receiptTotalCents": 8961
+    },
+    {
+      "txnId": "txn_0238",
+      "receiptTotalCents": 22454
+    },
+    {
+      "txnId": "txn_0242",
+      "receiptTotalCents": 1659
+    },
+    {
+      "txnId": "txn_0245",
+      "receiptTotalCents": 50000
+    },
+    {
+      "txnId": "txn_0247",
+      "receiptTotalCents": 24370
+    },
+    {
+      "txnId": "txn_0248",
+      "receiptTotalCents": 3900
+    },
+    {
+      "txnId": "txn_0249",
+      "receiptTotalCents": 55605
+    },
+    {
+      "txnId": "txn_0250",
+      "receiptTotalCents": 3900
+    },
+    {
+      "txnId": "txn_0253",
+      "receiptTotalCents": 3900
+    },
+    {
+      "txnId": "txn_0254",
+      "receiptTotalCents": 17170
+    },
+    {
+      "txnId": "txn_0256",
+      "receiptTotalCents": 1222
+    },
+    {
+      "txnId": "txn_0257",
+      "receiptTotalCents": 21576
+    },
+    {
+      "txnId": "txn_0258",
+      "receiptTotalCents": 544
+    },
+    {
+      "txnId": "txn_0260",
+      "receiptTotalCents": 43683
+    },
+    {
+      "txnId": "txn_0261",
+      "receiptTotalCents": 2857
+    },
+    {
+      "txnId": "txn_0263",
+      "receiptTotalCents": 1190
+    },
+    {
+      "txnId": "txn_0265",
+      "receiptTotalCents": 17247
+    },
+    {
+      "txnId": "txn_0268",
+      "receiptTotalCents": 18000
+    },
+    {
+      "txnId": "txn_0269",
+      "receiptTotalCents": 10599
+    },
+    {
+      "txnId": "txn_0270",
+      "receiptTotalCents": 2204
+    },
+    {
+      "txnId": "txn_0273",
+      "receiptTotalCents": 1866
+    },
+    {
+      "txnId": "txn_0275",
+      "receiptTotalCents": 757
+    },
+    {
+      "txnId": "txn_0277",
+      "receiptTotalCents": 4195
+    },
+    {
+      "txnId": "txn_0281",
+      "receiptTotalCents": 5994
+    },
+    {
+      "txnId": "txn_0286",
+      "receiptTotalCents": 18003
+    },
+    {
+      "txnId": "txn_0287",
+      "receiptTotalCents": 4153
+    },
+    {
+      "txnId": "txn_0288",
+      "receiptTotalCents": 28099
+    },
+    {
+      "txnId": "txn_0290",
+      "receiptTotalCents": 101875
+    },
+    {
+      "txnId": "txn_0291",
+      "receiptTotalCents": 64318
+    },
+    {
+      "txnId": "txn_0292",
+      "receiptTotalCents": 49704
+    },
+    {
+      "txnId": "txn_0293",
+      "receiptTotalCents": 46535
+    },
+    {
+      "txnId": "txn_0295",
+      "receiptTotalCents": 18000
+    },
+    {
+      "txnId": "txn_0296",
+      "receiptTotalCents": 11530
+    },
+    {
+      "txnId": "txn_0302",
+      "receiptTotalCents": 23693
+    },
+    {
+      "txnId": "txn_0305",
+      "receiptTotalCents": 23749
+    },
+    {
+      "txnId": "txn_0306",
+      "receiptTotalCents": 16853
+    },
+    {
+      "txnId": "txn_0307",
+      "receiptTotalCents": 1921
+    },
+    {
+      "txnId": "txn_0308",
+      "receiptTotalCents": 50000
+    },
+    {
+      "txnId": "txn_0310",
+      "receiptTotalCents": 1565
+    },
+    {
+      "txnId": "txn_0315",
+      "receiptTotalCents": 19361
+    },
+    {
+      "txnId": "txn_0317",
+      "receiptTotalCents": 9303
+    },
+    {
+      "txnId": "txn_0318",
+      "receiptTotalCents": 59900
+    },
+    {
+      "txnId": "txn_0322",
+      "receiptTotalCents": 10178
+    },
+    {
+      "txnId": "txn_0325",
+      "receiptTotalCents": 1075
+    },
+    {
+      "txnId": "txn_0328",
+      "receiptTotalCents": 11946
+    },
+    {
+      "txnId": "txn_0329",
+      "receiptTotalCents": 4210
+    },
+    {
+      "txnId": "txn_0337",
+      "receiptTotalCents": 9267
+    },
+    {
+      "txnId": "txn_0338",
+      "receiptTotalCents": 8444
+    },
+    {
+      "txnId": "txn_0339",
+      "receiptTotalCents": 21800
+    },
+    {
+      "txnId": "txn_0341",
+      "receiptTotalCents": 1233
+    },
+    {
+      "txnId": "txn_0342",
+      "receiptTotalCents": 19539
+    },
+    {
+      "txnId": "txn_0343",
+      "receiptTotalCents": 79491
+    },
+    {
+      "txnId": "txn_0344",
+      "receiptTotalCents": 2581
+    },
+    {
+      "txnId": "txn_0347",
+      "receiptTotalCents": 13881
+    },
+    {
+      "txnId": "txn_0348",
+      "receiptTotalCents": 50000
+    },
+    {
+      "txnId": "txn_0350",
+      "receiptTotalCents": 2213
+    },
+    {
+      "txnId": "txn_0352",
+      "receiptTotalCents": 32684
+    },
+    {
+      "txnId": "txn_0355",
+      "receiptTotalCents": 29718
+    },
+    {
+      "txnId": "txn_0359",
+      "receiptTotalCents": 9139
+    },
+    {
+      "txnId": "txn_0360",
+      "receiptTotalCents": 8500
+    },
+    {
+      "txnId": "txn_0375",
+      "receiptTotalCents": 18000
+    },
+    {
+      "txnId": "txn_0377",
+      "receiptTotalCents": 13089
+    },
+    {
+      "txnId": "txn_0380",
+      "receiptTotalCents": 1299
+    },
+    {
+      "txnId": "txn_0382",
+      "receiptTotalCents": 1299
+    },
+    {
+      "txnId": "txn_0384",
+      "receiptTotalCents": 16860
+    },
+    {
+      "txnId": "txn_0385",
+      "receiptTotalCents": 5900
+    },
+    {
+      "txnId": "txn_0388",
+      "receiptTotalCents": 3923
+    },
+    {
+      "txnId": "txn_0390",
+      "receiptTotalCents": 23941
+    },
+    {
+      "txnId": "txn_0391",
+      "receiptTotalCents": 5304
+    },
+    {
+      "txnId": "txn_0392",
+      "receiptTotalCents": 12453
+    },
+    {
+      "txnId": "txn_0394",
+      "receiptTotalCents": 10064
+    }
+  ],
+  "approvals": [
+    "txn_0093",
+    "txn_0094",
+    "txn_0095"
+  ]
+}
