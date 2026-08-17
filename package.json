@@ -14,7 +14,8 @@
     "fixtures:generate": "tsx fixtures/src/generate.ts",
     "prepare": "git config core.hooksPath .githooks",
     "close": "tsx evals/src/close.ts",
-    "ablate": "tsx evals/src/run-ablation.ts"
+    "ablate": "tsx evals/src/run-ablation.ts",
+    "matrix": "tsx evals/src/run-matrix.ts"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^9.6.0",
