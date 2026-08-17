@@ -46,7 +46,12 @@ export class AnthropicModelClient implements ModelClient {
   }
 
   async complete(req: CompleteRequest): Promise<CompleteResponse> {
-    const response = await this.client.messages.create({
+    // Streamed, always. The SDK refuses a non streaming request whose token
+    // ceiling implies it could run past ten minutes, which is a client side
+    // throw before anything reaches the network. Streaming and awaiting the
+    // assembled message keeps the calling code identical while removing a
+    // whole class of failure that only appears once outputs get large.
+    const response = await this.client.messages.stream({
       model: this.model,
       max_tokens: req.maxTokens,
       // The static prefix — chart of accounts, policy, tool definitions —
@@ -60,7 +65,7 @@ export class AnthropicModelClient implements ModelClient {
         input_schema: t.input_schema as Anthropic.Tool['input_schema'],
       })),
       messages: req.messages as Anthropic.MessageParam[],
-    });
+    }).finalMessage();
 
     const content: ContentBlock[] = [];
     for (const block of response.content) {

@@ -23,7 +23,13 @@ import { type ModelClient, type Usage } from '../model/client.js';
 import { defineTool, type ToolDefinition } from '../tools/define.js';
 import type { Finding } from './anomaly-hunter.js';
 
-export const RAW_MAX_TOKENS = 16_384;
+/**
+ * Raised from 16k after the first attempt was truncated mid report and
+ * scored zero across every category. That zero was an artefact of the
+ * ceiling, not a result, and publishing it would have been a lie in the
+ * ablation's favour.
+ */
+export const RAW_MAX_TOKENS = 32_768;
 const PAGE_SIZE = 100;
 
 export const RAW_SYSTEM = `You are a forensic accountant reviewing a month-end close.
@@ -61,9 +67,17 @@ WHAT TO LOOK FOR
 
 PROCESS
 
-Page through the transactions, fetch the receipts, the policy, and the
-approvals, then call report_findings ONCE with everything you found. Use
-the exact category names above. Precision matters as much as recall: a
+Work through the tools rather than thinking out loud. Do not narrate your
+analysis, do not restate the ledger back, and do not explain your method.
+Every token spent describing what you are about to do is a token not spent
+on findings.
+
+Fetch each page of transactions, then the receipts, then the policy and
+approvals. Then call report_findings. You may call it several times, in
+batches of roughly twenty, which is safer than assembling one enormous
+call. Keep each summary to a single short sentence.
+
+Use the exact category names above. Precision matters as much as recall: a
 report full of false alarms is one nobody reads.`;
 
 interface RawSink {
@@ -120,7 +134,9 @@ function buildRawTools(ledger: Ledger, sink: RawSink): readonly ToolDefinition[]
 
   const reportFindings = defineTool({
     name: 'report_findings',
-    description: 'Report everything you found. Call once, with every finding.',
+    description:
+      'Report findings. Safe to call several times in batches of roughly twenty; batching beats '
+      + 'one enormous call, which risks being cut off before it completes.',
     input: z.object({
       findings: z
         .array(
