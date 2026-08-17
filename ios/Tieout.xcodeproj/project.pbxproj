@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101CD1F652CB6AE7AD26785F /* TieoutMessages.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C53C105761D5454BB89CD649 /* TieoutMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		19CCCBFD17B37462824F5B6E /* close-run.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CD48BD6CC1136FF3265F15F /* close-run.json */; };
 		37B222A3BEF0DEBE3682535F /* TieoutCore in Frameworks */ = {isa = PBXBuildFile; productRef = E4FD81B7348FA82C0A674FDF /* TieoutCore */; };
 		38696E24CFAA4E3F899B7501 /* CloseRunActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68047C89E77E0F40248FE01 /* CloseRunActivityWidget.swift */; };
+		4B6455FAC071BE740E6B5804 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C25D675690AEB2E0C93D34 /* MessagesViewController.swift */; };
 		586CA3AF35F0579CAA9170B5 /* TieoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26939C5D31A625BB1E254D77 /* TieoutApp.swift */; };
 		5DF1AA18DCA85E051B56D3CC /* LiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5820FE89E6352B648ED9B0E1 /* LiveActivityController.swift */; };
 		606D44B0B9BA4F9C2BAD9797 /* TieoutCore in Frameworks */ = {isa = PBXBuildFile; productRef = B23ED7C07E75B54E4F4E8D21 /* TieoutCore */; };
 		72714FF996F84DA603CB19F9 /* RunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D9CC89D4CCA7B4F1C9A17 /* RunView.swift */; };
 		7E07106EF3D9727E070FF680 /* close-run.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CD48BD6CC1136FF3265F15F /* close-run.json */; };
+		B44F1C70047CEEA746AE9FA6 /* TieoutCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2F4CCD650E007B872EA82120 /* TieoutCore */; };
 		DEB74FD0301B4F17FCCA55F6 /* TieoutWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68224FDDF035D78580D86BB /* TieoutWidgetsBundle.swift */; };
 		FCDB8206AFA799E505945C5E /* TieoutWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0328D41D2E0C2E2E6DA718D8 /* TieoutWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -26,6 +30,13 @@
 			remoteGlobalIDString = 9C005046A4B9A867DEDC7DF5;
 			remoteInfo = TieoutWidgets;
 		};
+		C23F202C965D1D0D6D49939B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F244046EF3A1BB3406B148D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26047ABCF0BDF37F067C61D3;
+			remoteInfo = TieoutMessages;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +47,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				FCDB8206AFA799E505945C5E /* TieoutWidgets.appex in Embed Foundation Extensions */,
+				101CD1F652CB6AE7AD26785F /* TieoutMessages.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,15 +59,26 @@
 		1CD48BD6CC1136FF3265F15F /* close-run.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "close-run.json"; sourceTree = "<group>"; };
 		26939C5D31A625BB1E254D77 /* TieoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieoutApp.swift; sourceTree = "<group>"; };
 		378ABE7719F791ED53B56140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4472994DC3702D48E2BA6AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5820FE89E6352B648ED9B0E1 /* LiveActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityController.swift; sourceTree = "<group>"; };
 		88C155D450A83B4CEB488EAB /* TieoutCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TieoutCore; path = TieoutCore; sourceTree = SOURCE_ROOT; };
+		93C25D675690AEB2E0C93D34 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		AB705A54678EDF73DC049DC9 /* Tieout.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Tieout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68224FDDF035D78580D86BB /* TieoutWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieoutWidgetsBundle.swift; sourceTree = "<group>"; };
 		BA7D9CC89D4CCA7B4F1C9A17 /* RunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunView.swift; sourceTree = "<group>"; };
+		C53C105761D5454BB89CD649 /* TieoutMessages.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = TieoutMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68047C89E77E0F40248FE01 /* CloseRunActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseRunActivityWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9C761EF3F50E595E84A81F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44F1C70047CEEA746AE9FA6 /* TieoutCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B60C51C82B1A38A54D04369F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,6 +112,7 @@
 			children = (
 				EF86C6DD5C2B79C9F7C3815B /* Packages */,
 				E3F24DA78F17285158230F26 /* Tieout */,
+				E5844521CAE51108FF0D967A /* TieoutMessages */,
 				DF6FBE3DE18F23594BCFB10E /* TieoutWidgets */,
 				6EECBF1D51DF8962193CCB73 /* Products */,
 			);
@@ -107,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				AB705A54678EDF73DC049DC9 /* Tieout.app */,
+				C53C105761D5454BB89CD649 /* TieoutMessages.appex */,
 				0328D41D2E0C2E2E6DA718D8 /* TieoutWidgets.appex */,
 			);
 			name = Products;
@@ -147,6 +172,15 @@
 			path = Tieout;
 			sourceTree = "<group>";
 		};
+		E5844521CAE51108FF0D967A /* TieoutMessages */ = {
+			isa = PBXGroup;
+			children = (
+				4472994DC3702D48E2BA6AA7 /* Info.plist */,
+				93C25D675690AEB2E0C93D34 /* MessagesViewController.swift */,
+			);
+			path = TieoutMessages;
+			sourceTree = "<group>";
+		};
 		EF86C6DD5C2B79C9F7C3815B /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +192,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		26047ABCF0BDF37F067C61D3 /* TieoutMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1E4BC1800351FF0C75769E3 /* Build configuration list for PBXNativeTarget "TieoutMessages" */;
+			buildPhases = (
+				59DA486E28D04566B089B0B7 /* Sources */,
+				0EA8346EDF58A3A7908AF1BF /* Resources */,
+				9C761EF3F50E595E84A81F7A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TieoutMessages;
+			packageProductDependencies = (
+				2F4CCD650E007B872EA82120 /* TieoutCore */,
+			);
+			productName = TieoutMessages;
+			productReference = C53C105761D5454BB89CD649 /* TieoutMessages.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 		9C005046A4B9A867DEDC7DF5 /* TieoutWidgets */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2E270BCE136091707F8EC5F /* Build configuration list for PBXNativeTarget "TieoutWidgets" */;
@@ -190,6 +244,7 @@
 			);
 			dependencies = (
 				E9AC4DBBD27D98EF0B2113B3 /* PBXTargetDependency */,
+				48C300DE24CF1C263E6BE6B9 /* PBXTargetDependency */,
 			);
 			name = Tieout;
 			packageProductDependencies = (
@@ -226,12 +281,21 @@
 			projectRoot = "";
 			targets = (
 				B78181AEE00509C97B2290CF /* Tieout */,
+				26047ABCF0BDF37F067C61D3 /* TieoutMessages */,
 				9C005046A4B9A867DEDC7DF5 /* TieoutWidgets */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0EA8346EDF58A3A7908AF1BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19CCCBFD17B37462824F5B6E /* close-run.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B2412B45FBD928A87F56FF4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +307,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		59DA486E28D04566B089B0B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B6455FAC071BE740E6B5804 /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED546F423F5AC72C02C3E200 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,6 +337,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		48C300DE24CF1C263E6BE6B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26047ABCF0BDF37F067C61D3 /* TieoutMessages */;
+			targetProxy = C23F202C965D1D0D6D49939B /* PBXContainerItemProxy */;
+		};
 		E9AC4DBBD27D98EF0B2113B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9C005046A4B9A867DEDC7DF5 /* TieoutWidgets */;
@@ -367,6 +444,23 @@
 			};
 			name = Debug;
 		};
+		529C4FD4031392DB16015D5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				INFOPLIST_FILE = TieoutMessages/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arieltyson.tieout.messages;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		5B378D4CF65111616435A539 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -382,6 +476,23 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
+		};
+		B734F8FBB86327012847E124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				INFOPLIST_FILE = TieoutMessages/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arieltyson.tieout.messages;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
 		};
 		C31F23F6AC6E9EA6AEA3865D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -498,6 +609,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		F1E4BC1800351FF0C75769E3 /* Build configuration list for PBXNativeTarget "TieoutMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B734F8FBB86327012847E124 /* Debug */,
+				529C4FD4031392DB16015D5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
@@ -508,6 +628,10 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2F4CCD650E007B872EA82120 /* TieoutCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TieoutCore;
+		};
 		B23ED7C07E75B54E4F4E8D21 /* TieoutCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TieoutCore;

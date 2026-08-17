@@ -4,6 +4,7 @@ import TieoutCore
 struct RunView: View {
     @State var store: RunStore
     @State private var liveActivity = LiveActivityController()
+    @State private var showingApprovals = false
 
     var body: some View {
         NavigationStack {
@@ -22,6 +23,11 @@ struct RunView: View {
                 }
             }
             .navigationTitle("Tieout")
+            .navigationDestination(isPresented: $showingApprovals) {
+                if case let .loaded(run) = store.state {
+                    ApprovalListView(run: run)
+                }
+            }
         }
         .task {
             store.load()
@@ -31,6 +37,11 @@ struct RunView: View {
             if UserDefaults.standard.bool(forKey: "TieoutAutostartActivity"),
                case let .loaded(run) = store.state {
                 liveActivity.start(from: run)
+            }
+            // Same idea for the approval surface, so a screenshot script or
+            // a screen recording can reach it without a tap.
+            if UserDefaults.standard.bool(forKey: "TieoutShowApprovals") {
+                showingApprovals = true
             }
         }
     }
@@ -62,6 +73,16 @@ private struct RunDetail: View {
                 }
             } footer: {
                 Text("Replays the run on the Lock Screen and Dynamic Island. In Phase 6 the harness pushes these updates as each sub-agent finishes.")
+            }
+
+            Section {
+                NavigationLink {
+                    ApprovalListView(run: run)
+                } label: {
+                    Label("Review approvals", systemImage: "checkmark.seal")
+                }
+            } footer: {
+                Text("The same cards the Messages extension renders in-thread.")
             }
 
             Section("Verifier bank") {

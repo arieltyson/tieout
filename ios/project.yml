@@ -46,6 +46,8 @@ targets:
       - package: TieoutCore
       - target: TieoutWidgets
         embed: true
+      - target: TieoutMessages
+        embed: true
 
   TieoutWidgets:
     type: app-extension
@@ -65,5 +67,29 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.arieltyson.tieout.widgets
+        TARGETED_DEVICE_FAMILY: "1"
+        SKIP_INSTALL: YES
+
+  TieoutMessages:
+    type: app-extension.messages
+    platform: iOS
+    sources:
+      - path: TieoutMessages
+      - path: Tieout/Resources
+        buildPhase: resources
+    dependencies:
+      - package: TieoutCore
+    info:
+      path: TieoutMessages/Info.plist
+      properties:
+        CFBundleDisplayName: Tieout
+        CFBundleVersion: "1"
+        CFBundleShortVersionString: "1.0"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.message-payload-provider
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).MessagesViewController
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arieltyson.tieout.messages
         TARGETED_DEVICE_FAMILY: "1"
         SKIP_INSTALL: YES
