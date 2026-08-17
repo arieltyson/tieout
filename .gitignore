@@ -175,3 +175,11 @@ credentials.json
 # ==============================================================================
 *.log
 logs/
+
+# ==============================================================================
+# XcodeGen
+# ==============================================================================
+## Tieout.xcodeproj IS committed so a reviewer can clone and open it without
+## installing xcodegen. ios/project.yml remains the source of truth — after
+## editing it, run `xcodegen generate` from ios/ and commit the result.
+ios/**/*.xcodeproj/project.xcworkspace/xcuserdata/

@@ -1,0 +1,40 @@
+name: Tieout
+options:
+  bundleIdPrefix: com.arieltyson.tieout
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    GENERATE_INFOPLIST_FILE: YES
+    CODE_SIGNING_ALLOWED: NO
+
+packages:
+  TieoutCore:
+    path: TieoutCore
+
+targets:
+  Tieout:
+    type: application
+    platform: iOS
+    sources:
+      - path: Tieout/Sources
+      - path: Tieout/Resources
+        buildPhase: resources
+    dependencies:
+      - package: TieoutCore
+    info:
+      path: Tieout/Info.plist
+      properties:
+        UILaunchScreen: {}
+        CFBundleDisplayName: Tieout
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arieltyson.tieout
+        TARGETED_DEVICE_FAMILY: "1"
