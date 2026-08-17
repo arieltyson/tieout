@@ -29,8 +29,31 @@ fi
 
 STAGED=""
 
-# The 555555 filter exempts the documented placeholder handles in
-# .env.example and the test fixtures that mirror them.
+# THE 555555 EXEMPTION — read this before adding a placeholder.
+#
+# `grep -v '555555'` drops any matching line containing that literal
+# six-digit run. It does NOT mean "fictional numbers are allowed". It
+# exempts exactly one shape: the E.164 placeholders +1555555xxxx, whose
+# leading 5s happen to form that run.
+#
+# Consequences, all of which have bitten:
+#
+#   +15555550100   exempt — the canonical placeholder, use this one
+#   +15555550101   exempt — same run, fine for a second handle
+#   555-0100       NOT exempt — dashed form has no six-5 run, even though
+#                  it is the same reserved number
+#   +1604555nnnn   NOT exempt — only three consecutive 5s. Written with
+#                  letters here on purpose: spelled out in full, this line
+#                  would trip the very scanner it documents.
+#
+# NANP reserves 555-0100 through 555-0199 for fictional use. 555-1234 is a
+# common convention but is NOT in that block, so do not reach for it: it is
+# both outside the reserved range and outside this exemption.
+#
+# Keep every placeholder in this repo as +1555555xxxx. The deliberate
+# trigger strings in test/scan-secrets.test.ts are the exception — they are
+# assembled from split literals at runtime precisely so they stay OUTSIDE
+# the exemption and prove the scanner still blocks.
 matches_staged() {
   git diff --cached -U0 -- $STAGED \
     | grep -E '^\+' | grep -vE '^\+\+\+' \
