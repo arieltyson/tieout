@@ -1,0 +1,117 @@
+# Benchmark Results
+
+**No results yet. The eval runner lands in Phase 9.**
+
+This document is the measurement plan, published before the numbers exist so
+that the methodology is fixed in advance. Deciding how to score after seeing
+the output is how benchmarks end up flattering the thing they measure.
+
+Every cell below is `pending`. Nothing here will be filled in by hand — the
+runner writes `evals/results/<timestamp>-<config>.json` and this table is
+generated from those files.
+
+---
+
+## What is being measured
+
+The claim under test is **that the harness matters more than the model**. The
+same model, run through progressively degraded versions of the same harness,
+should produce measurably worse accounting. If it doesn't, the architecture
+isn't earning its complexity and the README should say so.
+
+## The fixture
+
+Measurements run against the committed synthetic ledger — same seed, same
+ledger, every run. CI regenerates it on every push and fails on any drift.
+
+| | |
+|---|---|
+| Seed | `20260601` |
+| Period | `2026-06` |
+| Transactions | 400 |
+| Expected GL codes | 400 (one per transaction) |
+| Planted defects | 47, across 7 categories |
+| Chart of accounts | 18 accounts |
+
+Ground truth is emitted by the generator in the same pass that plants each
+defect, so the answer key cannot drift from what was actually planted. A test
+asserts that no ground-truth key is reachable from the ledger snapshot — the
+agent sees only what an accountant would see.
+
+### Planted defects by category
+
+| Category | Count | What the agent must detect |
+|---|---|---|
+| Policy violation | 10 | Charge over a named limit with no approval on file |
+| Receipt mismatch | 9 | Receipt total ≠ posted transaction amount |
+| FX mismatch | 7 | EUR conversion off by a few cents, exact delta reported |
+| Duplicate charge | 6 | Same vendor, amount, and date, charged twice |
+| Price anomaly | 6 | Vendor jumps 40%+ month-over-month, flagged as anomaly not duplicate |
+| Missing recurring | 5 | Monthly charge that silently stops; gap detected, accrual proposed |
+| Vendor alias | 4 | One entity under multiple descriptors, merged to one canonical vendor |
+
+Three adversarial merchant descriptors are also planted (prompt-injection
+payloads). They are **not** scored below; the regression that proves the agent
+ignores them lands with the transport layer in Phase 6.5.
+
+## Metric definitions
+
+Fixed now so they can't be redefined to fit a result later.
+
+- **Categorization accuracy** — exact GL-code match against
+  `expectedCategorizations`. Not fuzzy, not "close enough", not partial credit
+  for the right account type. Exact string equality on the four-digit code.
+- **Anomaly precision** — of the defects the agent flagged, the fraction that
+  were genuinely planted. Punishes crying wolf.
+- **Anomaly recall** — of the 47 planted defects, the fraction found. Punishes
+  quiet misses, which in a close are the expensive kind.
+- **Anomaly F1** — harmonic mean of the two, reported per defect category as
+  well as overall. A system that aces duplicates and misses every FX mismatch
+  should not hide behind an average.
+- **Escape-hatch rate** — the fraction of transactions filed to
+  `6900 Uncategorized`. Tracked separately and deliberately: an agent that
+  punts on 30% of the ledger is not doing the job, however accurate it is on
+  the remainder. High accuracy paired with a high escape-hatch rate is a
+  failing result, not a passing one.
+- **Verifier block rate** — how often the deterministic bank caught something
+  before a human saw it. This is the number that justifies the architecture.
+- **Cost per run / tokens per run / turns per run / wall clock** — measured,
+  not estimated.
+
+## Ablation matrix
+
+Five toggles is 32 configurations. Six are worth running: the baseline, plus
+each component disabled individually.
+
+| Configuration | Categorization accuracy | Anomaly F1 | Escape-hatch rate | Verifier block rate | Median turns | Cost / run |
+|---|---|---|---|---|---|---|
+| Baseline (full harness) | pending | pending | pending | pending | pending | pending |
+| — deterministic verifiers | pending | pending | pending | pending | pending | pending |
+| — vendor memory | pending | pending | pending | pending | pending | pending |
+| — sub-agent isolation | pending | pending | pending | pending | pending | pending |
+| — deterministic pre-pass | pending | pending | pending | pending | pending | pending |
+| — self-correction cycle | pending | pending | pending | pending | pending | pending |
+
+## Model comparison
+
+The same harness against two or three models, to separate harness
+contribution from model capability.
+
+| Model | Categorization accuracy | Anomaly F1 | Cost / run |
+|---|---|---|---|
+| pending | pending | pending | pending |
+
+## Honest limitations
+
+Recorded now, while there's no result to be defensive about.
+
+- **The ledger is synthetic.** It's generated by a program, so its defects are
+  the defects that program knows how to plant. Real ledgers are messier in ways
+  this fixture doesn't anticipate, and a number measured here is a claim about
+  this fixture, not about production accounting.
+- **The fixture author and the harness author are the same person.** Some
+  circularity is unavoidable in a solo benchmark. Mitigated by writing the
+  ground truth in the same pass that plants each defect and by fixing these
+  metric definitions before any result exists — but it is not eliminated.
+- **One seed, one month.** Results on a single fixture are a point estimate.
+  Multi-seed variance is worth reporting before treating any gap as real.
