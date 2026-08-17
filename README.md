@@ -131,6 +131,12 @@ Treat 95.1% as a floor.
 - **A shared contract that cannot drift.** The Swift client decodes a byte for
   byte copy of what the harness actually writes, so a change to the shape
   fails a build instead of showing up as an empty screen on a device.
+- **A listener that speaks fluent Messages.** Polling the message database
+  means handling timestamps counted in nanoseconds from 2001 and bodies
+  stored as archived text rather than plain strings, both solved. Tapbacks and
+  system rows are filtered out, because a thumbs up on your own command would
+  otherwise start the close all over again.
+- **App Intents** put the close in Siri, Shortcuts, and Spotlight.
 
 ### Hostile Input by Default 🛡️
 - **Merchant text is treated as an attack surface.** A merchant chooses its own
@@ -147,6 +153,33 @@ Treat 95.1% as a floor.
   integration scans every tracked file, catching anything committed with the
   hook disabled.
 
+### Durable Runs and Approval Gates ⏸️
+- **Checkpointed to SQLite at every state transition**, so a run parks while
+  it waits for you and resumes cleanly an hour later with nothing held in
+  memory and no timer left running.
+- **Idempotency keys derived from content**, which makes applying the same
+  decision twice a no op. People double tap approve, and that is planned for
+  rather than discovered during a demo.
+- **Bounded self correction.** A verifier failure goes back to the agent that
+  caused it as a tool result, for a capped number of repair attempts, then
+  escalates to a person with the verdict attached.
+
+### Vendor Memory 🧠
+- **Approved categorizations become learned mappings**, merchant pattern to
+  account code, with a confidence counter behind them.
+- **Consulted before the model is called**, so a familiar ledger gets cheaper
+  every time it is closed. The first correction is a correction. The second is
+  a rule.
+
+### On Device Receipt Intelligence 📸
+- **Vision reads the receipt on the phone**, pulling merchant, total, date, and
+  line items out of a photo that never leaves the device.
+- **Two tiers of model.** Apple's on device model handles the cheap questions,
+  such as whether an image is even a receipt, and only genuine ambiguity
+  reaches the frontier model.
+- **Limited photo library access**, asking for the images you choose rather
+  than the whole camera roll.
+
 ### Measured, Not Asserted 📊
 - **A ledger generated from a fixed seed**, byte identical every time.
   Continuous integration rebuilds it on every push and fails if one byte moves.
@@ -158,6 +191,10 @@ Treat 95.1% as a floor.
 - **A scripted model client** that returns canned tool calls, making
   termination, budget limits, argument validation, and tool failure ordinary
   unit tests that cost nothing and never flake.
+
+Four of these are still landing: checkpointing, vendor memory, receipt
+reading, and the message listener. Everything else on this page is running
+today and measured above.
 
 </div>
 
