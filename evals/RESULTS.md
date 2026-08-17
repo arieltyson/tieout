@@ -133,20 +133,79 @@ Fixed now so they can't be redefined to fit a result later.
 
 ## Ablation matrix
 
-**Pending.** Five toggles is 32 configurations; six are worth running: the
-baseline, plus each component disabled individually. Configurations and
-per-variant hypotheses are committed in `evals/src/ablation.ts`, written
-before the runs so a surprising result cannot be quietly reinterpreted
-afterwards.
+Each component disabled in turn, same fixture, same model, same seed.
+Hypotheses were written in `evals/src/ablation.ts` before any of these ran.
 
-| Configuration | Categorization accuracy | Anomaly F1 | Escape-hatch rate | Verifier block rate | Median turns | Cost / run |
-|---|---|---|---|---|---|---|
-| Baseline (full harness) | pending | pending | pending | pending | pending | pending |
-| — deterministic verifiers | pending | pending | pending | pending | pending | pending |
-| — vendor memory | pending | pending | pending | pending | pending | pending |
-| — sub-agent isolation | pending | pending | pending | pending | pending | pending |
-| — deterministic pre-pass | pending | pending | pending | pending | pending | pending |
-| — self-correction cycle | pending | pending | pending | pending | pending | pending |
+| Configuration | Accuracy | Anomaly F1 | Turns | Cost | Delta vs baseline |
+|---|---|---|---|---|---|
+| **Baseline** | **94.1%** | **0.94** | 20 | **$0.95** | reference |
+| Second close, warm memory | **95.4%** | 0.94 | 9 | **$0.33** | 65% cheaper |
+| No deterministic pre pass | 92.4% | 0.95 | 20 | $1.56 | 64% dearer |
+| No sub agent isolation | 92.2% | 0.93 | 19 | $1.82 | 92% dearer |
+| No deterministic verifiers | 94.1% | 0.94 | 20 | $0.00 | none |
+| No self correction | 94.1% | 0.94 | 20 | $0.00 | none |
+
+Total spend for the matrix: $5.71.
+
+### What each row means
+
+**Context isolation is the clearest win.** One agent doing both jobs in one
+conversation costs 92% more and scores slightly worse on both measures. The
+transactions accumulate in the window while the anomaly work happens, and
+the model pays to re-read all of them on every turn. This is the row that
+most directly supports the architecture.
+
+**Vendor memory is the second.** The second close resolved 314 of 370
+transactions from memory, cut cost by 65%, halved the turns, and nudged
+accuracy up rather than down. No stem was ever marked conflicted, so the
+Uber trap never had to fire, though the guard that would catch it is tested
+separately.
+
+**The deterministic pre pass result contradicts the hypothesis, and the
+hypothesis is left on record.** The prediction was "the sharpest expected
+drop." Anomaly F1 went slightly UP, 0.94 to 0.95, while cost rose 64%. On
+this fixture the detectors buy cost, not correctness. The model searching
+the raw ledger finds roughly what arithmetic finds, and charges for the
+privilege.
+
+That is a weaker claim than the one the architecture was built on, and it
+is the honest one. The detectors remain worth keeping for reasons this
+table does show: they are free, they are deterministic, and they explain
+themselves. But the sentence "the model would be worse at this" is not
+supported by the evidence here.
+
+**Two rows show no effect at all, and that is the finding rather than a gap
+in it.** The verifier bank blocked zero proposals on a clean run, so
+removing it changes nothing. The bank earns its place under failure, not
+under success: it caught a truncated run during development that would
+otherwise have reported 0% accuracy as though it were a score. A control
+that only matters when something goes wrong still matters.
+
+Self correction shows the same nothing for a related reason: with no
+proposals blocked there is nothing to repair. That row measures the cost of
+the cycle, which is zero when it never fires.
+
+### Method notes
+
+Two rows cost nothing by design. Disabling the bank or the repair cycle
+changes what happens after the model produces output, and that output is
+identical by construction, so those arms reuse the baseline rather than
+paying twice for work that cannot differ.
+
+Vendor memory is measured on a second close because on a first one the
+memory is empty and the toggle does nothing. Reporting a cold run as
+evidence about memory would measure the wrong thing.
+
+The flat context arm was invalid on its first attempt: it tried to emit
+several hundred categorizations in one response, hit the output ceiling,
+and scored zero. That zero was the ceiling, not the architecture. It was
+re-run with batched emission and a turn budget matched to the work, since
+isolated mode gets twelve turns per batch across eight loops and handing
+the flat agent twelve in total would have measured the budget instead.
+
+An earlier scoring pass counted all 400 ground-truth entries when only 370
+are in the closing period, which cost every row about seven points
+uniformly. Corrected above.
 
 ## Model comparison
 

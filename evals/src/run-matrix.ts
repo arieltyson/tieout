@@ -53,6 +53,10 @@ function score(result: PipelineResult, expected: Record<string, string>, groundT
 }
 
 async function main(): Promise<void> {
+  // Re-running one arm after fixing it beats re-paying for the whole table.
+  // The scoring is identical either way, so a repaired arm slots straight in.
+  const only = process.argv.find((a) => a.startsWith('--only='))?.split('=')[1];
+
   if (!process.env['ANTHROPIC_API_KEY']) {
     console.error('ANTHROPIC_API_KEY is not set.');
     process.exit(1);
@@ -62,8 +66,14 @@ async function main(): Promise<void> {
   const groundTruth = loadGroundTruth();
   const client = new AnthropicModelClient({ apiKey: process.env['ANTHROPIC_API_KEY'] });
 
+  // Only the period under close. Scoring against the whole manifest counts
+  // April and May transactions as "missing" and drags every row down by the
+  // same seven points, which looks like a regression and is arithmetic.
+  const inPeriod = new Set(
+    ledger.transactions.filter((t) => t.date.startsWith(`${PERIOD}-`)).map((t) => t.id),
+  );
   const expected = Object.fromEntries(
-    Object.entries(groundTruth.expectedCategorizations),
+    Object.entries(groundTruth.expectedCategorizations).filter(([id]) => inPeriod.has(id)),
   ) as Record<string, string>;
 
   // Start from an empty memory so the cold run is genuinely cold.
@@ -76,8 +86,30 @@ async function main(): Promise<void> {
 
   const log = (m: string) => process.stdout.write(`\r${' '.repeat(70)}\r  ${m}`);
 
+  console.log(`\nAblation matrix · ${DEFAULT_MODEL} · ${PERIOD}${only ? ` · only ${only}` : ''}\n`);
+
+  if (only === 'flat') {
+    const flatOnly = await runPipeline({
+      client, ledger, period: PERIOD,
+      config: { ...BASELINE, subAgentIsolation: false, vendorMemory: false },
+      onProgress: log,
+    });
+    const s = score(flatOnly, expected, groundTruth);
+    console.log('\n  accuracy      ', `${(s.cat.accuracy * 100).toFixed(1)}%`,
+      `(${s.cat.correct}/${s.cat.attempted} attempted)`);
+    console.log('  anomaly F1    ', s.anomalies.overallF1.toFixed(2));
+    console.log('  turns         ', flatOnly.turns);
+    console.log('  cost          ', `$${s.cost.toFixed(2)}`);
+    console.log('  truncated     ', flatOnly.maxTokensHits > 0 ? 'YES, invalid' : 'no');
+    mkdirSync(RESULTS_DIR, { recursive: true });
+    const p = `${RESULTS_DIR}${new Date().toISOString().replace(/[:.]/g, '-')}-flat-only.json`;
+    writeFileSync(p, `${JSON.stringify({ score: s, usage: flatOnly.usage, turns: flatOnly.turns, truncated: flatOnly.maxTokensHits > 0 }, null, 2)}\n`);
+    console.log(`\n  wrote ${p}\n`);
+    memory.close();
+    return;
+  }
+
   // --- 1. Baseline, cold -------------------------------------------------
-  console.log(`\nAblation matrix · ${DEFAULT_MODEL} · ${PERIOD}\n`);
   console.log('[1/5] baseline, cold memory');
   const baseline = await runPipeline({
     client, ledger, period: PERIOD, config: BASELINE, memory, onProgress: log,

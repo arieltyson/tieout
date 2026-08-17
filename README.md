@@ -67,6 +67,45 @@ owns are the two weakest on the board. It calls too many duplicates, flagging
 three legitimate repeat purchases as double charges. Burying that inside an
 average would have hidden it.
 
+### What each part is worth
+
+Every component disabled in turn, same fixture, same model.
+
+| Configuration | Accuracy | Anomaly F1 | Cost |
+|---|---|---|---|
+| **Baseline** | **94.1%** | **0.94** | **$0.95** |
+| Second close, warm memory | 95.4% | 0.94 | $0.33 |
+| No deterministic pre pass | 92.4% | 0.95 | $1.56 |
+| No sub agent isolation | 92.2% | 0.93 | $1.82 |
+| No deterministic verifiers | 94.1% | 0.94 | no change |
+| No self correction | 94.1% | 0.94 | no change |
+
+Context isolation is the clearest win. One agent doing both jobs in one
+conversation costs 92 percent more and scores worse on both measures, because
+the ledger accumulates in the window and gets re-read on every turn.
+
+Vendor memory is next. A second close resolves 314 of 370 transactions from
+what it learned the first time, cutting cost by 65 percent and halving the
+turns.
+
+**One prediction was wrong and it stays on the record.** Removing the
+deterministic detectors was expected to be the sharpest drop. Anomaly F1
+actually rose slightly while cost rose 64 percent. On this fixture the
+detectors buy cost rather than correctness, which is a weaker claim than the
+one the design assumed. They remain worth keeping because they are free,
+deterministic, and self explaining, but the evidence does not support saying
+the model would be worse at the job.
+
+Two rows show no effect, which is the finding rather than a hole in it. The
+verifier bank blocked nothing on a clean run. It earns its place under
+failure instead: during development it caught a truncated run that would
+otherwise have reported zero accuracy as though it were a score.
+
+Full method notes, including two arms that had to be re-run after producing
+plausible looking nonsense, are in [evals/RESULTS.md](evals/RESULTS.md).
+
+### Where the categorizer was wrong
+
 Every one of the 18 categorization misses is a defensible disagreement rather
 than a blunder. Canva went to software subscriptions instead of marketing.
 Twilio went to software instead of telecom. Both readings are arguable, and
