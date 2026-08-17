@@ -6,236 +6,212 @@
 
 [![CI](https://github.com/arieltyson/tieout/actions/workflows/ci.yml/badge.svg)](https://github.com/arieltyson/tieout/actions/workflows/ci.yml)
 
-**Status: in active development.** The harness runs end to end and is
-measured; the iMessage transport and the ablation table are not built yet.
-Numbers: [evals/RESULTS.md](evals/RESULTS.md)
+**95.1% categorization accuracy · 0.94 anomaly F1 · $1.00 per close**
+
+[Full results and methodology](evals/RESULTS.md)
 
 </div>
 
 ## What it is 🎨
 
-**Tieout** is an agentic month-end close operated by text message. The intended
-shape: you send it `close june`, it dispatches specialist sub-agents across a
-ledger, verifies every proposal against deterministic checks, and replies with
-only the decisions that actually need a human.
+Tieout closes a month of accounting for you. It reads a ledger, assigns a
+general ledger code to every transaction, hunts for the things that go wrong
+in a real close, checks its own work against a bank of deterministic
+verifiers, and hands back only the decisions that genuinely need a person.
 
-The name is the accountant's verb — to *tie out* is to prove two sets of
-records agree. That proof is the architectural spine: a bank of pure verifier
-functions gating every model output before a person sees it. The model decides
-which transactions group and what category applies; typed code computes every
-sum, conversion, and balance. An LLM that adds a column of dollar figures will
-be wrong occasionally and confident always, which is unacceptable in a domain
-where being off by a cent means the books don't close.
+The name is the accountant's verb. To tie out is to prove that two sets of
+records agree. That proof is the spine of the whole system: a set of pure
+functions that gate every proposal before a human ever sees it. The model
+decides which transactions belong together and what category applies. Typed
+code computes every sum, every conversion, every balance. A language model
+that adds a column of dollar figures will be wrong occasionally and confident
+always, which is intolerable in a domain where being off by a cent means the
+books do not close.
 
-The harness is TypeScript. The surface will be Swift.
+The harness is TypeScript. The surface is Swift.
 
-## Status 🚧
+## Benchmark Results 📊
 
-A build log, not a finished product. The harness runs end to end and is
-measured; the transport that makes it a *Messages* app is not built.
-
-**Built, tested, and measured:**
-
-- **The harness runs.** `npm run close 2026-06` categorizes 370 transactions,
-  hunts anomalies, verifies every proposal, and scores against ground truth.
-- **Verifier bank** — six deterministic verifiers over pure
-  `(proposals, ledger)` functions. Every one mutation-tested: break the
-  predicate, confirm the right tests fail and no others.
-- **Deterministic detectors** — five defect categories solved by arithmetic at
-  P 1.00, before a model is invoked.
-- **Deterministic ledger fixture** — 400 transactions, 47 planted defects,
-  byte-identical from its seed. CI regenerates it every push and fails on drift.
-- **Agent loop** — tool dispatch, four budget types checked before every call,
-  and errors returned as `tool_result` rather than exceptions. Fully testable
-  against a scripted model client, zero tokens.
-- **iOS app** — SwiftUI run detail, a Live Activity with Lock Screen and
-  Dynamic Island presentations, and a Messages extension rendering approval
-  cards. Builds against the iOS 26.5 simulator; verified by screenshot.
-- **Shared contract** — the Swift client decodes a byte-for-byte copy of what
-  the harness actually emits, so drift fails a build rather than a screen.
-- **Private data stays out** — the transport reads a synthetic `chat.db` and
-  *refuses* any path under `~/Library/Messages` without an explicit opt-in.
-
-**318 TypeScript tests and 12 Swift tests**, all runnable without an API key.
-
-**Not built yet:** the iMessage listener and sender, the reconciler and receipt
-chaser sub-agents, durable checkpointing and decision application, vendor
-memory, the ablation runs, and on-device receipt Vision.
-
-## Benchmark 📊
-
-Measured against the committed fixture: 370 transactions, 47 planted defects
-across seven categories, `claude-sonnet-5`. Full methodology, per-category
-breakdown, and error analysis in [evals/RESULTS.md](evals/RESULTS.md).
+Measured against a synthetic ledger of 370 transactions carrying 47 planted
+defects, using Claude Sonnet 5.
 
 | | |
 |---|---|
-| Categorization accuracy | **95.1%** (352/370 exact GL match) |
-| Anomaly F1 | **0.94** (P 0.92 / R 0.96) |
-| Escape-hatch rate | 4.9%, all correct |
+| Categorization accuracy | **95.1%** (352 of 370, exact code match) |
+| Anomaly F1 | **0.94** (precision 0.92, recall 0.96) |
 | Cost | **$1.00** per close |
-| Wall clock | 291s |
+| Wall clock | 291 seconds |
+| Proposals blocked by verifiers | 0 |
 
-**The interesting number is the split, not the total.**
+The headline is not the total. It is where the work happens.
 
-| Found by | Categories | Precision | Recall | Tokens |
+| Handled by | Categories | Precision | Recall | Tokens |
 |---|---|---|---|---|
-| Deterministic code | FX, receipts, policy, recurring gaps, price jumps | 1.00 | 0.96 | **0** |
-| The model | Duplicate judgment, vendor aliasing | 0.71 | 0.90 | all of them |
+| Plain arithmetic | Currency conversion, receipts, spend policy, cancelled subscriptions, price jumps | 1.00 | 0.96 | **none** |
+| The model | Duplicate judgment, vendor identity | 0.71 | 0.90 | all of them |
 
-Five of seven defect categories are solved exactly by arithmetic, for nothing.
-The model is invoked only for the two that have no deterministic answer —
-whether identical same-day charges are a double charge or two legitimate
-purchases, and which mangled descriptors are the same merchant. That split is
-the architecture, and it is why a close costs a dollar instead of ten.
+Five of the seven defect categories have exact answers, so code finds them and
+the model never sees them. A currency conversion either reconciles to the cent
+or it does not. A receipt either matches the charge or it does not. Asking a
+language model to do that arithmetic would be slower, more expensive, and less
+accurate.
 
-It also shows the cost of the trade honestly: the model's two categories have
-the lowest precision on the board. It over-flags duplicates, calling three
-legitimate repeat purchases double charges.
+The model is called for the two questions arithmetic cannot answer. Are two
+identical charges on the same day a double billing or simply two cups of
+coffee? Are `AMZN Mktp US*2K4LM9XY3` and `AMAZON BUSINESS` the same merchant?
+Those are judgments, and the split is why a close costs a dollar rather than
+ten.
 
-**On the 18 categorization misses:** every one is a debatable classification
-rather than a clear error — `CANVA PRO` filed as software rather than
-marketing, `TWILIO` as software rather than telecom. Ground truth has not been
-adjusted to match, because fitting the answer key to the output is the failure
-this benchmark exists to prevent. 95.1% is a floor.
+It also shows the price of that trade honestly. The two categories the model
+owns are the two weakest on the board. It calls too many duplicates, flagging
+three legitimate repeat purchases as double charges. Burying that inside an
+average would have hidden it.
 
-The ablation table — each component disabled in turn — is still pending. The
-configurations and their hypotheses are committed in `evals/src/ablation.ts`,
-written before the runs.
+Every one of the 18 categorization misses is a defensible disagreement rather
+than a blunder. Canva went to software subscriptions instead of marketing.
+Twilio went to software instead of telecom. Both readings are arguable, and
+the answer key has not been edited to agree with the model, because fitting a
+benchmark to its own output is the failure this project exists to avoid.
+Treat 95.1% as a floor.
 
-### Why the fixture is the hard part
+## Highlights 💫
 
-Vendor descriptors are deliberately mangled the way real card processors mangle
-them. Two pairs do most of the work:
+<div align="left">
 
-- `AMZN Mktp US*2K4LM9XY3` and `AMAZON BUSINESS` are the same vendor under two
-  descriptors. A system keying vendor memory on the raw string treats them as
-  strangers.
-- `UBER *TRIP` and `UBER *EATS` are one brand under two different GL codes.
-  A normalizer that strips to `UBER` and memorizes one mapping confidently
-  mis-files the other.
+### The Harness 🔧
+- **Specialist agents with isolated context.** Each one gets a fresh window and
+  returns a compact summary rather than raw rows, so the orchestrator never
+  drowns in four hundred transactions.
+- **A typed tool layer built on Zod.** One schema produces both the JSON
+  Schema the model receives and the TypeScript type used internally, so the
+  two cannot drift apart.
+- **Permission tags on every tool.** Least privilege becomes something a test
+  asserts rather than something a reviewer has to trust.
+- **Budgets checked before every call.** Turns, input tokens, output tokens,
+  and wall clock, all enforced ahead of the request so an exhausted budget
+  cannot spend one more.
 
-Between them they punish both under- and over-normalization, which is the
-tension a real categorizer has to navigate. A generator emitting clean vendor
-names would yield 99% accuracy and prove nothing.
+### Deterministic Verification ⚖️
+- **Six pure verifiers** over `(proposals, ledger)`, with no network, no clock,
+  and no model. Sums tie to the cent, codes must exist in the chart of
+  accounts, nothing is categorized twice, nothing references a transaction
+  that is not there, and no claim arrives without evidence pointing at a tool
+  call that actually ran.
+- **Every check proven capable of failing.** Each verifier was tested by
+  breaking the predicate it depends on and confirming the right tests fail and
+  no others. A control that cannot be made to fail is decoration.
+- **Money is an integer.** A branded cents type makes floating point dollars
+  impossible to represent. Values are validated and branded in a single
+  expression, so no loader can reassert the type over a number nobody checked.
+- **Arithmetic never reaches the model.** Sums, conversions, and balances all
+  run in tested code.
 
-## The design 🔧
+### Anomaly Detection 🔎
+- **Five defect categories solved by code**, at perfect precision and for no
+  tokens: currency conversion errors, receipt discrepancies, spend policy
+  breaches, silently cancelled subscriptions, and month on month price jumps.
+- **The model judges rather than searches.** It receives candidates with the
+  arithmetic already done and answers only the questions that have no exact
+  answer.
+- **Findings ranked by materiality**, because a list nobody can triage is a
+  list nobody reads.
 
-**Deterministic-first.** Every operation that *can* run in code *must* run in
-code; the model is reserved for judgment that genuinely requires it. Exact
-duplicate detection is `GROUP BY vendor, amount, date HAVING COUNT(*) > 1`, not
-a prompt. The model's job starts where SQL runs out.
+### The iOS Surface 💬
+- **A Live Activity** on the Lock Screen and in the Dynamic Island.
+  ActivityKit was built for food delivery, and a close turns out to fit the
+  same shape: it takes minutes, it moves through stages, and it ends by
+  needing something from you, which is exactly what you should not have to
+  open an app to discover.
+- **Approval cards inside the Messages thread**, rendered by a Messages
+  extension. The message carries an identifier and nothing else, since
+  payloads are size constrained and a run holds hundreds of proposals.
+- **Rejected proposals cannot be approved.** Anything a verifier blocked
+  appears in the list without a button. A deterministic failure is a fact, and
+  nobody should be invited to wave one through.
+- **A shared contract that cannot drift.** The Swift client decodes a byte for
+  byte copy of what the harness actually writes, so a change to the shape
+  fails a build instead of showing up as an empty screen on a device.
 
-**The verifier bank.** Pure functions, `(Proposal, Ledger) -> VerifierResult` —
-no I/O, no network, no model. Sums must tie to the cent, GL codes must exist,
-no transaction categorized twice, debits equal credits. Deterministic failures
-block; inferential failures warn.
+### Hostile Input by Default 🛡️
+- **Merchant text is treated as an attack surface.** A merchant chooses its own
+  descriptor and that string reaches the model. Ledger rows travel inside a
+  delimited block explicitly framed as untrusted data, never spliced into the
+  system prompt.
+- **Three attack payloads live permanently in the fixture**, including one that
+  tries to close the data block and issue its own instructions.
+- **Your real messages stay out.** The transport reads a synthetic message
+  database and refuses any path inside your Messages directory unless you
+  deliberately opt in, sidecar files included.
+- **Secrets cannot enter the repository.** A hook blocks phone numbers, email
+  addresses, and API keys before every commit, and a second pass in continuous
+  integration scans every tracked file, catching anything committed with the
+  hook disabled.
 
-**Context isolation over parallelism.** Sub-agents exist so the categorizer can
-chew through thousands of rows without the orchestrator compacting by turn
-three. Each gets a fresh context and returns a compact structured summary.
-Least privilege on tool grants falls out as a second-order benefit. Two of the
-four are built — categorizer and anomaly hunter; the reconciler and receipt
-chaser are not.
+### Measured, Not Asserted 📊
+- **A ledger generated from a fixed seed**, byte identical every time.
+  Continuous integration rebuilds it on every push and fails if one byte moves.
+- **An answer key written by the generator itself**, in the same pass that
+  plants each defect, so it cannot drift from what was planted. A test proves
+  none of it is reachable from the ledger the agent reads.
+- **Scoring per category, not just overall**, so a system that aces duplicates
+  and misses every conversion error cannot hide behind an average.
+- **A scripted model client** that returns canned tool calls, making
+  termination, budget limits, argument validation, and tool failure ordinary
+  unit tests that cost nothing and never flake.
 
-**Bounded self-correction** *(designed, not built)*. Verifier failures are fed
-back to the originating sub-agent as a tool result for a capped number of
-repair attempts, then escalated to a human with the verifier output attached.
+</div>
 
-**A scripted model client.** The loop, budget enforcement, retry bounds, and
-self-correction are all testable against canned `tool_use` blocks — zero
-tokens, zero flakiness.
+## Why the fixture is the hard part 🧪
 
-## Security & scope 🔒
+Vendor descriptors are deliberately mangled the way real card processors
+mangle them, because a generator that emits clean names would score 99% and
+prove nothing.
 
-**Tieout runs against synthetic data and has no path to real money movement.**
-Every action it takes is a proposal requiring explicit human approval.
+Two pairs carry most of the difficulty. `AMZN Mktp US*2K4LM9XY3` and
+`AMAZON BUSINESS` are one merchant wearing two names, so a system that keys
+memory on the raw string treats them as strangers. `UBER *TRIP` and
+`UBER *EATS` are one brand covering two businesses that belong in different
+accounts, so a normalizer that strips both to `UBER` will confidently misfile
+one of them. Together they punish carelessness in either direction.
 
-Separated honestly, because a security claim about an unbuilt control is worse
-than no claim at all.
+One defect is unreachable by arithmetic on purpose. That merchant's descriptor
+carries a different numeric suffix on every charge, so exact matching can
+never group it. The model found it.
 
-**Enforced today:**
-
-- **Secret scanning.** Phone numbers, emails, and API keys are blocked from the
-  repo by a pre-commit hook, and by a whole-tree scan in CI that also catches
-  anything committed with `--no-verify`.
-- **Config isolation.** Handles and keys enter the process in exactly one
-  module, which reads them from the environment. "No handle literals outside
-  config" is greppable rather than remembered.
-- **Money is never a float.** Enforced by the type system and unit tests.
-- **Read-only by construction.** Nothing in the repository can mutate a
-  financial system, live or otherwise.
-- **An adversarial merchant descriptor is planted in the fixture.** A merchant
-  controls its own descriptor string, and that string reaches the model's
-  context — prompt injection through a merchant name is a fintech-specific
-  attack surface almost nobody models. The payload is planted and reaches the
-  ledger unescaped, on purpose. **The regression test proving the agent ignores
-  it lands with the transport layer in Phase 6.5** — planting the target is not
-  the same as testing the defence.
-
-**Designed, not yet built:**
-
-- **Sender allowlist**, checked before any parsing and before a token is spent.
-  An agent with tool access that answers arbitrary inbound messages is a remote
-  execution surface wearing a friendly hat.
-- **Untrusted input isolation** — ledger text passed inside a delimited,
-  explicitly-framed data block, never interpolated into a system prompt.
-- **Message filtering.** The listener will retain only rows where
-  `item_type = 0` and `associated_message_type = 0`. Both are *retain*
-  predicates — `0` identifies the rows you keep. Non-zero
-  `associated_message_type` marks a tapback, and reacting to your own
-  `close june` message produces an ordinary text row reading
-  `Reacted 👍 to "close june"`; without the predicate the listener parses it as
-  a fresh command and re-runs the close. Observed live during the Phase 0
-  transport spike.
-- **Least-privilege tool grants**, with a CI assertion that the receipt chaser
-  is offered zero tools tagged `ledger:write`.
-- **Deterministic command parsing** — `approve 1-4` parsed by a grammar, never
-  interpreted by a model.
-
-## Running it locally ⚙️
+## Running it ⚙️
 
 ```bash
 git clone https://github.com/arieltyson/tieout.git
 cd tieout
 npm install
 
-# Regenerate the synthetic ledger and ground-truth manifest.
-# Deterministic — this should produce no diff.
+# Rebuild the ledger from its seed. Produces no diff.
 npm run fixtures:generate
 
-# Typecheck and run the full suite. No API key required.
+# Typecheck and run everything. No API key needed.
 npm run typecheck
 npm test
+
+# Walk the whole pipeline with a scripted model. Costs nothing.
+npm run close -- 2026-06 --dry
+
+# Run it for real. Needs ANTHROPIC_API_KEY in .env.
+npm run close -- 2026-06
 ```
 
-Everything above works today. There is no `close` command yet — the agent loop
-is Phase 3 and the iMessage transport is Phase 6. Requires Node 22+.
+The iOS app lives in `ios/`. Open `ios/Tieout.xcodeproj` and build for a
+simulator. Requires Node 22 or newer.
 
-## Technical approach 💻
-
-**Harness:** TypeScript 7 in strict mode (`strict`,
-`noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`), Node 22+, Zod for
-schemas, `better-sqlite3` for the fixture and later for checkpoints and the
-audit log, Vitest, and the Anthropic SDK behind a `ModelClient` interface.
-
-**Planned iOS surface:** Swift 6 with strict concurrency, SwiftUI, The
-Composable Architecture, the Messages framework for in-thread approval cards,
-ActivityKit for run progress, App Intents for Siri and Shortcuts, and
-Vision + FoundationModels for on-device receipt triage.
-
-**Why strict everything:** this is a financial system. The compiler is the
-cheapest verifier available.
+318 TypeScript tests and 12 Swift tests. All of them run without an API key.
 
 ## License 🪪
 
-MIT — see [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
 
 ---
 
 <div align="center">
 
-*An active solo build. The plan runs to ten phases; the git history is the
-progress bar.*
+*An active solo build. The git history is the progress bar.*
 
 </div>
