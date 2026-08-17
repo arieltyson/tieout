@@ -1,0 +1,22 @@
+{
+  "accounts": [
+    { "code": "1010", "name": "Cash — Operating",         "type": "asset" },
+    { "code": "1200", "name": "Accounts Receivable",       "type": "asset" },
+    { "code": "2010", "name": "Accounts Payable",          "type": "liability" },
+    { "code": "2100", "name": "Credit Card Payable",       "type": "liability" },
+    { "code": "3000", "name": "Retained Earnings",         "type": "equity" },
+    { "code": "4010", "name": "Product Revenue",           "type": "revenue" },
+    { "code": "5010", "name": "Hosting & Infrastructure",  "type": "cogs" },
+    { "code": "6010", "name": "Software & Subscriptions",  "type": "expense" },
+    { "code": "6020", "name": "Travel",                    "type": "expense" },
+    { "code": "6030", "name": "Meals & Entertainment",     "type": "expense" },
+    { "code": "6040", "name": "Office Supplies",           "type": "expense" },
+    { "code": "6050", "name": "Professional Services",     "type": "expense" },
+    { "code": "6060", "name": "Marketing & Advertising",   "type": "expense" },
+    { "code": "6070", "name": "Equipment",                 "type": "expense" },
+    { "code": "6080", "name": "Telecom",                   "type": "expense" },
+    { "code": "6090", "name": "Insurance",                 "type": "expense" },
+    { "code": "6100", "name": "Training & Education",      "type": "expense" },
+    { "code": "6900", "name": "Uncategorized",             "type": "expense" }
+  ]
+}
