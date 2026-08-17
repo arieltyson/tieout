@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: typecheck · test · secret scan · fixture reproducibility
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # The documented floor, not the maintainer's local version — CI
+          # should fail if something creeps in that needs a newer runtime
+          # than the README tells a cloning reader to install.
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      # Whole-tree mode, not the staged-diff default: nothing is ever staged
+      # on a runner, so the default mode would find no files and exit 0.
+      - name: Secret scan
+        run: ./scripts/scan-secrets.sh --all
+
+      # "Same seed, same ledger, forever" is a claim the README makes, so it
+      # gets enforced rather than trusted: regenerate from the seed and fail
+      # if a single byte of the committed fixture moved.
+      - name: Fixture is reproducible from its seed
+        run: |
+          npm run fixtures:generate
+          git diff --exit-code -- fixtures/data

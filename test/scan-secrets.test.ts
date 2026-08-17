@@ -22,14 +22,18 @@ function stageFile(name: string, content: string): void {
   git('add', name);
 }
 
-function runScanner(): number {
+function runScanner(...args: string[]): number {
   try {
-    execFileSync(SCANNER, { cwd: repoDir, stdio: 'pipe' });
+    execFileSync(SCANNER, args, { cwd: repoDir, stdio: 'pipe' });
     return 0;
   } catch (err) {
     const status = (err as { status?: number }).status;
     return status ?? 1;
   }
+}
+
+function commit(message: string): void {
+  git('commit', '-q', '--no-verify', '-m', message);
 }
 
 beforeEach(() => {
@@ -87,5 +91,45 @@ describe('scan-secrets.sh', () => {
 
   test('allows an empty staging area', () => {
     expect(runScanner()).toBe(0);
+  });
+
+  test('rejects an unknown argument rather than silently scanning', () => {
+    expect(runScanner('--bogus')).toBe(2);
+  });
+});
+
+// The whole-tree mode exists for CI, where nothing is ever staged. Without
+// it, running the scanner on a runner finds no staged files, exits 0, and
+// reports a pass that proves nothing — the exact shape of false assurance
+// this scanner is supposed to prevent.
+describe('scan-secrets.sh --all', () => {
+  test('catches a secret that is committed but not staged', () => {
+    const key = 'sk-ant-' + 'abc123XYZ';
+    stageFile('leak.txt', `ANTHROPIC_API_KEY=${key}\n`);
+    commit('leak');
+
+    // Nothing staged now, so the default mode sees no files and passes.
+    // This is the gap --all exists to close, asserted rather than assumed.
+    expect(runScanner()).toBe(0);
+    expect(runScanner('--all')).toBe(1);
+  });
+
+  test('catches a phone number committed before the hook existed', () => {
+    const phone = '+1604' + '5551234';
+    stageFile('notes.md', `reach me on ${phone}\n`);
+    commit('notes');
+    expect(runScanner('--all')).toBe(1);
+  });
+
+  test('passes on a committed tree with no secret patterns', () => {
+    stageFile('README.md', '# Hello world\n');
+    commit('clean');
+    expect(runScanner('--all')).toBe(0);
+  });
+
+  test('still exempts the 555 placeholder handles', () => {
+    stageFile('.env.example', 'TIEOUT_ALLOWLIST=+15555550100\n');
+    commit('env example');
+    expect(runScanner('--all')).toBe(0);
   });
 });
