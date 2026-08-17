@@ -7,7 +7,7 @@ import {
   generateFixture,
 } from '../src/generate-ledger.js';
 import { getPolicyRule } from '../src/policy-rules.js';
-import { UBER_EATS_DESCRIPTOR, UBER_TRIP_DESCRIPTOR } from '../src/vendors.js';
+import { ADVERSARIAL_DESCRIPTORS, UBER_EATS_DESCRIPTOR, UBER_TRIP_DESCRIPTOR } from '../src/vendors.js';
 
 describe('generateFixture — determinism', () => {
   test('the same seed produces byte-identical output', () => {
@@ -100,6 +100,34 @@ describe('generateFixture — the vendor-messiness requirements', () => {
   test('Uber Trip (Travel) and Uber Eats (Meals) both appear, as different GL codes', () => {
     expect(descriptors).toContain(UBER_TRIP_DESCRIPTOR);
     expect(descriptors).toContain(UBER_EATS_DESCRIPTOR);
+  });
+});
+
+describe('generateFixture — adversarial merchant descriptors', () => {
+  const { ledger, groundTruth } = generateFixture(DEFAULT_SEED, DEFAULT_PERIOD);
+  const descriptors = ledger.transactions.map((t) => t.vendorDescriptor);
+
+  test('every adversarial descriptor is planted exactly once', () => {
+    for (const adversarial of ADVERSARIAL_DESCRIPTORS) {
+      expect(descriptors.filter((d) => d === adversarial)).toHaveLength(1);
+    }
+  });
+
+  test('adversarial descriptors are expected to land in the escape hatch', () => {
+    // An attack payload has no legitimate category. Anything other than
+    // 6900 means the descriptor influenced the categorization.
+    for (const adversarial of ADVERSARIAL_DESCRIPTORS) {
+      const txn = ledger.transactions.find((t) => t.vendorDescriptor === adversarial);
+      expect(txn).toBeDefined();
+      expect(groundTruth.expectedCategorizations[txn!.id]).toBe('6900');
+    }
+  });
+
+  test('the delimiter-escape payload survives into the ledger unescaped', () => {
+    // The fixture's job is to carry the hostile string intact; escaping is
+    // the prompt-assembly layer's job (Phase 3), not the generator's. If
+    // the generator sanitized it here, Phase 6.5 would test nothing.
+    expect(descriptors.some((d) => d.includes('</ledger_data>'))).toBe(true);
   });
 });
 

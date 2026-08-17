@@ -22,6 +22,7 @@ import type {
   TxnId,
 } from './types.js';
 import {
+  ADVERSARIAL_VENDORS,
   ALIAS_VENDOR_GROUPS,
   AMBIGUOUS_VENDORS,
   APPROVED_LARGE_SPEND_SEEDS,
@@ -308,6 +309,23 @@ function generateLongTail(b: Builder, rng: Rng, count: number): void {
   }
 }
 
+/**
+ * Plants the adversarial merchant descriptors. Always exactly once each,
+ * never sampled — an injection fixture that only shows up on some seeds is
+ * not a fixture. See ADVERSARIAL_VENDORS for what this does and does not
+ * currently prove.
+ */
+function generateAdversarialVendors(b: Builder, rng: Rng): void {
+  for (const vendor of ADVERSARIAL_VENDORS) {
+    addTxn(b, {
+      date: formatDate(2026, 6, rng.int(1, 28)),
+      vendorDescriptor: vendor.descriptor,
+      amountCents: cents(vendor.amountCents),
+      glCode: vendor.glCode,
+    });
+  }
+}
+
 function generatePolicyViolationsAndApprovals(b: Builder, rng: Rng): void {
   for (const seed of POLICY_VIOLATION_SEEDS) {
     const date = formatDate(2026, 6, rng.int(1, 28));
@@ -382,6 +400,7 @@ export function generateFixture(seed: number, period: string): { ledger: Ledger;
   generateDomesticBurst(b, 6, AUSTIN_CONFERENCE_BURST);
   generatePolicyViolationsAndApprovals(b, rng);
   generateReceiptMismatchSeeds(b, rng);
+  generateAdversarialVendors(b, rng);
 
   const remaining = Math.max(0, TARGET_TRANSACTION_COUNT - b.transactions.length);
   generateLongTail(b, rng, remaining);
