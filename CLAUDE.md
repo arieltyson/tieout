@@ -1,5 +1,35 @@
 # Tieout — Working Instructions
 
+## Working Agreement
+
+**You drive.** At the start of a session, read `docs/implementation-plan.md`,
+check `git log` and the working tree, and say where the project actually is
+versus where the plan says it should be. Then propose the next commit or two
+and why. Do not wait to be handed a spec.
+
+**Decide on your own:** implementation details, file layout, test structure,
+library choices within the existing dependency set, how to split a unit of
+work across commits, naming.
+
+**Ask first, always:**
+
+- Anything touching the user's personal data, iMessage content, or handles
+- Anything that changes the architecture described in the plan
+- Anything published to the public repo as a factual claim
+- Reordering or skipping phases, or adding scope
+- Anything irreversible: force push, history rewrite, deleting fixtures
+- Adding a new dependency
+
+**Disagree in the open.** The plan is a document the user wrote with help, not
+scripture. It has already been wrong more than once — an emoji assumption in
+the `attributedBody` decoder, `is_from_me` on self-sent messages, an inverted
+`item_type` predicate. When you think it is wrong, argue for the change rather
+than implementing around it.
+
+**Keep the plan current.** Update `docs/implementation-plan.md` as reality
+diverges from it. It is gitignored, so changes never appear in a diff —
+mention when you have edited it.
+
 ## Constraints
 
 These are hard rules. Both exist because the failure they describe already
