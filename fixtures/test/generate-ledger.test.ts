@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { isValidGLCode } from '../src/chart-of-accounts.js';
+import { isValidGLCode } from '../../harness/src/domain/chart-of-accounts.js';
 import {
   DEFAULT_PERIOD,
   DEFAULT_SEED,

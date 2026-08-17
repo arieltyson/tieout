@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { chartOfAccounts, getAccount, isValidGLCode } from '../src/chart-of-accounts.js';
+import { chartOfAccounts, getAccount, isValidGLCode } from '../src/domain/chart-of-accounts.js';
 
 describe('chartOfAccounts', () => {
   test('loads a non-empty, Zod-validated chart', () => {

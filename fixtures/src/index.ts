@@ -28,7 +28,7 @@ export function loadGroundTruth(): GroundTruth {
   return parsed.data;
 }
 
-export * from './chart-of-accounts.js';
+export * from '../../harness/src/domain/chart-of-accounts.js';
 export * from './generate-ledger.js';
 export * from './policy-rules.js';
 export * from './types.js';

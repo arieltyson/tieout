@@ -2,6 +2,12 @@
  * The chart of accounts: loaded from JSON and Zod-validated at import time,
  * not lazily. A malformed chart should fail the process on startup, not on
  * the first transaction that happens to touch it.
+ *
+ * Lives in the harness domain rather than in fixtures/ because the
+ * `gl_codes_exist` verifier needs it, and fixtures already imports from
+ * harness — putting it the other way round would make the dependency
+ * circular. It is also reference data an accounting system supplies in
+ * reality, not something synthetic about this benchmark.
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -28,7 +34,7 @@ const ChartOfAccountsSchema = z.object({
   accounts: z.array(AccountSchema).min(1),
 });
 
-const DATA_PATH = fileURLToPath(new URL('../data/chart-of-accounts.json', import.meta.url));
+const DATA_PATH = fileURLToPath(new URL('../../data/chart-of-accounts.json', import.meta.url));
 
 function loadChartOfAccounts(): readonly Account[] {
   const raw = readFileSync(DATA_PATH, 'utf-8');
