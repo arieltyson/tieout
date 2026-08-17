@@ -101,6 +101,19 @@ describe('policy violations', () => {
     expect(s.recall).toBe(1);
   });
 
+  // The assertion that was missing, and whose absence let a precision
+  // figure be reported that had never been measured. It was 0.24: the
+  // generator emitted ~31 legitimate large charges with no approval
+  // record, so a correct detector flagged all of them against a manifest
+  // that labelled only ten. The detector was right and the fixture was
+  // self-contradictory; the generator now grants standing approval to
+  // over-threshold spend that is not a planted violation.
+  test('reports no false positives — precision is exactly 1', () => {
+    const s = score(found.map((f) => f.txnId), planted.flatMap((d) => d.txnIds));
+    expect(s.precision).toBe(1);
+    expect(s.found).toBe(s.expected);
+  });
+
   test('names the same rule ground truth does', () => {
     for (const defect of planted) {
       if (defect.kind !== 'policyViolation') continue;

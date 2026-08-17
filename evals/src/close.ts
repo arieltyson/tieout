@@ -21,6 +21,9 @@ try {
 
 import { fileURLToPath } from 'node:url';
 import { runCategorizer } from '../../harness/src/agents/categorizer.js';
+import { runAnomalyHunter, deterministicFindings, type Finding } from '../../harness/src/agents/anomaly-hunter.js';
+import { detectAll } from '../../harness/src/domain/detectors.js';
+import { scoreAnomalies } from './score-anomalies.js';
 import { runBank } from '../../harness/src/domain/bank.js';
 import { byPeriod } from '../../harness/src/domain/queries.js';
 import type { Proposal } from '../../harness/src/domain/proposal.js';
@@ -39,6 +42,7 @@ interface Args {
   readonly limit: number | null;
   readonly batchSize: number;
   readonly model: string;
+  readonly skipAnomalies: boolean;
 }
 
 function parseArgs(argv: readonly string[]): Args {
@@ -54,6 +58,7 @@ function parseArgs(argv: readonly string[]): Args {
     limit: limitRaw ? Number(limitRaw) : null,
     batchSize: Number(get('--batch') ?? 50),
     model: get('--model') ?? DEFAULT_MODEL,
+    skipAnomalies: argv.includes('--no-anomalies'),
   };
 }
 
@@ -172,7 +177,40 @@ async function main(): Promise<void> {
       .filter((e): e is [string, string] => e[1] !== undefined),
   );
   const score = scoreCategorizations(result.categorizations, expectedForScope);
-  const cost = estimateCostUsd(args.model, result.usage.inputTokens, result.usage.outputTokens);
+
+  // The anomaly hunter runs after the categorizer because scoped policy
+  // rules need to know which account a transaction landed in — that is the
+  // categorizer's output, not a ledger field.
+  const glByTxn = new Map(result.categorizations.map((c) => [c.txnId, c.glCode]));
+  const glCodeFor = (txnId: string) => glByTxn.get(txnId);
+
+  let findings: readonly Finding[] = [];
+  let anomalyUsage = { inputTokens: 0, outputTokens: 0 };
+  let anomalyTurns = 0;
+  // The FULL ledger, not the period-scoped one. The categorizer only needs
+  // the month it is closing, but recurring gaps and price anomalies are
+  // defined against prior months — handed a single period they find nothing
+  // and report a confident zero.
+  if (args.skipAnomalies) {
+    findings = deterministicFindings(ledger, args.period, detectAll(ledger, args.period, glCodeFor));
+  } else {
+    const hunted = await runAnomalyHunter({
+      client,
+      ledger,
+      period: args.period,
+      glCodeFor,
+      runId: 'run_local',
+    });
+    findings = hunted.findings;
+    anomalyUsage = { inputTokens: hunted.usage.inputTokens, outputTokens: hunted.usage.outputTokens };
+    anomalyTurns = hunted.turns;
+  }
+  const anomalyScore = scoreAnomalies(findings, groundTruth);
+  const cost = estimateCostUsd(
+    args.model,
+    result.usage.inputTokens + anomalyUsage.inputTokens,
+    result.usage.outputTokens + anomalyUsage.outputTokens,
+  );
 
   if (result.maxTokensHits > 0) {
     console.log('⚠️  TRUNCATED RESPONSE');
@@ -195,9 +233,21 @@ async function main(): Promise<void> {
     console.log(`    - ${reason.slice(0, 140)}`);
   }
   console.log('');
+  console.log('ANOMALIES');
+  console.log(`  findings           ${findings.length}  (${anomalyScore.deterministicFindings} deterministic, ${anomalyScore.modelFindings} model)`);
+  console.log(`  overall            P ${anomalyScore.overallPrecision.toFixed(2)}  R ${anomalyScore.overallRecall.toFixed(2)}  F1 ${anomalyScore.overallF1.toFixed(2)}`);
+  console.log('  by category:');
+  console.log('    kind               planted  found   P     R     source');
+  for (const c of anomalyScore.byCategory) {
+    console.log(
+      `    ${c.kind.padEnd(18)} ${String(c.planted).padStart(4)}  ${String(c.reported).padStart(5)}   `
+        + `${c.precision.toFixed(2)}  ${c.recall.toFixed(2)}  ${c.source}`,
+    );
+  }
+  console.log('');
   console.log('COST');
-  console.log(`  turns              ${result.turns} over ${result.batches} batch(es)`);
-  console.log(`  tokens in/out      ${result.usage.inputTokens} / ${result.usage.outputTokens}`);
+  console.log(`  turns              ${result.turns + anomalyTurns} (${result.turns} categorizer over ${result.batches} batch(es), ${anomalyTurns} anomaly)`);
+  console.log(`  tokens in/out      ${result.usage.inputTokens + anomalyUsage.inputTokens} / ${result.usage.outputTokens + anomalyUsage.outputTokens}`);
   console.log(`  cached read        ${result.usage.cacheReadTokens ?? 0}`);
   console.log(`  estimated cost     ${cost === null ? 'n/a' : `$${cost.toFixed(4)}`}`);
   console.log(`  wall clock         ${(wallClockMs / 1000).toFixed(1)}s`);

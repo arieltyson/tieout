@@ -10,6 +10,7 @@
  * couldn't otherwise see on a real statement.
  */
 import { cents, type Cents } from '../../harness/src/domain/money.js';
+import { policyRules } from '../../harness/src/domain/policy-rules.js';
 import { clampDay, formatDate } from './dates.js';
 import { createRng, type Rng } from './rng.js';
 import type {
@@ -380,6 +381,42 @@ function attachOrdinaryReceipts(b: Builder, rng: Rng): void {
   }
 }
 
+/**
+ * Puts a standing approval on every over-threshold charge that is NOT a
+ * planted policy violation.
+ *
+ * Without this the fixture contradicts itself. The generator emits plenty
+ * of legitimate large spend — an AWS bill, a WeWork lease, a laptop — with
+ * no approval record, so a correct policy detector flags all of them and
+ * scores 0.24 precision against a manifest that labelled only ten. The
+ * detector was right and the fixture was wrong.
+ *
+ * Modelling it as standing approval is also what a real finance team does:
+ * contracted and recurring spend is pre-authorized, and the violations are
+ * the discretionary charges that slipped through. After this, the only
+ * unapproved over-threshold charges in the ledger are the planted ones.
+ */
+function grantStandingApprovals(b: Builder): void {
+  const plantedViolationIds = new Set(
+    b.defects.filter((d) => d.kind === 'policyViolation').flatMap((d) => d.txnIds),
+  );
+  const alreadyApproved = new Set(b.approvals);
+
+  for (const txn of b.transactions) {
+    if (plantedViolationIds.has(txn.id) || alreadyApproved.has(txn.id)) continue;
+    const glCode = b.expectedCategorizations[txn.id];
+
+    const breaches = policyRules.some(
+      (rule) =>
+        (rule.glScope === null || rule.glScope === glCode) && txn.amountCents > rule.thresholdCents,
+    );
+    if (breaches) {
+      b.approvals.push(txn.id);
+      alreadyApproved.add(txn.id);
+    }
+  }
+}
+
 export function generateFixture(seed: number, period: string): { ledger: Ledger; groundTruth: GroundTruth } {
   const rng = createRng(seed);
   const b: Builder = {
@@ -406,6 +443,7 @@ export function generateFixture(seed: number, period: string): { ledger: Ledger;
   generateLongTail(b, rng, remaining);
 
   attachOrdinaryReceipts(b, rng);
+  grantStandingApprovals(b);
 
   const sortedTransactions = [...b.transactions].sort((a, c) =>
     a.date === c.date ? a.id.localeCompare(c.id) : a.date.localeCompare(c.date),
