@@ -179,7 +179,14 @@ logs/
 # ==============================================================================
 # XcodeGen
 # ==============================================================================
-## Tieout.xcodeproj IS committed so a reviewer can clone and open it without
-## installing xcodegen. ios/project.yml remains the source of truth — after
-## editing it, run `xcodegen generate` from ios/ and commit the result.
-ios/**/*.xcodeproj/project.xcworkspace/xcuserdata/
+## The Xcode project is GENERATED from ios/project.yml and is not committed.
+##
+## It was committed at first, so a reviewer could open it without installing
+## anything. That turned out to leak: XcodeGen resolves the signing xcconfig
+## and writes DEVELOPMENT_TEAM, an account identifier, straight into the
+## project file. Generated artifacts also drift from their source and make
+## noisy diffs. Run `xcodegen generate` in ios/ instead.
+ios/Tieout.xcodeproj/
+
+## Apple Developer team ID. Real one is local only; see ios/Signing.example.xcconfig
+ios/Signing.xcconfig

@@ -1,0 +1,13 @@
+// Copy to Signing.xcconfig and fill in your team.
+//
+// Signing.xcconfig is gitignored. Your Apple Developer Team ID is an
+// account identifier, and while it is not a secret it has no business in a
+// public repository, so it lives here rather than in project.yml.
+//
+// Find it in Xcode under Settings, Accounts, then your team, or at
+// developer.apple.com under Membership.
+DEVELOPMENT_TEAM =
+
+// Simulator builds need no signing at all. Set to YES only when building
+// for a physical device.
+CODE_SIGNING_ALLOWED = NO

@@ -5,6 +5,10 @@ options:
     iOS: "18.0"
   createIntermediateGroups: true
 
+configFiles:
+  Debug: Signing.xcconfig
+  Release: Signing.xcconfig
+
 settings:
   base:
     SWIFT_VERSION: "6.0"
@@ -13,7 +17,6 @@ settings:
     SWIFT_STRICT_CONCURRENCY: complete
     ENABLE_USER_SCRIPT_SANDBOXING: YES
     GENERATE_INFOPLIST_FILE: YES
-    CODE_SIGNING_ALLOWED: NO
 
 packages:
   TieoutCore:

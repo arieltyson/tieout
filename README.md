@@ -275,8 +275,20 @@ npm run close -- 2026-06 --dry
 npm run close -- 2026-06
 ```
 
-The iOS app lives in `ios/`. Open `ios/Tieout.xcodeproj` and build for a
-simulator. Requires Node 22 or newer.
+The iOS app lives in `ios/`. The Xcode project is generated from
+`ios/project.yml`, so build it with:
+
+```bash
+brew install xcodegen
+cd ios && xcodegen generate && open Tieout.xcodeproj
+```
+
+To run on a physical device, copy `ios/Signing.example.xcconfig` to
+`ios/Signing.xcconfig` and add your Apple Developer team. That file is
+gitignored, since a team identifier belongs to your account rather than to
+this repository. Simulator builds need no signing at all.
+
+Requires Node 22 or newer.
 
 318 TypeScript tests and 12 Swift tests. All of them run without an API key.
 
