@@ -1,69 +1,35 @@
 /**
- * Fixture domain types: the synthetic ledger and its ground-truth manifest.
- * Zod schemas here validate what's read back off disk (by tests and by
- * later phases); the generator itself builds plain TS objects typed against
- * the interfaces below and serializes them directly.
+ * Fixture-specific types: the ground-truth manifest.
+ *
+ * The ledger types themselves live in `harness/src/domain/ledger.ts` — the
+ * verifier bank operates on a Ledger, so it is a domain concept rather than
+ * a fixture one, and duplicating the shape here would give it two
+ * definitions that could drift. They are re-exported for convenience.
+ *
+ * Ground truth stays here on purpose. It is a property of a synthetic
+ * benchmark, and nothing in the harness should be able to import it.
  */
 import { z } from 'zod';
+import {
+  GlCodeSchema,
+  PeriodSchema,
+  TxnIdSchema,
+  type TxnId,
+} from '../../harness/src/domain/ledger.js';
 import { CentsSchema, PositiveCentsSchema, type Cents } from '../../harness/src/domain/money.js';
 
-export type TxnId = string;
-export const TxnIdSchema = z.string().regex(/^txn_\d{4,}$/);
-
-export const CurrencySchema = z.enum(['USD', 'EUR']);
-export type Currency = z.infer<typeof CurrencySchema>;
-
-export interface Transaction {
-  readonly id: TxnId;
-  /** ISO date, YYYY-MM-DD. */
-  readonly date: string;
-  /** The raw, messy string as it would appear on a card statement. */
-  readonly vendorDescriptor: string;
-  /** What posts to the ledger — USD, always. */
-  readonly amountCents: Cents;
-  readonly currency: Currency;
-  /** Original-currency minor units for non-USD charges; null for USD. */
-  readonly originalAmountCents: Cents | null;
-  /** FX rate applied at posting time; null for USD. */
-  readonly fxRate: number | null;
-}
-
-export const TransactionSchema = z.object({
-  id: TxnIdSchema,
-  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  vendorDescriptor: z.string().min(1),
-  amountCents: PositiveCentsSchema,
-  currency: CurrencySchema,
-  originalAmountCents: PositiveCentsSchema.nullable(),
-  fxRate: z.number().positive().nullable(),
-});
-
-export interface Receipt {
-  readonly txnId: TxnId;
-  readonly receiptTotalCents: Cents;
-}
-
-export const ReceiptSchema = z.object({
-  txnId: TxnIdSchema,
-  receiptTotalCents: PositiveCentsSchema,
-});
-
-export interface Ledger {
-  readonly seed: number;
-  readonly period: string;
-  readonly transactions: readonly Transaction[];
-  readonly receipts: readonly Receipt[];
-  /** txnIds with prior spend approval on file — legitimate ledger data, not a defect flag. */
-  readonly approvals: readonly TxnId[];
-}
-
-export const LedgerSchema = z.object({
-  seed: z.number().int(),
-  period: z.string().regex(/^\d{4}-\d{2}$/),
-  transactions: z.array(TransactionSchema),
-  receipts: z.array(ReceiptSchema),
-  approvals: z.array(TxnIdSchema),
-});
+export {
+  CurrencySchema,
+  LedgerSchema,
+  ReceiptSchema,
+  TransactionSchema,
+  TxnIdSchema,
+  type Currency,
+  type Ledger,
+  type Receipt,
+  type Transaction,
+  type TxnId,
+} from '../../harness/src/domain/ledger.js';
 
 // --- Ground truth -----------------------------------------------------
 
@@ -156,7 +122,7 @@ export const PlantedDefectSchema = z.discriminatedUnion('kind', [
     kind: z.literal('vendorAlias'),
     txnIds: z.array(TxnIdSchema).min(2),
     canonicalVendor: z.string().min(1),
-    glCode: z.string().regex(/^\d{4}$/),
+    glCode: GlCodeSchema,
   }),
   z.object({
     ...baseDefectFields,
@@ -179,9 +145,9 @@ export const PlantedDefectSchema = z.discriminatedUnion('kind', [
     kind: z.literal('missingRecurring'),
     txnIds: z.array(TxnIdSchema).min(1),
     vendor: z.string().min(1),
-    glCode: z.string().regex(/^\d{4}$/),
+    glCode: GlCodeSchema,
     expectedAmountCents: PositiveCentsSchema,
-    expectedPeriod: z.string().regex(/^\d{4}-\d{2}$/),
+    expectedPeriod: PeriodSchema,
   }),
   z.object({
     ...baseDefectFields,
@@ -209,7 +175,7 @@ export interface GroundTruth {
 
 export const GroundTruthSchema = z.object({
   seed: z.number().int(),
-  period: z.string().regex(/^\d{4}-\d{2}$/),
-  expectedCategorizations: z.record(TxnIdSchema, z.string().regex(/^\d{4}$/)),
+  period: PeriodSchema,
+  expectedCategorizations: z.record(TxnIdSchema, GlCodeSchema),
   plantedDefects: z.array(PlantedDefectSchema),
 });
