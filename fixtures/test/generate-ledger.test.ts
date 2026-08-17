@@ -6,7 +6,7 @@ import {
   TARGET_TRANSACTION_COUNT,
   generateFixture,
 } from '../src/generate-ledger.js';
-import { getPolicyRule } from '../src/policy-rules.js';
+import { getPolicyRule } from '../../harness/src/domain/policy-rules.js';
 import { ADVERSARIAL_DESCRIPTORS, UBER_EATS_DESCRIPTOR, UBER_TRIP_DESCRIPTOR } from '../src/vendors.js';
 
 describe('generateFixture — determinism', () => {

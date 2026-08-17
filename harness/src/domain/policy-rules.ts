@@ -1,4 +1,10 @@
-/** Policy rules consulted by the anomaly hunter's policy-violation check (Phase 4.4). */
+/**
+ * Spend policy. Lives in the harness domain because the policy detector
+ * needs it, and fixtures already imports from harness — the other direction
+ * would make the dependency circular. Like the chart of accounts, this is
+ * reference data a real finance team supplies, not something synthetic
+ * about the benchmark.
+ */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
@@ -15,7 +21,7 @@ const PolicyRulesSchema = z.object({
   rules: z.array(PolicyRuleSchema).min(1),
 });
 
-const DATA_PATH = fileURLToPath(new URL('../data/policy-rules.json', import.meta.url));
+const DATA_PATH = fileURLToPath(new URL('../../data/policy-rules.json', import.meta.url));
 
 function loadPolicyRules(): readonly PolicyRule[] {
   const raw = readFileSync(DATA_PATH, 'utf-8');

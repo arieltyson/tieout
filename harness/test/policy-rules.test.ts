@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { getPolicyRule, policyRules } from '../src/policy-rules.js';
+import { getPolicyRule, policyRules } from '../src/domain/policy-rules.js';
 
 describe('policyRules', () => {
   test('loads a non-empty, Zod-validated rule set', () => {
