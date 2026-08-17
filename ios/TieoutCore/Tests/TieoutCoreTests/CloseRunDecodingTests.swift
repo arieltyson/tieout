@@ -114,3 +114,35 @@ struct MoneyFormattingTests {
         }
     }
 }
+
+struct ActivityCopyTests {
+    @Test func compactFitsTheDynamicIsland() {
+        #expect(ActivityCopy.compact(agentsComplete: 3, agentsTotal: 5) == "3/5")
+        // Measured, not guessed. On an iPhone 17 Pro even "4/4" lost its
+        // leading digit at .caption2 — the sensor housing squeezes the
+        // compact regions harder than the nominal widths imply. The widget
+        // now renders at 12pt with minimumScaleFactor, and this bound keeps
+        // the STRING short enough that scaling stays legible. Character
+        // count is a proxy for rendered width, so the widget carries the
+        // real defence and this is the cheap guard.
+        #expect(ActivityCopy.compact(agentsComplete: 10, agentsTotal: 10).count <= 5)
+    }
+
+    @Test func headlineSingularizesTheApprovalCount() {
+        #expect(ActivityCopy.headline(state: .awaitingApproval, pendingApprovals: 1) == "1 needs you")
+        #expect(ActivityCopy.headline(state: .awaitingApproval, pendingApprovals: 4) == "4 need you")
+    }
+
+    @Test(arguments: RunState.allCases)
+    func headlineStaysShortForEveryState(_ state: RunState) {
+        let text = ActivityCopy.headline(state: state, pendingApprovals: 3)
+        #expect(text.isEmpty == false)
+        #expect(text.count <= 30)
+    }
+
+    @Test func summaryHandlesTheEmptyCase() {
+        #expect(ActivityCopy.summary(findings: 0, pendingApprovals: 0) == "No findings yet")
+        #expect(ActivityCopy.summary(findings: 1, pendingApprovals: 0) == "1 finding")
+        #expect(ActivityCopy.summary(findings: 3, pendingApprovals: 2) == "3 findings · 2 to approve")
+    }
+}

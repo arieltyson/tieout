@@ -3,6 +3,7 @@ import TieoutCore
 
 struct RunView: View {
     @State var store: RunStore
+    @State private var liveActivity = LiveActivityController()
 
     var body: some View {
         NavigationStack {
@@ -17,17 +18,27 @@ struct RunView: View {
                         description: Text(message)
                     )
                 case let .loaded(run):
-                    RunDetail(run: run)
+                    RunDetail(run: run, liveActivity: liveActivity)
                 }
             }
             .navigationTitle("Tieout")
         }
-        .task { store.load() }
+        .task {
+            store.load()
+            // Lets a screen recording or a screenshot script drive the Live
+            // Activity without a tap:
+            //   simctl launch --console <dev> <bundle> -TieoutAutostartActivity YES
+            if UserDefaults.standard.bool(forKey: "TieoutAutostartActivity"),
+               case let .loaded(run) = store.state {
+                liveActivity.start(from: run)
+            }
+        }
     }
 }
 
 private struct RunDetail: View {
     let run: CloseRun
+    let liveActivity: LiveActivityController
 
     var body: some View {
         List {
@@ -35,6 +46,22 @@ private struct RunDetail: View {
                 HeadlineCard(run: run)
                     .listRowInsets(EdgeInsets())
                     .listRowBackground(Color.clear)
+            }
+
+            Section {
+                Button {
+                    liveActivity.isRunning ? liveActivity.stop() : liveActivity.start(from: run)
+                } label: {
+                    Label(
+                        liveActivity.isRunning ? "End Live Activity" : "Start Live Activity",
+                        systemImage: liveActivity.isRunning ? "stop.circle" : "play.circle"
+                    )
+                }
+                if let error = liveActivity.lastError {
+                    Text(error).font(.caption).foregroundStyle(.red)
+                }
+            } footer: {
+                Text("Replays the run on the Lock Screen and Dynamic Island. In Phase 6 the harness pushes these updates as each sub-agent finishes.")
             }
 
             Section("Verifier bank") {

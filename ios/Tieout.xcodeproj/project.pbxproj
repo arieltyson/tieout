@@ -7,21 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37B222A3BEF0DEBE3682535F /* TieoutCore in Frameworks */ = {isa = PBXBuildFile; productRef = E4FD81B7348FA82C0A674FDF /* TieoutCore */; };
+		38696E24CFAA4E3F899B7501 /* CloseRunActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68047C89E77E0F40248FE01 /* CloseRunActivityWidget.swift */; };
 		586CA3AF35F0579CAA9170B5 /* TieoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26939C5D31A625BB1E254D77 /* TieoutApp.swift */; };
+		5DF1AA18DCA85E051B56D3CC /* LiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5820FE89E6352B648ED9B0E1 /* LiveActivityController.swift */; };
 		606D44B0B9BA4F9C2BAD9797 /* TieoutCore in Frameworks */ = {isa = PBXBuildFile; productRef = B23ED7C07E75B54E4F4E8D21 /* TieoutCore */; };
 		72714FF996F84DA603CB19F9 /* RunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D9CC89D4CCA7B4F1C9A17 /* RunView.swift */; };
 		7E07106EF3D9727E070FF680 /* close-run.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CD48BD6CC1136FF3265F15F /* close-run.json */; };
+		DEB74FD0301B4F17FCCA55F6 /* TieoutWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68224FDDF035D78580D86BB /* TieoutWidgetsBundle.swift */; };
+		FCDB8206AFA799E505945C5E /* TieoutWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0328D41D2E0C2E2E6DA718D8 /* TieoutWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B7AB7C573E96DF88CB72B20C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F244046EF3A1BB3406B148D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C005046A4B9A867DEDC7DF5;
+			remoteInfo = TieoutWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EEDF6E6C82B88E4FD6C8D10D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FCDB8206AFA799E505945C5E /* TieoutWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0328D41D2E0C2E2E6DA718D8 /* TieoutWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = TieoutWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD48BD6CC1136FF3265F15F /* close-run.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "close-run.json"; sourceTree = "<group>"; };
 		26939C5D31A625BB1E254D77 /* TieoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieoutApp.swift; sourceTree = "<group>"; };
+		378ABE7719F791ED53B56140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5820FE89E6352B648ED9B0E1 /* LiveActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityController.swift; sourceTree = "<group>"; };
 		88C155D450A83B4CEB488EAB /* TieoutCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TieoutCore; path = TieoutCore; sourceTree = SOURCE_ROOT; };
 		AB705A54678EDF73DC049DC9 /* Tieout.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Tieout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68224FDDF035D78580D86BB /* TieoutWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieoutWidgetsBundle.swift; sourceTree = "<group>"; };
 		BA7D9CC89D4CCA7B4F1C9A17 /* RunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunView.swift; sourceTree = "<group>"; };
+		F68047C89E77E0F40248FE01 /* CloseRunActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseRunActivityWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B60C51C82B1A38A54D04369F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37B222A3BEF0DEBE3682535F /* TieoutCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7198EC33E704582E4B6E101 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,6 +89,7 @@
 			children = (
 				EF86C6DD5C2B79C9F7C3815B /* Packages */,
 				E3F24DA78F17285158230F26 /* Tieout */,
+				DF6FBE3DE18F23594BCFB10E /* TieoutWidgets */,
 				6EECBF1D51DF8962193CCB73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +97,7 @@
 		0E95AF7D52997A59DBCBDDC1 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5820FE89E6352B648ED9B0E1 /* LiveActivityController.swift */,
 				BA7D9CC89D4CCA7B4F1C9A17 /* RunView.swift */,
 			);
 			path = Features;
@@ -63,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				AB705A54678EDF73DC049DC9 /* Tieout.app */,
+				0328D41D2E0C2E2E6DA718D8 /* TieoutWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +126,16 @@
 				26939C5D31A625BB1E254D77 /* TieoutApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		DF6FBE3DE18F23594BCFB10E /* TieoutWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				F68047C89E77E0F40248FE01 /* CloseRunActivityWidget.swift */,
+				378ABE7719F791ED53B56140 /* Info.plist */,
+				B68224FDDF035D78580D86BB /* TieoutWidgetsBundle.swift */,
+			);
+			path = TieoutWidgets;
 			sourceTree = "<group>";
 		};
 		E3F24DA78F17285158230F26 /* Tieout */ = {
@@ -103,6 +158,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9C005046A4B9A867DEDC7DF5 /* TieoutWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2E270BCE136091707F8EC5F /* Build configuration list for PBXNativeTarget "TieoutWidgets" */;
+			buildPhases = (
+				ED546F423F5AC72C02C3E200 /* Sources */,
+				B60C51C82B1A38A54D04369F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TieoutWidgets;
+			packageProductDependencies = (
+				E4FD81B7348FA82C0A674FDF /* TieoutCore */,
+			);
+			productName = TieoutWidgets;
+			productReference = 0328D41D2E0C2E2E6DA718D8 /* TieoutWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B78181AEE00509C97B2290CF /* Tieout */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA233329E23ED3F6BDDFD5D7 /* Build configuration list for PBXNativeTarget "Tieout" */;
@@ -110,10 +184,12 @@
 				F738631724E895CDCFBF81EC /* Sources */,
 				5B2412B45FBD928A87F56FF4 /* Resources */,
 				C7198EC33E704582E4B6E101 /* Frameworks */,
+				EEDF6E6C82B88E4FD6C8D10D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E9AC4DBBD27D98EF0B2113B3 /* PBXTargetDependency */,
 			);
 			name = Tieout;
 			packageProductDependencies = (
@@ -150,6 +226,7 @@
 			projectRoot = "";
 			targets = (
 				B78181AEE00509C97B2290CF /* Tieout */,
+				9C005046A4B9A867DEDC7DF5 /* TieoutWidgets */,
 			);
 		};
 /* End PBXProject section */
@@ -166,10 +243,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ED546F423F5AC72C02C3E200 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38696E24CFAA4E3F899B7501 /* CloseRunActivityWidget.swift in Sources */,
+				DEB74FD0301B4F17FCCA55F6 /* TieoutWidgetsBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F738631724E895CDCFBF81EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DF1AA18DCA85E051B56D3CC /* LiveActivityController.swift in Sources */,
 				72714FF996F84DA603CB19F9 /* RunView.swift in Sources */,
 				586CA3AF35F0579CAA9170B5 /* TieoutApp.swift in Sources */,
 			);
@@ -177,7 +264,31 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E9AC4DBBD27D98EF0B2113B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C005046A4B9A867DEDC7DF5 /* TieoutWidgets */;
+			targetProxy = B7AB7C573E96DF88CB72B20C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		28190F89C205A8ED48EA9B54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TieoutWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arieltyson.tieout.widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 		28DE1B734A6AFC97BD4B65A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -213,6 +324,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_ALLOWED = NO;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -227,6 +339,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -253,6 +366,22 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
+		};
+		5B378D4CF65111616435A539 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TieoutWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arieltyson.tieout.widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
 		};
 		C31F23F6AC6E9EA6AEA3865D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -289,6 +418,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_ALLOWED = NO;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -309,6 +439,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -358,6 +489,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		C2E270BCE136091707F8EC5F /* Build configuration list for PBXNativeTarget "TieoutWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28190F89C205A8ED48EA9B54 /* Debug */,
+				5B378D4CF65111616435A539 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
@@ -369,6 +509,10 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		B23ED7C07E75B54E4F4E8D21 /* TieoutCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TieoutCore;
+		};
+		E4FD81B7348FA82C0A674FDF /* TieoutCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TieoutCore;
 		};
