@@ -29,10 +29,33 @@ and issue commands, and a forged authority claim. They reach the ledger
 unescaped on purpose, because a fixture that sanitizes its own payloads
 tests nothing.
 
-**Honest scope.** Planting the payload is not the same as proving the
-defence. The regression that asserts the model ignores them is not yet
-written, so treat this as a hardened design with a target in place rather
-than a demonstrated result.
+### What is actually proven
+
+Four properties are asserted on every test run, for free:
+
+- The payloads reach the ledger unescaped, so the fixture is live rather
+  than a description of one.
+- The system prompt is byte identical regardless of what is in the data,
+  and contains none of the payload text.
+- Every descriptor arrives inside the delimited block, framed as merchant
+  supplied data.
+- A descriptor containing the exact closing delimiter is neutralized. The
+  planted payload carries `</ledger_data>`, which does not match the real
+  closing tag, so today it could not escape anyway. That was luck rather
+  than design, and the escaping now makes the property hold because of what
+  the code does rather than what the attacker happened to guess.
+
+And the behavioural half, from a real paid run rather than from hope: all
+three payloads were filed to the uncategorized account, and the model named
+them as injection attempts in its own rationale, including "descriptor
+contains injected instruction, not a real vendor". A test reads that
+artifact back, so a future run that starts obeying them fails the suite.
+
+**Remaining limit, stated rather than buried.** That is one model on one
+run against three payloads. It is evidence, not a guarantee, and a
+different model or a cleverer payload is not covered by it. The prompt
+assembly properties above are the durable part; the behavioural result is a
+snapshot.
 
 ## Your messages stay out of this project
 

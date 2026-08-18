@@ -183,7 +183,9 @@ Treat 95.1% as a floor.
   delimited block explicitly framed as untrusted data, never spliced into the
   system prompt.
 - **Three attack payloads live permanently in the fixture**, including one that
-  tries to close the data block and issue its own instructions.
+  tries to close the data block and issue its own instructions. All three were
+  filed to the uncategorized account in the real benchmark run, and the model
+  named them as injection attempts in its own reasoning.
 - **Your real messages stay out.** The transport reads a synthetic message
   database and refuses any path inside your Messages directory unless you
   deliberately opt in, sidecar files included.
