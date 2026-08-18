@@ -180,3 +180,46 @@ merchant is served by exact matches only.
 Crude generalization with a check beats careful generalization without one,
 because the check fails loudly and cleverness fails quietly. That principle
 recurs throughout this codebase and this is the clearest instance of it.
+
+---
+
+## ADR-009: The reconciler's model half needs a way to abstain
+
+**Status:** open, found by measurement
+
+The deterministic matcher pairs a ledger row to a bank row only when the
+pairing is mutually unique, and hands the contested rows to a model to
+adjudicate. The prompt asks that model to judge. It never tells it that
+declining is an available and often correct answer.
+
+Three models were run through it. The gap this leaves was invisible in two
+of them and glaring in the third.
+
+| Model | Unreconciled reported | True | False |
+|---|---|---|---|
+| Haiku 4.5 | 5 | 5 | 0 |
+| Sonnet 5 | 3 | 3 | 0 |
+| Opus 5 | 39 | 5 | 34 |
+
+Sonnet abstained on everything and added nothing to the deterministic
+three. Haiku added two and both were right. Opus adjudicated every row it
+was handed, found all five planted defects, and produced thirty four false
+positives doing it. Its recall was 1.00. It was not being careless; it was
+answering the question actually put to it.
+
+The reading that matters: **the two cheaper models looked correct because
+they did nothing.** An abstention that comes from reticence rather than
+from a rule is not a control, it is luck that happens to look like one. The
+same prompt in front of a more willing model produced the failure that was
+always available.
+
+That is also why this ADR is open rather than accepted. The fix is a
+defined abstention path with an explicit rule for when a contested row
+stays contested, and a cap on how many exceptions any single agent may
+raise before the run treats it as a fault rather than a finding. Neither
+exists yet.
+
+The published anomaly F1 of 0.90 therefore rests on a model that declines
+to use a gap rather than on a harness that closes it. Recorded here rather
+than quietly fixed, because the discovery is the useful part: a benchmark
+across models found a hole that a benchmark on one model had no way to see.

@@ -278,12 +278,83 @@ matched on the bank row, and a test fails against the old behaviour.
 
 ## Model comparison
 
-The same harness against two or three models, to separate harness
-contribution from model capability.
+The same harness against three models, one code path, same fixture, same
+seed. This is the comparison that tests the claim the whole project rests
+on: that the harness matters more than the model.
 
-| Model | Categorization accuracy | Anomaly F1 | Cost / run |
+| Model | Accuracy | Anomaly F1 | Turns | Cost | vs Sonnet |
+|---|---|---|---|---|---|
+| Haiku 4.5 | 94.1% | 0.87 | 26 | **$0.26** | 80% cheaper |
+| **Sonnet 5** | 93.5% | 0.86 | 26 | **$1.33** | reference |
+| Opus 5 | **97.0%** | 0.71 | 34 | $6.76 | 407% dearer |
+
+### The result the table exists to show
+
+**All three produced exactly the same 43 findings by arithmetic.** Not
+similar counts: the same count, the same categories, the same per-category
+recall down to the decimal. FX at 1.00, receipts at 1.00, policy at 1.00,
+price anomalies at 0.83, bank orphans at 0.25.
+
+That is what moving the work into code buys. Two thirds of the defects in
+this fixture are found identically whether the model underneath costs
+twenty six cents or six dollars seventy six, because the model never
+touches them.
+
+### Opus scores highest and worst at once, for one reason
+
+Opus is the best categorizer measured here by a clear margin, 97.0%
+against 93.5%. Its anomaly F1 of 0.71 is the lowest in the table, and it
+comes from a single category.
+
+| Model | Unreconciled reported | True | False | Precision |
+|---|---|---|---|---|
+| Haiku 4.5 | 5 | 5 | 0 | 1.00 |
+| Sonnet 5 | 3 | 3 | 0 | 1.00 |
+| Opus 5 | **39** | 5 | **34** | 0.13 |
+
+Every other Opus category is at or above the rest of the table, including
+duplicates at 0.62 precision and 0.83 recall, its best-in-table showing.
+Excluding the surplus unreconciled rows, Opus would score P 0.93, R 0.90,
+F1 0.92, the best of the three. That figure is a diagnostic and is not
+published as a measurement.
+
+**This is a defect in the reconciler prompt, not a fact about Opus.** The
+deterministic matcher deliberately refuses contested rows and hands them
+to the model half to adjudicate. That half is under-constrained: it is
+asked to judge without being told what abstaining looks like. Sonnet
+abstained entirely and added nothing to the deterministic three. Haiku
+added two, both correct. Opus, asked to adjudicate, adjudicated
+everything, and the recall of 1.00 shows it was not being careless so much
+as answering the question it was actually asked.
+
+A more capable model exposed a weakness the weaker ones hid by declining
+to act. That is worth more than the table it spoiled: the guardrail is
+missing, and only the strongest model in the set went looking for it.
+
+### What this table cannot support
+
+**Single runs, and the model is not deterministic.** Sonnet was measured
+twice on this fixture within an hour, same seed, same code:
+
+| Sonnet run | Accuracy | Anomaly F1 | Duplicate precision |
 |---|---|---|---|
-| pending | pending | pending | pending |
+| First | 94.1% | 0.90 | 0.63 |
+| Second | 93.5% | 0.86 | 0.25 |
+
+Accuracy moved 0.6 points, F1 moved 0.04, and duplicate precision moved by
+more than half. The Haiku-to-Sonnet gap in the main table, 94.1% against
+93.5%, sits **inside** that observed variance. It is not evidence that
+Haiku categorizes better than Sonnet, and this document does not claim it
+does.
+
+What survives the variance is the size of the effects: the 43 identical
+deterministic findings, the 80% cost difference, and Opus's 34 false
+positives. Those are not 0.6-point effects and no plausible amount of
+run-to-run noise accounts for them.
+
+The judged categories are where the noise concentrates, which is the
+honest shape of the trade rather than a surprise. Duplicate judgment has
+been the weakest and most variable number since the first run.
 
 ## Honest limitations
 
@@ -299,6 +370,12 @@ Recorded now, while there's no result to be defensive about.
   metric definitions before any result exists — but it is not eliminated.
 - **One seed, one month.** Results on a single fixture are a point estimate.
   Multi-seed variance is worth reporting before treating any gap as real.
+- **Run-to-run variance is measured and it is not small.** Two Sonnet runs
+  on the same fixture an hour apart differed by 0.6 accuracy points, 0.04
+  anomaly F1, and 0.38 duplicate precision. Every number in this document
+  is a single run unless it says otherwise. Differences smaller than those
+  figures should be read as noise, including some of the gaps in the
+  ablation table.
 - **Some ground-truth labels are debatable.** Every categorization miss in
   the baseline run was on a vendor that could reasonably sit in two
   accounts. That makes 94.1% a floor rather than a ceiling, and it means

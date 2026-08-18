@@ -120,6 +120,39 @@ otherwise have reported zero accuracy as though it were a score.
 Full method notes, including two arms that had to be re-run after producing
 plausible looking nonsense, are in [evals/RESULTS.md](evals/RESULTS.md).
 
+### Same harness, three models
+
+| Model | Accuracy | Anomaly F1 | Cost |
+|---|---|---|---|
+| Haiku 4.5 | 94.1% | 0.87 | **$0.26** |
+| **Sonnet 5** | 93.5% | 0.86 | **$1.33** |
+| Opus 5 | **97.0%** | 0.71 | $6.76 |
+
+All three found **the same 43 defects by arithmetic**. Not similar counts,
+the same count in the same categories with the same recall in each. That is
+what moving the work into code buys: two thirds of this fixture is solved
+identically whether the model underneath costs twenty six cents or six
+dollars.
+
+Opus categorizes best and scores worst on anomalies, and the cause is one
+category. Handed the rows the deterministic matcher refused to pair, it
+adjudicated all of them and produced 34 false positives. Its other
+categories lead the table.
+
+That is a hole in the reconciler prompt rather than a fact about Opus. The
+model is asked to judge contested rows and never told that declining is a
+valid answer. Sonnet declined to act at all and Haiku acted twice, so both
+looked correct by doing almost nothing. **An abstention that comes from
+reticence rather than from a rule is not a control.** The strongest model
+in the set was the only one that went looking for the gap, and it found it.
+Written up in [ADR-009](docs/DECISIONS.md).
+
+One caution the table needs. Two Sonnet runs an hour apart on the same
+fixture differed by 0.6 accuracy points and 0.04 anomaly F1. The gap
+between Haiku and Sonnet above sits inside that, so it is noise rather than
+a ranking. The 43 identical findings, the 80 percent cost difference, and
+the 34 false positives are far too large to be.
+
 ### Where the categorizer was wrong
 
 Every one of the 22 categorization misses is a defensible disagreement rather

@@ -95,7 +95,7 @@ def load_runs() -> list[dict]:
 def main() -> None:
     runs = load_runs()
 
-    height = (300 + 52 * len(runs) + 140) * SCALE
+    height = (300 + 52 * len(runs) + 130) * SCALE
     image = Image.new("RGB", (W, height), PAPER)
     draw = ImageDraw.Draw(image)
 
@@ -173,11 +173,38 @@ def main() -> None:
     draw.line([(x0, y), (x1, y)], fill=RULE, width=1 * SCALE)
     y += 28 * SCALE
 
-    note = ("Deterministic findings are identical across all three rows: the detectors "
-            "are code, so the model never touches them.")
-    if any_truncated:
-        note += "  Dashes mean the run exhausted its context and has no score."
+    # The deterministic count is the claim this table exists to test, so it
+    # is read back out of the data rather than asserted in a string.
+    det = {r["anomalies"]["deterministicFindings"] for r in runs}
+    note = (
+        f"All three produced the same {det.pop()} findings by arithmetic."
+        if len(det) == 1
+        else f"Deterministic findings differ across models ({sorted(det)}), which should be impossible."
+    )
+    note += " The detectors are code, so the model never touches them."
     draw.text((x0, y), note, font=f_note, fill=MUTED)
+    y += 24 * SCALE
+
+    # Name the outlier. An F1 that low on the most expensive row reads as
+    # "the big model is bad at this" unless the cause is on the slide.
+    worst = min(runs, key=lambda r: r["anomalies"]["overallF1"])
+    spike = max(
+        (c for c in worst["anomalies"]["byCategory"]),
+        key=lambda c: c["falsePositives"],
+    )
+    if spike["falsePositives"] > 0:
+        draw.text(
+            (x0, y),
+            f"{short_name(worst['model'])}'s F1 is one category: {spike['falsePositives']} false "
+            f"{spike['kind']} findings from the model half of the reconciler. Its other categories score highest here.",
+            font=f_note,
+            fill=MUTED,
+        )
+        y += 24 * SCALE
+
+    if any_truncated:
+        draw.text((x0, y), "Dashes mean the run exhausted its context and has no score.",
+                  font=f_note, fill=MUTED)
 
     out = sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser("~/Desktop/tieout-models.png")
     image.resize((W // SCALE, height // SCALE), Image.LANCZOS).save(out, "PNG")
