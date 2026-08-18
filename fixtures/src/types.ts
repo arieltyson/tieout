@@ -19,11 +19,13 @@ import {
 import { CentsSchema, PositiveCentsSchema, type Cents } from '../../harness/src/domain/money.js';
 
 export {
+  BankTransactionSchema,
   CurrencySchema,
   LedgerSchema,
   ReceiptSchema,
   TransactionSchema,
   TxnIdSchema,
+  type BankTransaction,
   type Currency,
   type Ledger,
   type Receipt,
@@ -100,6 +102,32 @@ export interface PriceAnomalyDefect {
   readonly note: string;
 }
 
+export interface UnreconciledDefect {
+  readonly id: string;
+  readonly kind: 'unreconciled';
+  readonly txnIds: readonly [TxnId];
+  readonly note: string;
+}
+
+export interface BankOnlyDefect {
+  readonly id: string;
+  readonly kind: 'bankOnly';
+  /** Always empty. A bank only row has no ledger counterpart by definition. */
+  readonly txnIds: readonly TxnId[];
+  readonly bankId: string;
+  readonly amountCents: Cents;
+  readonly note: string;
+}
+
+export interface BankAmountMismatchDefect {
+  readonly id: string;
+  readonly kind: 'bankAmountMismatch';
+  readonly txnIds: readonly [TxnId];
+  readonly bankId: string;
+  readonly deltaCents: number;
+  readonly note: string;
+}
+
 export type PlantedDefect =
   | DuplicateDefect
   | VendorAliasDefect
@@ -107,7 +135,10 @@ export type PlantedDefect =
   | ReceiptMismatchDefect
   | MissingRecurringDefect
   | PolicyViolationDefect
-  | PriceAnomalyDefect;
+  | PriceAnomalyDefect
+  | UnreconciledDefect
+  | BankOnlyDefect
+  | BankAmountMismatchDefect;
 
 const baseDefectFields = { id: z.string().min(1), note: z.string().min(1) };
 
@@ -157,6 +188,25 @@ export const PlantedDefectSchema = z.discriminatedUnion('kind', [
   }),
   z.object({
     ...baseDefectFields,
+    kind: z.literal('unreconciled'),
+    txnIds: z.tuple([TxnIdSchema]),
+  }),
+  z.object({
+    ...baseDefectFields,
+    kind: z.literal('bankOnly'),
+    txnIds: z.array(TxnIdSchema).length(0),
+    bankId: z.string().regex(/^bank_\d{4,}$/),
+    amountCents: PositiveCentsSchema,
+  }),
+  z.object({
+    ...baseDefectFields,
+    kind: z.literal('bankAmountMismatch'),
+    txnIds: z.tuple([TxnIdSchema]),
+    bankId: z.string().regex(/^bank_\d{4,}$/),
+    deltaCents: z.number().int(),
+  }),
+  z.object({
+    ...baseDefectFields,
     kind: z.literal('priceAnomaly'),
     txnIds: z.tuple([TxnIdSchema]),
     vendor: z.string().min(1),
@@ -167,6 +217,7 @@ export const PlantedDefectSchema = z.discriminatedUnion('kind', [
 ]);
 
 export interface GroundTruth {
+  readonly fixtureVersion: number;
   readonly seed: number;
   readonly period: string;
   readonly expectedCategorizations: Readonly<Record<TxnId, string>>;
@@ -174,6 +225,9 @@ export interface GroundTruth {
 }
 
 export const GroundTruthSchema = z.object({
+  /** Bumped when the planted defect set changes, so published scores can be
+   *  matched to the fixture they were measured against. */
+  fixtureVersion: z.number().int().default(1),
   seed: z.number().int(),
   period: PeriodSchema,
   expectedCategorizations: z.record(TxnIdSchema, GlCodeSchema),

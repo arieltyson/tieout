@@ -48,6 +48,14 @@ export const ReceiptSchema = z.object({
 });
 export type Receipt = z.infer<typeof ReceiptSchema>;
 
+export const BankTransactionSchema = z.object({
+  id: z.string().regex(/^bank_\d{4,}$/),
+  postedDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  descriptor: z.string().min(1),
+  amountCents: PositiveCentsSchema,
+});
+export type BankTransaction = z.infer<typeof BankTransactionSchema>;
+
 export const LedgerSchema = z.object({
   seed: z.number().int(),
   period: PeriodSchema,
@@ -55,5 +63,11 @@ export const LedgerSchema = z.object({
   receipts: z.array(ReceiptSchema),
   /** txnIds with prior spend approval on file — ordinary ledger data, not a defect flag. */
   approvals: z.array(TxnIdSchema),
+  /**
+   * The same month as the bank saw it. Defaulted so a fixture written
+   * before the reconciler existed still loads rather than failing
+   * validation on a field it could not have known about.
+   */
+  bankTransactions: z.array(BankTransactionSchema).default([]),
 });
 export type Ledger = z.infer<typeof LedgerSchema>;

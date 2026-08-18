@@ -64,6 +64,7 @@ export function ledger(transactions: readonly Transaction[], overrides: Partial<
     transactions: [...transactions],
     receipts: [],
     approvals: [],
+    bankTransactions: [],
     ...overrides,
   };
 }

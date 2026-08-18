@@ -1,4 +1,5 @@
 {
+  "fixtureVersion": 2,
   "seed": 20260601,
   "period": "2026-06",
   "expectedCategorizations": {
@@ -456,6 +457,78 @@
       "note": "A PayPal-intermediated recurring charge and a direct one-off charge are the same vendor."
     },
     {
+      "id": "bankdiff-txn_0156",
+      "kind": "bankAmountMismatch",
+      "txnIds": [
+        "txn_0156"
+      ],
+      "bankId": "bank_0123",
+      "deltaCents": -198,
+      "note": "MARRIOTT HOTELS settled -198c away from the authorised amount."
+    },
+    {
+      "id": "bankdiff-txn_0209",
+      "kind": "bankAmountMismatch",
+      "txnIds": [
+        "txn_0209"
+      ],
+      "bankId": "bank_0175",
+      "deltaCents": 863,
+      "note": "AVIS RENT A CAR settled 863c away from the authorised amount."
+    },
+    {
+      "id": "bankdiff-txn_0308",
+      "kind": "bankAmountMismatch",
+      "txnIds": [
+        "txn_0308"
+      ],
+      "bankId": "bank_0273",
+      "deltaCents": 812,
+      "note": "SQUARE UP*MISC SVC settled 812c away from the authorised amount."
+    },
+    {
+      "id": "bankdiff-txn_0338",
+      "kind": "bankAmountMismatch",
+      "txnIds": [
+        "txn_0338"
+      ],
+      "bankId": "bank_0303",
+      "deltaCents": 364,
+      "note": "VENDOR SVCS LLC settled 364c away from the authorised amount."
+    },
+    {
+      "id": "bankonly-bank_0366",
+      "kind": "bankOnly",
+      "txnIds": [],
+      "bankId": "bank_0366",
+      "amountCents": 3500,
+      "note": "MONTHLY SERVICE CHARGE for 35.00 is on the statement with no matching card charge."
+    },
+    {
+      "id": "bankonly-bank_0367",
+      "kind": "bankOnly",
+      "txnIds": [],
+      "bankId": "bank_0367",
+      "amountCents": 4500,
+      "note": "WIRE TRANSFER FEE for 45.00 is on the statement with no matching card charge."
+    },
+    {
+      "id": "bankonly-bank_0368",
+      "kind": "bankOnly",
+      "txnIds": [],
+      "bankId": "bank_0368",
+      "amountCents": 1275,
+      "note": "FOREIGN TXN FEE for 12.75 is on the statement with no matching card charge."
+    },
+    {
+      "id": "bankonly-bank_0369",
+      "kind": "bankOnly",
+      "txnIds": [],
+      "bankId": "bank_0369",
+      "amountCents": 2900,
+      "note": "RETURNED ITEM FEE for 29.00 is on the statement with no matching card charge."
+    },
+    {
       "id": "dup-01",
       "kind": "duplicate",
       "txnIds": [
@@ -911,6 +984,46 @@
       "receiptTotalCents": 7600,
       "deltaCents": -1300,
       "note": "OFFICE DEPOT #2210: receipt total differs from the posted charge by -1300c."
+    },
+    {
+      "id": "unrec-txn_0080",
+      "kind": "unreconciled",
+      "txnIds": [
+        "txn_0080"
+      ],
+      "note": "CHIPOTLE 2871 for 14.20 appears on the card but never settled at the bank."
+    },
+    {
+      "id": "unrec-txn_0112",
+      "kind": "unreconciled",
+      "txnIds": [
+        "txn_0112"
+      ],
+      "note": "GOOGLE ADS-4471829 for 432.37 appears on the card but never settled at the bank."
+    },
+    {
+      "id": "unrec-txn_0123",
+      "kind": "unreconciled",
+      "txnIds": [
+        "txn_0123"
+      ],
+      "note": "UBER   *EATS for 54.34 appears on the card but never settled at the bank."
+    },
+    {
+      "id": "unrec-txn_0175",
+      "kind": "unreconciled",
+      "txnIds": [
+        "txn_0175"
+      ],
+      "note": "TWILIO INC for 93.90 appears on the card but never settled at the bank."
+    },
+    {
+      "id": "unrec-txn_0215",
+      "kind": "unreconciled",
+      "txnIds": [
+        "txn_0215"
+      ],
+      "note": "UBER   *TRIP HELP.UBER.CO for 52.73 appears on the card but never settled at the bank."
     }
   ]
 }

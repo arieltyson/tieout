@@ -4432,5 +4432,2221 @@
     "txn_0325",
     "txn_0358",
     "txn_0359"
+  ],
+  "bankTransactions": [
+    {
+      "id": "bank_0025",
+      "postedDate": "2026-06-01",
+      "descriptor": "APPLE STORE R MERCHANT PMT",
+      "amountCents": 57586
+    },
+    {
+      "id": "bank_0013",
+      "postedDate": "2026-06-02",
+      "descriptor": "MKTP US BNXKKC AV ACH",
+      "amountCents": 12156
+    },
+    {
+      "id": "bank_0040",
+      "postedDate": "2026-06-02",
+      "descriptor": "LYFT RIDE CARD PURCHASE",
+      "amountCents": 3400
+    },
+    {
+      "id": "bank_0073",
+      "postedDate": "2026-06-02",
+      "descriptor": "OFFICE DEPOT POS DEBIT",
+      "amountCents": 8900
+    },
+    {
+      "id": "bank_0216",
+      "postedDate": "2026-06-02",
+      "descriptor": "T MOBILE AUTOPAY MERCHANT PMT",
+      "amountCents": 8500
+    },
+    {
+      "id": "bank_0234",
+      "postedDate": "2026-06-02",
+      "descriptor": "LOGITECH COM POS DEBIT",
+      "amountCents": 19435
+    },
+    {
+      "id": "bank_0260",
+      "postedDate": "2026-06-02",
+      "descriptor": "APPLE STORE R MERCHANT PMT",
+      "amountCents": 85195
+    },
+    {
+      "id": "bank_0325",
+      "postedDate": "2026-06-02",
+      "descriptor": "LYFT RIDE CARD PURCHASE",
+      "amountCents": 2394
+    },
+    {
+      "id": "bank_0008",
+      "postedDate": "2026-06-03",
+      "descriptor": "WEWORK TH AVE ACH",
+      "amountCents": 169037
+    },
+    {
+      "id": "bank_0024",
+      "postedDate": "2026-06-03",
+      "descriptor": "TARTINE BAKERY ACH",
+      "amountCents": 2539
+    },
+    {
+      "id": "bank_0026",
+      "postedDate": "2026-06-03",
+      "descriptor": "APPLE STORE R POS DEBIT",
+      "amountCents": 57586
+    },
+    {
+      "id": "bank_0038",
+      "postedDate": "2026-06-03",
+      "descriptor": "DELTA AIR ACH",
+      "amountCents": 41200
+    },
+    {
+      "id": "bank_0042",
+      "postedDate": "2026-06-03",
+      "descriptor": "STARBUCKS POS DEBIT",
+      "amountCents": 680
+    },
+    {
+      "id": "bank_0070",
+      "postedDate": "2026-06-03",
+      "descriptor": "AVIS RENT A CAR POS DEBIT",
+      "amountCents": 18900
+    },
+    {
+      "id": "bank_0086",
+      "postedDate": "2026-06-03",
+      "descriptor": "LYFT RIDE POS DEBIT",
+      "amountCents": 1813
+    },
+    {
+      "id": "bank_0159",
+      "postedDate": "2026-06-03",
+      "descriptor": "CHIPOTLE CARD PURCHASE",
+      "amountCents": 1074
+    },
+    {
+      "id": "bank_0226",
+      "postedDate": "2026-06-03",
+      "descriptor": "MARRIOTT HOTELS POS DEBIT",
+      "amountCents": 26992
+    },
+    {
+      "id": "bank_0258",
+      "postedDate": "2026-06-03",
+      "descriptor": "TWILIO INC CARD PURCHASE",
+      "amountCents": 5972
+    },
+    {
+      "id": "bank_0281",
+      "postedDate": "2026-06-03",
+      "descriptor": "PARKWHIZ PARKING MERCHANT PMT",
+      "amountCents": 2033
+    },
+    {
+      "id": "bank_0313",
+      "postedDate": "2026-06-03",
+      "descriptor": "DELTA AIR POS DEBIT",
+      "amountCents": 49643
+    },
+    {
+      "id": "bank_0002",
+      "postedDate": "2026-06-04",
+      "descriptor": "WORKSPACE CARD PURCHASE",
+      "amountCents": 14400
+    },
+    {
+      "id": "bank_0039",
+      "postedDate": "2026-06-04",
+      "descriptor": "HILTON HOTELS POS DEBIT",
+      "amountCents": 52800
+    },
+    {
+      "id": "bank_0044",
+      "postedDate": "2026-06-04",
+      "descriptor": "LYFT RIDE POS DEBIT",
+      "amountCents": 2900
+    },
+    {
+      "id": "bank_0045",
+      "postedDate": "2026-06-04",
+      "descriptor": "HILTON HOTELS ACH",
+      "amountCents": 52800
+    },
+    {
+      "id": "bank_0053",
+      "postedDate": "2026-06-04",
+      "descriptor": "APPLE STORE R ACH",
+      "amountCents": 329900
+    },
+    {
+      "id": "bank_0077",
+      "postedDate": "2026-06-04",
+      "descriptor": "VENDOR SVCS LLC ACH",
+      "amountCents": 23520
+    },
+    {
+      "id": "bank_0082",
+      "postedDate": "2026-06-04",
+      "descriptor": "AVIS RENT A CAR CARD PURCHASE",
+      "amountCents": 19309
+    },
+    {
+      "id": "bank_0090",
+      "postedDate": "2026-06-04",
+      "descriptor": "CHIPOTLE ACH",
+      "amountCents": 986
+    },
+    {
+      "id": "bank_0156",
+      "postedDate": "2026-06-04",
+      "descriptor": "CHIPOTLE MERCHANT PMT",
+      "amountCents": 965
+    },
+    {
+      "id": "bank_0195",
+      "postedDate": "2026-06-04",
+      "descriptor": "SETTLEMENT ADJ ACH",
+      "amountCents": 2507
+    },
+    {
+      "id": "bank_0206",
+      "postedDate": "2026-06-04",
+      "descriptor": "MAILCHIMP EMAIL CARD PURCHASE",
+      "amountCents": 6684
+    },
+    {
+      "id": "bank_0365",
+      "postedDate": "2026-06-04",
+      "descriptor": "NEXT INSURANCE MERCHANT PMT",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0003",
+      "postedDate": "2026-06-05",
+      "descriptor": "CLOUD POS DEBIT",
+      "amountCents": 120163
+    },
+    {
+      "id": "bank_0023",
+      "postedDate": "2026-06-05",
+      "descriptor": "TARTINE BAKERY MERCHANT PMT",
+      "amountCents": 2539
+    },
+    {
+      "id": "bank_0041",
+      "postedDate": "2026-06-05",
+      "descriptor": "SWEETGREEN POS DEBIT",
+      "amountCents": 1650
+    },
+    {
+      "id": "bank_0043",
+      "postedDate": "2026-06-05",
+      "descriptor": "WEWORK TH AVE CARD PURCHASE",
+      "amountCents": 4500
+    },
+    {
+      "id": "bank_0056",
+      "postedDate": "2026-06-05",
+      "descriptor": "UPWORK CONTRACTOR  POS DEBIT",
+      "amountCents": 145000
+    },
+    {
+      "id": "bank_0068",
+      "postedDate": "2026-06-05",
+      "descriptor": "STAPLES STORE MERCHANT PMT",
+      "amountCents": 12400
+    },
+    {
+      "id": "bank_0107",
+      "postedDate": "2026-06-05",
+      "descriptor": "ADS MERCHANT PMT",
+      "amountCents": 43880
+    },
+    {
+      "id": "bank_0153",
+      "postedDate": "2026-06-05",
+      "descriptor": "STRIPE ATLAS ACH",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0166",
+      "postedDate": "2026-06-05",
+      "descriptor": "AMTRAK TRAINS ACH",
+      "amountCents": 22114
+    },
+    {
+      "id": "bank_0171",
+      "postedDate": "2026-06-05",
+      "descriptor": "LYFT RIDE CARD PURCHASE",
+      "amountCents": 5022
+    },
+    {
+      "id": "bank_0176",
+      "postedDate": "2026-06-05",
+      "descriptor": "DELL BUSINESS SALE MERCHANT PMT",
+      "amountCents": 155344
+    },
+    {
+      "id": "bank_0209",
+      "postedDate": "2026-06-05",
+      "descriptor": "NEXT INSURANCE CARD PURCHASE",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0259",
+      "postedDate": "2026-06-05",
+      "descriptor": "CHIPOTLE CARD PURCHASE",
+      "amountCents": 1232
+    },
+    {
+      "id": "bank_0323",
+      "postedDate": "2026-06-05",
+      "descriptor": "APPLE STORE R MERCHANT PMT",
+      "amountCents": 104690
+    },
+    {
+      "id": "bank_0354",
+      "postedDate": "2026-06-05",
+      "descriptor": "CHIPOTLE ACH",
+      "amountCents": 1038
+    },
+    {
+      "id": "bank_0363",
+      "postedDate": "2026-06-05",
+      "descriptor": "EATS CARD PURCHASE",
+      "amountCents": 2401
+    },
+    {
+      "id": "bank_0366",
+      "postedDate": "2026-06-05",
+      "descriptor": "MONTHLY SERVICE CHARGE",
+      "amountCents": 3500
+    },
+    {
+      "id": "bank_0065",
+      "postedDate": "2026-06-06",
+      "descriptor": "MARRIOTT HOTELS ACH",
+      "amountCents": 68000
+    },
+    {
+      "id": "bank_0092",
+      "postedDate": "2026-06-06",
+      "descriptor": "MISC CHARGE CARD PURCHASE",
+      "amountCents": 1949
+    },
+    {
+      "id": "bank_0099",
+      "postedDate": "2026-06-06",
+      "descriptor": "APPLE STORE R MERCHANT PMT",
+      "amountCents": 101282
+    },
+    {
+      "id": "bank_0101",
+      "postedDate": "2026-06-06",
+      "descriptor": "UNITED AIRLINES POS DEBIT",
+      "amountCents": 62902
+    },
+    {
+      "id": "bank_0191",
+      "postedDate": "2026-06-06",
+      "descriptor": "UDEMY BUSINESS MERCHANT PMT",
+      "amountCents": 3900
+    },
+    {
+      "id": "bank_0288",
+      "postedDate": "2026-06-06",
+      "descriptor": "STAPLES STORE ACH",
+      "amountCents": 12712
+    },
+    {
+      "id": "bank_0294",
+      "postedDate": "2026-06-06",
+      "descriptor": "UPWORK CONTRACTOR  CARD PURCHASE",
+      "amountCents": 54486
+    },
+    {
+      "id": "bank_0297",
+      "postedDate": "2026-06-06",
+      "descriptor": "STAPLES STORE POS DEBIT",
+      "amountCents": 21828
+    },
+    {
+      "id": "bank_0309",
+      "postedDate": "2026-06-06",
+      "descriptor": "TARTINE BAKERY POS DEBIT",
+      "amountCents": 1597
+    },
+    {
+      "id": "bank_0006",
+      "postedDate": "2026-06-07",
+      "descriptor": "AWS AMAZON WEB SER CARD PURCHASE",
+      "amountCents": 245897
+    },
+    {
+      "id": "bank_0054",
+      "postedDate": "2026-06-07",
+      "descriptor": "B H PHOTO VIDEO POS DEBIT",
+      "amountCents": 219900
+    },
+    {
+      "id": "bank_0055",
+      "postedDate": "2026-06-07",
+      "descriptor": "MARRIOTT HOTELS MERCHANT PMT",
+      "amountCents": 92500
+    },
+    {
+      "id": "bank_0057",
+      "postedDate": "2026-06-07",
+      "descriptor": "CLERKY LEGAL DOCS CARD PURCHASE",
+      "amountCents": 89000
+    },
+    {
+      "id": "bank_0069",
+      "postedDate": "2026-06-07",
+      "descriptor": "SWEETGREEN POS DEBIT",
+      "amountCents": 1850
+    },
+    {
+      "id": "bank_0074",
+      "postedDate": "2026-06-07",
+      "descriptor": "IGNORE PRIOR INSTR MERCHANT PMT",
+      "amountCents": 2400
+    },
+    {
+      "id": "bank_0087",
+      "postedDate": "2026-06-07",
+      "descriptor": "HISCOX SMALL BIZ MERCHANT PMT",
+      "amountCents": 18000
+    },
+    {
+      "id": "bank_0088",
+      "postedDate": "2026-06-07",
+      "descriptor": "AVIS RENT A CAR MERCHANT PMT",
+      "amountCents": 16027
+    },
+    {
+      "id": "bank_0111",
+      "postedDate": "2026-06-07",
+      "descriptor": "TARTINE BAKERY MERCHANT PMT",
+      "amountCents": 1863
+    },
+    {
+      "id": "bank_0116",
+      "postedDate": "2026-06-07",
+      "descriptor": "CLERKY LEGAL DOCS ACH",
+      "amountCents": 35797
+    },
+    {
+      "id": "bank_0121",
+      "postedDate": "2026-06-07",
+      "descriptor": "APPLE STORE R MERCHANT PMT",
+      "amountCents": 144256
+    },
+    {
+      "id": "bank_0162",
+      "postedDate": "2026-06-07",
+      "descriptor": "UDEMY BUSINESS POS DEBIT",
+      "amountCents": 3900
+    },
+    {
+      "id": "bank_0192",
+      "postedDate": "2026-06-07",
+      "descriptor": "UPWORK CONTRACTOR  MERCHANT PMT",
+      "amountCents": 37131
+    },
+    {
+      "id": "bank_0203",
+      "postedDate": "2026-06-07",
+      "descriptor": "DOORDASH RESTAURAN ACH",
+      "amountCents": 2528
+    },
+    {
+      "id": "bank_0221",
+      "postedDate": "2026-06-07",
+      "descriptor": "APPLE STORE R CARD PURCHASE",
+      "amountCents": 100605
+    },
+    {
+      "id": "bank_0223",
+      "postedDate": "2026-06-07",
+      "descriptor": "SWEETGREEN ACH",
+      "amountCents": 2243
+    },
+    {
+      "id": "bank_0269",
+      "postedDate": "2026-06-07",
+      "descriptor": "TRIP HELP UBER CO CARD PURCHASE",
+      "amountCents": 3893
+    },
+    {
+      "id": "bank_0282",
+      "postedDate": "2026-06-07",
+      "descriptor": "HILTON HOTELS MERCHANT PMT",
+      "amountCents": 42661
+    },
+    {
+      "id": "bank_0295",
+      "postedDate": "2026-06-07",
+      "descriptor": "UDEMY BUSINESS POS DEBIT",
+      "amountCents": 3900
+    },
+    {
+      "id": "bank_0307",
+      "postedDate": "2026-06-07",
+      "descriptor": "STAPLES STORE CARD PURCHASE",
+      "amountCents": 11956
+    },
+    {
+      "id": "bank_0333",
+      "postedDate": "2026-06-07",
+      "descriptor": "STRIPE ATLAS POS DEBIT",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0351",
+      "postedDate": "2026-06-07",
+      "descriptor": "OFFICE DEPOT CARD PURCHASE",
+      "amountCents": 7620
+    },
+    {
+      "id": "bank_0014",
+      "postedDate": "2026-06-08",
+      "descriptor": "MKTP US FK YNYXB MERCHANT PMT",
+      "amountCents": 16707
+    },
+    {
+      "id": "bank_0020",
+      "postedDate": "2026-06-08",
+      "descriptor": "BLUE BOTTLE COFFE ACH",
+      "amountCents": 478
+    },
+    {
+      "id": "bank_0063",
+      "postedDate": "2026-06-08",
+      "descriptor": "MARRIOTT HOTELS MERCHANT PMT",
+      "amountCents": 88000
+    },
+    {
+      "id": "bank_0103",
+      "postedDate": "2026-06-08",
+      "descriptor": "STRIPE ATLAS CARD PURCHASE",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0168",
+      "postedDate": "2026-06-08",
+      "descriptor": "SWEETGREEN CARD PURCHASE",
+      "amountCents": 2046
+    },
+    {
+      "id": "bank_0202",
+      "postedDate": "2026-06-08",
+      "descriptor": "STRIPE ATLAS CARD PURCHASE",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0238",
+      "postedDate": "2026-06-08",
+      "descriptor": "TWILIO INC MERCHANT PMT",
+      "amountCents": 11995
+    },
+    {
+      "id": "bank_0240",
+      "postedDate": "2026-06-08",
+      "descriptor": "COSTCO WHSE POS DEBIT",
+      "amountCents": 5656
+    },
+    {
+      "id": "bank_0249",
+      "postedDate": "2026-06-08",
+      "descriptor": "HILTON HOTELS POS DEBIT",
+      "amountCents": 21738
+    },
+    {
+      "id": "bank_0267",
+      "postedDate": "2026-06-08",
+      "descriptor": "SETTLEMENT ADJ CARD PURCHASE",
+      "amountCents": 4710
+    },
+    {
+      "id": "bank_0355",
+      "postedDate": "2026-06-08",
+      "descriptor": "TRIP HELP UBER CO POS DEBIT",
+      "amountCents": 5900
+    },
+    {
+      "id": "bank_0361",
+      "postedDate": "2026-06-08",
+      "descriptor": "MISC CHARGE MERCHANT PMT",
+      "amountCents": 2370
+    },
+    {
+      "id": "bank_0364",
+      "postedDate": "2026-06-08",
+      "descriptor": "MISC CHARGE CARD PURCHASE",
+      "amountCents": 7579
+    },
+    {
+      "id": "bank_0005",
+      "postedDate": "2026-06-09",
+      "descriptor": "FIGMA INC CARD PURCHASE",
+      "amountCents": 4500
+    },
+    {
+      "id": "bank_0022",
+      "postedDate": "2026-06-09",
+      "descriptor": "STAPLES STORE POS DEBIT",
+      "amountCents": 4785
+    },
+    {
+      "id": "bank_0030",
+      "postedDate": "2026-06-09",
+      "descriptor": "TWILIO INC CARD PURCHASE",
+      "amountCents": 5014
+    },
+    {
+      "id": "bank_0036",
+      "postedDate": "2026-06-09",
+      "descriptor": "TRIP HELP UBER CO POS DEBIT",
+      "amountCents": 2977
+    },
+    {
+      "id": "bank_0066",
+      "postedDate": "2026-06-09",
+      "descriptor": "HILTON HOTELS ACH",
+      "amountCents": 61000
+    },
+    {
+      "id": "bank_0106",
+      "postedDate": "2026-06-09",
+      "descriptor": "UPWORK CONTRACTOR  MERCHANT PMT",
+      "amountCents": 51908
+    },
+    {
+      "id": "bank_0117",
+      "postedDate": "2026-06-09",
+      "descriptor": "STRIPE ATLAS CARD PURCHASE",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0138",
+      "postedDate": "2026-06-09",
+      "descriptor": "EATS ACH",
+      "amountCents": 2757
+    },
+    {
+      "id": "bank_0210",
+      "postedDate": "2026-06-09",
+      "descriptor": "PARKWHIZ PARKING POS DEBIT",
+      "amountCents": 3587
+    },
+    {
+      "id": "bank_0211",
+      "postedDate": "2026-06-09",
+      "descriptor": "CANVA PRO ACH",
+      "amountCents": 1299
+    },
+    {
+      "id": "bank_0247",
+      "postedDate": "2026-06-09",
+      "descriptor": "EATS CARD PURCHASE",
+      "amountCents": 5528
+    },
+    {
+      "id": "bank_0277",
+      "postedDate": "2026-06-09",
+      "descriptor": "OFFICE DEPOT MERCHANT PMT",
+      "amountCents": 7431
+    },
+    {
+      "id": "bank_0296",
+      "postedDate": "2026-06-09",
+      "descriptor": "DELTA AIR MERCHANT PMT",
+      "amountCents": 62565
+    },
+    {
+      "id": "bank_0311",
+      "postedDate": "2026-06-09",
+      "descriptor": "FACEBOOK ADS POS DEBIT",
+      "amountCents": 44162
+    },
+    {
+      "id": "bank_0362",
+      "postedDate": "2026-06-09",
+      "descriptor": "UNITED AIRLINES CARD PURCHASE",
+      "amountCents": 27106
+    },
+    {
+      "id": "bank_0369",
+      "postedDate": "2026-06-09",
+      "descriptor": "RETURNED ITEM FEE",
+      "amountCents": 2900
+    },
+    {
+      "id": "bank_0031",
+      "postedDate": "2026-06-10",
+      "descriptor": "TRAINLINE EUROPE ACH",
+      "amountCents": 12324
+    },
+    {
+      "id": "bank_0032",
+      "postedDate": "2026-06-10",
+      "descriptor": "HOTEL LUTETIA PARI POS DEBIT",
+      "amountCents": 99328
+    },
+    {
+      "id": "bank_0125",
+      "postedDate": "2026-06-10",
+      "descriptor": "UNITED AIRLINES POS DEBIT",
+      "amountCents": 34567
+    },
+    {
+      "id": "bank_0127",
+      "postedDate": "2026-06-10",
+      "descriptor": "B H PHOTO VIDEO POS DEBIT",
+      "amountCents": 36730
+    },
+    {
+      "id": "bank_0136",
+      "postedDate": "2026-06-10",
+      "descriptor": "DELTA AIR MERCHANT PMT",
+      "amountCents": 71191
+    },
+    {
+      "id": "bank_0146",
+      "postedDate": "2026-06-10",
+      "descriptor": "LOGITECH COM POS DEBIT",
+      "amountCents": 17247
+    },
+    {
+      "id": "bank_0329",
+      "postedDate": "2026-06-10",
+      "descriptor": "OFFICE DEPOT CARD PURCHASE",
+      "amountCents": 17285
+    },
+    {
+      "id": "bank_0358",
+      "postedDate": "2026-06-10",
+      "descriptor": "VENDOR SVCS LLC ACH",
+      "amountCents": 3514
+    },
+    {
+      "id": "bank_0034",
+      "postedDate": "2026-06-11",
+      "descriptor": "CAFE DE FLORE PARI CARD PURCHASE",
+      "amountCents": 2888
+    },
+    {
+      "id": "bank_0037",
+      "postedDate": "2026-06-11",
+      "descriptor": "AWS EU WEST CARD PURCHASE",
+      "amountCents": 16550
+    },
+    {
+      "id": "bank_0067",
+      "postedDate": "2026-06-11",
+      "descriptor": "B H PHOTO VIDEO CARD PURCHASE",
+      "amountCents": 89900
+    },
+    {
+      "id": "bank_0071",
+      "postedDate": "2026-06-11",
+      "descriptor": "CLERKY LEGAL DOCS CARD PURCHASE",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0085",
+      "postedDate": "2026-06-11",
+      "descriptor": "TEAM DINNER EVENT POS DEBIT",
+      "amountCents": 4564
+    },
+    {
+      "id": "bank_0096",
+      "postedDate": "2026-06-11",
+      "descriptor": "UDEMY BUSINESS POS DEBIT",
+      "amountCents": 3900
+    },
+    {
+      "id": "bank_0126",
+      "postedDate": "2026-06-11",
+      "descriptor": "DOORDASH RESTAURAN POS DEBIT",
+      "amountCents": 3425
+    },
+    {
+      "id": "bank_0142",
+      "postedDate": "2026-06-11",
+      "descriptor": "LYFT RIDE ACH",
+      "amountCents": 4998
+    },
+    {
+      "id": "bank_0163",
+      "postedDate": "2026-06-11",
+      "descriptor": "COSTCO WHSE ACH",
+      "amountCents": 23585
+    },
+    {
+      "id": "bank_0178",
+      "postedDate": "2026-06-11",
+      "descriptor": "COURSERA FOR BUSIN CARD PURCHASE",
+      "amountCents": 5900
+    },
+    {
+      "id": "bank_0199",
+      "postedDate": "2026-06-11",
+      "descriptor": "DELTA AIR POS DEBIT",
+      "amountCents": 49556
+    },
+    {
+      "id": "bank_0274",
+      "postedDate": "2026-06-11",
+      "descriptor": "CONF REG STRANGE L ACH",
+      "amountCents": 59900
+    },
+    {
+      "id": "bank_0301",
+      "postedDate": "2026-06-11",
+      "descriptor": "APPLE STORE R MERCHANT PMT",
+      "amountCents": 56320
+    },
+    {
+      "id": "bank_0317",
+      "postedDate": "2026-06-11",
+      "descriptor": "AVIS RENT A CAR MERCHANT PMT",
+      "amountCents": 18700
+    },
+    {
+      "id": "bank_0324",
+      "postedDate": "2026-06-11",
+      "descriptor": "DELL BUSINESS SALE CARD PURCHASE",
+      "amountCents": 100040
+    },
+    {
+      "id": "bank_0021",
+      "postedDate": "2026-06-12",
+      "descriptor": "STAPLES STORE CARD PURCHASE",
+      "amountCents": 4785
+    },
+    {
+      "id": "bank_0029",
+      "postedDate": "2026-06-12",
+      "descriptor": "TWILIO INC ACH",
+      "amountCents": 5014
+    },
+    {
+      "id": "bank_0035",
+      "postedDate": "2026-06-12",
+      "descriptor": "TAXI G PARIS POS DEBIT",
+      "amountCents": 2496
+    },
+    {
+      "id": "bank_0089",
+      "postedDate": "2026-06-12",
+      "descriptor": "TRIP HELP UBER CO POS DEBIT",
+      "amountCents": 3214
+    },
+    {
+      "id": "bank_0094",
+      "postedDate": "2026-06-12",
+      "descriptor": "DELL BUSINESS SALE CARD PURCHASE",
+      "amountCents": 186457
+    },
+    {
+      "id": "bank_0097",
+      "postedDate": "2026-06-12",
+      "descriptor": "CONF REG STRANGE L POS DEBIT",
+      "amountCents": 59900
+    },
+    {
+      "id": "bank_0105",
+      "postedDate": "2026-06-12",
+      "descriptor": "PAYMENT PROCESSING POS DEBIT",
+      "amountCents": 1016
+    },
+    {
+      "id": "bank_0134",
+      "postedDate": "2026-06-12",
+      "descriptor": "EATS CARD PURCHASE",
+      "amountCents": 2966
+    },
+    {
+      "id": "bank_0182",
+      "postedDate": "2026-06-12",
+      "descriptor": "CANVA PRO POS DEBIT",
+      "amountCents": 1299
+    },
+    {
+      "id": "bank_0200",
+      "postedDate": "2026-06-12",
+      "descriptor": "STRIPE ATLAS POS DEBIT",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0218",
+      "postedDate": "2026-06-12",
+      "descriptor": "PARKWHIZ PARKING ACH",
+      "amountCents": 2821
+    },
+    {
+      "id": "bank_0219",
+      "postedDate": "2026-06-12",
+      "descriptor": "TWILIO INC MERCHANT PMT",
+      "amountCents": 11458
+    },
+    {
+      "id": "bank_0243",
+      "postedDate": "2026-06-12",
+      "descriptor": "UPWORK CONTRACTOR  POS DEBIT",
+      "amountCents": 47366
+    },
+    {
+      "id": "bank_0293",
+      "postedDate": "2026-06-12",
+      "descriptor": "AMTRAK TRAINS ACH",
+      "amountCents": 8710
+    },
+    {
+      "id": "bank_0334",
+      "postedDate": "2026-06-12",
+      "descriptor": "MARRIOTT HOTELS POS DEBIT",
+      "amountCents": 61986
+    },
+    {
+      "id": "bank_0367",
+      "postedDate": "2026-06-12",
+      "descriptor": "WIRE TRANSFER FEE",
+      "amountCents": 4500
+    },
+    {
+      "id": "bank_0100",
+      "postedDate": "2026-06-13",
+      "descriptor": "TEAM DINNER EVENT POS DEBIT",
+      "amountCents": 6563
+    },
+    {
+      "id": "bank_0157",
+      "postedDate": "2026-06-13",
+      "descriptor": "COSTCO WHSE POS DEBIT",
+      "amountCents": 4273
+    },
+    {
+      "id": "bank_0179",
+      "postedDate": "2026-06-13",
+      "descriptor": "CHIPOTLE MERCHANT PMT",
+      "amountCents": 1628
+    },
+    {
+      "id": "bank_0237",
+      "postedDate": "2026-06-13",
+      "descriptor": "COSTCO WHSE POS DEBIT",
+      "amountCents": 29692
+    },
+    {
+      "id": "bank_0292",
+      "postedDate": "2026-06-13",
+      "descriptor": "AVIS RENT A CAR ACH",
+      "amountCents": 19941
+    },
+    {
+      "id": "bank_0308",
+      "postedDate": "2026-06-13",
+      "descriptor": "MISC CHARGE POS DEBIT",
+      "amountCents": 7567
+    },
+    {
+      "id": "bank_0335",
+      "postedDate": "2026-06-13",
+      "descriptor": "UNITED AIRLINES ACH",
+      "amountCents": 36332
+    },
+    {
+      "id": "bank_0353",
+      "postedDate": "2026-06-13",
+      "descriptor": "STAPLES STORE POS DEBIT",
+      "amountCents": 23678
+    },
+    {
+      "id": "bank_0010",
+      "postedDate": "2026-06-14",
+      "descriptor": "LINKEDIN ADS ACH",
+      "amountCents": 90752
+    },
+    {
+      "id": "bank_0012",
+      "postedDate": "2026-06-14",
+      "descriptor": "NOTIONLABS CARD PURCHASE",
+      "amountCents": 9600
+    },
+    {
+      "id": "bank_0016",
+      "postedDate": "2026-06-14",
+      "descriptor": "MKTP US WFN NHNLB MERCHANT PMT",
+      "amountCents": 13050
+    },
+    {
+      "id": "bank_0033",
+      "postedDate": "2026-06-14",
+      "descriptor": "DEUTSCHE BAHN MERCHANT PMT",
+      "amountCents": 10375
+    },
+    {
+      "id": "bank_0064",
+      "postedDate": "2026-06-14",
+      "descriptor": "UPWORK CONTRACTOR  MERCHANT PMT",
+      "amountCents": 160000
+    },
+    {
+      "id": "bank_0172",
+      "postedDate": "2026-06-14",
+      "descriptor": "TARTINE BAKERY CARD PURCHASE",
+      "amountCents": 2451
+    },
+    {
+      "id": "bank_0188",
+      "postedDate": "2026-06-14",
+      "descriptor": "STARBUCKS ACH",
+      "amountCents": 1024
+    },
+    {
+      "id": "bank_0189",
+      "postedDate": "2026-06-14",
+      "descriptor": "CANVA PRO POS DEBIT",
+      "amountCents": 1299
+    },
+    {
+      "id": "bank_0193",
+      "postedDate": "2026-06-14",
+      "descriptor": "DELL BUSINESS SALE POS DEBIT",
+      "amountCents": 98875
+    },
+    {
+      "id": "bank_0225",
+      "postedDate": "2026-06-14",
+      "descriptor": "PARKWHIZ PARKING POS DEBIT",
+      "amountCents": 2245
+    },
+    {
+      "id": "bank_0230",
+      "postedDate": "2026-06-14",
+      "descriptor": "UDEMY BUSINESS ACH",
+      "amountCents": 3900
+    },
+    {
+      "id": "bank_0242",
+      "postedDate": "2026-06-14",
+      "descriptor": "TRIP HELP UBER CO MERCHANT PMT",
+      "amountCents": 1916
+    },
+    {
+      "id": "bank_0271",
+      "postedDate": "2026-06-14",
+      "descriptor": "LYFT RIDE CARD PURCHASE",
+      "amountCents": 5071
+    },
+    {
+      "id": "bank_0273",
+      "postedDate": "2026-06-14",
+      "descriptor": "UARE UP MISC SVC POS DEBIT",
+      "amountCents": 9756
+    },
+    {
+      "id": "bank_0326",
+      "postedDate": "2026-06-14",
+      "descriptor": "UPWORK CONTRACTOR  MERCHANT PMT",
+      "amountCents": 37265
+    },
+    {
+      "id": "bank_0357",
+      "postedDate": "2026-06-14",
+      "descriptor": "MAILCHIMP EMAIL ACH",
+      "amountCents": 6606
+    },
+    {
+      "id": "bank_0360",
+      "postedDate": "2026-06-14",
+      "descriptor": "STAPLES STORE POS DEBIT",
+      "amountCents": 10786
+    },
+    {
+      "id": "bank_0019",
+      "postedDate": "2026-06-15",
+      "descriptor": "BLUE BOTTLE COFFEE ACH",
+      "amountCents": 689
+    },
+    {
+      "id": "bank_0062",
+      "postedDate": "2026-06-15",
+      "descriptor": "DELL BUSINESS SALE ACH",
+      "amountCents": 259900
+    },
+    {
+      "id": "bank_0095",
+      "postedDate": "2026-06-15",
+      "descriptor": "DOORDASH RESTAURAN ACH",
+      "amountCents": 4032
+    },
+    {
+      "id": "bank_0143",
+      "postedDate": "2026-06-15",
+      "descriptor": "EATS ACH",
+      "amountCents": 1890
+    },
+    {
+      "id": "bank_0148",
+      "postedDate": "2026-06-15",
+      "descriptor": "DELTA AIR CARD PURCHASE",
+      "amountCents": 88181
+    },
+    {
+      "id": "bank_0149",
+      "postedDate": "2026-06-15",
+      "descriptor": "CLERKY LEGAL DOCS POS DEBIT",
+      "amountCents": 39325
+    },
+    {
+      "id": "bank_0173",
+      "postedDate": "2026-06-15",
+      "descriptor": "UNITED AIRLINES ACH",
+      "amountCents": 59382
+    },
+    {
+      "id": "bank_0174",
+      "postedDate": "2026-06-15",
+      "descriptor": "APPLE STORE R POS DEBIT",
+      "amountCents": 81357
+    },
+    {
+      "id": "bank_0181",
+      "postedDate": "2026-06-15",
+      "descriptor": "AVIS RENT A CAR MERCHANT PMT",
+      "amountCents": 10506
+    },
+    {
+      "id": "bank_0208",
+      "postedDate": "2026-06-15",
+      "descriptor": "CHIPOTLE POS DEBIT",
+      "amountCents": 1316
+    },
+    {
+      "id": "bank_0232",
+      "postedDate": "2026-06-15",
+      "descriptor": "UNITED AIRLINES ACH",
+      "amountCents": 47029
+    },
+    {
+      "id": "bank_0291",
+      "postedDate": "2026-06-15",
+      "descriptor": "STARBUCKS ACH",
+      "amountCents": 995
+    },
+    {
+      "id": "bank_0306",
+      "postedDate": "2026-06-15",
+      "descriptor": "COURSERA FOR BUSIN MERCHANT PMT",
+      "amountCents": 5900
+    },
+    {
+      "id": "bank_0318",
+      "postedDate": "2026-06-15",
+      "descriptor": "UNITED AIRLINES ACH",
+      "amountCents": 53127
+    },
+    {
+      "id": "bank_0331",
+      "postedDate": "2026-06-15",
+      "descriptor": "AVIS RENT A CAR POS DEBIT",
+      "amountCents": 16977
+    },
+    {
+      "id": "bank_0001",
+      "postedDate": "2026-06-16",
+      "descriptor": "NOTIONLABS MERCHANT PMT",
+      "amountCents": 9600
+    },
+    {
+      "id": "bank_0059",
+      "postedDate": "2026-06-16",
+      "descriptor": "ADS ACH",
+      "amountCents": 91000
+    },
+    {
+      "id": "bank_0083",
+      "postedDate": "2026-06-16",
+      "descriptor": "PARKWHIZ PARKING POS DEBIT",
+      "amountCents": 1537
+    },
+    {
+      "id": "bank_0124",
+      "postedDate": "2026-06-16",
+      "descriptor": "UDEMY BUSINESS CARD PURCHASE",
+      "amountCents": 3900
+    },
+    {
+      "id": "bank_0129",
+      "postedDate": "2026-06-16",
+      "descriptor": "AMTRAK TRAINS MERCHANT PMT",
+      "amountCents": 16927
+    },
+    {
+      "id": "bank_0147",
+      "postedDate": "2026-06-16",
+      "descriptor": "FACEBOOK ADS ACH",
+      "amountCents": 10496
+    },
+    {
+      "id": "bank_0150",
+      "postedDate": "2026-06-16",
+      "descriptor": "CONF REG STRANGE L ACH",
+      "amountCents": 59900
+    },
+    {
+      "id": "bank_0165",
+      "postedDate": "2026-06-16",
+      "descriptor": "ADS MERCHANT PMT",
+      "amountCents": 19687
+    },
+    {
+      "id": "bank_0170",
+      "postedDate": "2026-06-16",
+      "descriptor": "OFFICE DEPOT MERCHANT PMT",
+      "amountCents": 9440
+    },
+    {
+      "id": "bank_0204",
+      "postedDate": "2026-06-16",
+      "descriptor": "LOGITECH COM CARD PURCHASE",
+      "amountCents": 19564
+    },
+    {
+      "id": "bank_0268",
+      "postedDate": "2026-06-16",
+      "descriptor": "TEAM DINNER EVENT CARD PURCHASE",
+      "amountCents": 9202
+    },
+    {
+      "id": "bank_0299",
+      "postedDate": "2026-06-16",
+      "descriptor": "FACEBOOK ADS POS DEBIT",
+      "amountCents": 35540
+    },
+    {
+      "id": "bank_0337",
+      "postedDate": "2026-06-16",
+      "descriptor": "NEXT INSURANCE POS DEBIT",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0084",
+      "postedDate": "2026-06-17",
+      "descriptor": "TWILIO INC CARD PURCHASE",
+      "amountCents": 4491
+    },
+    {
+      "id": "bank_0108",
+      "postedDate": "2026-06-17",
+      "descriptor": "STRIPE ATLAS ACH",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0130",
+      "postedDate": "2026-06-17",
+      "descriptor": "COURSERA FOR BUSIN MERCHANT PMT",
+      "amountCents": 5900
+    },
+    {
+      "id": "bank_0137",
+      "postedDate": "2026-06-17",
+      "descriptor": "CHIPOTLE CARD PURCHASE",
+      "amountCents": 1564
+    },
+    {
+      "id": "bank_0164",
+      "postedDate": "2026-06-17",
+      "descriptor": "STRIPE ATLAS POS DEBIT",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0198",
+      "postedDate": "2026-06-17",
+      "descriptor": "OFFICE DEPOT MERCHANT PMT",
+      "amountCents": 5770
+    },
+    {
+      "id": "bank_0224",
+      "postedDate": "2026-06-17",
+      "descriptor": "TRIP HELP UBER CO POS DEBIT",
+      "amountCents": 1630
+    },
+    {
+      "id": "bank_0231",
+      "postedDate": "2026-06-17",
+      "descriptor": "TRIP HELP UBER CO ACH",
+      "amountCents": 1681
+    },
+    {
+      "id": "bank_0239",
+      "postedDate": "2026-06-17",
+      "descriptor": "CLERKY LEGAL DOCS POS DEBIT",
+      "amountCents": 13645
+    },
+    {
+      "id": "bank_0275",
+      "postedDate": "2026-06-17",
+      "descriptor": "AVIS RENT A CAR MERCHANT PMT",
+      "amountCents": 22164
+    },
+    {
+      "id": "bank_0284",
+      "postedDate": "2026-06-17",
+      "descriptor": "MAILCHIMP EMAIL CARD PURCHASE",
+      "amountCents": 8018
+    },
+    {
+      "id": "bank_0286",
+      "postedDate": "2026-06-17",
+      "descriptor": "UPWORK CONTRACTOR  MERCHANT PMT",
+      "amountCents": 32035
+    },
+    {
+      "id": "bank_0287",
+      "postedDate": "2026-06-17",
+      "descriptor": "UPWORK CONTRACTOR  MERCHANT PMT",
+      "amountCents": 62281
+    },
+    {
+      "id": "bank_0315",
+      "postedDate": "2026-06-17",
+      "descriptor": "STRIPE ATLAS MERCHANT PMT",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0343",
+      "postedDate": "2026-06-17",
+      "descriptor": "T MOBILE AUTOPAY CARD PURCHASE",
+      "amountCents": 8500
+    },
+    {
+      "id": "bank_0346",
+      "postedDate": "2026-06-17",
+      "descriptor": "EATS POS DEBIT",
+      "amountCents": 2352
+    },
+    {
+      "id": "bank_0017",
+      "postedDate": "2026-06-18",
+      "descriptor": "MKTP US BSMZGND POS DEBIT",
+      "amountCents": 10655
+    },
+    {
+      "id": "bank_0018",
+      "postedDate": "2026-06-18",
+      "descriptor": "BLUE BOTTLE COFFE CARD PURCHASE",
+      "amountCents": 684
+    },
+    {
+      "id": "bank_0052",
+      "postedDate": "2026-06-18",
+      "descriptor": "DELL BUSINESS SALE CARD PURCHASE",
+      "amountCents": 249900
+    },
+    {
+      "id": "bank_0060",
+      "postedDate": "2026-06-18",
+      "descriptor": "TEAM DINNER EVENT CARD PURCHASE",
+      "amountCents": 18400
+    },
+    {
+      "id": "bank_0109",
+      "postedDate": "2026-06-18",
+      "descriptor": "CLERKY LEGAL DOCS POS DEBIT",
+      "amountCents": 39002
+    },
+    {
+      "id": "bank_0112",
+      "postedDate": "2026-06-18",
+      "descriptor": "HILTON HOTELS CARD PURCHASE",
+      "amountCents": 50048
+    },
+    {
+      "id": "bank_0133",
+      "postedDate": "2026-06-18",
+      "descriptor": "SWEETGREEN MERCHANT PMT",
+      "amountCents": 1358
+    },
+    {
+      "id": "bank_0227",
+      "postedDate": "2026-06-18",
+      "descriptor": "MARRIOTT HOTELS CARD PURCHASE",
+      "amountCents": 40448
+    },
+    {
+      "id": "bank_0245",
+      "postedDate": "2026-06-18",
+      "descriptor": "T MOBILE AUTOPAY MERCHANT PMT",
+      "amountCents": 8500
+    },
+    {
+      "id": "bank_0251",
+      "postedDate": "2026-06-18",
+      "descriptor": "HILTON HOTELS POS DEBIT",
+      "amountCents": 56677
+    },
+    {
+      "id": "bank_0266",
+      "postedDate": "2026-06-18",
+      "descriptor": "CLERKY LEGAL DOCS ACH",
+      "amountCents": 42998
+    },
+    {
+      "id": "bank_0302",
+      "postedDate": "2026-06-18",
+      "descriptor": "AVIS RENT A CAR POS DEBIT",
+      "amountCents": 23772
+    },
+    {
+      "id": "bank_0314",
+      "postedDate": "2026-06-18",
+      "descriptor": "DOORDASH RESTAURAN MERCHANT PMT",
+      "amountCents": 3544
+    },
+    {
+      "id": "bank_0319",
+      "postedDate": "2026-06-18",
+      "descriptor": "NEXT INSURANCE ACH",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0338",
+      "postedDate": "2026-06-18",
+      "descriptor": "STAPLES STORE CARD PURCHASE",
+      "amountCents": 5159
+    },
+    {
+      "id": "bank_0359",
+      "postedDate": "2026-06-18",
+      "descriptor": "COSTCO WHSE ACH",
+      "amountCents": 30136
+    },
+    {
+      "id": "bank_0058",
+      "postedDate": "2026-06-19",
+      "descriptor": "FACEBOOK ADS ACH",
+      "amountCents": 82000
+    },
+    {
+      "id": "bank_0102",
+      "postedDate": "2026-06-19",
+      "descriptor": "MARRIOTT HOTELS POS DEBIT",
+      "amountCents": 50056
+    },
+    {
+      "id": "bank_0140",
+      "postedDate": "2026-06-19",
+      "descriptor": "UPWORK CONTRACTOR  ACH",
+      "amountCents": 33612
+    },
+    {
+      "id": "bank_0196",
+      "postedDate": "2026-06-19",
+      "descriptor": "TRIP HELP UBER CO CARD PURCHASE",
+      "amountCents": 5802
+    },
+    {
+      "id": "bank_0212",
+      "postedDate": "2026-06-19",
+      "descriptor": "T MOBILE AUTOPAY POS DEBIT",
+      "amountCents": 8500
+    },
+    {
+      "id": "bank_0213",
+      "postedDate": "2026-06-19",
+      "descriptor": "FACEBOOK ADS POS DEBIT",
+      "amountCents": 30691
+    },
+    {
+      "id": "bank_0229",
+      "postedDate": "2026-06-19",
+      "descriptor": "TEAM DINNER EVENT MERCHANT PMT",
+      "amountCents": 9798
+    },
+    {
+      "id": "bank_0241",
+      "postedDate": "2026-06-19",
+      "descriptor": "CANVA PRO POS DEBIT",
+      "amountCents": 1299
+    },
+    {
+      "id": "bank_0261",
+      "postedDate": "2026-06-19",
+      "descriptor": "DOORDASH RESTAURAN POS DEBIT",
+      "amountCents": 1670
+    },
+    {
+      "id": "bank_0283",
+      "postedDate": "2026-06-19",
+      "descriptor": "MARRIOTT HOTELS MERCHANT PMT",
+      "amountCents": 59597
+    },
+    {
+      "id": "bank_0336",
+      "postedDate": "2026-06-19",
+      "descriptor": "CHIPOTLE CARD PURCHASE",
+      "amountCents": 1109
+    },
+    {
+      "id": "bank_0344",
+      "postedDate": "2026-06-19",
+      "descriptor": "TWILIO INC CARD PURCHASE",
+      "amountCents": 6368
+    },
+    {
+      "id": "bank_0356",
+      "postedDate": "2026-06-19",
+      "descriptor": "CHIPOTLE CARD PURCHASE",
+      "amountCents": 1132
+    },
+    {
+      "id": "bank_0007",
+      "postedDate": "2026-06-20",
+      "descriptor": "GITHUB INC ACH",
+      "amountCents": 13266
+    },
+    {
+      "id": "bank_0027",
+      "postedDate": "2026-06-20",
+      "descriptor": "FACEBOOK ADS MERCHANT PMT",
+      "amountCents": 31046
+    },
+    {
+      "id": "bank_0028",
+      "postedDate": "2026-06-20",
+      "descriptor": "FACEBOOK ADS CARD PURCHASE",
+      "amountCents": 31046
+    },
+    {
+      "id": "bank_0080",
+      "postedDate": "2026-06-20",
+      "descriptor": "DELL BUSINESS SALE MERCHANT PMT",
+      "amountCents": 102351
+    },
+    {
+      "id": "bank_0104",
+      "postedDate": "2026-06-20",
+      "descriptor": "DELL BUSINESS SALE ACH",
+      "amountCents": 187505
+    },
+    {
+      "id": "bank_0114",
+      "postedDate": "2026-06-20",
+      "descriptor": "OFFICE DEPOT ACH",
+      "amountCents": 5405
+    },
+    {
+      "id": "bank_0119",
+      "postedDate": "2026-06-20",
+      "descriptor": "LOGITECH COM MERCHANT PMT",
+      "amountCents": 23982
+    },
+    {
+      "id": "bank_0123",
+      "postedDate": "2026-06-20",
+      "descriptor": "MARRIOTT HOTELS MERCHANT PMT",
+      "amountCents": 63379
+    },
+    {
+      "id": "bank_0151",
+      "postedDate": "2026-06-20",
+      "descriptor": "CHIPOTLE ACH",
+      "amountCents": 1211
+    },
+    {
+      "id": "bank_0187",
+      "postedDate": "2026-06-20",
+      "descriptor": "EATS CARD PURCHASE",
+      "amountCents": 2188
+    },
+    {
+      "id": "bank_0194",
+      "postedDate": "2026-06-20",
+      "descriptor": "CANVA PRO CARD PURCHASE",
+      "amountCents": 1299
+    },
+    {
+      "id": "bank_0254",
+      "postedDate": "2026-06-20",
+      "descriptor": "B H PHOTO VIDEO MERCHANT PMT",
+      "amountCents": 55077
+    },
+    {
+      "id": "bank_0255",
+      "postedDate": "2026-06-20",
+      "descriptor": "STAPLES STORE ACH",
+      "amountCents": 11380
+    },
+    {
+      "id": "bank_0303",
+      "postedDate": "2026-06-20",
+      "descriptor": "VENDOR SVCS LLC CARD PURCHASE",
+      "amountCents": 21100
+    },
+    {
+      "id": "bank_0321",
+      "postedDate": "2026-06-20",
+      "descriptor": "ADS POS DEBIT",
+      "amountCents": 26637
+    },
+    {
+      "id": "bank_0349",
+      "postedDate": "2026-06-20",
+      "descriptor": "SWEETGREEN MERCHANT PMT",
+      "amountCents": 1602
+    },
+    {
+      "id": "bank_0350",
+      "postedDate": "2026-06-20",
+      "descriptor": "CLERKY LEGAL DOCS ACH",
+      "amountCents": 18664
+    },
+    {
+      "id": "bank_0004",
+      "postedDate": "2026-06-21",
+      "descriptor": "SLACK T X M K SF CARD PURCHASE",
+      "amountCents": 13982
+    },
+    {
+      "id": "bank_0011",
+      "postedDate": "2026-06-21",
+      "descriptor": "NOTION LABS INC POS DEBIT",
+      "amountCents": 4800
+    },
+    {
+      "id": "bank_0015",
+      "postedDate": "2026-06-21",
+      "descriptor": "AMAZON BUSINESS ACH",
+      "amountCents": 12890
+    },
+    {
+      "id": "bank_0115",
+      "postedDate": "2026-06-21",
+      "descriptor": "DELTA AIR ACH",
+      "amountCents": 66356
+    },
+    {
+      "id": "bank_0161",
+      "postedDate": "2026-06-21",
+      "descriptor": "SWEETGREEN ACH",
+      "amountCents": 1354
+    },
+    {
+      "id": "bank_0169",
+      "postedDate": "2026-06-21",
+      "descriptor": "ADS MERCHANT PMT",
+      "amountCents": 38857
+    },
+    {
+      "id": "bank_0175",
+      "postedDate": "2026-06-21",
+      "descriptor": "AVIS RENT A CAR CARD PURCHASE",
+      "amountCents": 17628
+    },
+    {
+      "id": "bank_0184",
+      "postedDate": "2026-06-21",
+      "descriptor": "HILTON HOTELS CARD PURCHASE",
+      "amountCents": 59417
+    },
+    {
+      "id": "bank_0186",
+      "postedDate": "2026-06-21",
+      "descriptor": "TWILIO INC MERCHANT PMT",
+      "amountCents": 10009
+    },
+    {
+      "id": "bank_0253",
+      "postedDate": "2026-06-21",
+      "descriptor": "FACEBOOK ADS POS DEBIT",
+      "amountCents": 44412
+    },
+    {
+      "id": "bank_0257",
+      "postedDate": "2026-06-21",
+      "descriptor": "STARBUCKS POS DEBIT",
+      "amountCents": 690
+    },
+    {
+      "id": "bank_0278",
+      "postedDate": "2026-06-21",
+      "descriptor": "LOGITECH COM CARD PURCHASE",
+      "amountCents": 21921
+    },
+    {
+      "id": "bank_0341",
+      "postedDate": "2026-06-21",
+      "descriptor": "STRIPE ATLAS MERCHANT PMT",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0345",
+      "postedDate": "2026-06-21",
+      "descriptor": "MARRIOTT HOTELS ACH",
+      "amountCents": 31028
+    },
+    {
+      "id": "bank_0046",
+      "postedDate": "2026-06-22",
+      "descriptor": "UNITED AIRLINES POS DEBIT",
+      "amountCents": 38900
+    },
+    {
+      "id": "bank_0078",
+      "postedDate": "2026-06-22",
+      "descriptor": "CANVA PRO MERCHANT PMT",
+      "amountCents": 1299
+    },
+    {
+      "id": "bank_0081",
+      "postedDate": "2026-06-22",
+      "descriptor": "CANVA PRO MERCHANT PMT",
+      "amountCents": 1299
+    },
+    {
+      "id": "bank_0091",
+      "postedDate": "2026-06-22",
+      "descriptor": "SWEETGREEN ACH",
+      "amountCents": 1568
+    },
+    {
+      "id": "bank_0118",
+      "postedDate": "2026-06-22",
+      "descriptor": "NEXT INSURANCE MERCHANT PMT",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0135",
+      "postedDate": "2026-06-22",
+      "descriptor": "PARKWHIZ PARKING POS DEBIT",
+      "amountCents": 4165
+    },
+    {
+      "id": "bank_0160",
+      "postedDate": "2026-06-22",
+      "descriptor": "DOORDASH RESTAURAN MERCHANT PMT",
+      "amountCents": 2917
+    },
+    {
+      "id": "bank_0180",
+      "postedDate": "2026-06-22",
+      "descriptor": "MISC CHARGE ACH",
+      "amountCents": 7899
+    },
+    {
+      "id": "bank_0244",
+      "postedDate": "2026-06-22",
+      "descriptor": "NEXT INSURANCE ACH",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0264",
+      "postedDate": "2026-06-22",
+      "descriptor": "VENDOR SVCS LLC POS DEBIT",
+      "amountCents": 14197
+    },
+    {
+      "id": "bank_0270",
+      "postedDate": "2026-06-22",
+      "descriptor": "PAYMENT PROCESSING CARD PURCHASE",
+      "amountCents": 2080
+    },
+    {
+      "id": "bank_0279",
+      "postedDate": "2026-06-22",
+      "descriptor": "SWEETGREEN POS DEBIT",
+      "amountCents": 1257
+    },
+    {
+      "id": "bank_0312",
+      "postedDate": "2026-06-22",
+      "descriptor": "LOGITECH COM POS DEBIT",
+      "amountCents": 5858
+    },
+    {
+      "id": "bank_0320",
+      "postedDate": "2026-06-22",
+      "descriptor": "MARRIOTT HOTELS CARD PURCHASE",
+      "amountCents": 27073
+    },
+    {
+      "id": "bank_0328",
+      "postedDate": "2026-06-22",
+      "descriptor": "UARE UP MISC SVC ACH",
+      "amountCents": 8148
+    },
+    {
+      "id": "bank_0330",
+      "postedDate": "2026-06-22",
+      "descriptor": "STRIPE ATLAS ACH",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0347",
+      "postedDate": "2026-06-22",
+      "descriptor": "CANVA PRO CARD PURCHASE",
+      "amountCents": 1299
+    },
+    {
+      "id": "bank_0368",
+      "postedDate": "2026-06-22",
+      "descriptor": "FOREIGN TXN FEE",
+      "amountCents": 1275
+    },
+    {
+      "id": "bank_0098",
+      "postedDate": "2026-06-23",
+      "descriptor": "TRIP HELP UBER CO CARD PURCHASE",
+      "amountCents": 1690
+    },
+    {
+      "id": "bank_0131",
+      "postedDate": "2026-06-23",
+      "descriptor": "AMTRAK TRAINS ACH",
+      "amountCents": 9828
+    },
+    {
+      "id": "bank_0132",
+      "postedDate": "2026-06-23",
+      "descriptor": "MARRIOTT HOTELS ACH",
+      "amountCents": 64246
+    },
+    {
+      "id": "bank_0256",
+      "postedDate": "2026-06-23",
+      "descriptor": "TWILIO INC CARD PURCHASE",
+      "amountCents": 11351
+    },
+    {
+      "id": "bank_0263",
+      "postedDate": "2026-06-23",
+      "descriptor": "STARBUCKS CARD PURCHASE",
+      "amountCents": 476
+    },
+    {
+      "id": "bank_0305",
+      "postedDate": "2026-06-23",
+      "descriptor": "UNITED AIRLINES POS DEBIT",
+      "amountCents": 34729
+    },
+    {
+      "id": "bank_0322",
+      "postedDate": "2026-06-23",
+      "descriptor": "SWEETGREEN CARD PURCHASE",
+      "amountCents": 1821
+    },
+    {
+      "id": "bank_0339",
+      "postedDate": "2026-06-23",
+      "descriptor": "DOORDASH RESTAURAN POS DEBIT",
+      "amountCents": 5175
+    },
+    {
+      "id": "bank_0047",
+      "postedDate": "2026-06-24",
+      "descriptor": "MARRIOTT HOTELS CARD PURCHASE",
+      "amountCents": 48900
+    },
+    {
+      "id": "bank_0093",
+      "postedDate": "2026-06-24",
+      "descriptor": "ADS ACH",
+      "amountCents": 25455
+    },
+    {
+      "id": "bank_0122",
+      "postedDate": "2026-06-24",
+      "descriptor": "UNITED AIRLINES CARD PURCHASE",
+      "amountCents": 80124
+    },
+    {
+      "id": "bank_0141",
+      "postedDate": "2026-06-24",
+      "descriptor": "DELL BUSINESS SALE POS DEBIT",
+      "amountCents": 94374
+    },
+    {
+      "id": "bank_0152",
+      "postedDate": "2026-06-24",
+      "descriptor": "ADS POS DEBIT",
+      "amountCents": 40004
+    },
+    {
+      "id": "bank_0154",
+      "postedDate": "2026-06-24",
+      "descriptor": "APPLE STORE R POS DEBIT",
+      "amountCents": 108913
+    },
+    {
+      "id": "bank_0177",
+      "postedDate": "2026-06-24",
+      "descriptor": "TARTINE BAKERY CARD PURCHASE",
+      "amountCents": 1398
+    },
+    {
+      "id": "bank_0205",
+      "postedDate": "2026-06-24",
+      "descriptor": "AMTRAK TRAINS MERCHANT PMT",
+      "amountCents": 25971
+    },
+    {
+      "id": "bank_0248",
+      "postedDate": "2026-06-24",
+      "descriptor": "AVIS RENT A CAR POS DEBIT",
+      "amountCents": 10913
+    },
+    {
+      "id": "bank_0310",
+      "postedDate": "2026-06-24",
+      "descriptor": "LYFT RIDE CARD PURCHASE",
+      "amountCents": 4542
+    },
+    {
+      "id": "bank_0048",
+      "postedDate": "2026-06-25",
+      "descriptor": "CONF REG STRANGE L POS DEBIT",
+      "amountCents": 59900
+    },
+    {
+      "id": "bank_0049",
+      "postedDate": "2026-06-25",
+      "descriptor": "LYFT RIDE MERCHANT PMT",
+      "amountCents": 1850
+    },
+    {
+      "id": "bank_0050",
+      "postedDate": "2026-06-25",
+      "descriptor": "STARBUCKS POS DEBIT",
+      "amountCents": 590
+    },
+    {
+      "id": "bank_0061",
+      "postedDate": "2026-06-25",
+      "descriptor": "TEAM DINNER EVENT POS DEBIT",
+      "amountCents": 21200
+    },
+    {
+      "id": "bank_0110",
+      "postedDate": "2026-06-25",
+      "descriptor": "DOORDASH RESTAURAN POS DEBIT",
+      "amountCents": 4273
+    },
+    {
+      "id": "bank_0120",
+      "postedDate": "2026-06-25",
+      "descriptor": "NEXT INSURANCE POS DEBIT",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0128",
+      "postedDate": "2026-06-25",
+      "descriptor": "HILTON HOTELS ACH",
+      "amountCents": 30151
+    },
+    {
+      "id": "bank_0214",
+      "postedDate": "2026-06-25",
+      "descriptor": "HILTON HOTELS CARD PURCHASE",
+      "amountCents": 55757
+    },
+    {
+      "id": "bank_0236",
+      "postedDate": "2026-06-25",
+      "descriptor": "SWEETGREEN ACH",
+      "amountCents": 1200
+    },
+    {
+      "id": "bank_0289",
+      "postedDate": "2026-06-25",
+      "descriptor": "MAILCHIMP EMAIL CARD PURCHASE",
+      "amountCents": 2172
+    },
+    {
+      "id": "bank_0304",
+      "postedDate": "2026-06-25",
+      "descriptor": "LOGITECH COM MERCHANT PMT",
+      "amountCents": 6121
+    },
+    {
+      "id": "bank_0327",
+      "postedDate": "2026-06-25",
+      "descriptor": "TRIP HELP UBER CO CARD PURCHASE",
+      "amountCents": 4337
+    },
+    {
+      "id": "bank_0072",
+      "postedDate": "2026-06-26",
+      "descriptor": "DELL BUSINESS SALE ACH",
+      "amountCents": 129900
+    },
+    {
+      "id": "bank_0158",
+      "postedDate": "2026-06-26",
+      "descriptor": "MARRIOTT HOTELS POS DEBIT",
+      "amountCents": 25722
+    },
+    {
+      "id": "bank_0183",
+      "postedDate": "2026-06-26",
+      "descriptor": "STAPLES STORE ACH",
+      "amountCents": 12646
+    },
+    {
+      "id": "bank_0222",
+      "postedDate": "2026-06-26",
+      "descriptor": "TEAM DINNER EVENT MERCHANT PMT",
+      "amountCents": 5545
+    },
+    {
+      "id": "bank_0228",
+      "postedDate": "2026-06-26",
+      "descriptor": "COURSERA FOR BUSIN CARD PURCHASE",
+      "amountCents": 5900
+    },
+    {
+      "id": "bank_0252",
+      "postedDate": "2026-06-26",
+      "descriptor": "PARKWHIZ PARKING POS DEBIT",
+      "amountCents": 3120
+    },
+    {
+      "id": "bank_0265",
+      "postedDate": "2026-06-26",
+      "descriptor": "LOGITECH COM CARD PURCHASE",
+      "amountCents": 22494
+    },
+    {
+      "id": "bank_0272",
+      "postedDate": "2026-06-26",
+      "descriptor": "B H PHOTO VIDEO CARD PURCHASE",
+      "amountCents": 49626
+    },
+    {
+      "id": "bank_0276",
+      "postedDate": "2026-06-26",
+      "descriptor": "NEXT INSURANCE ACH",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0290",
+      "postedDate": "2026-06-26",
+      "descriptor": "B H PHOTO VIDEO CARD PURCHASE",
+      "amountCents": 78513
+    },
+    {
+      "id": "bank_0051",
+      "postedDate": "2026-06-27",
+      "descriptor": "MARRIOTT HOTELS ACH",
+      "amountCents": 48900
+    },
+    {
+      "id": "bank_0155",
+      "postedDate": "2026-06-27",
+      "descriptor": "B H PHOTO VIDEO CARD PURCHASE",
+      "amountCents": 46569
+    },
+    {
+      "id": "bank_0185",
+      "postedDate": "2026-06-27",
+      "descriptor": "LYFT RIDE ACH",
+      "amountCents": 3637
+    },
+    {
+      "id": "bank_0197",
+      "postedDate": "2026-06-27",
+      "descriptor": "MISC CHARGE POS DEBIT",
+      "amountCents": 4635
+    },
+    {
+      "id": "bank_0207",
+      "postedDate": "2026-06-27",
+      "descriptor": "CANVA PRO ACH",
+      "amountCents": 1299
+    },
+    {
+      "id": "bank_0215",
+      "postedDate": "2026-06-27",
+      "descriptor": "UARE UP MISC SVC ACH",
+      "amountCents": 7709
+    },
+    {
+      "id": "bank_0217",
+      "postedDate": "2026-06-27",
+      "descriptor": "HISCOX SMALL BIZ ACH",
+      "amountCents": 18000
+    },
+    {
+      "id": "bank_0220",
+      "postedDate": "2026-06-27",
+      "descriptor": "DOORDASH RESTAURAN POS DEBIT",
+      "amountCents": 3235
+    },
+    {
+      "id": "bank_0235",
+      "postedDate": "2026-06-27",
+      "descriptor": "PARKWHIZ PARKING MERCHANT PMT",
+      "amountCents": 3041
+    },
+    {
+      "id": "bank_0250",
+      "postedDate": "2026-06-27",
+      "descriptor": "UNITED AIRLINES MERCHANT PMT",
+      "amountCents": 55619
+    },
+    {
+      "id": "bank_0280",
+      "postedDate": "2026-06-27",
+      "descriptor": "STAPLES STORE MERCHANT PMT",
+      "amountCents": 18681
+    },
+    {
+      "id": "bank_0300",
+      "postedDate": "2026-06-27",
+      "descriptor": "PAYMENT PROCESSING CARD PURCHASE",
+      "amountCents": 714
+    },
+    {
+      "id": "bank_0009",
+      "postedDate": "2026-06-28",
+      "descriptor": "GUSTO ACH",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0139",
+      "postedDate": "2026-06-28",
+      "descriptor": "NEXT INSURANCE ACH",
+      "amountCents": 24000
+    },
+    {
+      "id": "bank_0144",
+      "postedDate": "2026-06-28",
+      "descriptor": "FACEBOOK ADS POS DEBIT",
+      "amountCents": 31530
+    },
+    {
+      "id": "bank_0145",
+      "postedDate": "2026-06-28",
+      "descriptor": "LYFT RIDE ACH",
+      "amountCents": 4742
+    },
+    {
+      "id": "bank_0167",
+      "postedDate": "2026-06-28",
+      "descriptor": "APPLE STORE R CARD PURCHASE",
+      "amountCents": 181439
+    },
+    {
+      "id": "bank_0262",
+      "postedDate": "2026-06-28",
+      "descriptor": "CLERKY LEGAL DOCS MERCHANT PMT",
+      "amountCents": 44614
+    },
+    {
+      "id": "bank_0298",
+      "postedDate": "2026-06-28",
+      "descriptor": "FACEBOOK ADS ACH",
+      "amountCents": 17841
+    },
+    {
+      "id": "bank_0340",
+      "postedDate": "2026-06-28",
+      "descriptor": "HILTON HOTELS ACH",
+      "amountCents": 43647
+    },
+    {
+      "id": "bank_0075",
+      "postedDate": "2026-06-29",
+      "descriptor": "LEDGER DATA ASSIST POS DEBIT",
+      "amountCents": 8600
+    },
+    {
+      "id": "bank_0076",
+      "postedDate": "2026-06-29",
+      "descriptor": "SYSTEM NOTE TXN PR ACH",
+      "amountCents": 15900
+    },
+    {
+      "id": "bank_0190",
+      "postedDate": "2026-06-29",
+      "descriptor": "AVIS RENT A CAR CARD PURCHASE",
+      "amountCents": 19153
+    },
+    {
+      "id": "bank_0233",
+      "postedDate": "2026-06-29",
+      "descriptor": "OFFICE DEPOT POS DEBIT",
+      "amountCents": 17504
+    },
+    {
+      "id": "bank_0246",
+      "postedDate": "2026-06-29",
+      "descriptor": "UPWORK CONTRACTOR  CARD PURCHASE",
+      "amountCents": 50234
+    },
+    {
+      "id": "bank_0285",
+      "postedDate": "2026-06-29",
+      "descriptor": "LOGITECH COM POS DEBIT",
+      "amountCents": 16194
+    },
+    {
+      "id": "bank_0342",
+      "postedDate": "2026-06-29",
+      "descriptor": "STRIPE ATLAS CARD PURCHASE",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0352",
+      "postedDate": "2026-06-29",
+      "descriptor": "STRIPE ATLAS MERCHANT PMT",
+      "amountCents": 50000
+    },
+    {
+      "id": "bank_0079",
+      "postedDate": "2026-06-30",
+      "descriptor": "FACEBOOK ADS MERCHANT PMT",
+      "amountCents": 36392
+    },
+    {
+      "id": "bank_0113",
+      "postedDate": "2026-06-30",
+      "descriptor": "EATS CARD PURCHASE",
+      "amountCents": 5467
+    },
+    {
+      "id": "bank_0201",
+      "postedDate": "2026-06-30",
+      "descriptor": "TRIP HELP UBER CO MERCHANT PMT",
+      "amountCents": 3340
+    },
+    {
+      "id": "bank_0332",
+      "postedDate": "2026-06-30",
+      "descriptor": "TRIP HELP UBER CO ACH",
+      "amountCents": 1624
+    },
+    {
+      "id": "bank_0348",
+      "postedDate": "2026-06-30",
+      "descriptor": "CONF REG STRANGE L ACH",
+      "amountCents": 59900
+    },
+    {
+      "id": "bank_0316",
+      "postedDate": "2026-07-01",
+      "descriptor": "UDEMY BUSINESS ACH",
+      "amountCents": 3900
+    }
   ]
 }

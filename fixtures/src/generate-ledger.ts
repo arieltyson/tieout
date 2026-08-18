@@ -11,6 +11,7 @@
  */
 import { cents, type Cents } from '../../harness/src/domain/money.js';
 import { policyRules } from '../../harness/src/domain/policy-rules.js';
+import { generateBankFeed, type BankTransaction } from './bank-feed.js';
 import { clampDay, formatDate } from './dates.js';
 import { createRng, type Rng } from './rng.js';
 import type {
@@ -66,6 +67,7 @@ function last<T>(xs: readonly T[]): T {
 
 interface Builder {
   readonly transactions: Transaction[];
+  bankTransactions: BankTransaction[];
   readonly receipts: Receipt[];
   readonly approvals: TxnId[];
   readonly expectedCategorizations: Record<TxnId, string>;
@@ -417,10 +419,59 @@ function grantStandingApprovals(b: Builder): void {
   }
 }
 
+/**
+ * Builds the bank feed and records what it deliberately disagrees about.
+ *
+ * Runs last so the transactions themselves are already final: the feed is a
+ * second view of the same month rather than something the ledger is built
+ * around, which is the direction the real relationship runs in.
+ */
+function generateReconciliationDefects(b: Builder, period: string, rng: Rng): void {
+  const feed = generateBankFeed(b.transactions, period, rng);
+  b.bankTransactions = feed.bankTransactions;
+  const byId = new Map(b.transactions.map((t) => [t.id, t]));
+  const bankById = new Map(feed.bankTransactions.map((r) => [r.id, r]));
+
+  for (const txnId of feed.unreconciledTxnIds) {
+    const txn = byId.get(txnId)!;
+    b.defects.push({
+      id: `unrec-${txnId}`,
+      kind: 'unreconciled',
+      txnIds: [txnId],
+      note: `${txn.vendorDescriptor} for ${(txn.amountCents / 100).toFixed(2)} appears on the card but never settled at the bank.`,
+    });
+  }
+
+  for (const bankId of feed.bankOnlyIds) {
+    const row = bankById.get(bankId)!;
+    b.defects.push({
+      id: `bankonly-${bankId}`,
+      kind: 'bankOnly',
+      txnIds: [],
+      bankId,
+      amountCents: row.amountCents,
+      note: `${row.descriptor} for ${(row.amountCents / 100).toFixed(2)} is on the statement with no matching card charge.`,
+    });
+  }
+
+  for (const mismatch of feed.amountMismatches) {
+    const txn = byId.get(mismatch.txnId)!;
+    b.defects.push({
+      id: `bankdiff-${mismatch.txnId}`,
+      kind: 'bankAmountMismatch',
+      txnIds: [mismatch.txnId],
+      bankId: mismatch.bankId,
+      deltaCents: mismatch.deltaCents,
+      note: `${txn.vendorDescriptor} settled ${mismatch.deltaCents}c away from the authorised amount.`,
+    });
+  }
+}
+
 export function generateFixture(seed: number, period: string): { ledger: Ledger; groundTruth: GroundTruth } {
   const rng = createRng(seed);
   const b: Builder = {
     transactions: [],
+    bankTransactions: [],
     receipts: [],
     approvals: [],
     expectedCategorizations: {},
@@ -444,6 +495,7 @@ export function generateFixture(seed: number, period: string): { ledger: Ledger;
 
   attachOrdinaryReceipts(b, rng);
   grantStandingApprovals(b);
+  generateReconciliationDefects(b, period, rng);
 
   const sortedTransactions = [...b.transactions].sort((a, c) =>
     a.date === c.date ? a.id.localeCompare(c.id) : a.date.localeCompare(c.date),
@@ -461,8 +513,12 @@ export function generateFixture(seed: number, period: string): { ledger: Ledger;
     transactions: sortedTransactions,
     receipts: sortedReceipts,
     approvals: sortedApprovals,
+    bankTransactions: [...b.bankTransactions],
   };
   const groundTruth: GroundTruth = {
+    // Bumped when the planted defect set changes, so a published score can
+    // be matched to the fixture it was measured against.
+    fixtureVersion: 2,
     seed,
     period,
     expectedCategorizations: sortedExpectedCategorizations,
