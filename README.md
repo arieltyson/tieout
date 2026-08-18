@@ -162,9 +162,14 @@ Treat 94.1% as a floor.
   run in tested code.
 
 ### Anomaly Detection 🔎
-- **Five defect categories solved by code**, at perfect precision and for no
+- **Eight defect categories solved by code**, at perfect precision and for no
   tokens: currency conversion errors, receipt discrepancies, spend policy
-  breaches, silently cancelled subscriptions, and month on month price jumps.
+  breaches, silently cancelled subscriptions, month on month price jumps, and
+  the three ways a ledger and a bank feed disagree.
+- **Bank reconciliation that declines to guess.** A ledger row is matched to a
+  bank row only when the pairing is unambiguous. Contested rows are held back
+  rather than reported as exceptions, which costs recall and buys a clean
+  sheet on false alarms.
 - **The model judges rather than searches.** It receives candidates with the
   arithmetic already done and answers only the questions that have no exact
   answer.

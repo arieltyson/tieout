@@ -10,9 +10,12 @@ import type { BankResult } from '../../harness/src/domain/bank.js';
 import {
   CloseRunSchema,
   SCHEMA_VERSION,
+  type AgentStatus,
   type CloseRun,
+  type FindingView,
   type ProposalView,
 } from '../../harness/src/domain/close-run.js';
+import type { Finding } from '../../harness/src/agents/anomaly-hunter.js';
 import type { Ledger } from '../../harness/src/domain/ledger.js';
 import type { Proposal } from '../../harness/src/domain/proposal.js';
 import type { CategorizerResult } from '../../harness/src/agents/categorizer.js';
@@ -34,6 +37,14 @@ export interface BuildArtifactInput {
   readonly costUsd: number | null;
   readonly startedAt: Date;
   readonly finishedAt: Date;
+  /** Anomalies the run surfaced. Empty when anomaly hunting was skipped. */
+  readonly findings?: readonly Finding[];
+  /**
+   * Which agents actually ran. Passed in rather than assumed, because the
+   * previous version of this file hardcoded three of them as "not
+   * implemented" and went on saying so for weeks after they were built.
+   */
+  readonly agents?: readonly AgentStatus[];
 }
 
 export function buildCloseRun(input: BuildArtifactInput): CloseRun {
@@ -79,6 +90,20 @@ export function buildCloseRun(input: BuildArtifactInput): CloseRun {
 
   const escapeHatchCount = proposals.filter((p) => p.glCode === '6900').length;
 
+  // Ranked by materiality, largest first, with the unpriced ones last. A
+  // reviewer works down this list and stops when it stops being worth the
+  // time, so the order is the difference between a list that gets read and
+  // one that does not.
+  const findings: FindingView[] = [...(input.findings ?? [])]
+    .map((f) => ({
+      kind: f.kind,
+      txnIds: [...f.txnIds],
+      summary: f.summary,
+      materialityCents: f.materialityCents,
+      source: f.source,
+    }))
+    .sort((a, b) => (b.materialityCents ?? -1) - (a.materialityCents ?? -1));
+
   const artifact: CloseRun = {
     schemaVersion: SCHEMA_VERSION,
     runId: input.runId,
@@ -106,15 +131,12 @@ export function buildCloseRun(input: BuildArtifactInput): CloseRun {
       costUsd: input.costUsd,
       wallClockMs: input.finishedAt.getTime() - input.startedAt.getTime(),
     },
-    agents: [
+    agents: input.agents ? [...input.agents] : [
       {
         agent: 'categorizer',
         state: 'complete',
         detail: `${input.categorizer.categorizations.length} categorized in ${input.categorizer.batches} batches`,
       },
-      { agent: 'reconciler', state: 'pending', detail: 'not implemented' },
-      { agent: 'anomalyHunter', state: 'pending', detail: 'not implemented' },
-      { agent: 'receiptChaser', state: 'pending', detail: 'not implemented' },
     ],
     verifiers: input.bank.results.map((r) => ({
       verifier: r.verifier,
@@ -124,6 +146,7 @@ export function buildCloseRun(input: BuildArtifactInput): CloseRun {
       offendingCount: r.offending.length,
     })),
     proposals,
+    findings,
   };
 
   const parsed = CloseRunSchema.safeParse(artifact);

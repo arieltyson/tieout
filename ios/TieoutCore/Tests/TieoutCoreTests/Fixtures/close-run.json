@@ -1,10 +1,10 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "runId": "run_local",
   "period": "2026-06",
   "state": "awaitingApproval",
-  "startedAt": "2026-08-17T06:36:47.000Z",
-  "finishedAt": "2026-08-17T06:36:47.007Z",
+  "startedAt": "2026-08-18T10:15:43.525Z",
+  "finishedAt": "2026-08-18T10:15:43.784Z",
   "model": "scripted-dry",
   "dryRun": true,
   "summary": {
@@ -23,7 +23,7 @@
     "outputTokens": 0,
     "cachedReadTokens": 0,
     "costUsd": 0,
-    "wallClockMs": 7
+    "wallClockMs": 259
   },
   "agents": [
     {
@@ -32,19 +32,19 @@
       "detail": "370 categorized in 8 batches"
     },
     {
-      "agent": "reconciler",
-      "state": "pending",
-      "detail": "not implemented"
+      "agent": "anomalyHunter",
+      "state": "complete",
+      "detail": "0 judged, 43 from arithmetic"
     },
     {
-      "agent": "anomalyHunter",
-      "state": "pending",
-      "detail": "not implemented"
+      "agent": "reconciler",
+      "state": "complete",
+      "detail": "7 bank discrepancies"
     },
     {
       "agent": "receiptChaser",
-      "state": "pending",
-      "detail": "not implemented"
+      "state": "complete",
+      "detail": "0 receipts requested"
     }
   ],
   "verifiers": [
@@ -4531,6 +4531,393 @@
       "confidence": "high",
       "rationale": "dry run",
       "blockedBy": null
+    }
+  ],
+  "findings": [
+    {
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0084"
+      ],
+      "summary": "APPLE STORE R234 charged 3299.00 with no approval on file. Breaches \"equipment-limit\": Equipment purchases over $2000 require prior approval.",
+      "materialityCents": 129900,
+      "source": "deterministic"
+    },
+    {
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0020"
+      ],
+      "summary": "AWS  AMAZON WEB SERVICES moved 52% month-over-month: 1617.52 to 2458.97.",
+      "materialityCents": 84145,
+      "source": "deterministic"
+    },
+    {
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0087"
+      ],
+      "summary": "UPWORK CONTRACTOR PMT charged 1450.00 with no approval on file. Breaches \"single-txn-limit\": Any single charge over $750 requires prior approval on file.",
+      "materialityCents": 70000,
+      "source": "deterministic"
+    },
+    {
+      "kind": "missingRecurring",
+      "txnIds": [
+        "txn_0032"
+      ],
+      "summary": "CARTA INC billed in 2026-04 and 2026-05 but not in 2026-06. Last charge 500.00 — propose an accrual or confirm cancellation.",
+      "materialityCents": 50000,
+      "source": "deterministic"
+    },
+    {
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0083"
+      ],
+      "summary": "DELL BUSINESS SALES charged 2499.00 with no approval on file. Breaches \"equipment-limit\": Equipment purchases over $2000 require prior approval.",
+      "materialityCents": 49900,
+      "source": "deterministic"
+    },
+    {
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0028"
+      ],
+      "summary": "WEWORK 1234 5TH AVE moved 35% month-over-month: 1252.29 to 1690.37.",
+      "materialityCents": 43808,
+      "source": "deterministic"
+    },
+    {
+      "kind": "unreconciled",
+      "txnIds": [
+        "txn_0112"
+      ],
+      "summary": "GOOGLE ADS-4471829 for 432.37 on 2026-06-06 never settled at the bank.",
+      "materialityCents": 43237,
+      "source": "deterministic"
+    },
+    {
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0038"
+      ],
+      "summary": "LINKEDIN ADS moved 63% month-over-month: 558.40 to 907.52.",
+      "materialityCents": 34912,
+      "source": "deterministic"
+    },
+    {
+      "kind": "missingRecurring",
+      "txnIds": [
+        "txn_0030"
+      ],
+      "summary": "DATADOG INC billed in 2026-04 and 2026-05 but not in 2026-06. Last charge 336.42 — propose an accrual or confirm cancellation.",
+      "materialityCents": 33642,
+      "source": "deterministic"
+    },
+    {
+      "kind": "missingRecurring",
+      "txnIds": [
+        "txn_0040"
+      ],
+      "summary": "VERIZON WIRELESS billed in 2026-04 and 2026-05 but not in 2026-06. Last charge 310.00 — propose an accrual or confirm cancellation.",
+      "materialityCents": 31000,
+      "source": "deterministic"
+    },
+    {
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0085"
+      ],
+      "summary": "B&H PHOTO VIDEO charged 2199.00 with no approval on file. Breaches \"equipment-limit\": Equipment purchases over $2000 require prior approval.",
+      "materialityCents": 19900,
+      "source": "deterministic"
+    },
+    {
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0086"
+      ],
+      "summary": "MARRIOTT HOTELS charged 925.00 with no approval on file. Breaches \"single-txn-limit\": Any single charge over $750 requires prior approval on file.",
+      "materialityCents": 17500,
+      "source": "deterministic"
+    },
+    {
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0090"
+      ],
+      "summary": "GOOGLE ADS-4471829 charged 910.00 with no approval on file. Breaches \"single-txn-limit\": Any single charge over $750 requires prior approval on file.",
+      "materialityCents": 16000,
+      "source": "deterministic"
+    },
+    {
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0088"
+      ],
+      "summary": "CLERKY LEGAL DOCS charged 890.00 with no approval on file. Breaches \"single-txn-limit\": Any single charge over $750 requires prior approval on file.",
+      "materialityCents": 14000,
+      "source": "deterministic"
+    },
+    {
+      "kind": "missingRecurring",
+      "txnIds": [
+        "txn_0025"
+      ],
+      "summary": "LINEAR ORBIT INC billed in 2026-04 and 2026-05 but not in 2026-06. Last charge 96.00 — propose an accrual or confirm cancellation.",
+      "materialityCents": 9600,
+      "source": "deterministic"
+    },
+    {
+      "kind": "unreconciled",
+      "txnIds": [
+        "txn_0175"
+      ],
+      "summary": "TWILIO INC for 93.90 on 2026-06-08 never settled at the bank.",
+      "materialityCents": 9390,
+      "source": "deterministic"
+    },
+    {
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0089"
+      ],
+      "summary": "FACEBOOK ADS charged 820.00 with no approval on file. Breaches \"single-txn-limit\": Any single charge over $750 requires prior approval on file.",
+      "materialityCents": 7000,
+      "source": "deterministic"
+    },
+    {
+      "kind": "missingRecurring",
+      "txnIds": [
+        "txn_0017"
+      ],
+      "summary": "ZOOM.US SAN JOSE CA billed in 2026-04 and 2026-05 but not in 2026-06. Last charge 64.99 — propose an accrual or confirm cancellation.",
+      "materialityCents": 6499,
+      "source": "deterministic"
+    },
+    {
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0092"
+      ],
+      "summary": "SQ *TEAM DINNER EVENT charged 212.00 with no approval on file. Breaches \"meals-daily-limit\": Meals & Entertainment charges over $150 require prior approval.",
+      "materialityCents": 6200,
+      "source": "deterministic"
+    },
+    {
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0012"
+      ],
+      "summary": "SLACK   T02X4M9K1 SF moved 56% month-over-month: 89.55 to 139.82.",
+      "materialityCents": 5027,
+      "source": "deterministic"
+    },
+    {
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0098"
+      ],
+      "summary": "B&H PHOTO VIDEO: receipt 849.00 vs charge 899.00 — off by -5000c.",
+      "materialityCents": 5000,
+      "source": "deterministic"
+    },
+    {
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0103"
+      ],
+      "summary": "DELL BUSINESS SALES: receipt 1349.00 vs charge 1299.00 — off by 5000c.",
+      "materialityCents": 5000,
+      "source": "deterministic"
+    },
+    {
+      "kind": "priceAnomaly",
+      "txnIds": [
+        "txn_0023"
+      ],
+      "summary": "GITHUB, INC. moved 60% month-over-month: 82.97 to 132.66.",
+      "materialityCents": 4969,
+      "source": "deterministic"
+    },
+    {
+      "kind": "policyViolation",
+      "txnIds": [
+        "txn_0091"
+      ],
+      "summary": "SQ *TEAM DINNER EVENT charged 184.00 with no approval on file. Breaches \"meals-daily-limit\": Meals & Entertainment charges over $150 require prior approval.",
+      "materialityCents": 3400,
+      "source": "deterministic"
+    },
+    {
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0096"
+      ],
+      "summary": "MARRIOTT HOTELS: receipt 712.00 vs charge 680.00 — off by 3200c.",
+      "materialityCents": 3200,
+      "source": "deterministic"
+    },
+    {
+      "kind": "bankOnly",
+      "txnIds": [],
+      "summary": "RETURNED ITEM FEE for 29.00 on 2026-06-09 is on the statement with no matching charge.",
+      "materialityCents": 2900,
+      "source": "deterministic"
+    },
+    {
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0097"
+      ],
+      "summary": "HILTON HOTELS: receipt 584.00 vs charge 610.00 — off by -2600c.",
+      "materialityCents": 2600,
+      "source": "deterministic"
+    },
+    {
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0101"
+      ],
+      "summary": "AVIS RENT A CAR: receipt 212.00 vs charge 189.00 — off by 2300c.",
+      "materialityCents": 2300,
+      "source": "deterministic"
+    },
+    {
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0099"
+      ],
+      "summary": "STAPLES STORE #1423: receipt 109.00 vs charge 124.00 — off by -1500c.",
+      "materialityCents": 1500,
+      "source": "deterministic"
+    },
+    {
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0102"
+      ],
+      "summary": "CLERKY LEGAL DOCS: receipt 225.00 vs charge 240.00 — off by -1500c.",
+      "materialityCents": 1500,
+      "source": "deterministic"
+    },
+    {
+      "kind": "unreconciled",
+      "txnIds": [
+        "txn_0080"
+      ],
+      "summary": "CHIPOTLE 2871 for 14.20 on 2026-06-23 never settled at the bank.",
+      "materialityCents": 1420,
+      "source": "deterministic"
+    },
+    {
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0104"
+      ],
+      "summary": "OFFICE DEPOT #2210: receipt 76.00 vs charge 89.00 — off by -1300c.",
+      "materialityCents": 1300,
+      "source": "deterministic"
+    },
+    {
+      "kind": "bankAmountMismatch",
+      "txnIds": [
+        "txn_0209"
+      ],
+      "summary": "Settled 863c away from the authorised amount, 2 day(s) later.",
+      "materialityCents": 863,
+      "source": "deterministic"
+    },
+    {
+      "kind": "receiptMismatch",
+      "txnIds": [
+        "txn_0100"
+      ],
+      "summary": "SWEETGREEN #442: receipt 14.00 vs charge 18.50 — off by -450c.",
+      "materialityCents": 450,
+      "source": "deterministic"
+    },
+    {
+      "kind": "bankAmountMismatch",
+      "txnIds": [
+        "txn_0338"
+      ],
+      "summary": "Settled 364c away from the authorised amount, 3 day(s) later.",
+      "materialityCents": 364,
+      "source": "deterministic"
+    },
+    {
+      "kind": "bankAmountMismatch",
+      "txnIds": [
+        "txn_0156"
+      ],
+      "summary": "Settled -198c away from the authorised amount, 0 day(s) later.",
+      "materialityCents": 198,
+      "source": "deterministic"
+    },
+    {
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0065"
+      ],
+      "summary": "TAXI G7 PARIS: EUR 23.07 at 1.086 should post 25.05, posted 24.96 — off by -9c.",
+      "materialityCents": 9,
+      "source": "deterministic"
+    },
+    {
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0067"
+      ],
+      "summary": "AWS EU-WEST-1: EUR 152.46 at 1.086 should post 165.57, posted 165.50 — off by -7c.",
+      "materialityCents": 7,
+      "source": "deterministic"
+    },
+    {
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0062"
+      ],
+      "summary": "HOTEL LUTETIA PARIS: EUR 914.67 at 1.086 should post 993.33, posted 993.28 — off by -5c.",
+      "materialityCents": 5,
+      "source": "deterministic"
+    },
+    {
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0063"
+      ],
+      "summary": "DEUTSCHE BAHN: EUR 95.58 at 1.086 should post 103.80, posted 103.75 — off by -5c.",
+      "materialityCents": 5,
+      "source": "deterministic"
+    },
+    {
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0061"
+      ],
+      "summary": "TRAINLINE EUROPE: EUR 113.52 at 1.086 should post 123.28, posted 123.24 — off by -4c.",
+      "materialityCents": 4,
+      "source": "deterministic"
+    },
+    {
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0064"
+      ],
+      "summary": "CAFE DE FLORE PARIS: EUR 26.56 at 1.086 should post 28.84, posted 28.88 — off by 4c.",
+      "materialityCents": 4,
+      "source": "deterministic"
+    },
+    {
+      "kind": "fxMismatch",
+      "txnIds": [
+        "txn_0066"
+      ],
+      "summary": "UBER   *TRIP HELP.UBER.CO: EUR 27.44 at 1.086 should post 29.80, posted 29.77 — off by -3c.",
+      "materialityCents": 3,
+      "source": "deterministic"
     }
   ]
 }

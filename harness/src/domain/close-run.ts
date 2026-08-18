@@ -12,7 +12,14 @@
  */
 import { z } from 'zod';
 
-export const SCHEMA_VERSION = 1;
+/**
+ * Bumped to 2 when findings joined the artifact.
+ *
+ * The client pins this with a literal rather than accepting anything it can
+ * partially decode. An artifact of the wrong shape should fail loudly at the
+ * decode rather than render as a screen that is quietly missing a section.
+ */
+export const SCHEMA_VERSION = 2;
 
 export const RunStateSchema = z.enum([
   'planning',
@@ -48,6 +55,26 @@ export const ProposalViewSchema = z.object({
   blockedBy: z.string().nullable(),
 });
 export type ProposalView = z.infer<typeof ProposalViewSchema>;
+
+/**
+ * An anomaly the run surfaced.
+ *
+ * `source` is the field that matters and is why this is not folded into
+ * ProposalView. A finding produced by arithmetic is a fact and a reviewer
+ * should treat it as one. A finding produced by the model is a judgement
+ * call that a human is being asked to confirm, and the two must not look
+ * alike on screen.
+ */
+export const FindingViewSchema = z.object({
+  kind: z.string(),
+  /** Empty for bank-only rows, which reference a bank row and no ledger row. */
+  txnIds: z.array(z.string()),
+  summary: z.string(),
+  /** Null when the finding has no single dollar figure attached. */
+  materialityCents: z.number().int().nullable(),
+  source: z.enum(['deterministic', 'model']),
+});
+export type FindingView = z.infer<typeof FindingViewSchema>;
 
 export const VerifierResultViewSchema = z.object({
   verifier: z.string(),
@@ -96,5 +123,6 @@ export const CloseRunSchema = z.object({
   agents: z.array(AgentStatusSchema),
   verifiers: z.array(VerifierResultViewSchema),
   proposals: z.array(ProposalViewSchema),
+  findings: z.array(FindingViewSchema),
 });
 export type CloseRun = z.infer<typeof CloseRunSchema>;

@@ -299,6 +299,31 @@ async function main(): Promise<void> {
     costUsd: cost,
     startedAt: startedAtDate,
     finishedAt: new Date(),
+    findings,
+    agents: [
+      {
+        agent: 'categorizer',
+        state: 'complete',
+        detail: `${result.categorizations.length} categorized in ${result.batches} batches`,
+      },
+      {
+        agent: 'anomalyHunter',
+        state: 'complete',
+        detail: `${findings.filter((f) => f.source === 'model').length} judged, ${
+          findings.filter((f) => f.source === 'deterministic').length
+        } from arithmetic`,
+      },
+      {
+        agent: 'reconciler',
+        state: 'complete',
+        detail: `${reconciled.length} bank discrepancies`,
+      },
+      {
+        agent: 'receiptChaser',
+        state: args.skipAnomalies ? 'pending' : 'complete',
+        detail: args.skipAnomalies ? 'skipped' : `${receiptRequests} receipts requested`,
+      },
+    ],
   });
   mkdirSync(RESULTS_DIR, { recursive: true });
   const artifactPath = `${RESULTS_DIR}latest-run.json`;

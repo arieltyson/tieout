@@ -75,6 +75,24 @@ struct CloseRunDecodingTests {
     @Test func decodesANullAccuracy() throws {
         // A real (unscored) run has no accuracy. Optional must survive.
         let json = """
+            {"schemaVersion":2,"runId":"r","period":"2026-06","state":"complete",
+             "startedAt":"","finishedAt":"","model":"m","dryRun":false,
+             "summary":{"transactions":0,"categorized":0,"needsReview":0,"blocked":0,
+                        "hasBlockingFailure":false,"escapeHatchCount":0,"accuracy":null},
+             "cost":{"turns":0,"batches":0,"inputTokens":0,"outputTokens":0,
+                     "cachedReadTokens":0,"costUsd":null,"wallClockMs":0},
+             "agents":[],"verifiers":[],"proposals":[],"findings":[]}
+            """
+        let run = try CloseRun.decode(from: Data(json.utf8))
+        #expect(run.summary.accuracy == nil)
+        #expect(run.accuracyFormatted == "—")
+    }
+
+    @Test func namesTheVersionRatherThanTheFieldWhenAnOldArtifactArrives() throws {
+        // A v1 artifact is missing `findings`. Before the version was probed
+        // first, this surfaced as "Key 'findings' not found", which tells a
+        // reader nothing about what actually went wrong.
+        let json = """
             {"schemaVersion":1,"runId":"r","period":"2026-06","state":"complete",
              "startedAt":"","finishedAt":"","model":"m","dryRun":false,
              "summary":{"transactions":0,"categorized":0,"needsReview":0,"blocked":0,
@@ -83,9 +101,12 @@ struct CloseRunDecodingTests {
                      "cachedReadTokens":0,"costUsd":null,"wallClockMs":0},
              "agents":[],"verifiers":[],"proposals":[]}
             """
-        let run = try CloseRun.decode(from: Data(json.utf8))
-        #expect(run.summary.accuracy == nil)
-        #expect(run.accuracyFormatted == "—")
+        do {
+            _ = try CloseRun.decode(from: Data(json.utf8))
+            Issue.record("a v1 artifact must not decode")
+        } catch let error as CloseRunDecodingError {
+            #expect(String(describing: error).contains("schemaVersion 1"))
+        }
     }
 }
 
@@ -150,13 +171,13 @@ struct ActivityCopyTests {
 struct SpokenSummaryTests {
     static func run(state: RunState, needsReview: Int) -> CloseRun {
         CloseRun(
-            schemaVersion: 1, runId: "r", period: "2026-06", state: state,
+            schemaVersion: TieoutSchema.supportedVersion, runId: "r", period: "2026-06", state: state,
             startedAt: "", finishedAt: "", model: "m", dryRun: true,
             summary: RunSummary(transactions: 370, categorized: 370, needsReview: needsReview,
                                 blocked: 0, hasBlockingFailure: false, escapeHatchCount: 0, accuracy: nil),
             cost: RunCost(turns: 0, batches: 0, inputTokens: 0, outputTokens: 0,
                           cachedReadTokens: 0, costUsd: nil, wallClockMs: 0),
-            agents: [], verifiers: [], proposals: [])
+            agents: [], verifiers: [], proposals: [], findings: [])
     }
 
     @Test func singularizesASingleItem() {
@@ -178,5 +199,37 @@ struct SpokenSummaryTests {
         let text = SpokenSummary.text(for: Self.run(state: state, needsReview: 2))
         #expect(text.isEmpty == false)
         #expect(text.contains("2026-06"))
+    }
+}
+
+/// Guards on the two numbers the UI is most able to lie with.
+struct RunPresentationTests {
+
+    @Test func aDryRunWithholdsItsAccuracy() throws {
+        // A dry run derives its proposals from the answer key, so it scores
+        // 1.0 by construction. That is not a measurement and must not be
+        // drawn as one.
+        let run = try CloseRun.decode(from: CloseRunDecodingTests.fixtureData())
+        if run.dryRun {
+            #expect(run.summary.accuracy == 1.0, "fixture is a dry run scoring perfectly, as expected")
+            #expect(run.accuracyFormatted == "—", "a dry run must not print an accuracy figure")
+        } else {
+            #expect(run.accuracyFormatted != "—")
+            #expect(run.accuracyFormatted.hasSuffix("%"))
+        }
+    }
+
+    @Test func onlyModelFindingsAreOfferedForJudgement() throws {
+        let run = try CloseRun.decode(from: CloseRunDecodingTests.fixtureData())
+        #expect(run.findingsNeedingJudgement.allSatisfy { $0.source == .model })
+        // Arithmetic is a fact, not a question. Anything deterministic that
+        // reached the approval queue would be training the reviewer to nod.
+        #expect(run.findingsNeedingJudgement.count <= run.findings.count)
+    }
+
+    @Test func findingKindsReadAsProseRatherThanFieldNames() {
+        #expect("bankAmountMismatch".humanizedKind == "Bank amount mismatch")
+        #expect("duplicate".humanizedKind == "Duplicate")
+        #expect("vendorAlias".humanizedKind == "Vendor alias")
     }
 }

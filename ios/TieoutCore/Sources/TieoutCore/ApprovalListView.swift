@@ -48,6 +48,35 @@ public struct ApprovalListView: View {
                     .listRowBackground(Color.clear)
             }
 
+            // Above the categorizations on purpose. A duplicate charge is
+            // worth more of a reviewer's attention than whether a software
+            // subscription landed in marketing, and the order of the screen
+            // is the only thing that says so.
+            if !run.findingsNeedingJudgement.isEmpty {
+                Section {
+                    ForEach(run.findingsNeedingJudgement) { finding in
+                        FindingCard(finding: finding)
+                    }
+                } header: {
+                    Label("Judgement calls", systemImage: "questionmark.circle")
+                } footer: {
+                    Text("No arithmetic settles these. The model reached a view and a person confirms it.")
+                }
+            }
+
+            let settled = run.findings.filter { !$0.needsJudgement }
+            if !settled.isEmpty {
+                Section {
+                    ForEach(settled.prefix(12)) { finding in
+                        FindingCard(finding: finding)
+                    }
+                } header: {
+                    Label("Found by arithmetic", systemImage: "function")
+                } footer: {
+                    Text("\(settled.count) exceptions computed exactly. Shown for the record, not for approval.")
+                }
+            }
+
             if !run.blockedProposals.isEmpty {
                 Section {
                     ForEach(run.blockedProposals.prefix(20)) { proposal in
@@ -102,11 +131,56 @@ private struct SummaryHeader: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
-            Text("\(run.summary.blocked) blocked · \(run.summary.needsReview) need review")
+            Text("\(run.summary.blocked) blocked · \(run.summary.needsReview) need review · \(run.findings.count) findings")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
         .padding()
+    }
+}
+
+private struct FindingCard: View {
+    let finding: FindingView
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Text(finding.kind.humanizedKind)
+                    .font(.subheadline.weight(.medium))
+                Spacer()
+                if let cents = finding.materialityCents {
+                    Text(cents.centsFormatted)
+                        .font(.subheadline.monospacedDigit())
+                }
+            }
+            Text(finding.summary)
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+            if !finding.txnIds.isEmpty {
+                Text(finding.txnIds.prefix(4).joined(separator: ", ")
+                     + (finding.txnIds.count > 4 ? " +\(finding.txnIds.count - 4) more" : ""))
+                    .font(.caption2.monospaced())
+                    .foregroundStyle(.tertiary)
+            }
+        }
+        .padding(.vertical, 2)
+    }
+}
+
+extension String {
+    /// `bankAmountMismatch` reads as "Bank amount mismatch" rather than as a
+    /// field name that leaked onto the screen.
+    var humanizedKind: String {
+        var out = ""
+        for character in self {
+            if character.isUppercase, !out.isEmpty {
+                out.append(" ")
+                out.append(Character(character.lowercased()))
+            } else {
+                out.append(character)
+            }
+        }
+        return out.prefix(1).uppercased() + out.dropFirst()
     }
 }
 
