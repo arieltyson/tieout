@@ -146,3 +146,37 @@ struct ActivityCopyTests {
         #expect(ActivityCopy.summary(findings: 3, pendingApprovals: 2) == "3 findings · 2 to approve")
     }
 }
+
+struct SpokenSummaryTests {
+    static func run(state: RunState, needsReview: Int) -> CloseRun {
+        CloseRun(
+            schemaVersion: 1, runId: "r", period: "2026-06", state: state,
+            startedAt: "", finishedAt: "", model: "m", dryRun: true,
+            summary: RunSummary(transactions: 370, categorized: 370, needsReview: needsReview,
+                                blocked: 0, hasBlockingFailure: false, escapeHatchCount: 0, accuracy: nil),
+            cost: RunCost(turns: 0, batches: 0, inputTokens: 0, outputTokens: 0,
+                          cachedReadTokens: 0, costUsd: nil, wallClockMs: 0),
+            agents: [], verifiers: [], proposals: [])
+    }
+
+    @Test func singularizesASingleItem() {
+        #expect(SpokenSummary.text(for: Self.run(state: .awaitingApproval, needsReview: 1))
+            .contains("1 item to review"))
+        #expect(SpokenSummary.text(for: Self.run(state: .awaitingApproval, needsReview: 4))
+            .contains("4 items to review"))
+    }
+
+    @Test func saysNothingNeedsAttentionWhenNothingDoes() {
+        let text = SpokenSummary.text(for: Self.run(state: .awaitingApproval, needsReview: 0))
+        #expect(text.contains("Nothing needs your attention"))
+    }
+
+    // Spoken aloud with no screen in front of you, so every state has to
+    // produce a sentence rather than a shrug.
+    @Test(arguments: RunState.allCases)
+    func everyStateSaysSomethingUseful(_ state: RunState) {
+        let text = SpokenSummary.text(for: Self.run(state: state, needsReview: 2))
+        #expect(text.isEmpty == false)
+        #expect(text.contains("2026-06"))
+    }
+}

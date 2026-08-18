@@ -94,3 +94,27 @@ public enum ActivityCopy {
         return parts.isEmpty ? "No findings yet" : parts.joined(separator: " · ")
     }
 }
+
+
+/// What a system reads aloud about a run.
+///
+/// Lives here rather than inside an intent's perform method because the
+/// wording is a decision rather than an implementation detail, and a
+/// sentence a device speaks to somebody should be testable.
+public enum SpokenSummary {
+    public static func text(for run: CloseRun) -> String {
+        switch run.state {
+        case .awaitingApproval:
+            let n = run.summary.needsReview
+            return n == 0
+                ? "The \(run.period) close is ready. Nothing needs your attention."
+                : "The \(run.period) close is waiting on you. \(n) item\(n == 1 ? "" : "s") to review."
+        case .complete:
+            return "The \(run.period) close is finished."
+        case .failed:
+            return "The \(run.period) close failed."
+        case .planning, .dispatched, .verifying, .applying:
+            return "The \(run.period) close is still running."
+        }
+    }
+}
