@@ -292,6 +292,16 @@ Requires Node 22 or newer.
 
 318 TypeScript tests and 12 Swift tests. All of them run without an API key.
 
+## Further reading 📄
+
+- [evals/RESULTS.md](evals/RESULTS.md) covers the benchmark, the full
+  ablation matrix, and the limitations.
+- [docs/SECURITY.md](docs/SECURITY.md) covers prompt injection through
+  merchant text, how your real messages are kept out, and what is enforced
+  today versus designed.
+- [docs/DECISIONS.md](docs/DECISIONS.md) records why the system is shaped
+  this way, including a claim the measurements forced me to narrow.
+
 ## License 🪪
 
 MIT. See [LICENSE](LICENSE).
