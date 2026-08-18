@@ -81,6 +81,8 @@ export interface Finding {
   /** Cents at stake, used to rank. Null when not a money amount. */
   readonly materialityCents: number | null;
   readonly source: 'deterministic' | 'model';
+  /** Set for findings about a bank row that has no ledger counterpart. */
+  readonly bankId?: string;
 }
 
 export interface AnomalyHunterResult {

@@ -16,6 +16,9 @@ import {
 import { runRawAnomalyHunter } from '../../harness/src/agents/anomaly-hunter-raw.js';
 import { runCategorizer } from '../../harness/src/agents/categorizer.js';
 import { runFlatAgent } from '../../harness/src/agents/flat-agent.js';
+import { reconciliationFindings, runReconciler } from '../../harness/src/agents/reconciler.js';
+import { runReceiptChaser } from '../../harness/src/agents/receipt-chaser.js';
+import { reconcile } from '../../harness/src/domain/reconcile.js';
 import { runBank, type BankResult } from '../../harness/src/domain/bank.js';
 import { detectAll } from '../../harness/src/domain/detectors.js';
 import type { Ledger, Transaction, TxnId } from '../../harness/src/domain/ledger.js';
@@ -40,6 +43,8 @@ export interface PipelineResult {
   /** Resolved from vendor memory, so never sent to the model. */
   readonly memoryHits: number;
   readonly wallClockMs: number;
+  /** Receipts the chaser judged worth asking about. */
+  readonly receiptRequests: number;
 }
 
 export interface PipelineOptions {
@@ -82,6 +87,7 @@ export async function runPipeline(options: PipelineOptions): Promise<PipelineRes
   let batches = 0;
   let maxTokensHits = 0;
   let memoryHits = 0;
+  let receiptRequests = 0;
   let categorizations: CategorizationRecord[] = [];
   const modelFindings: Finding[] = [];
 
@@ -119,6 +125,7 @@ export async function runPipeline(options: PipelineOptions): Promise<PipelineRes
     const glByTxn = new Map(categorizations.map((c) => [c.txnId, c.glCode]));
     modelFindings.push(
       ...deterministicFindings(ledger, period, detectAll(ledger, period, (id) => glByTxn.get(id))),
+      ...reconciliationFindings(reconcile(ledger, period)),
     );
     for (const v of flat.duplicateVerdicts) {
       if (!v.isDuplicate) continue;
@@ -170,6 +177,22 @@ export async function runPipeline(options: PipelineOptions): Promise<PipelineRes
       usage = addUsage(usage, hunted.usage);
       turns += hunted.turns;
       maxTokensHits += hunted.maxTokensHits;
+
+      // Reconciliation and receipt chasing sit behind the same toggle: both
+      // are a deterministic pass with a model only for what it cannot
+      // settle. Removing the pre-pass removes them too, which is the
+      // honest thing for the ablation to measure.
+      const reconciled = await runReconciler({ client, ledger, period });
+      modelFindings.push(...reconciled.findings);
+      usage = addUsage(usage, reconciled.usage);
+      turns += reconciled.turns;
+      maxTokensHits += reconciled.maxTokensHits;
+
+      const chased = await runReceiptChaser({ client, ledger, period, glCodeFor });
+      receiptRequests = chased.requested.length;
+      usage = addUsage(usage, chased.usage);
+      turns += chased.turns;
+      maxTokensHits += chased.maxTokensHits;
     } else {
       // No detectors. The model searches the raw ledger itself.
       const raw = await runRawAnomalyHunter({ client, ledger, period });
@@ -214,5 +237,6 @@ export async function runPipeline(options: PipelineOptions): Promise<PipelineRes
     maxTokensHits,
     memoryHits,
     wallClockMs: Date.now() - startedAt,
+    receiptRequests,
   };
 }

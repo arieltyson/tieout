@@ -23,6 +23,9 @@ import { fileURLToPath } from 'node:url';
 import { runCategorizer } from '../../harness/src/agents/categorizer.js';
 import { runAnomalyHunter, deterministicFindings, type Finding } from '../../harness/src/agents/anomaly-hunter.js';
 import { detectAll } from '../../harness/src/domain/detectors.js';
+import { reconciliationFindings, runReconciler } from '../../harness/src/agents/reconciler.js';
+import { runReceiptChaser } from '../../harness/src/agents/receipt-chaser.js';
+import { reconcile } from '../../harness/src/domain/reconcile.js';
 import { scoreAnomalies } from './score-anomalies.js';
 import { runBank } from '../../harness/src/domain/bank.js';
 import { byPeriod } from '../../harness/src/domain/queries.js';
@@ -185,14 +188,22 @@ async function main(): Promise<void> {
   const glCodeFor = (txnId: string) => glByTxn.get(txnId);
 
   let findings: readonly Finding[] = [];
+  let receiptRequests = 0;
   let anomalyUsage = { inputTokens: 0, outputTokens: 0 };
   let anomalyTurns = 0;
   // The FULL ledger, not the period-scoped one. The categorizer only needs
   // the month it is closing, but recurring gaps and price anomalies are
   // defined against prior months — handed a single period they find nothing
   // and report a confident zero.
+  // Reconciliation is deterministic and free, so it runs either way. Only
+  // the model half of it is behind the anomaly flag.
+  const reconciled = reconciliationFindings(reconcile(ledger, args.period));
+
   if (args.skipAnomalies) {
-    findings = deterministicFindings(ledger, args.period, detectAll(ledger, args.period, glCodeFor));
+    findings = [
+      ...deterministicFindings(ledger, args.period, detectAll(ledger, args.period, glCodeFor)),
+      ...reconciled,
+    ];
   } else {
     const hunted = await runAnomalyHunter({
       client,
@@ -201,9 +212,18 @@ async function main(): Promise<void> {
       glCodeFor,
       runId: 'run_local',
     });
-    findings = hunted.findings;
-    anomalyUsage = { inputTokens: hunted.usage.inputTokens, outputTokens: hunted.usage.outputTokens };
-    anomalyTurns = hunted.turns;
+    const rec = await runReconciler({ client, ledger, period: args.period, runId: 'run_local' });
+    const chased = await runReceiptChaser({
+      client, ledger, period: args.period, glCodeFor, runId: 'run_local',
+    });
+    receiptRequests = chased.requested.length;
+
+    findings = [...hunted.findings, ...rec.findings];
+    anomalyUsage = {
+      inputTokens: hunted.usage.inputTokens + rec.usage.inputTokens + chased.usage.inputTokens,
+      outputTokens: hunted.usage.outputTokens + rec.usage.outputTokens + chased.usage.outputTokens,
+    };
+    anomalyTurns = hunted.turns + rec.turns + chased.turns;
   }
   const anomalyScore = scoreAnomalies(findings, groundTruth);
   const cost = estimateCostUsd(
@@ -234,6 +254,9 @@ async function main(): Promise<void> {
   }
   console.log('');
   console.log('ANOMALIES');
+  if (receiptRequests > 0) {
+    console.log(`  receipts to chase  ${receiptRequests}`);
+  }
   console.log(`  findings           ${findings.length}  (${anomalyScore.deterministicFindings} deterministic, ${anomalyScore.modelFindings} model)`);
   console.log(`  overall            P ${anomalyScore.overallPrecision.toFixed(2)}  R ${anomalyScore.overallRecall.toFixed(2)}  F1 ${anomalyScore.overallF1.toFixed(2)}`);
   console.log('  by category:');

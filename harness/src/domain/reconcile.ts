@@ -43,6 +43,11 @@ export interface Reconciliation {
   readonly ambiguous: readonly AmbiguousMatch[];
 }
 
+/** Bank rows still wanted by an unresolved transaction. */
+function reconciliationContested(ambiguous: readonly AmbiguousMatch[]): string[] {
+  return ambiguous.flatMap((a) => [...a.candidateBankIds]);
+}
+
 function daysBetween(a: string, b: string): number {
   const toUtc = (d: string) => {
     const [y, m, day] = d.split('-').map(Number);
@@ -178,7 +183,13 @@ export function reconcile(
     }
   }
 
-  const bankOnly = bankRows.filter((row) => !claimedBank.has(row.id));
+  // A row that some ambiguous transaction still wants is not an orphan; it
+  // is the other half of an open question. Reporting it as "on the
+  // statement with no matching charge" would be a confident wrong answer,
+  // and there are far more of those than there are real orphans.
+  const contested = new Set(reconciliationContested(ambiguous));
+  const bankOnly = bankRows.filter(
+    (row) => !claimedBank.has(row.id) && !contested.has(row.id));
 
   return { matched, amountMismatches, unreconciled, bankOnly, ambiguous };
 }

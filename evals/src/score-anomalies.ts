@@ -38,6 +38,9 @@ const KINDS = [
   'missingRecurring',
   'policyViolation',
   'priceAnomaly',
+  'unreconciled',
+  'bankOnly',
+  'bankAmountMismatch',
 ] as const;
 
 /**
@@ -53,6 +56,23 @@ function overlaps(a: readonly string[], b: readonly string[]): boolean {
   return b.some((id) => set.has(id));
 }
 
+/**
+ * Whether a finding and a defect describe the same thing.
+ *
+ * Bank only findings reference no transaction at all, so comparing
+ * transaction ids compares two empty lists and matches everything against
+ * everything. An earlier version of this function did exactly that and
+ * reported precision 1.00 while returning forty eight findings for four
+ * planted defects. They are matched on the bank row instead.
+ */
+function describesSame(finding: Finding, defect: PlantedDefect): boolean {
+  if (finding.kind === 'bankOnly') {
+    const defectBankId = (defect as { bankId?: string }).bankId;
+    return defectBankId !== undefined && finding.bankId === defectBankId;
+  }
+  return overlaps(finding.txnIds, defect.txnIds);
+}
+
 function scoreKind(
   kind: string,
   findings: readonly Finding[],
@@ -64,7 +84,7 @@ function scoreKind(
   const matchedDefects = new Set<string>();
   let truePositives = 0;
   for (const finding of reported) {
-    const hit = expected.find((d) => overlaps(finding.txnIds, d.txnIds));
+    const hit = expected.find((d) => describesSame(finding, d));
     if (hit) {
       truePositives += 1;
       matchedDefects.add(hit.id);
