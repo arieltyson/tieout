@@ -11,6 +11,21 @@ import Testing
 /// themselves.
 struct CloseRunDecodingTests {
 
+    /// The artifact the app actually ships, read from its real location.
+    ///
+    /// Deliberately not a copy in the test bundle. A copy is a second thing
+    /// to keep in sync, and the moment it drifts this test starts proving
+    /// something about a file nobody ships. Reading the shipped file means
+    /// Swift's decoder is the shape check: every element of every array has
+    /// to carry every non-optional field, which a jq key comparison cannot
+    /// see because one finding missing a field leaves the key set unchanged.
+    static func shippedArtifactData() throws -> Data {
+        var url = URL(fileURLWithPath: #filePath)
+        for _ in 0..<4 { url.deleteLastPathComponent() }   // → ios/
+        url.appendPathComponent("Tieout/Resources/close-run.json")
+        return try Data(contentsOf: url)
+    }
+
     static func fixtureData() throws -> Data {
         let url = try #require(
             Bundle.module.url(forResource: "close-run", withExtension: "json", subdirectory: "Fixtures")
@@ -220,11 +235,30 @@ struct RunPresentationTests {
     }
 
     @Test func onlyModelFindingsAreOfferedForJudgement() throws {
-        let run = try CloseRun.decode(from: CloseRunDecodingTests.fixtureData())
+        // Deliberately the real fixture. The dry one has no model findings
+        // at all, so this assertion would hold over an empty array and
+        // prove nothing.
+        let run = try CloseRun.decode(from: CloseRunDecodingTests.shippedArtifactData())
+        #expect(run.dryRun == false)
+        #expect(run.findingsNeedingJudgement.isEmpty == false, "the real run must carry judgement calls")
         #expect(run.findingsNeedingJudgement.allSatisfy { $0.source == .model })
         // Arithmetic is a fact, not a question. Anything deterministic that
         // reached the approval queue would be training the reviewer to nod.
-        #expect(run.findingsNeedingJudgement.count <= run.findings.count)
+        #expect(run.findingsNeedingJudgement.count < run.findings.count)
+    }
+
+    @Test func theRealRunReportsAMeasuredAccuracy() throws {
+        let run = try CloseRun.decode(from: CloseRunDecodingTests.shippedArtifactData())
+        #expect(run.accuracyFormatted.hasSuffix("%"))
+        #expect(run.accuracyFormatted != "100.0%", "a real run scoring perfectly would mean the answer key leaked")
+    }
+
+    @Test func turnsAndCostDescribeTheSameRun() throws {
+        // The app showed 17 turns beside a cost that bought 25, because
+        // turns came from the categorizer and cost covered every agent.
+        let run = try CloseRun.decode(from: CloseRunDecodingTests.shippedArtifactData())
+        let categorizerTurnsOnly = 17
+        #expect(run.cost.turns > categorizerTurnsOnly)
     }
 
     @Test func findingKindsReadAsProseRatherThanFieldNames() {

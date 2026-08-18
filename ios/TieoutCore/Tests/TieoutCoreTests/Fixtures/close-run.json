@@ -3,27 +3,27 @@
   "runId": "run_local",
   "period": "2026-06",
   "state": "awaitingApproval",
-  "startedAt": "2026-08-18T10:30:33.548Z",
-  "finishedAt": "2026-08-18T10:39:57.674Z",
-  "model": "claude-sonnet-5",
-  "dryRun": false,
+  "startedAt": "2026-08-18T10:43:12.443Z",
+  "finishedAt": "2026-08-18T10:43:12.704Z",
+  "model": "scripted-dry",
+  "dryRun": true,
   "summary": {
     "transactions": 370,
     "categorized": 370,
-    "needsReview": 78,
+    "needsReview": 0,
     "blocked": 0,
     "hasBlockingFailure": false,
-    "escapeHatchCount": 17,
-    "accuracy": 0.9405405405405406
+    "escapeHatchCount": 21,
+    "accuracy": 1
   },
   "cost": {
-    "turns": 25,
+    "turns": 19,
     "batches": 8,
-    "inputTokens": 101993,
-    "outputTokens": 66986,
-    "cachedReadTokens": 29776,
-    "costUsd": 1.310769,
-    "wallClockMs": 564126
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cachedReadTokens": 0,
+    "costUsd": 0,
+    "wallClockMs": 261
   },
   "agents": [
     {
@@ -34,7 +34,7 @@
     {
       "agent": "anomalyHunter",
       "state": "complete",
-      "detail": "13 judged, 43 from arithmetic"
+      "detail": "0 judged, 43 from arithmetic"
     },
     {
       "agent": "reconciler",
@@ -44,7 +44,7 @@
     {
       "agent": "receiptChaser",
       "state": "complete",
-      "detail": "17 receipts requested"
+      "detail": "0 receipts requested"
     }
   ],
   "verifiers": [
@@ -100,8 +100,8 @@
       "amountCents": 169037,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "low",
-      "rationale": "WeWork coworking space, closest fit is office expense",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -112,8 +112,8 @@
       "amountCents": 12156,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "low",
-      "rationale": "Generic Amazon marketplace purchase, likely office supplies",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -124,8 +124,8 @@
       "amountCents": 57586,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store hardware purchase",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -136,8 +136,8 @@
       "amountCents": 57586,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store hardware purchase",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -149,7 +149,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -160,8 +160,8 @@
       "amountCents": 2507,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Vague settlement adjustment, no identifiable category",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -173,7 +173,7 @@
       "glCode": "6080",
       "glName": "Telecom",
       "confidence": "high",
-      "rationale": "T-Mobile autopay is telecom service",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -185,7 +185,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott hotel stay is travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -197,7 +197,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -209,7 +209,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Delta Air is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -221,7 +221,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hilton hotel stay is travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -233,7 +233,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -245,7 +245,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples is office supplies store",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -257,7 +257,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis car rental is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -269,7 +269,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Office Depot is office supplies store",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -278,10 +278,10 @@
       "txnId": "txn_0108",
       "vendorDescriptor": "VENDOR SVCS LLC",
       "amountCents": 23520,
-      "glCode": "6050",
-      "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Vendor services suggests professional services",
+      "glCode": "6900",
+      "glName": "Uncategorized",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -292,8 +292,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas incorporation service is professional services",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -305,7 +305,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Logitech hardware purchase is equipment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -314,10 +314,10 @@
       "txnId": "txn_0293",
       "vendorDescriptor": "TWILIO INC",
       "amountCents": 5972,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
-      "confidence": "medium",
-      "rationale": "Twilio API platform is software subscription",
+      "glCode": "6080",
+      "glName": "Telecom",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -329,7 +329,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle is meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -340,8 +340,8 @@
       "amountCents": 85195,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store hardware purchase",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -353,7 +353,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Parking fee is travel-related expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -365,7 +365,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Uber Eats is meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -377,7 +377,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Next Insurance is insurance expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -389,7 +389,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Tartine Bakery purchase is meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -401,7 +401,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Tartine Bakery purchase is meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -413,7 +413,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen is meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -425,7 +425,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Starbucks is meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -436,8 +436,8 @@
       "amountCents": 4500,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "low",
-      "rationale": "WeWork coworking space, closest fit is office expense",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -448,8 +448,8 @@
       "amountCents": 329900,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store hardware purchase",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -460,8 +460,8 @@
       "amountCents": 1949,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Generic misc charge, no identifiable category",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -473,7 +473,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "United Airlines is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -485,7 +485,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle is meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -497,7 +497,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Amtrak train travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -509,7 +509,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Dell business hardware purchase is equipment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -521,7 +521,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Udemy Business is training and education",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -533,7 +533,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment is professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -545,7 +545,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples is office supplies store",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -557,7 +557,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Delta Air is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -569,7 +569,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle is meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -581,7 +581,7 @@
       "glCode": "6010",
       "glName": "Software & Subscriptions",
       "confidence": "high",
-      "rationale": "Google Workspace is software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -593,7 +593,7 @@
       "glCode": "5010",
       "glName": "Hosting & Infrastructure",
       "confidence": "high",
-      "rationale": "AWS is hosting and infrastructure",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -605,7 +605,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -617,7 +617,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hilton hotel stay is travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -629,7 +629,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott hotel stay is travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -641,7 +641,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Clerky legal document service is professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -653,7 +653,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen is meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -665,7 +665,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis car rental is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -677,7 +677,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle is meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -688,8 +688,8 @@
       "amountCents": 101282,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store hardware purchase",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -701,7 +701,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Google Ads is advertising spend",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -713,7 +713,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Bakery purchase, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -724,8 +724,8 @@
       "amountCents": 144256,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store purchase, likely equipment",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -737,7 +737,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle restaurant, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -749,7 +749,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Udemy Business is training platform",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -761,7 +761,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -770,10 +770,10 @@
       "txnId": "txn_0241",
       "vendorDescriptor": "MAILCHIMP*EMAIL",
       "amountCents": 6684,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
-      "confidence": "medium",
-      "rationale": "Mailchimp is a SaaS subscription tool",
+      "glCode": "6060",
+      "glName": "Marketing & Advertising",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -784,8 +784,8 @@
       "amountCents": 100605,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store purchase, likely equipment",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -797,7 +797,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen restaurant, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -809,7 +809,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber trip is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -821,7 +821,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples is office supplies retailer",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -833,7 +833,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Udemy Business is training platform",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -845,7 +845,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Bakery purchase, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -857,7 +857,7 @@
       "glCode": "5010",
       "glName": "Hosting & Infrastructure",
       "confidence": "high",
-      "rationale": "Google Cloud is hosting infrastructure",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -869,7 +869,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment, professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -881,7 +881,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott hotel stay, travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -893,7 +893,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen restaurant, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -905,7 +905,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Next Insurance is an insurance provider",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -917,7 +917,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples is office supplies retailer",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -928,8 +928,8 @@
       "amountCents": 104690,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store purchase, likely equipment",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -941,7 +941,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber trip is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -953,7 +953,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott hotel stay, travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -965,7 +965,7 @@
       "glCode": "6900",
       "glName": "Uncategorized",
       "confidence": "high",
-      "rationale": "Suspicious embedded instruction, not a real vendor",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -977,7 +977,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Google Ads is advertising spend",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -989,7 +989,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Hiscox is a small business insurer",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1001,7 +1001,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis car rental, travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1012,8 +1012,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas company formation, professional services",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1024,8 +1024,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas company formation, professional services",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1037,7 +1037,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "DoorDash restaurant delivery, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1049,7 +1049,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Office Depot is office supplies retailer",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1061,7 +1061,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hilton hotel stay, travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1073,7 +1073,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Office Depot is office supplies retailer",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1084,8 +1084,8 @@
       "amountCents": 2370,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Generic misc charge, no identifiable category",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1096,8 +1096,8 @@
       "amountCents": 7579,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Generic misc charge, no identifiable category",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1109,7 +1109,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "B&H Photo Video sells equipment/electronics",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1121,7 +1121,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment, professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1133,7 +1133,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Clerky legal document service, professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1145,7 +1145,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Delta Air is airline travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1157,7 +1157,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Logitech.com sells hardware equipment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1169,7 +1169,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment, professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1178,10 +1178,10 @@
       "txnId": "txn_0246",
       "vendorDescriptor": "CANVA PRO",
       "amountCents": 1299,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
+      "glCode": "6060",
+      "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Canva Pro is a software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1192,8 +1192,8 @@
       "amountCents": 5656,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "medium",
-      "rationale": "Costco wholesale purchase, office supplies",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1205,7 +1205,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads is advertising spend",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1216,8 +1216,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas company formation, professional services",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1228,8 +1228,8 @@
       "amountCents": 16707,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "low",
-      "rationale": "Amazon marketplace purchase, likely supplies",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1241,7 +1241,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Blue Bottle Coffee, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1253,7 +1253,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Clerky legal document service, professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1265,7 +1265,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Team dinner event, meals & entertainment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1277,7 +1277,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Udemy Business is training platform",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1289,7 +1289,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "United Airlines is airline travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1301,7 +1301,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "DoorDash food delivery",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1312,8 +1312,8 @@
       "amountCents": 36730,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "B&H Photo Video sells equipment",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1325,7 +1325,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Uber Eats food delivery",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1334,10 +1334,10 @@
       "txnId": "txn_0175",
       "vendorDescriptor": "TWILIO INC",
       "amountCents": 9390,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
-      "confidence": "medium",
-      "rationale": "Twilio API/software subscription",
+      "glCode": "6080",
+      "glName": "Telecom",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1349,7 +1349,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber Trip is travel/transport",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1358,10 +1358,10 @@
       "txnId": "txn_0273",
       "vendorDescriptor": "TWILIO INC",
       "amountCents": 11995,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
-      "confidence": "medium",
-      "rationale": "Twilio API/software subscription",
+      "glCode": "6080",
+      "glName": "Telecom",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1373,7 +1373,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Uber Eats food delivery",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1385,7 +1385,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hilton Hotels lodging travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1396,8 +1396,8 @@
       "amountCents": 4710,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Generic settlement adjustment, no category identifiable",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1409,7 +1409,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Delta Air flight travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1421,7 +1421,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis car rental travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1432,8 +1432,8 @@
       "amountCents": 3514,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Vague vendor name, no category identifiable",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1445,7 +1445,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "United Airlines flight travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1457,7 +1457,7 @@
       "glCode": "6010",
       "glName": "Software & Subscriptions",
       "confidence": "high",
-      "rationale": "Figma design software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1469,7 +1469,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples office supplies store",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1481,7 +1481,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples office supplies store",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1490,10 +1490,10 @@
       "txnId": "txn_0059",
       "vendorDescriptor": "TWILIO INC",
       "amountCents": 5014,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
-      "confidence": "medium",
-      "rationale": "Twilio API/software subscription",
+      "glCode": "6080",
+      "glName": "Telecom",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1502,10 +1502,10 @@
       "txnId": "txn_0060",
       "vendorDescriptor": "TWILIO INC",
       "amountCents": 5014,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
-      "confidence": "medium",
-      "rationale": "Twilio API/software subscription",
+      "glCode": "6080",
+      "glName": "Telecom",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1517,7 +1517,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hotel lodging in Paris, travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1529,7 +1529,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Taxi ride, travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1541,7 +1541,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber Trip is travel/transport",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1553,7 +1553,7 @@
       "glCode": "5010",
       "glName": "Hosting & Infrastructure",
       "confidence": "high",
-      "rationale": "AWS cloud hosting infrastructure",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1565,7 +1565,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hilton Hotels lodging travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1577,7 +1577,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Conference registration fee, training",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1588,8 +1588,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas company formation service",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1601,7 +1601,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride, travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1613,7 +1613,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Coursera for Business, training",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1622,10 +1622,10 @@
       "txnId": "txn_0217",
       "vendorDescriptor": "CANVA PRO",
       "amountCents": 1299,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
+      "glCode": "6060",
+      "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Canva Pro design software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1637,7 +1637,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Delta Air flight travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1648,8 +1648,8 @@
       "amountCents": 3587,
       "glCode": "6020",
       "glName": "Travel",
-      "confidence": "medium",
-      "rationale": "ParkWhiz parking, travel expense",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1660,8 +1660,8 @@
       "amountCents": 2821,
       "glCode": "6020",
       "glName": "Travel",
-      "confidence": "medium",
-      "rationale": "ParkWhiz parking, travel expense",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1673,7 +1673,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Amtrak train travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1684,8 +1684,8 @@
       "amountCents": 56320,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store equipment purchase",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1697,7 +1697,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Office Depot office supplies",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1709,7 +1709,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Trainline Europe rail travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1721,7 +1721,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Cafe de Flore, meal expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1733,7 +1733,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber Trip is travel/transport",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1745,7 +1745,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Uber Eats food delivery",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1756,8 +1756,8 @@
       "amountCents": 29692,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "low",
-      "rationale": "Costco wholesale purchase, office supplies",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1769,7 +1769,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment, professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1781,7 +1781,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis car rental travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1793,7 +1793,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Dell Business Sales, equipment purchase",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1804,8 +1804,8 @@
       "amountCents": 13050,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "low",
-      "rationale": "Amazon Marketplace purchase, office supplies",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1817,7 +1817,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Deutsche Bahn rail travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1828,8 +1828,8 @@
       "amountCents": 89900,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "B&H Photo Video equipment purchase",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1841,7 +1841,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Dell Business Sales, equipment purchase",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1852,8 +1852,8 @@
       "amountCents": 23585,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "low",
-      "rationale": "Costco wholesale purchase, office supplies",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1865,7 +1865,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Tartine Bakery, meal expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1874,10 +1874,10 @@
       "txnId": "txn_0224",
       "vendorDescriptor": "CANVA PRO",
       "amountCents": 1299,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
+      "glCode": "6060",
+      "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Canva Pro design software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1889,7 +1889,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Dell Business Sales, equipment purchase",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1898,10 +1898,10 @@
       "txnId": "txn_0254",
       "vendorDescriptor": "TWILIO INC",
       "amountCents": 11458,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
-      "confidence": "medium",
-      "rationale": "Twilio communications API platform subscription",
+      "glCode": "6080",
+      "glName": "Telecom",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1913,7 +1913,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Parking fee, travel-related expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1925,7 +1925,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Udemy Business is a training platform",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1937,7 +1937,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber Trip is ground transportation/travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1949,7 +1949,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Conference registration is training/education",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1960,8 +1960,8 @@
       "amountCents": 7567,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Generic descriptor with no identifiable category",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1973,7 +1973,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott hotel stay is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1985,7 +1985,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "LinkedIn Ads is marketing/advertising spend",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -1994,10 +1994,10 @@
       "txnId": "txn_0138",
       "vendorDescriptor": "PAYMENT PROCESSING FEE",
       "amountCents": 1016,
-      "glCode": "6050",
-      "glName": "Professional Services",
-      "confidence": "low",
-      "rationale": "Payment processing fee treated as financial services",
+      "glCode": "6900",
+      "glName": "Uncategorized",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2009,7 +2009,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Uber Eats is a food delivery/meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2021,7 +2021,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Clerky provides legal document services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2032,8 +2032,8 @@
       "amountCents": 4273,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "medium",
-      "rationale": "Costco warehouse purchase, likely office supplies",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2044,8 +2044,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas is a business formation legal service",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2057,7 +2057,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment for professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2069,7 +2069,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "United Airlines ticket is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2081,7 +2081,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples store purchase is office supplies",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2093,7 +2093,7 @@
       "glCode": "6010",
       "glName": "Software & Subscriptions",
       "confidence": "high",
-      "rationale": "Notion Labs software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2105,7 +2105,7 @@
       "glCode": "6010",
       "glName": "Software & Subscriptions",
       "confidence": "high",
-      "rationale": "Notion Labs software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2117,7 +2117,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "DoorDash restaurant order is a meal expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2129,7 +2129,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Team dinner event is meals & entertainment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2141,7 +2141,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Delta Air ticket is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2152,8 +2152,8 @@
       "amountCents": 81357,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store purchase likely equipment/hardware",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2165,7 +2165,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle restaurant purchase is a meal expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2177,7 +2177,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis car rental is a travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2188,8 +2188,8 @@
       "amountCents": 8944,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Vague misc service descriptor, no clear category",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2201,7 +2201,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Coursera for Business is training/education",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2212,8 +2212,8 @@
       "amountCents": 6606,
       "glCode": "6060",
       "glName": "Marketing & Advertising",
-      "confidence": "medium",
-      "rationale": "Mailchimp email marketing platform",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2225,7 +2225,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples store purchase is office supplies",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2236,8 +2236,8 @@
       "amountCents": 689,
       "glCode": "6030",
       "glName": "Meals & Entertainment",
-      "confidence": "medium",
-      "rationale": "Blue Bottle Coffee purchase is a meal/beverage expense",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2249,7 +2249,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Dell Business Sales is equipment/hardware purchase",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2261,7 +2261,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment for professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2273,7 +2273,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Parking fee, travel-related expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2285,7 +2285,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle restaurant purchase is a meal expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2297,7 +2297,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Office Depot purchase is office supplies",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2309,7 +2309,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "United Airlines ticket is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2321,7 +2321,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Starbucks purchase is a meal/beverage expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2333,7 +2333,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Logitech.com purchase is equipment/hardware",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2345,7 +2345,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Team dinner event is meals & entertainment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2357,7 +2357,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride is a travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2368,8 +2368,8 @@
       "amountCents": 8018,
       "glCode": "6060",
       "glName": "Marketing & Advertising",
-      "confidence": "medium",
-      "rationale": "Mailchimp email marketing platform",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2381,7 +2381,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment for professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2393,7 +2393,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment for professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2405,7 +2405,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads is marketing/advertising spend",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2417,7 +2417,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "United Airlines ticket is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2429,7 +2429,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Uber Eats is a food delivery/meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2440,8 +2440,8 @@
       "amountCents": 684,
       "glCode": "6030",
       "glName": "Meals & Entertainment",
-      "confidence": "medium",
-      "rationale": "Blue Bottle Coffee purchase is a meal/beverage expense",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2453,7 +2453,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Google Ads is marketing/advertising spend",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2465,7 +2465,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hilton hotel stay is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2477,7 +2477,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Amtrak train ticket is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2489,7 +2489,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Uber Eats is a food delivery/meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2501,7 +2501,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads is paid marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2513,7 +2513,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle restaurant purchase, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2525,7 +2525,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber trip is travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2537,7 +2537,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber trip is travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2549,7 +2549,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "United Airlines is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2561,7 +2561,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Starbucks purchase, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2573,7 +2573,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "DoorDash restaurant delivery, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2585,7 +2585,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis car rental is travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2597,7 +2597,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples is office supplies store",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2608,8 +2608,8 @@
       "amountCents": 4491,
       "glCode": "6080",
       "glName": "Telecom",
-      "confidence": "medium",
-      "rationale": "Twilio provides telecom messaging/voice APIs",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2621,7 +2621,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Clerky provides legal document services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2633,7 +2633,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Udemy Business is training/education",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2645,7 +2645,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Coursera for Business is training",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2657,7 +2657,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Conference registration is training/education",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2668,8 +2668,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas is business formation service",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2681,7 +2681,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Google Ads is marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2693,7 +2693,7 @@
       "glCode": "6080",
       "glName": "Telecom",
       "confidence": "high",
-      "rationale": "T-Mobile autopay is telecom bill",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2705,7 +2705,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Team dinner event is meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2717,7 +2717,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis car rental is travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2729,7 +2729,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott hotel is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2741,7 +2741,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis car rental is travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2752,8 +2752,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas is business formation service",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2765,7 +2765,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Next Insurance is insurance premium",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2777,7 +2777,7 @@
       "glCode": "6080",
       "glName": "Telecom",
       "confidence": "high",
-      "rationale": "T-Mobile autopay is telecom bill",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2789,7 +2789,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle restaurant purchase, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2801,7 +2801,7 @@
       "glCode": "6010",
       "glName": "Software & Subscriptions",
       "confidence": "high",
-      "rationale": "GitHub is a software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2812,8 +2812,8 @@
       "amountCents": 10655,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "low",
-      "rationale": "Amazon purchase, likely office supplies",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2824,8 +2824,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas is business formation service",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2837,7 +2837,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber trip is travel",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2849,7 +2849,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Office Depot is office supplies store",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2861,7 +2861,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott hotel is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2873,7 +2873,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Clerky provides legal document services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2882,10 +2882,10 @@
       "txnId": "txn_0276",
       "vendorDescriptor": "CANVA PRO",
       "amountCents": 1299,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
+      "glCode": "6060",
+      "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Canva Pro is a software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2896,8 +2896,8 @@
       "amountCents": 20736,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Generic vendor name gives no category signal",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2909,7 +2909,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Next Insurance is insurance premium",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2921,7 +2921,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Google Ads is marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2932,8 +2932,8 @@
       "amountCents": 6368,
       "glCode": "6080",
       "glName": "Telecom",
-      "confidence": "medium",
-      "rationale": "Twilio provides telecom messaging/voice APIs",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2944,8 +2944,8 @@
       "amountCents": 30136,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "low",
-      "rationale": "Costco wholesale purchase, office supplies",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2957,7 +2957,7 @@
       "glCode": "6010",
       "glName": "Software & Subscriptions",
       "confidence": "high",
-      "rationale": "Notion Labs is a software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2969,7 +2969,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads is paid marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2981,7 +2981,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads is paid marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -2993,7 +2993,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Dell Business Sales is equipment purchase",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3005,7 +3005,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads is paid marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3017,7 +3017,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Team dinner event is meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3029,7 +3029,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott hotel is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3041,7 +3041,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Dell Business Sales is equipment purchase",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3053,7 +3053,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Delta Airlines is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3065,7 +3065,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen restaurant purchase, meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3077,7 +3077,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment, professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3089,7 +3089,7 @@
       "glCode": "6080",
       "glName": "Telecom",
       "confidence": "high",
-      "rationale": "T-Mobile autopay is telecom bill",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3101,7 +3101,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hilton Hotels - lodging travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3113,7 +3113,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads - marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3125,7 +3125,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples - office supplies store",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3137,7 +3137,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "DoorDash restaurant delivery - meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3149,7 +3149,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Clerky legal document service - professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3161,7 +3161,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Logitech hardware purchase - equipment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3173,7 +3173,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott Hotels - lodging travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3185,7 +3185,7 @@
       "glCode": "6010",
       "glName": "Software & Subscriptions",
       "confidence": "high",
-      "rationale": "Slack - software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3197,7 +3197,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Dell business hardware purchase - equipment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3206,10 +3206,10 @@
       "txnId": "txn_0113",
       "vendorDescriptor": "CANVA PRO",
       "amountCents": 1299,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
+      "glCode": "6060",
+      "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Canva Pro - software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3221,7 +3221,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Next Insurance - insurance premium",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3233,7 +3233,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "ParkWhiz parking - travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3245,7 +3245,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "DoorDash restaurant delivery - meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3257,7 +3257,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen - meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3269,7 +3269,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis rental car - travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3281,7 +3281,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hilton Hotels - lodging travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3290,10 +3290,10 @@
       "txnId": "txn_0221",
       "vendorDescriptor": "TWILIO INC",
       "amountCents": 10009,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
-      "confidence": "medium",
-      "rationale": "Twilio API subscription - software",
+      "glCode": "6080",
+      "glName": "Telecom",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3305,7 +3305,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Uber Eats - meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3314,10 +3314,10 @@
       "txnId": "txn_0229",
       "vendorDescriptor": "CANVA PRO",
       "amountCents": 1299,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
+      "glCode": "6060",
+      "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Canva Pro - software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3329,7 +3329,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads - marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3341,7 +3341,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen - meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3353,7 +3353,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle - meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3362,10 +3362,10 @@
       "txnId": "txn_0382",
       "vendorDescriptor": "CANVA PRO",
       "amountCents": 1299,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
+      "glCode": "6060",
+      "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Canva Pro - software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3377,7 +3377,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen - meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3388,8 +3388,8 @@
       "amountCents": 12890,
       "glCode": "6040",
       "glName": "Office Supplies",
-      "confidence": "medium",
-      "rationale": "Amazon Business - general office supplies purchase",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3401,7 +3401,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Office Depot - office supplies",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3413,7 +3413,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Logitech hardware purchase - equipment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3425,7 +3425,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott Hotels - lodging travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3437,7 +3437,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle - meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3448,8 +3448,8 @@
       "amountCents": 7899,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Generic misc charge with no identifiable merchant",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3461,7 +3461,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Next Insurance - insurance premium",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3473,7 +3473,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "B&H Photo Video - equipment purchase",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3484,8 +3484,8 @@
       "amountCents": 14197,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Vague vendor name does not indicate category",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3494,10 +3494,10 @@
       "txnId": "txn_0305",
       "vendorDescriptor": "PAYMENT PROCESSING FEE",
       "amountCents": 2080,
-      "glCode": "6050",
-      "glName": "Professional Services",
-      "confidence": "low",
-      "rationale": "Payment processing fee - best fit professional services",
+      "glCode": "6900",
+      "glName": "Uncategorized",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3509,7 +3509,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "United Airlines - travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3520,8 +3520,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas incorporation service - professional services",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3533,7 +3533,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Clerky legal document service - professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3542,10 +3542,10 @@
       "txnId": "txn_0109",
       "vendorDescriptor": "CANVA PRO",
       "amountCents": 1299,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
+      "glCode": "6060",
+      "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Canva Pro - software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3557,7 +3557,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Google Ads - marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3569,7 +3569,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber Trip - travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3581,7 +3581,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Amtrak - travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3593,7 +3593,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Marriott Hotels - lodging travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3605,7 +3605,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Dell business hardware purchase - equipment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3617,7 +3617,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Google Ads - marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3629,7 +3629,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Apple Store purchase - equipment",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3641,7 +3641,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Google Ads - marketing/advertising",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3653,7 +3653,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Tartine Bakery - meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3662,10 +3662,10 @@
       "txnId": "txn_0291",
       "vendorDescriptor": "TWILIO INC",
       "amountCents": 11351,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
-      "confidence": "medium",
-      "rationale": "Twilio API subscription - software",
+      "glCode": "6080",
+      "glName": "Telecom",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3677,7 +3677,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Starbucks - meals",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3689,7 +3689,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride - travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3701,7 +3701,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen is a restaurant, meal expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3712,8 +3712,8 @@
       "amountCents": 8148,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Generic 'misc svc' descriptor gives no clear category.",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3724,8 +3724,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas is a business formation/legal service.",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3737,7 +3737,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "DoorDash restaurant order, meal expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3749,7 +3749,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Airline ticket purchase, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3761,7 +3761,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hotel stay, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3773,7 +3773,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Conference registration, training/education.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3785,7 +3785,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Team dinner event, meals & entertainment.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3797,7 +3797,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen is a restaurant, meal expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3809,7 +3809,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "DoorDash restaurant order, meal expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3821,7 +3821,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Airline ticket purchase, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3833,7 +3833,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hotel stay, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3845,7 +3845,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Amtrak train fare, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3857,7 +3857,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Logitech hardware purchase, equipment.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3869,7 +3869,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hotel stay, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3881,7 +3881,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3893,7 +3893,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Chipotle restaurant, meal expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3905,7 +3905,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hotel stay, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3917,7 +3917,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Coursera for Business, training subscription.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3929,7 +3929,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Starbucks coffee, meal expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3941,7 +3941,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "B&H Photo Video, camera/electronics equipment.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3953,7 +3953,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Next Insurance, business insurance expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3964,8 +3964,8 @@
       "amountCents": 2172,
       "glCode": "6060",
       "glName": "Marketing & Advertising",
-      "confidence": "medium",
-      "rationale": "Mailchimp email marketing platform.",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3977,7 +3977,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Logitech hardware purchase, equipment.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -3989,7 +3989,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Starbucks coffee, meal expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4001,7 +4001,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hotel stay, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4013,7 +4013,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "B&H Photo Video, camera/electronics equipment.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4025,7 +4025,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples office supply store purchase.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4037,7 +4037,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Team dinner event, meals & entertainment.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4049,7 +4049,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Sweetgreen is a restaurant, meal expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4061,7 +4061,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis car rental, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4073,7 +4073,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Airline ticket purchase, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4085,7 +4085,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Parking fee, travel-related expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4097,7 +4097,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Staples office supply store purchase.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4109,7 +4109,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Dell Business Sales, computer equipment.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4121,7 +4121,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Next Insurance, business insurance expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4133,7 +4133,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Parking fee, travel-related expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4145,7 +4145,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "B&H Photo Video, camera/electronics equipment.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4154,10 +4154,10 @@
       "txnId": "txn_0335",
       "vendorDescriptor": "PAYMENT PROCESSING FEE",
       "amountCents": 714,
-      "glCode": "6050",
-      "glName": "Professional Services",
-      "confidence": "low",
-      "rationale": "Payment processing fee, financial/professional service.",
+      "glCode": "6900",
+      "glName": "Uncategorized",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4169,7 +4169,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber trip, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4181,7 +4181,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hotel stay, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4192,8 +4192,8 @@
       "amountCents": 15900,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Descriptor is a suspicious embedded instruction, not a merchant.",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4205,7 +4205,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Hotel stay, travel expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4217,7 +4217,7 @@
       "glCode": "6040",
       "glName": "Office Supplies",
       "confidence": "high",
-      "rationale": "Office Depot, office supplies purchase.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4229,7 +4229,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Clerky legal document service, professional services.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4241,7 +4241,7 @@
       "glCode": "6070",
       "glName": "Equipment",
       "confidence": "high",
-      "rationale": "Logitech hardware purchase, equipment.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4253,7 +4253,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads, marketing & advertising expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4264,8 +4264,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas is a business formation/legal service.",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4276,8 +4276,8 @@
       "amountCents": 8600,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Descriptor contains embedded prompt injection, not a real merchant.",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4289,7 +4289,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "Uber Eats food delivery, meal expense.",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4301,7 +4301,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads is marketing/advertising spend",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4313,7 +4313,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4325,7 +4325,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Lyft ride is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4336,8 +4336,8 @@
       "amountCents": 4635,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Generic misc charge with no identifiable category",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4346,10 +4346,10 @@
       "txnId": "txn_0242",
       "vendorDescriptor": "CANVA PRO",
       "amountCents": 1299,
-      "glCode": "6010",
-      "glName": "Software & Subscriptions",
+      "glCode": "6060",
+      "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Canva Pro is a software subscription",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4360,8 +4360,8 @@
       "amountCents": 7709,
       "glCode": "6900",
       "glName": "Uncategorized",
-      "confidence": "low",
-      "rationale": "Square misc service descriptor does not identify category",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4373,7 +4373,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Hiscox is a small business insurance provider",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4385,7 +4385,7 @@
       "glCode": "6030",
       "glName": "Meals & Entertainment",
       "confidence": "high",
-      "rationale": "DoorDash restaurant order is meals expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4397,7 +4397,7 @@
       "glCode": "6050",
       "glName": "Professional Services",
       "confidence": "high",
-      "rationale": "Upwork contractor payment is professional services",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4409,7 +4409,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber trip is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4421,7 +4421,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Conference registration is training & education",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4432,8 +4432,8 @@
       "amountCents": 50000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Stripe Atlas company formation is professional services",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4444,8 +4444,8 @@
       "amountCents": 24000,
       "glCode": "6050",
       "glName": "Professional Services",
-      "confidence": "medium",
-      "rationale": "Gusto payroll processing service is professional services",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4457,7 +4457,7 @@
       "glCode": "6060",
       "glName": "Marketing & Advertising",
       "confidence": "high",
-      "rationale": "Facebook Ads is marketing/advertising spend",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4469,7 +4469,7 @@
       "glCode": "6090",
       "glName": "Insurance",
       "confidence": "high",
-      "rationale": "Next Insurance is an insurance provider",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4480,8 +4480,8 @@
       "amountCents": 181439,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Apple Store purchase is equipment",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4493,7 +4493,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Avis Rent A Car is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4505,7 +4505,7 @@
       "glCode": "6020",
       "glName": "Travel",
       "confidence": "high",
-      "rationale": "Uber trip is travel expense",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4516,8 +4516,8 @@
       "amountCents": 16194,
       "glCode": "6070",
       "glName": "Equipment",
-      "confidence": "medium",
-      "rationale": "Logitech.com purchase is equipment",
+      "confidence": "high",
+      "rationale": "dry run",
       "blockedBy": null
     },
     {
@@ -4529,7 +4529,7 @@
       "glCode": "6100",
       "glName": "Training & Education",
       "confidence": "high",
-      "rationale": "Udemy Business is training & education",
+      "rationale": "dry run",
       "blockedBy": null
     }
   ],
@@ -4562,16 +4562,6 @@
       "source": "deterministic"
     },
     {
-      "kind": "duplicate",
-      "txnIds": [
-        "txn_0055",
-        "txn_0056"
-      ],
-      "summary": "APPLE STORE R234 charged 2 times: Apple Store charge of $575.86 duplicated exactly same store/day; large precise amount repeated is a strong double-charge signal.",
-      "materialityCents": 57586,
-      "source": "model"
-    },
-    {
       "kind": "missingRecurring",
       "txnIds": [
         "txn_0032"
@@ -4579,26 +4569,6 @@
       "summary": "CARTA INC billed in 2026-04 and 2026-05 but not in 2026-06. Last charge 500.00 — propose an accrual or confirm cancellation.",
       "materialityCents": 50000,
       "source": "deterministic"
-    },
-    {
-      "kind": "duplicate",
-      "txnIds": [
-        "txn_0136",
-        "txn_0237"
-      ],
-      "summary": "STRIPE ATLAS charged 2 times: Stripe Atlas $500.00 flat fee charged twice same day; round, large, one-time-service-shaped amount strongly indicates duplicate billing.",
-      "materialityCents": 50000,
-      "source": "model"
-    },
-    {
-      "kind": "duplicate",
-      "txnIds": [
-        "txn_0198",
-        "txn_0350"
-      ],
-      "summary": "STRIPE ATLAS charged 2 times: Stripe Atlas $500.00 flat fee charged twice same day, same pattern as the other Stripe Atlas duplicate — round one-time-service amount repeated.",
-      "materialityCents": 50000,
-      "source": "model"
     },
     {
       "kind": "policyViolation",
@@ -4644,16 +4614,6 @@
       "summary": "DATADOG INC billed in 2026-04 and 2026-05 but not in 2026-06. Last charge 336.42 — propose an accrual or confirm cancellation.",
       "materialityCents": 33642,
       "source": "deterministic"
-    },
-    {
-      "kind": "duplicate",
-      "txnIds": [
-        "txn_0057",
-        "txn_0058"
-      ],
-      "summary": "FACEBOOK ADS charged 2 times: Facebook Ads charge of $310.46 duplicated exactly same day; precise non-round amount repeating suggests duplicate billing rather than two independent campaign charges.",
-      "materialityCents": 31046,
-      "source": "model"
     },
     {
       "kind": "missingRecurring",
@@ -4710,16 +4670,6 @@
       "source": "deterministic"
     },
     {
-      "kind": "duplicate",
-      "txnIds": [
-        "txn_0003",
-        "txn_0042"
-      ],
-      "summary": "PAYPAL *NOTIONLABS charged 2 times: PayPal *NotionLabs $96.00 charged twice same day — round, subscription-shaped SaaS amount, no per-seat justification found.",
-      "materialityCents": 9600,
-      "source": "model"
-    },
-    {
       "kind": "unreconciled",
       "txnIds": [
         "txn_0175"
@@ -4727,16 +4677,6 @@
       "summary": "TWILIO INC for 93.90 on 2026-06-08 never settled at the bank.",
       "materialityCents": 9390,
       "source": "deterministic"
-    },
-    {
-      "kind": "duplicate",
-      "txnIds": [
-        "txn_0247",
-        "txn_0378"
-      ],
-      "summary": "T-MOBILE*AUTOPAY charged 2 times: T-Mobile Autopay $85.00 charged twice same day; recurring phone bill autopay should occur once per billing cycle, so a same-day repeat is a duplicate draft.",
-      "materialityCents": 8500,
-      "source": "model"
     },
     {
       "kind": "policyViolation",
@@ -4775,16 +4715,6 @@
       "source": "deterministic"
     },
     {
-      "kind": "duplicate",
-      "txnIds": [
-        "txn_0059",
-        "txn_0060"
-      ],
-      "summary": "TWILIO INC charged 2 times: Twilio usage charge of $50.14 duplicated exactly same day; usage-based billing rarely produces two identical invoices same day.",
-      "materialityCents": 5014,
-      "source": "model"
-    },
-    {
       "kind": "receiptMismatch",
       "txnIds": [
         "txn_0098"
@@ -4810,16 +4740,6 @@
       "summary": "GITHUB, INC. moved 60% month-over-month: 82.97 to 132.66.",
       "materialityCents": 4969,
       "source": "deterministic"
-    },
-    {
-      "kind": "duplicate",
-      "txnIds": [
-        "txn_0051",
-        "txn_0052"
-      ],
-      "summary": "STAPLES STORE #1423 charged 2 times: Staples #1423 identical $47.85 charge twice same day; exact-to-the-cent retail match is unlikely to be two coincidental separate purchases.",
-      "materialityCents": 4785,
-      "source": "model"
     },
     {
       "kind": "policyViolation",
@@ -4998,66 +4918,6 @@
       "summary": "UBER   *TRIP HELP.UBER.CO: EUR 27.44 at 1.086 should post 29.80, posted 29.77 — off by -3c.",
       "materialityCents": 3,
       "source": "deterministic"
-    },
-    {
-      "kind": "vendorAlias",
-      "txnIds": [
-        "txn_0044",
-        "txn_0043",
-        "txn_0047",
-        "txn_0046",
-        "txn_0045"
-      ],
-      "summary": "Amazon: AMZN Mktp US*9FK6YNYXB + AMZN Mktp US*BNXKKC8AV + AMZN Mktp US*BSMZGND66 + AMZN Mktp US*WFN2NHNLB + AMAZON BUSINESS — All are Amazon marketplace/business purchases; the alphanumeric suffix is a per-order token generated by Amazon's processor, not a distinct merchant.",
-      "materialityCents": null,
-      "source": "model"
-    },
-    {
-      "kind": "vendorAlias",
-      "txnIds": [
-        "txn_0008",
-        "txn_0009",
-        "txn_0007"
-      ],
-      "summary": "Google Cloud: GOOGLE *CLOUD 2319196 + GOOGLE *CLOUD 4843015 + GOOGLE *CLOUD 8199486 — Same GCP infrastructure billing account; trailing digits are per-invoice reference numbers, not different products.",
-      "materialityCents": null,
-      "source": "model"
-    },
-    {
-      "kind": "vendorAlias",
-      "txnIds": [
-        "txn_0018",
-        "txn_0019",
-        "txn_0020",
-        "txn_0067"
-      ],
-      "summary": "Amazon Web Services (AWS): AWS  AMAZON WEB SERVICES + AWS EU-WEST-1 — Both are AWS infrastructure charges; the second descriptor just reflects the billing region.",
-      "materialityCents": null,
-      "source": "model"
-    },
-    {
-      "kind": "vendorAlias",
-      "txnIds": [
-        "txn_0049",
-        "txn_0050",
-        "txn_0048"
-      ],
-      "summary": "Blue Bottle Coffee: BLUE BOTTLE COFFEE + SQ *BLUE BOTTLE COFFE — Same coffee shop; one charge routed through Square (truncated name), the other direct.",
-      "materialityCents": null,
-      "source": "model"
-    },
-    {
-      "kind": "vendorAlias",
-      "txnIds": [
-        "txn_0041",
-        "txn_0001",
-        "txn_0002",
-        "txn_0003",
-        "txn_0042"
-      ],
-      "summary": "Notion Labs: NOTION LABS INC + PAYPAL *NOTIONLABS — Same software vendor (Notion); one charge processed directly, the other via PayPal.",
-      "materialityCents": null,
-      "source": "model"
     }
   ]
 }

@@ -62,6 +62,25 @@ jobs:
           diff <(jq -S "$STRIP" evals/results/latest-run.json) \
                <(jq -S "$STRIP" ios/TieoutCore/Tests/TieoutCoreTests/Fixtures/close-run.json)
 
+      # Both artifacts above are dry runs, because CI has no API key. The one
+      # the app ships is a real scored close and cannot be regenerated here,
+      # so it gets these two semantic checks. Its per-field shape is verified
+      # in the swift job, where the decoder reads the shipped file directly
+      # and rejects any element missing a non-optional field. A jq key
+      # comparison cannot do that: one finding missing a field leaves the
+      # unique key set unchanged, which was confirmed by mutation rather than
+      # assumed.
+      - name: Shipped artifact is a real run with something to approve
+        shell: bash
+        run: |
+          # A dry run builds its proposals from the answer key and scores a
+          # perfect 1.0. Shipping one puts a meaningless 100% in the app.
+          jq -e '.dryRun == false' ios/Tieout/Resources/close-run.json > /dev/null \
+            || { echo "::error::the app is bundling a dry run"; exit 1; }
+          jq -e '[.findings[] | select(.source == "model")] | length > 0' \
+            ios/Tieout/Resources/close-run.json > /dev/null \
+            || { echo "::error::the shipped artifact has no model findings, so the approval queue would be empty"; exit 1; }
+
   swift:
     name: swift build · swift test
     runs-on: macos-15
