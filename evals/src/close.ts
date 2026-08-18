@@ -157,7 +157,7 @@ async function main(): Promise<void> {
     batchSize: args.batchSize,
     onBatch: (done, total) => process.stdout.write(`\r  categorizing ${done}/${total}`),
   });
-  const wallClockMs = Date.now() - startedAt;
+  const categorizerWallClockMs = Date.now() - startedAt;
   process.stdout.write('\r'.padEnd(40) + '\r');
 
   // Every proposal goes through the bank before anyone sees a number.
@@ -273,7 +273,10 @@ async function main(): Promise<void> {
   console.log(`  tokens in/out      ${result.usage.inputTokens + anomalyUsage.inputTokens} / ${result.usage.outputTokens + anomalyUsage.outputTokens}`);
   console.log(`  cached read        ${result.usage.cacheReadTokens ?? 0}`);
   console.log(`  estimated cost     ${cost === null ? 'n/a' : `$${cost.toFixed(4)}`}`);
-  console.log(`  wall clock         ${(wallClockMs / 1000).toFixed(1)}s`);
+  // End to end, not just the categorizer. This line used to stop the clock
+  // after categorization and print the result as the run's wall clock,
+  // which halved it once the anomaly agents were added.
+  console.log(`  wall clock         ${((Date.now() - startedAt) / 1000).toFixed(1)}s  (categorizer ${(categorizerWallClockMs / 1000).toFixed(1)}s)`);
 
   if (score.worstConfusions.length > 0) {
     console.log('\nTOP CONFUSIONS');
@@ -300,6 +303,11 @@ async function main(): Promise<void> {
     startedAt: startedAtDate,
     finishedAt: new Date(),
     findings,
+    totals: {
+      turns: result.turns + anomalyTurns,
+      inputTokens: result.usage.inputTokens + anomalyUsage.inputTokens,
+      outputTokens: result.usage.outputTokens + anomalyUsage.outputTokens,
+    },
     agents: [
       {
         agent: 'categorizer',
@@ -340,7 +348,7 @@ async function main(): Promise<void> {
     writeFileSync(
       path,
       `${JSON.stringify(
-        { period: args.period, model: args.model, transactions: transactions.length, score, usage: result.usage, turns: result.turns, wallClockMs, costUsd: cost },
+        { period: args.period, model: args.model, transactions: transactions.length, score, usage: result.usage, turns: result.turns, wallClockMs: categorizerWallClockMs, costUsd: cost },
         null,
         2,
       )}\n`,

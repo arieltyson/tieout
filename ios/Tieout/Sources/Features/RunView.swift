@@ -72,7 +72,7 @@ private struct RunDetail: View {
                     Text(error).font(.caption).foregroundStyle(.red)
                 }
             } footer: {
-                Text("Replays the run on the Lock Screen and Dynamic Island. In Phase 6 the harness pushes these updates as each sub-agent finishes.")
+                Text("Replays the run on the Lock Screen and Dynamic Island, the same updates the harness pushes as each sub-agent finishes.")
             }
 
             Section {

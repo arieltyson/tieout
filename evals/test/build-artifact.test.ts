@@ -90,3 +90,27 @@ describe('agent status reflects what actually ran', () => {
     expect(run.agents.every((a) => a.detail !== 'not implemented')).toBe(true);
   });
 });
+
+describe('cost figures describe the same run', () => {
+  test('turns and tokens cover every agent, not just the categorizer', () => {
+    // costUsd has always been the whole run. Reporting the categorizer's
+    // turns beside it put "17 turns" next to a figure that bought 25.
+    const run = buildCloseRun(input({
+      categorizer: { categorizations: [], turns: 17, batches: 8, maxTokensHits: 0,
+        usage: { inputTokens: 90, outputTokens: 60 } } as never,
+      totals: { turns: 25, inputTokens: 102, outputTokens: 65 },
+      costUsd: 1.29,
+    }));
+    expect(run.cost.turns).toBe(25);
+    expect(run.cost.inputTokens).toBe(102);
+    expect(run.cost.outputTokens).toBe(65);
+  });
+
+  test('falls back to the categorizer when no totals are supplied', () => {
+    const run = buildCloseRun(input({
+      categorizer: { categorizations: [], turns: 17, batches: 8, maxTokensHits: 0,
+        usage: { inputTokens: 90, outputTokens: 60 } } as never,
+    }));
+    expect(run.cost.turns).toBe(17);
+  });
+});

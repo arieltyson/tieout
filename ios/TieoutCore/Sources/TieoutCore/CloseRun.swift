@@ -221,9 +221,14 @@ extension CloseRun {
         return String(format: "%.1f%%", accuracy * 100)
     }
 
+    /// Cost to the cent.
+    ///
+    /// Four decimal places was a development habit that survived onto the
+    /// screen: "$1.2889" reads as a machine talking to itself. Nobody
+    /// approving a close cares about hundredths of a cent.
     public var costFormatted: String {
         guard let usd = cost.costUsd, usd > 0 else { return dryRun ? "$0.00 (dry)" : "—" }
-        return String(format: "$%.4f", usd)
+        return String(format: "$%.2f", usd)
     }
 
     public var wallClockFormatted: String {

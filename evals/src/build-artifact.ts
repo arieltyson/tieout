@@ -45,6 +45,19 @@ export interface BuildArtifactInput {
    * implemented" and went on saying so for weeks after they were built.
    */
   readonly agents?: readonly AgentStatus[];
+  /**
+   * Turns and tokens across every agent, not just the categorizer.
+   *
+   * `costUsd` has always been the whole run, so reporting the categorizer's
+   * turns beside it put "17 turns" next to a figure that bought 25. The two
+   * numbers sat side by side on the same row of the app disagreeing with
+   * each other.
+   */
+  readonly totals?: {
+    readonly turns: number;
+    readonly inputTokens: number;
+    readonly outputTokens: number;
+  };
 }
 
 export function buildCloseRun(input: BuildArtifactInput): CloseRun {
@@ -123,10 +136,10 @@ export function buildCloseRun(input: BuildArtifactInput): CloseRun {
       accuracy: input.score ? input.score.accuracy : null,
     },
     cost: {
-      turns: input.categorizer.turns,
+      turns: input.totals?.turns ?? input.categorizer.turns,
       batches: input.categorizer.batches,
-      inputTokens: input.categorizer.usage.inputTokens,
-      outputTokens: input.categorizer.usage.outputTokens,
+      inputTokens: input.totals?.inputTokens ?? input.categorizer.usage.inputTokens,
+      outputTokens: input.totals?.outputTokens ?? input.categorizer.usage.outputTokens,
       cachedReadTokens: input.categorizer.usage.cacheReadTokens ?? 0,
       costUsd: input.costUsd,
       wallClockMs: input.finishedAt.getTime() - input.startedAt.getTime(),
