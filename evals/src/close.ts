@@ -344,11 +344,34 @@ async function main(): Promise<void> {
   } else {
     mkdirSync(RESULTS_DIR, { recursive: true });
     const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const path = `${RESULTS_DIR}${stamp}-categorizer.json`;
+    const path = `${RESULTS_DIR}${stamp}-close.json`;
+    // The anomaly score used to exist only as printed text, so anything
+    // wanting to compare runs had to scrape stdout. It is written down now,
+    // alongside the truncation flag: a run that hit the output ceiling
+    // produces a plausible-looking score that means nothing, and whoever
+    // reads this file later needs to be told that in the file itself.
     writeFileSync(
       path,
       `${JSON.stringify(
-        { period: args.period, model: args.model, transactions: transactions.length, score, usage: result.usage, turns: result.turns, wallClockMs: categorizerWallClockMs, costUsd: cost },
+        {
+          period: args.period,
+          model: args.model,
+          transactions: transactions.length,
+          score,
+          anomalies: anomalyScore,
+          findings: findings.length,
+          receiptRequests,
+          usage: {
+            inputTokens: result.usage.inputTokens + anomalyUsage.inputTokens,
+            outputTokens: result.usage.outputTokens + anomalyUsage.outputTokens,
+          },
+          turns: result.turns + anomalyTurns,
+          categorizerTurns: result.turns,
+          wallClockMs: Date.now() - startedAt,
+          categorizerWallClockMs,
+          costUsd: cost,
+          truncated: result.maxTokensHits > 0,
+        },
         null,
         2,
       )}\n`,
