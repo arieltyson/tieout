@@ -6,7 +6,7 @@
 
 [![CI](https://github.com/arieltyson/tieout/actions/workflows/ci.yml/badge.svg)](https://github.com/arieltyson/tieout/actions/workflows/ci.yml)
 
-**95.1% categorization accuracy · 0.94 anomaly F1 · $1.00 per close**
+**94.1% categorization accuracy · 0.90 anomaly F1 · $1.41 per close**
 
 [Full results and methodology](evals/RESULTS.md)
 
@@ -32,25 +32,24 @@ The harness is TypeScript. The surface is Swift.
 
 ## Benchmark Results 📊
 
-Measured against a synthetic ledger of 370 transactions carrying 47 planted
+Measured against a synthetic ledger of 370 transactions carrying 60 planted
 defects, using Claude Sonnet 5.
 
 | | |
 |---|---|
-| Categorization accuracy | **95.1%** (352 of 370, exact code match) |
-| Anomaly F1 | **0.94** (precision 0.92, recall 0.96) |
-| Cost | **$1.00** per close |
-| Wall clock | 291 seconds |
+| Categorization accuracy | **94.1%** (348 of 370, exact code match) |
+| Anomaly F1 | **0.90** (precision 0.93, recall 0.87) |
+| Cost | **$1.41** per close |
 | Proposals blocked by verifiers | 0 |
 
 The headline is not the total. It is where the work happens.
 
 | Handled by | Categories | Precision | Recall | Tokens |
 |---|---|---|---|---|
-| Plain arithmetic | Currency conversion, receipts, spend policy, cancelled subscriptions, price jumps | 1.00 | 0.96 | **none** |
-| The model | Duplicate judgment, vendor identity | 0.71 | 0.90 | all of them |
+| Plain arithmetic | Currency conversion, receipts, spend policy, cancelled subscriptions, price jumps, bank reconciliation | 1.00 | 0.86 | **none** |
+| The model | Duplicate judgment, vendor identity | 0.69 | 0.90 | all of them |
 
-Five of the seven defect categories have exact answers, so code finds them and
+Eight of the ten defect categories have exact answers, so code finds them and
 the model never sees them. A currency conversion either reconciles to the cent
 or it does not. A receipt either matches the charge or it does not. Asking a
 language model to do that arithmetic would be slower, more expensive, and less
@@ -63,9 +62,18 @@ Those are judgments, and the split is why a close costs a dollar rather than
 ten.
 
 It also shows the price of that trade honestly. The two categories the model
-owns are the two weakest on the board. It calls too many duplicates, flagging
-three legitimate repeat purchases as double charges. Burying that inside an
-average would have hidden it.
+owns are the only two that miss a perfect precision score. It calls too many
+duplicates, flagging three legitimate repeat purchases as double charges.
+Burying that inside an average would have hidden it.
+
+The arithmetic side pays its own price, in recall rather than precision. The
+reconciler matches a ledger row to a bank row only when the pairing is
+unambiguous, and when several bank rows could explain the same charge it
+declines to choose. That is why it finds three of five unreconciled entries
+and only one of four bank orphans. The trade is deliberate. A missed
+exception turns up next month when the account still does not tie. A false
+one sends an accountant chasing a payment that was always fine, and a control
+that does that a few times stops being read.
 
 ### What each part is worth
 
@@ -73,28 +81,36 @@ Every component disabled in turn, same fixture, same model.
 
 | Configuration | Accuracy | Anomaly F1 | Cost |
 |---|---|---|---|
-| **Baseline** | **94.1%** | **0.94** | **$0.95** |
-| Second close, warm memory | 95.4% | 0.94 | $0.33 |
-| No deterministic pre pass | 92.4% | 0.95 | $1.56 |
-| No sub agent isolation | 92.2% | 0.93 | $1.82 |
-| No deterministic verifiers | 94.1% | 0.94 | no change |
-| No self correction | 94.1% | 0.94 | no change |
+| **Baseline** | **94.1%** | **0.90** | **$1.41** |
+| Second close, warm memory | 94.6% | 0.89 | $0.62 |
+| No sub agent isolation | 91.9% | 0.87 | $1.93 |
+| No deterministic pre pass | ran out of context | | $1.39 |
+| No deterministic verifiers | 94.1% | 0.90 | no change |
+| No self correction | 94.1% | 0.90 | no change |
 
 Context isolation is the clearest win. One agent doing both jobs in one
-conversation costs 92 percent more and scores worse on both measures, because
+conversation costs 37 percent more and scores worse on both measures, because
 the ledger accumulates in the window and gets re-read on every turn.
 
-Vendor memory is next. A second close resolves 314 of 370 transactions from
-what it learned the first time, cutting cost by 65 percent and halving the
-turns.
+Vendor memory is next. A second close resolves 327 of 370 transactions from
+what it learned the first time, cutting cost by 56 percent and taking 11
+turns instead of 27.
 
-**One prediction was wrong and it stays on the record.** Removing the
-deterministic detectors was expected to be the sharpest drop. Anomaly F1
-actually rose slightly while cost rose 64 percent. On this fixture the
-detectors buy cost rather than correctness, which is a weaker claim than the
-one the design assumed. They remain worth keeping because they are free,
-deterministic, and self explaining, but the evidence does not support saying
-the model would be worse at the job.
+**One arm has no score, and the blank stays visible.** Stripped of the
+detectors, the model has to search the raw ledger itself, and against sixty
+defects it exhausted its output budget before finishing. Reporting the zero
+it technically scored would put a number on the board that nothing measured,
+so the row shows the failure instead.
+
+That failure is not a win for the architecture and is not offered as one. The
+budget is a setting, and a larger one might finish. The narrow claim is that
+on the same budget every other arm completes with, this one did not. Against
+an earlier, smaller fixture the same arm did complete, and it contradicted
+its own hypothesis by scoring a fraction better while costing 64 percent
+more. The prediction that removing the detectors would be the sharpest drop
+has now failed to hold up twice, in two different ways. The detectors stay
+because they are free, deterministic, and self explaining, not because the
+evidence says the model would be worse at the job.
 
 Two rows show no effect, which is the finding rather than a hole in it. The
 verifier bank blocked nothing on a clean run. It earns its place under
@@ -106,12 +122,12 @@ plausible looking nonsense, are in [evals/RESULTS.md](evals/RESULTS.md).
 
 ### Where the categorizer was wrong
 
-Every one of the 18 categorization misses is a defensible disagreement rather
+Every one of the 22 categorization misses is a defensible disagreement rather
 than a blunder. Canva went to software subscriptions instead of marketing.
 Twilio went to software instead of telecom. Both readings are arguable, and
 the answer key has not been edited to agree with the model, because fitting a
 benchmark to its own output is the failure this project exists to avoid.
-Treat 95.1% as a floor.
+Treat 94.1% as a floor.
 
 ## Highlights 💫
 

@@ -43,6 +43,13 @@ deterministic work. The ablation does not support that. Removing the
 detectors and asking the model to search the raw ledger produced slightly
 **better** anomaly F1, at 64 percent higher cost.
 
+Re-run against the larger fixture, this arm exhausted its output budget
+before finishing and has no score. That is not a belated confirmation of
+the original claim and is not recorded as one. The budget is a setting, and
+the honest statement is only that on the budget every other arm completes
+with, this one did not. The hypothesis has now failed to be confirmed
+twice, first by contradiction and then by truncation.
+
 So the claim is narrowed rather than abandoned. The detectors are kept
 because they are free, instant, deterministic across runs, and explain
 themselves with exact deltas. Those are real properties. "The model would
@@ -63,10 +70,16 @@ categorizer chews through hundreds of rows, and if that happens in the
 orchestrator's window then the orchestrator is compacting by the third
 agent and loses the thread.
 
-Measured: one agent doing both jobs in one conversation costs 92 percent
+Measured: one agent doing both jobs in one conversation costs 37 percent
 more and scores worse on both accuracy and anomaly F1. This is the clearest
 result in the ablation and the one that most directly earns the
 architecture.
+
+The size of the gap is not stable and should not be quoted as though it
+were. An earlier fixture put it at 92 percent, and on that run this arm
+exhausted its context and produced no score at all. The direction has held
+across both. The magnitude depends on how much the fixture makes the single
+window carry.
 
 A second benefit falls out. Each specialist gets only the tools its job
 needs, which makes least privilege something a test can assert.
